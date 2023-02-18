@@ -10,6 +10,7 @@ export * from "./ImageResizer";
 export * from "./KatexEquationAlterer";
 export * from "./LinkPreview";
 export * from "./FileInput";
+export * from "./Switch";
 export { LexicalContentEditable as ContentEditable } from "./ContentEditable";
 
 export * from "./hooks";

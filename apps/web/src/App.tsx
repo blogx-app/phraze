@@ -11,7 +11,7 @@ import Editor, {
   SharedAutocompleteContext,
   SharedHistoryContext,
 } from "lexical-editor";
-import { isDevPlayground } from "./appSettings";
+import { isDevPlayground } from "lib/appSettings";
 import { PlaygroundNodes } from "lexical-editor/node/PlaygroundNodes";
 import PasteLogPlugin from "lexical-editor/plugins/PasteLogPlugin";
 import { TableContext } from "lexical-editor/plugins/TablePlugin";
