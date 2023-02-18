@@ -33,7 +33,7 @@ import {
 import { Button } from "ui";
 import { DialogActions, DialogButtonsList } from "components/Dialog";
 import FileInput from "components/FileInput";
-import TextInput from "components/TextInput";
+import TextInput from "ui/TextInput";
 
 export type InsertImagePayload = Readonly<ImagePayload>;
 
