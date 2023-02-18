@@ -13,9 +13,9 @@ import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
 import * as React from "react";
 import { useState } from "react";
 
-import { useSettings } from "../context/SettingsContext";
-import { useSharedHistoryContext } from "../context/SharedHistoryContext";
-import { TableCellNodes } from "../node/TableCellNodes";
+import { useSettings } from "./context/SettingsContext";
+import { useSharedHistoryContext } from "./context/SharedHistoryContext";
+import { TableCellNodes } from "./node/TableCellNodes";
 import ActionsPlugin from "./plugins/ActionsPlugin";
 import AutocompletePlugin from "./plugins/AutocompletePlugin";
 import AutoEmbedPlugin from "./plugins/AutoEmbedPlugin";
