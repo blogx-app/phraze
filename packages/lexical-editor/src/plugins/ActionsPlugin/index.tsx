@@ -42,3 +42,5 @@ export default function ActionsPlugin(): JSX.Element {
     </div>
   );
 }
+
+export { ActionsPlugin };

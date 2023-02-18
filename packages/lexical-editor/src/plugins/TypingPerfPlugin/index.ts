@@ -107,3 +107,5 @@ export default function TypingPerfPlugin(): JSX.Element | null {
 
   return null;
 }
+
+export { TypingPerfPlugin };

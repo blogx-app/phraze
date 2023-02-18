@@ -274,3 +274,5 @@ export default function FloatingLinkEditorPlugin({
   const [editor] = useLexicalComposerContext();
   return useFloatingLinkEditorToolbar(editor, anchorElem);
 }
+
+export { FloatingLinkEditorPlugin };

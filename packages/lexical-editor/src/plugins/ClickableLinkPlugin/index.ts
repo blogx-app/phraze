@@ -118,3 +118,5 @@ function getLinkDomNode(
     return null;
   });
 }
+
+export { ClickableLinkPlugin };

@@ -69,3 +69,5 @@ export default function EmojisPlugin(): JSX.Element | null {
   useEmojis(editor);
   return null;
 }
+
+export { EmojisPlugin };

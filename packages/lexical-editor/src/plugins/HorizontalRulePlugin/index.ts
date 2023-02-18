@@ -39,3 +39,5 @@ export default function HorizontalRulePlugin(): null {
 
   return null;
 }
+
+export { HorizontalRulePlugin };

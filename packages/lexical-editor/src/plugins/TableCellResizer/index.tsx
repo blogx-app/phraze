@@ -377,3 +377,5 @@ export default function TableCellResizerPlugin(): null | ReactPortal {
     [editor, isEditable]
   );
 }
+
+export { TableCellResizerPlugin };

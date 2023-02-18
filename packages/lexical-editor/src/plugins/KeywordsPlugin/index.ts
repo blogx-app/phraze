@@ -46,3 +46,5 @@ export default function KeywordsPlugin(): JSX.Element | null {
 
   return null;
 }
+
+export { KeywordsPlugin };

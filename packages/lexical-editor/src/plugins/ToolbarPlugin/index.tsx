@@ -994,3 +994,5 @@ export default function ToolbarPlugin(): JSX.Element {
     </div>
   );
 }
+
+export { ToolbarPlugin };

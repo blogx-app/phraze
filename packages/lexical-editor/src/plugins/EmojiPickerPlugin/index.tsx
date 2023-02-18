@@ -191,3 +191,5 @@ export default function EmojiPickerPlugin() {
     />
   );
 }
+
+export { EmojiPickerPlugin };

@@ -349,3 +349,5 @@ export default function AutoEmbedPlugin(): JSX.Element {
     </>
   );
 }
+
+export { AutoEmbedPlugin };

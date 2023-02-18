@@ -35,3 +35,5 @@ export default function YouTubePlugin(): JSX.Element | null {
 
   return null;
 }
+
+export { YouTubePlugin };

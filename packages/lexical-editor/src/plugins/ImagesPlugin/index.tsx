@@ -387,3 +387,5 @@ function getDragSelection(event: DragEvent): Range | null | undefined {
 
   return range;
 }
+
+export { ImagesPlugin };

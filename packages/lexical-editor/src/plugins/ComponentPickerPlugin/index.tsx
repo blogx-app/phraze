@@ -378,3 +378,5 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
     </>
   );
 }
+
+export { ComponentPickerMenuPlugin };

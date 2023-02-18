@@ -34,3 +34,5 @@ export default function FigmaPlugin(): JSX.Element | null {
 
   return null;
 }
+
+export { FigmaPlugin };
