@@ -31,7 +31,6 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from "lexical";
-import * as React from "react";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
 import { useSettings } from "../context/SettingsContext";
@@ -41,9 +40,9 @@ import KeywordsPlugin from "../plugins/KeywordsPlugin";
 import LinkPlugin from "../plugins/LinkPlugin";
 import MentionsPlugin from "../plugins/MentionsPlugin";
 import TreeViewPlugin from "../plugins/TreeViewPlugin";
-import ContentEditable from "components/ContentEditable";
+import { ContentEditable } from "ui";
 import ImageResizer from "components/ImageResizer";
-import Placeholder from "components/Placeholder";
+import { Placeholder } from "ui";
 import { $isImageNode } from "./ImageNode";
 
 const imageCache = new Set();
@@ -95,7 +94,7 @@ function LazyImage({
   );
 }
 
-export default function ImageComponent({
+export function ImageComponent({
   src,
   altText,
   nodeKey,

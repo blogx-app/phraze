@@ -1,11 +1,4 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
+import * as React from "react";
 import type {
   EditorConfig,
   ElementFormatType,
@@ -13,14 +6,13 @@ import type {
   LexicalNode,
   NodeKey,
   Spread,
-} from 'lexical';
+} from "lexical";
 
-import {BlockWithAlignableContents} from '@lexical/react/LexicalBlockWithAlignableContents';
+import { BlockWithAlignableContents } from "@lexical/react/LexicalBlockWithAlignableContents";
 import {
   DecoratorBlockNode,
   SerializedDecoratorBlockNode,
-} from '@lexical/react/LexicalDecoratorBlockNode';
-import * as React from 'react';
+} from "@lexical/react/LexicalDecoratorBlockNode";
 
 type YouTubeComponentProps = Readonly<{
   className: Readonly<{
@@ -42,7 +34,8 @@ function YouTubeComponent({
     <BlockWithAlignableContents
       className={className}
       format={format}
-      nodeKey={nodeKey}>
+      nodeKey={nodeKey}
+    >
       <iframe
         width="560"
         height="315"
@@ -59,7 +52,7 @@ function YouTubeComponent({
 export type SerializedYouTubeNode = Spread<
   {
     videoID: string;
-    type: 'youtube';
+    type: "youtube";
     version: 1;
   },
   SerializedDecoratorBlockNode
@@ -69,7 +62,7 @@ export class YouTubeNode extends DecoratorBlockNode {
   __id: string;
 
   static getType(): string {
-    return 'youtube';
+    return "youtube";
   }
 
   static clone(node: YouTubeNode): YouTubeNode {
@@ -85,7 +78,7 @@ export class YouTubeNode extends DecoratorBlockNode {
   exportJSON(): SerializedYouTubeNode {
     return {
       ...super.exportJSON(),
-      type: 'youtube',
+      type: "youtube",
       version: 1,
       videoID: this.__id,
     };
@@ -106,7 +99,7 @@ export class YouTubeNode extends DecoratorBlockNode {
 
   getTextContent(
     _includeInert?: boolean | undefined,
-    _includeDirectionless?: false | undefined,
+    _includeDirectionless?: false | undefined
   ): string {
     return `https://www.youtube.com/watch?v=${this.__id}`;
   }
@@ -114,8 +107,8 @@ export class YouTubeNode extends DecoratorBlockNode {
   decorate(_editor: LexicalEditor, config: EditorConfig): JSX.Element {
     const embedBlockTheme = config.theme.embedBlock || {};
     const className = {
-      base: embedBlockTheme.base || '',
-      focus: embedBlockTheme.focus || '',
+      base: embedBlockTheme.base || "",
+      focus: embedBlockTheme.focus || "",
     };
     return (
       <YouTubeComponent
@@ -137,7 +130,7 @@ export function $createYouTubeNode(videoID: string): YouTubeNode {
 }
 
 export function $isYouTubeNode(
-  node: YouTubeNode | LexicalNode | null | undefined,
+  node: YouTubeNode | LexicalNode | null | undefined
 ): node is YouTubeNode {
   return node instanceof YouTubeNode;
 }

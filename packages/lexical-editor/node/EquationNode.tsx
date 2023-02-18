@@ -1,31 +1,23 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 import type {
   EditorConfig,
   LexicalNode,
   NodeKey,
   SerializedLexicalNode,
   Spread,
-} from 'lexical';
+} from "lexical";
 
-import {$applyNodeReplacement, DecoratorNode} from 'lexical';
-import * as React from 'react';
-import {Suspense} from 'react';
+import { $applyNodeReplacement, DecoratorNode } from "lexical";
+import * as React from "react";
+import { Suspense } from "react";
 
 const EquationComponent = React.lazy(
   // @ts-ignore
-  () => import('./EquationComponent'),
+  () => import("./EquationComponent")
 );
 
 export type SerializedEquationNode = Spread<
   {
-    type: 'equation';
+    type: "equation";
     equation: string;
     inline: boolean;
   },
@@ -37,7 +29,7 @@ export class EquationNode extends DecoratorNode<JSX.Element> {
   __inline: boolean;
 
   static getType(): string {
-    return 'equation';
+    return "equation";
   }
 
   static clone(node: EquationNode): EquationNode {
@@ -53,7 +45,7 @@ export class EquationNode extends DecoratorNode<JSX.Element> {
   static importJSON(serializedNode: SerializedEquationNode): EquationNode {
     const node = $createEquationNode(
       serializedNode.equation,
-      serializedNode.inline,
+      serializedNode.inline
     );
     return node;
   }
@@ -62,13 +54,13 @@ export class EquationNode extends DecoratorNode<JSX.Element> {
     return {
       equation: this.getEquation(),
       inline: this.__inline,
-      type: 'equation',
+      type: "equation",
       version: 1,
     };
   }
 
   createDOM(_config: EditorConfig): HTMLElement {
-    return document.createElement(this.__inline ? 'span' : 'div');
+    return document.createElement(this.__inline ? "span" : "div");
   }
 
   updateDOM(prevNode: EquationNode): boolean {
@@ -99,15 +91,15 @@ export class EquationNode extends DecoratorNode<JSX.Element> {
 }
 
 export function $createEquationNode(
-  equation = '',
-  inline = false,
+  equation = "",
+  inline = false
 ): EquationNode {
   const equationNode = new EquationNode(equation, inline);
   return $applyNodeReplacement(equationNode);
 }
 
 export function $isEquationNode(
-  node: LexicalNode | null | undefined,
+  node: LexicalNode | null | undefined
 ): node is EquationNode {
   return node instanceof EquationNode;
 }

@@ -15,7 +15,7 @@ import { useState } from "react";
 
 import { useSettings } from "./context/SettingsContext";
 import { useSharedHistoryContext } from "./context/SharedHistoryContext";
-import TableCellNodes from "node/TableCellNodes";
+import TableCellNodes from "./node/TableCellNodes";
 import ActionsPlugin from "./plugins/ActionsPlugin";
 import AutocompletePlugin from "./plugins/AutocompletePlugin";
 import AutoEmbedPlugin from "./plugins/AutoEmbedPlugin";
@@ -50,14 +50,14 @@ import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin";
 import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import TwitterPlugin from "./plugins/TwitterPlugin";
 import YouTubePlugin from "./plugins/YouTubePlugin";
+import { ContentEditable } from "ui";
+import { isDevPlayground } from "lib";
+import { Placeholder } from "ui";
 import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
-import ContentEditable from "components/ContentEditable";
-import Placeholder from "components/Placeholder";
-import { isDevPlayground } from "./lib/appSettings";
 
 const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
 
-export default function Editor(): JSX.Element {
+export function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext();
   const {
     settings: {

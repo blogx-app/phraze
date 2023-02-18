@@ -24,7 +24,7 @@ import { TableNode as NewTableNode } from "./TableNode";
 import { TweetNode } from "./TweetNode";
 import { YouTubeNode } from "./YouTubeNode";
 
-const PlaygroundNodes: Array<Klass<LexicalNode>> = [
+export const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
   ListNode,
   ListItemNode,
@@ -54,5 +54,3 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   CollapsibleContentNode,
   CollapsibleTitleNode,
 ];
-
-export default PlaygroundNodes;

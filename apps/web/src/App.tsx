@@ -1,26 +1,30 @@
 import "./SplitPane.css";
+import * as React from "react";
 import { $createLinkNode } from "@lexical/link";
 import { $createListItemNode, $createListNode } from "@lexical/list";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
 import { $createParagraphNode, $createTextNode, $getRoot } from "lexical";
-import * as React from "react";
+import Editor, {
+  SettingsContext,
+  useSettings,
+  SharedAutocompleteContext,
+  SharedHistoryContext,
+} from "lexical-editor";
 import { isDevPlayground } from "./appSettings";
-import { SettingsContext, useSettings } from "./context/SettingsContext";
-import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext";
-import { SharedHistoryContext } from "./context/SharedHistoryContext";
-import Editor from "./Editor";
-import PlaygroundNodes from "node/PlaygroundNodes";
-import PasteLogPlugin from "./plugins/PasteLogPlugin";
-import { TableContext } from "./plugins/TablePlugin";
-import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
+import { PlaygroundNodes } from "lexical-editor/node/PlaygroundNodes";
+import PasteLogPlugin from "lexical-editor/plugins/PasteLogPlugin";
+import { TableContext } from "lexical-editor/plugins/TablePlugin";
+import PlaygroundEditorTheme from "lexical-editor/themes/PlaygroundEditorTheme";
 import { BlogHeader } from "ui";
 
 // Dynamically loading so that it does not hurt prod performance.
-const TypingPerfPlugin = React.lazy(() => import("./plugins/TypingPerfPlugin"));
+const TypingPerfPlugin = React.lazy(
+  () => import("lexical-editor/plugins/TypingPerfPlugin")
+);
 const Settings = React.lazy(() => import("./Settings"));
 const TestRecorderPlugin = React.lazy(
-  () => import("./plugins/TestRecorderPlugin")
+  () => import("lexical-editor/plugins/TestRecorderPlugin")
 );
 
 // only in develop

@@ -49,7 +49,7 @@ import {
 } from "react";
 import * as React from "react";
 import { createPortal } from "react-dom";
-import { IS_APPLE } from "constants/editor-constants";
+import { IS_APPLE } from "lib";
 
 import { CellContext } from "../plugins/TablePlugin";
 import {
@@ -258,7 +258,7 @@ function getSelectedIDs(
     return [];
   }
   const { startX, endY, endX, startY } = rect;
-  const ids = [];
+  const ids: string[] = [];
 
   for (let x = startX; x <= endX; x++) {
     for (let y = startY; y <= endY; y++) {
@@ -673,7 +673,7 @@ function TableCell({
   );
 }
 
-export default function TableComponent({
+export function TableComponent({
   nodeKey,
   rows: rawRows,
   theme,
@@ -1514,8 +1514,8 @@ export default function TableComponent({
               number
             ];
             event.preventDefault();
-            let nextX = null;
-            let nextY = null;
+            let nextX: number | null = null;
+            let nextY: number | null = null;
             if (x === 0 && isBackward) {
               if (y !== 0) {
                 nextY = y - 1;
