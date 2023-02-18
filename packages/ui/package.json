@@ -14,9 +14,11 @@
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@emotion/babel-plugin": "11.10.5",
+    "@types/react-dom": "18.0.0",
     "@types/react": "18.0.22",
     "eslint": "7.32.0",
     "eslint-config-custom": "*",
+    "react-dom": "18.2.0",
     "react": "18.2.0",
     "tsconfig": "*",
     "typescript": "4.5.2"
