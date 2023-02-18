@@ -60,14 +60,13 @@ import {
   UNDO_COMMAND,
 } from "lexical";
 import { useCallback, useEffect, useState } from "react";
-import { IS_APPLE } from "constants/editor-constants";
+import { IS_APPLE } from "lib/editor-constants";
 
-import useModal from "../../hooks/useModal";
+import useModal from "ui/hooks/useModal";
 import catTypingGif from "../../images/cat-typing.gif";
 import ColorPicker from "ui/ColorPicker";
-import DropDown, { DropDownItem } from "components/DropDown";
-import { getSelectedNode } from "lib/getSelectedNode";
-import { sanitizeUrl } from "lib/url";
+import DropDown, { DropDownItem } from "ui/DropDown";
+import { getSelectedNode, sanitizeUrl } from "lib";
 import { EmbedConfigs } from "../AutoEmbedPlugin";
 import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
 import { InsertEquationDialog } from "../EquationsPlugin";
@@ -77,6 +76,7 @@ import {
   InsertImagePayload,
 } from "../ImagesPlugin";
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin";
+import React from "react";
 
 const blockTypeToBlockName = {
   bullet: "Bulleted List",
