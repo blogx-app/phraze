@@ -10,3 +10,4 @@ export * from "./point";
 export * from "./rect";
 export * from "./setFloatingElemPosition";
 export * from "./getDOMRangeRect";
+export * from "./getCodeLanguageOptions";
