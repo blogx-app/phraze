@@ -14,7 +14,7 @@ import PlaygroundNodes from "node/PlaygroundNodes";
 import PasteLogPlugin from "./plugins/PasteLogPlugin";
 import { TableContext } from "./plugins/TablePlugin";
 import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
-import BlogHeader from "components/BlogHeader";
+import { BlogHeader } from "ui";
 
 // Dynamically loading so that it does not hurt prod performance.
 const TypingPerfPlugin = React.lazy(() => import("./plugins/TypingPerfPlugin"));

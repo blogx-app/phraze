@@ -1,7 +1,7 @@
 import { HeaderInput, DescriptionInput } from "./styles";
 
 // replace with a resizeable textarea
-const BlogHeader = () => {
+export const BlogHeader = () => {
   // const autosize = (ev: any) => {
   //   const { target: el } = ev || {};
 
