@@ -1,5 +1,5 @@
 import type { LexicalEditor } from "lexical";
-
+import React from "react";
 import {
   AutoEmbedOption,
   EmbedConfig,
@@ -11,9 +11,9 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { useMemo, useState } from "react";
 import * as ReactDOM from "react-dom";
 
-import useModal from "../../hooks/useModal";
+import useModal from "ui/hooks/useModal";
 import { Button } from "ui";
-import { DialogActions } from "components/Dialog";
+import { DialogActions } from "ui/Dialog";
 import { INSERT_FIGMA_COMMAND } from "../FigmaPlugin";
 import { INSERT_TWEET_COMMAND } from "../TwitterPlugin";
 import { INSERT_YOUTUBE_COMMAND } from "../YouTubePlugin";

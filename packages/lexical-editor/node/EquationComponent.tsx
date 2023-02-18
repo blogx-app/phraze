@@ -1,5 +1,5 @@
 import type { NodeKey } from "lexical";
-
+import React from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { mergeRegister } from "@lexical/utils";
 import {
@@ -12,8 +12,8 @@ import {
 } from "lexical";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import EquationEditor from "components/EquationEditor";
-import KatexRenderer from "components/KatexRenderer";
+import EquationEditor from "ui/EquationEditor";
+import KatexRenderer from "ui/KatexRenderer";
 import { $isEquationNode } from "./EquationNode";
 
 type EquationComponentProps = {

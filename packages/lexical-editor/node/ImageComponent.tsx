@@ -41,8 +41,8 @@ import LinkPlugin from "../plugins/LinkPlugin";
 import MentionsPlugin from "../plugins/MentionsPlugin";
 import TreeViewPlugin from "../plugins/TreeViewPlugin";
 import { ContentEditable } from "ui";
-import  from "ui/ImageResizer";
-import { Placeholder, ImageResizer } from "ui";
+import ImageResizer from "ui/ImageResizer";
+import { Placeholder } from "ui";
 import { $isImageNode } from "./ImageNode";
 
 const imageCache = new Set();

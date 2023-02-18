@@ -1,20 +1,12 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
+import "./EquationEditor.css";
 
-import './EquationEditor.css';
-
-import * as React from 'react';
-import {ChangeEvent, RefObject} from 'react';
+import * as React from "react";
+import { ChangeEvent, RefObject } from "react";
 
 type BaseEquationEditorProps = {
   equation: string;
   inline: boolean;
-  inputRef: {current: null | HTMLInputElement | HTMLTextAreaElement};
+  inputRef: { current: null | HTMLInputElement | HTMLTextAreaElement };
   setEquation: (equation: string) => void;
 };
 
@@ -49,7 +41,7 @@ export default function EquationEditor({
 
 type EquationEditorImplProps = {
   equation: string;
-  inputRef: {current: null | HTMLInputElement};
+  inputRef: { current: null | HTMLInputElement };
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -75,7 +67,7 @@ function InlineEquationEditor({
 
 type BlockEquationEditorImplProps = {
   equation: string;
-  inputRef: {current: null | HTMLTextAreaElement};
+  inputRef: { current: null | HTMLTextAreaElement };
   onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
@@ -86,14 +78,16 @@ function BlockEquationEditor({
 }: BlockEquationEditorImplProps): JSX.Element {
   return (
     <div className="EquationEditor_inputBackground">
-      <span className="EquationEditor_dollarSign">{'$$\n'}</span>
+      <span className="EquationEditor_dollarSign">{"$$\n"}</span>
       <textarea
         className="EquationEditor_blockEditor"
         value={equation}
         onChange={onChange}
         ref={inputRef}
       />
-      <span className="EquationEditor_dollarSign">{'\n$$'}</span>
+      <span className="EquationEditor_dollarSign">{"\n$$"}</span>
     </div>
   );
 }
+
+export { EquationEditor };

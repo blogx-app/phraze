@@ -25,8 +25,8 @@ import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteCo
 import {
   $createAutocompleteNode,
   AutocompleteNode,
-} from "node/AutocompleteNode";
-import { addSwipeRightListener } from "lib/swipe";
+} from "../../node/AutocompleteNode";
+import { addSwipeRightListener } from "lib";
 
 type SearchPromise = {
   dismiss: () => void;
@@ -51,7 +51,7 @@ function $search(
   if (!$isTextNode(node) || !node.isSimpleText() || !$isAtNodeEnd(anchor)) {
     return [false, ""];
   }
-  const word = [];
+  const word: any[] = [];
   const text = node.getTextContent();
   let i = node.getTextContentSize();
   let c;

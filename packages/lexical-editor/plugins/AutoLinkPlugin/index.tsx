@@ -1,13 +1,5 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-import {AutoLinkPlugin} from '@lexical/react/LexicalAutoLinkPlugin';
-import * as React from 'react';
+import { AutoLinkPlugin } from "@lexical/react/LexicalAutoLinkPlugin";
+import * as React from "react";
 
 const URL_MATCHER =
   /((https?:\/\/(www\.)?)|(www\.))[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/;
@@ -26,7 +18,7 @@ const MATCHERS = [
       index: match.index,
       length: fullMatch.length,
       text: fullMatch,
-      url: fullMatch.startsWith('http') ? fullMatch : `https://${fullMatch}`,
+      url: fullMatch.startsWith("http") ? fullMatch : `https://${fullMatch}`,
     };
   },
   (text: string) => {
