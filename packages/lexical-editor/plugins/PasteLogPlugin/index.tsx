@@ -1,6 +1,6 @@
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { COMMAND_PRIORITY_NORMAL, PASTE_COMMAND } from "lexical";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // This might be a good start for renderer
 export default function PasteLogPlugin(): JSX.Element {

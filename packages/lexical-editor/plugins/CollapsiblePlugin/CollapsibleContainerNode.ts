@@ -1,11 +1,3 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 import {
   DOMConversionMap,
   EditorConfig,
@@ -14,11 +6,11 @@ import {
   NodeKey,
   SerializedElementNode,
   Spread,
-} from 'lexical';
+} from "lexical";
 
 type SerializedCollapsibleContainerNode = Spread<
   {
-    type: 'collapsible-container';
+    type: "collapsible-container";
     version: 1;
   },
   SerializedElementNode
@@ -33,7 +25,7 @@ export class CollapsibleContainerNode extends ElementNode {
   }
 
   static getType(): string {
-    return 'collapsible-container';
+    return "collapsible-container";
   }
 
   static clone(node: CollapsibleContainerNode): CollapsibleContainerNode {
@@ -41,15 +33,15 @@ export class CollapsibleContainerNode extends ElementNode {
   }
 
   createDOM(config: EditorConfig): HTMLElement {
-    const dom = document.createElement('details');
-    dom.classList.add('Collapsible__container');
+    const dom = document.createElement("details");
+    dom.classList.add("Collapsible__container");
     dom.open = this.__open;
     return dom;
   }
 
   updateDOM(
     prevNode: CollapsibleContainerNode,
-    dom: HTMLDetailsElement,
+    dom: HTMLDetailsElement
   ): boolean {
     if (prevNode.__open !== this.__open) {
       dom.open = this.__open;
@@ -63,7 +55,7 @@ export class CollapsibleContainerNode extends ElementNode {
   }
 
   static importJSON(
-    serializedNode: SerializedCollapsibleContainerNode,
+    serializedNode: SerializedCollapsibleContainerNode
   ): CollapsibleContainerNode {
     const node = $createCollapsibleContainerNode();
     return node;
@@ -72,7 +64,7 @@ export class CollapsibleContainerNode extends ElementNode {
   exportJSON(): SerializedCollapsibleContainerNode {
     return {
       ...super.exportJSON(),
-      type: 'collapsible-container',
+      type: "collapsible-container",
       version: 1,
     };
   }
@@ -96,7 +88,7 @@ export function $createCollapsibleContainerNode(): CollapsibleContainerNode {
 }
 
 export function $isCollapsibleContainerNode(
-  node: LexicalNode | null | undefined,
+  node: LexicalNode | null | undefined
 ): node is CollapsibleContainerNode {
   return node instanceof CollapsibleContainerNode;
 }

@@ -1,13 +1,5 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import useLexicalEditable from '@lexical/react/useLexicalEditable';
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import useLexicalEditable from "@lexical/react/useLexicalEditable";
 import {
   $deleteTableColumn,
   $getElementGridForTableNode,
@@ -24,19 +16,19 @@ import {
   HTMLTableElementWithWithTableSelectionState,
   TableCellHeaderStates,
   TableCellNode,
-} from '@lexical/table';
+} from "@lexical/table";
 import {
   $getRoot,
   $getSelection,
   $isRangeSelection,
   DEPRECATED_$isGridSelection,
-} from 'lexical';
-import * as React from 'react';
-import {ReactPortal, useCallback, useEffect, useRef, useState} from 'react';
-import {createPortal} from 'react-dom';
+} from "lexical";
+import * as React from "react";
+import { ReactPortal, useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 type TableCellActionMenuProps = Readonly<{
-  contextRef: {current: null | HTMLElement};
+  contextRef: { current: null | HTMLElement };
   onClose: () => void;
   setIsMenuOpen: (isOpen: boolean) => void;
   tableCellNode: TableCellNode;
@@ -59,7 +51,7 @@ function TableActionMenu({
   useEffect(() => {
     return editor.registerMutationListener(TableCellNode, (nodeMutations) => {
       const nodeUpdated =
-        nodeMutations.get(tableCellNode.getKey()) === 'updated';
+        nodeMutations.get(tableCellNode.getKey()) === "updated";
 
       if (nodeUpdated) {
         editor.getEditorState().read(() => {
@@ -91,7 +83,7 @@ function TableActionMenu({
     if (menuButtonElement != null && dropDownElement != null) {
       const menuButtonRect = menuButtonElement.getBoundingClientRect();
 
-      dropDownElement.style.opacity = '1';
+      dropDownElement.style.opacity = "1";
 
       dropDownElement.style.left = `${
         menuButtonRect.left + menuButtonRect.width + window.pageXOffset + 5
@@ -115,9 +107,9 @@ function TableActionMenu({
       }
     }
 
-    window.addEventListener('click', handleClickOutside);
+    window.addEventListener("click", handleClickOutside);
 
-    return () => window.removeEventListener('click', handleClickOutside);
+    return () => window.removeEventListener("click", handleClickOutside);
   }, [setIsMenuOpen, contextRef]);
 
   const clearTableSelection = useCallback(() => {
@@ -125,11 +117,11 @@ function TableActionMenu({
       if (tableCellNode.isAttached()) {
         const tableNode = $getTableNodeFromLexicalNodeOrThrow(tableCellNode);
         const tableElement = editor.getElementByKey(
-          tableNode.getKey(),
+          tableNode.getKey()
         ) as HTMLTableElementWithWithTableSelectionState;
 
         if (!tableElement) {
-          throw new Error('Expected to find tableElement in DOM');
+          throw new Error("Expected to find tableElement in DOM");
         }
 
         const tableSelection = getTableSelectionFromTableElement(tableElement);
@@ -171,7 +163,7 @@ function TableActionMenu({
           tableRowIndex,
           shouldInsertAfter,
           selectionCounts.rows,
-          grid,
+          grid
         );
 
         clearTableSelection();
@@ -179,7 +171,7 @@ function TableActionMenu({
         onClose();
       });
     },
-    [editor, tableCellNode, selectionCounts.rows, clearTableSelection, onClose],
+    [editor, tableCellNode, selectionCounts.rows, clearTableSelection, onClose]
   );
 
   const insertTableColumnAtSelection = useCallback(
@@ -208,7 +200,7 @@ function TableActionMenu({
           tableColumnIndex,
           shouldInsertAfter,
           selectionCounts.columns,
-          grid,
+          grid
         );
 
         clearTableSelection();
@@ -222,7 +214,7 @@ function TableActionMenu({
       selectionCounts.columns,
       clearTableSelection,
       onClose,
-    ],
+    ]
   );
 
   const deleteTableRowAtSelection = useCallback(() => {
@@ -270,18 +262,18 @@ function TableActionMenu({
       const tableRows = tableNode.getChildren();
 
       if (tableRowIndex >= tableRows.length || tableRowIndex < 0) {
-        throw new Error('Expected table cell to be inside of table row.');
+        throw new Error("Expected table cell to be inside of table row.");
       }
 
       const tableRow = tableRows[tableRowIndex];
 
       if (!$isTableRowNode(tableRow)) {
-        throw new Error('Expected table row');
+        throw new Error("Expected table row");
       }
 
       tableRow.getChildren().forEach((tableCell) => {
         if (!$isTableCellNode(tableCell)) {
-          throw new Error('Expected table cell');
+          throw new Error("Expected table cell");
         }
 
         tableCell.toggleHeaderStyle(TableCellHeaderStates.ROW);
@@ -305,19 +297,19 @@ function TableActionMenu({
         const tableRow = tableRows[r];
 
         if (!$isTableRowNode(tableRow)) {
-          throw new Error('Expected table row');
+          throw new Error("Expected table row");
         }
 
         const tableCells = tableRow.getChildren();
 
         if (tableColumnIndex >= tableCells.length || tableColumnIndex < 0) {
-          throw new Error('Expected table cell to be inside of table row.');
+          throw new Error("Expected table cell to be inside of table row.");
         }
 
         const tableCell = tableCells[tableColumnIndex];
 
         if (!$isTableCellNode(tableCell)) {
-          throw new Error('Expected table cell');
+          throw new Error("Expected table cell");
         }
 
         tableCell.toggleHeaderStyle(TableCellHeaderStates.COLUMN);
@@ -335,41 +327,44 @@ function TableActionMenu({
       ref={dropDownRef}
       onClick={(e) => {
         e.stopPropagation();
-      }}>
+      }}
+    >
       <button className="item" onClick={() => insertTableRowAtSelection(false)}>
         <span className="text">
-          Insert{' '}
-          {selectionCounts.rows === 1 ? 'row' : `${selectionCounts.rows} rows`}{' '}
+          Insert{" "}
+          {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`}{" "}
           above
         </span>
       </button>
       <button className="item" onClick={() => insertTableRowAtSelection(true)}>
         <span className="text">
-          Insert{' '}
-          {selectionCounts.rows === 1 ? 'row' : `${selectionCounts.rows} rows`}{' '}
+          Insert{" "}
+          {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`}{" "}
           below
         </span>
       </button>
       <hr />
       <button
         className="item"
-        onClick={() => insertTableColumnAtSelection(false)}>
+        onClick={() => insertTableColumnAtSelection(false)}
+      >
         <span className="text">
-          Insert{' '}
+          Insert{" "}
           {selectionCounts.columns === 1
-            ? 'column'
-            : `${selectionCounts.columns} columns`}{' '}
+            ? "column"
+            : `${selectionCounts.columns} columns`}{" "}
           left
         </span>
       </button>
       <button
         className="item"
-        onClick={() => insertTableColumnAtSelection(true)}>
+        onClick={() => insertTableColumnAtSelection(true)}
+      >
         <span className="text">
-          Insert{' '}
+          Insert{" "}
           {selectionCounts.columns === 1
-            ? 'column'
-            : `${selectionCounts.columns} columns`}{' '}
+            ? "column"
+            : `${selectionCounts.columns} columns`}{" "}
           right
         </span>
       </button>
@@ -388,8 +383,8 @@ function TableActionMenu({
         <span className="text">
           {(tableCellNode.__headerState & TableCellHeaderStates.ROW) ===
           TableCellHeaderStates.ROW
-            ? 'Remove'
-            : 'Add'}{' '}
+            ? "Remove"
+            : "Add"}{" "}
           row header
         </span>
       </button>
@@ -397,13 +392,13 @@ function TableActionMenu({
         <span className="text">
           {(tableCellNode.__headerState & TableCellHeaderStates.COLUMN) ===
           TableCellHeaderStates.COLUMN
-            ? 'Remove'
-            : 'Add'}{' '}
+            ? "Remove"
+            : "Add"}{" "}
           column header
         </span>
       </button>
     </div>,
-    document.body,
+    document.body
   );
 }
 
@@ -419,7 +414,7 @@ function TableCellActionMenuContainer({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [tableCellNode, setTableMenuCellNode] = useState<TableCellNode | null>(
-    null,
+    null
   );
 
   const moveMenu = useCallback(() => {
@@ -442,7 +437,7 @@ function TableCellActionMenuContainer({
       rootElement.contains(nativeSelection.anchorNode)
     ) {
       const tableCellNodeFromSelection = $getTableCellNodeFromLexicalNode(
-        selection.anchor.getNode(),
+        selection.anchor.getNode()
       );
 
       if (tableCellNodeFromSelection == null) {
@@ -451,7 +446,7 @@ function TableCellActionMenuContainer({
       }
 
       const tableCellParentNodeDOM = editor.getElementByKey(
-        tableCellNodeFromSelection.getKey(),
+        tableCellNodeFromSelection.getKey()
       );
 
       if (tableCellParentNodeDOM == null) {
@@ -488,11 +483,11 @@ function TableCellActionMenuContainer({
         const left =
           tableCellRect.right - menuRect.width - 10 - anchorRect.left;
 
-        menuButtonDOM.style.opacity = '1';
+        menuButtonDOM.style.opacity = "1";
         menuButtonDOM.style.transform = `translate(${left}px, ${top}px)`;
       } else {
-        menuButtonDOM.style.opacity = '0';
-        menuButtonDOM.style.transform = 'translate(-10000px, -10000px)';
+        menuButtonDOM.style.opacity = "0";
+        menuButtonDOM.style.transform = "translate(-10000px, -10000px)";
       }
     }
   }, [menuButtonRef, tableCellNode, editor, anchorElem]);
@@ -517,7 +512,8 @@ function TableCellActionMenuContainer({
               e.stopPropagation();
               setIsMenuOpen(!isMenuOpen);
             }}
-            ref={menuRootRef}>
+            ref={menuRootRef}
+          >
             <i className="chevron-down" />
           </button>
           {isMenuOpen && (
@@ -544,6 +540,6 @@ export default function TableActionMenuPlugin({
     isEditable ? (
       <TableCellActionMenuContainer anchorElem={anchorElem} />
     ) : null,
-    anchorElem,
+    anchorElem
   );
 }

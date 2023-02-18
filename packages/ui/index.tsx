@@ -7,6 +7,9 @@ export * from "./TextInput";
 export * from "./DropDown";
 export * from "./ColorPicker";
 export * from "./ImageResizer";
+export * from "./KatexEquationAlterer";
+export * from "./LinkPreview";
+export * from "./FileInput";
 export { LexicalContentEditable as ContentEditable } from "./ContentEditable";
 
 export * from "./hooks";

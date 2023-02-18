@@ -22,17 +22,17 @@ import { useEffect, useRef, useState } from "react";
 import * as React from "react";
 import { CAN_USE_DOM } from "lib/canUseDOM";
 
-import landscapeImage from "../../images/landscape.jpg";
-import yellowFlowerImage from "../../images/yellow-flower.jpg";
+import landscapeImage from "ui/images/landscape.jpg";
+import yellowFlowerImage from "ui/images/yellow-flower.jpg";
 import {
   $createImageNode,
   $isImageNode,
   ImageNode,
   ImagePayload,
-} from "node/ImageNode";
+} from "../../node/ImageNode";
 import { Button } from "ui";
-import { DialogActions, DialogButtonsList } from "components/Dialog";
-import FileInput from "components/FileInput";
+import { DialogActions, DialogButtonsList } from "ui/Dialog";
+import FileInput from "ui/FileInput";
 import TextInput from "ui/TextInput";
 
 export type InsertImagePayload = Readonly<ImagePayload>;
