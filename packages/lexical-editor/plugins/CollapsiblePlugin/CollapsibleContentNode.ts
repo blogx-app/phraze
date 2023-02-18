@@ -1,11 +1,3 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 import {
   DOMConversionMap,
   EditorConfig,
@@ -13,11 +5,11 @@ import {
   LexicalNode,
   SerializedElementNode,
   Spread,
-} from 'lexical';
+} from "lexical";
 
 type SerializedCollapsibleContentNode = Spread<
   {
-    type: 'collapsible-content';
+    type: "collapsible-content";
     version: 1;
   },
   SerializedElementNode
@@ -25,7 +17,7 @@ type SerializedCollapsibleContentNode = Spread<
 
 export class CollapsibleContentNode extends ElementNode {
   static getType(): string {
-    return 'collapsible-content';
+    return "collapsible-content";
   }
 
   static clone(node: CollapsibleContentNode): CollapsibleContentNode {
@@ -33,8 +25,8 @@ export class CollapsibleContentNode extends ElementNode {
   }
 
   createDOM(config: EditorConfig): HTMLElement {
-    const dom = document.createElement('div');
-    dom.classList.add('Collapsible__content');
+    const dom = document.createElement("div");
+    dom.classList.add("Collapsible__content");
     return dom;
   }
 
@@ -47,7 +39,7 @@ export class CollapsibleContentNode extends ElementNode {
   }
 
   static importJSON(
-    serializedNode: SerializedCollapsibleContentNode,
+    serializedNode: SerializedCollapsibleContentNode
   ): CollapsibleContentNode {
     return $createCollapsibleContentNode();
   }
@@ -59,7 +51,7 @@ export class CollapsibleContentNode extends ElementNode {
   exportJSON(): SerializedCollapsibleContentNode {
     return {
       ...super.exportJSON(),
-      type: 'collapsible-content',
+      type: "collapsible-content",
       version: 1,
     };
   }
@@ -70,7 +62,7 @@ export function $createCollapsibleContentNode(): CollapsibleContentNode {
 }
 
 export function $isCollapsibleContentNode(
-  node: LexicalNode | null | undefined,
+  node: LexicalNode | null | undefined
 ): node is CollapsibleContentNode {
   return node instanceof CollapsibleContentNode;
 }
