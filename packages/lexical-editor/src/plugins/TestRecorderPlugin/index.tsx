@@ -461,3 +461,5 @@ export default function TestRecorderPlugin(): JSX.Element {
     </>
   );
 }
+
+export { TestRecorderPlugin };

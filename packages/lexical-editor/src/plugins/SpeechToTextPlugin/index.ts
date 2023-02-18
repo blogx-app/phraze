@@ -115,3 +115,5 @@ function SpeechToTextPlugin(): null {
 export default (SUPPORT_SPEECH_RECOGNITION
   ? SpeechToTextPlugin
   : () => null) as () => null;
+
+export { SpeechToTextPlugin };

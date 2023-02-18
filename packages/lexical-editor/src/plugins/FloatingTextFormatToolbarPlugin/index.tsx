@@ -321,3 +321,5 @@ export default function FloatingTextFormatToolbarPlugin({
   const [editor] = useLexicalComposerContext();
   return useFloatingTextFormatToolbar(editor, anchorElem);
 }
+
+export { FloatingTextFormatToolbarPlugin };

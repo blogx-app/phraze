@@ -37,3 +37,5 @@ const MATCHERS = [
 export default function LexicalAutoLinkPlugin(): JSX.Element {
   return <AutoLinkPlugin matchers={MATCHERS} />;
 }
+
+export { LexicalAutoLinkPlugin };

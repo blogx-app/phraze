@@ -228,6 +228,8 @@ export default function AutocompletePlugin(): JSX.Element | null {
   return null;
 }
 
+export { AutocompletePlugin };
+
 /*
  * Simulate an asynchronous autocomplete server (typical in more common use cases like GMail where
  * the data is not static).

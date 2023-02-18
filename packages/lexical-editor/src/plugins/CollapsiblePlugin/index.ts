@@ -1,15 +1,7 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
+import "./Collapsible.css";
 
-import './Collapsible.css';
-
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import {$findMatchingParent, mergeRegister} from '@lexical/utils';
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { $findMatchingParent, mergeRegister } from "@lexical/utils";
 import {
   $createParagraphNode,
   $getNodeByKey,
@@ -25,24 +17,24 @@ import {
   INSERT_PARAGRAPH_COMMAND,
   KEY_ARROW_DOWN_COMMAND,
   NodeKey,
-} from 'lexical';
-import {useEffect} from 'react';
+} from "lexical";
+import { useEffect } from "react";
 
 import {
   $createCollapsibleContainerNode,
   $isCollapsibleContainerNode,
   CollapsibleContainerNode,
-} from './CollapsibleContainerNode';
+} from "./CollapsibleContainerNode";
 import {
   $createCollapsibleContentNode,
   $isCollapsibleContentNode,
   CollapsibleContentNode,
-} from './CollapsibleContentNode';
+} from "./CollapsibleContentNode";
 import {
   $createCollapsibleTitleNode,
   $isCollapsibleTitleNode,
   CollapsibleTitleNode,
-} from './CollapsibleTitleNode';
+} from "./CollapsibleTitleNode";
 
 export const INSERT_COLLAPSIBLE_COMMAND = createCommand<void>();
 export const TOGGLE_COLLAPSIBLE_COMMAND = createCommand<NodeKey>();
@@ -58,7 +50,7 @@ export default function CollapsiblePlugin(): JSX.Element | null {
       ])
     ) {
       throw new Error(
-        'CollapsiblePlugin: CollapsibleContainerNode, CollapsibleTitleNode, or CollapsibleContentNode not registered on editor',
+        "CollapsiblePlugin: CollapsibleContainerNode, CollapsibleTitleNode, or CollapsibleContentNode not registered on editor"
       );
     }
 
@@ -125,7 +117,7 @@ export default function CollapsiblePlugin(): JSX.Element | null {
           container.setOpen(true);
           return true;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       // When collapsible is the last child pressing down arrow will insert paragraph
       // below it to allow adding more content. It's similar what $insertBlockNode
@@ -141,7 +133,7 @@ export default function CollapsiblePlugin(): JSX.Element | null {
 
           const container = $findMatchingParent(
             selection.anchor.getNode(),
-            $isCollapsibleContainerNode,
+            $isCollapsibleContainerNode
           );
 
           if (container === null) {
@@ -154,7 +146,7 @@ export default function CollapsiblePlugin(): JSX.Element | null {
           }
           return false;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       // Handling CMD+Enter to toggle collapsible element collapsed state
       editor.registerCommand(
@@ -166,13 +158,13 @@ export default function CollapsiblePlugin(): JSX.Element | null {
           if (
             windowEvent &&
             (windowEvent.ctrlKey || windowEvent.metaKey) &&
-            windowEvent.key === 'Enter'
+            windowEvent.key === "Enter"
           ) {
             const selection = $getPreviousSelection();
             if ($isRangeSelection(selection) && selection.isCollapsed()) {
               const parent = $findMatchingParent(
                 selection.anchor.getNode(),
-                (node) => $isElementNode(node) && !node.isInline(),
+                (node) => $isElementNode(node) && !node.isInline()
               );
 
               if ($isCollapsibleTitleNode(parent)) {
@@ -188,7 +180,7 @@ export default function CollapsiblePlugin(): JSX.Element | null {
 
           return false;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(
         INSERT_COLLAPSIBLE_COMMAND,
@@ -202,11 +194,11 @@ export default function CollapsiblePlugin(): JSX.Element | null {
 
             const title = $createCollapsibleTitleNode();
             const content = $createCollapsibleContentNode().append(
-              $createParagraphNode(),
+              $createParagraphNode()
             );
             const container = $createCollapsibleContainerNode().append(
               title,
-              content,
+              content
             );
             selection.insertNodes([container]);
             title.selectStart();
@@ -214,7 +206,7 @@ export default function CollapsiblePlugin(): JSX.Element | null {
 
           return true;
         },
-        COMMAND_PRIORITY_EDITOR,
+        COMMAND_PRIORITY_EDITOR
       ),
       editor.registerCommand(
         TOGGLE_COLLAPSIBLE_COMMAND,
@@ -228,9 +220,11 @@ export default function CollapsiblePlugin(): JSX.Element | null {
 
           return true;
         },
-        COMMAND_PRIORITY_EDITOR,
-      ),
+        COMMAND_PRIORITY_EDITOR
+      )
     );
   }, [editor]);
   return null;
 }
+
+export { CollapsiblePlugin };

@@ -365,3 +365,5 @@ export default function DraggableBlockPlugin({
   const [editor] = useLexicalComposerContext();
   return useDraggableBlockMenu(editor, anchorElem, editor._editable);
 }
+
+export { DraggableBlockPlugin };

@@ -45,3 +45,5 @@ export default function PasteLogPlugin(): JSX.Element {
     </>
   );
 }
+
+export { PasteLogPlugin };

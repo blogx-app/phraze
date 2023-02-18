@@ -35,3 +35,5 @@ export default function TwitterPlugin(): JSX.Element | null {
 
   return null;
 }
+
+export { TwitterPlugin };

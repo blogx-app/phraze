@@ -192,3 +192,5 @@ export default function TableOfContentsPlugin() {
     </LexicalTableOfContents__EXPERIMENTAL>
   );
 }
+
+export { TableOfContentsPlugin };

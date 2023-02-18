@@ -76,3 +76,5 @@ export default function ListMaxIndentLevelPlugin({ maxDepth }: Props): null {
   }, [editor, maxDepth]);
   return null;
 }
+
+export { ListMaxIndentLevelPlugin };

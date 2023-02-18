@@ -75,3 +75,5 @@ export default function EquationsPlugin(): JSX.Element | null {
 
   return null;
 }
+
+export { EquationsPlugin };

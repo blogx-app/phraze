@@ -11,3 +11,5 @@ export default function CodeHighlightPlugin(): JSX.Element | null {
 
   return null;
 }
+
+export { CodeHighlightPlugin };

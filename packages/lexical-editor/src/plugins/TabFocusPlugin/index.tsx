@@ -55,3 +55,5 @@ export default function TabFocusPlugin(): null {
 
   return null;
 }
+
+export { TabFocusPlugin };

@@ -15,3 +15,5 @@ export default function TreeViewPlugin(): JSX.Element {
     />
   );
 }
+
+export { TreeViewPlugin };

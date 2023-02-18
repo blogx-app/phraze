@@ -543,3 +543,5 @@ export default function TableActionMenuPlugin({
     anchorElem
   );
 }
+
+export { TableActionMenuPlugin };

@@ -712,3 +712,5 @@ export default function NewMentionsPlugin(): JSX.Element | null {
     />
   );
 }
+
+export { NewMentionsPlugin };
