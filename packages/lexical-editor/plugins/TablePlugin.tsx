@@ -21,8 +21,8 @@ import invariant from "lib/invariant";
 
 import { $createTableNodeWithDimensions, TableNode } from "../node/TableNode";
 import { Button } from "ui";
-import { DialogActions } from "components/Dialog";
-import TextInput from "components/TextInput";
+import { DialogActions } from "ui/Dialog";
+import TextInput from "ui/TextInput";
 
 export type InsertTableCommandPayload = Readonly<{
   columns: string;

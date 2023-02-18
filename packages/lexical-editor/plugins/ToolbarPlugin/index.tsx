@@ -64,7 +64,7 @@ import { IS_APPLE } from "constants/editor-constants";
 
 import useModal from "../../hooks/useModal";
 import catTypingGif from "../../images/cat-typing.gif";
-import ColorPicker from "components/ColorPicker";
+import ColorPicker from "ui/ColorPicker";
 import DropDown, { DropDownItem } from "components/DropDown";
 import { getSelectedNode } from "lib/getSelectedNode";
 import { sanitizeUrl } from "lib/url";

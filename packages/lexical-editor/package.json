@@ -8,7 +8,8 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "dependencies": {
-    "lib": "*"
+    "lib": "*",
+    "ui": "*"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",
