@@ -33,17 +33,17 @@ import {
 } from "lexical";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
-import { useSettings } from "context/SettingsContext";
-import { useSharedHistoryContext } from "../context/SharedHistoryContext";
-import EmojisPlugin from "plugins/EmojisPlugin";
-import KeywordsPlugin from "plugins/KeywordsPlugin";
-import LinkPlugin from "plugins/LinkPlugin";
-import MentionsPlugin from "plugins/MentionsPlugin";
-import TreeViewPlugin from "plugins/TreeViewPlugin";
+import { useSettings } from "lexical-editor/context/SettingsContext";
+import { useSharedHistoryContext } from "lexical-editor/context/SharedHistoryContext";
+import EmojisPlugin from "lexical-editor/plugins/EmojisPlugin";
+import KeywordsPlugin from "lexical-editor/plugins/KeywordsPlugin";
+import LinkPlugin from "lexical-editor/plugins/LinkPlugin";
+import MentionsPlugin from "lexical-editor/plugins/MentionsPlugin";
+import TreeViewPlugin from "lexical-editor/plugins/TreeViewPlugin";
 import { ContentEditable } from "ui";
-import ImageResizer from "components/ImageResizer";
-import Placeholder from "components/Placeholder";
-import { $isImageNode } from "node/ImageNode";
+import ImageResizer from "ui/ImageResizer";
+import Placeholder from "ui/Placeholder";
+import { $isImageNode } from "lexical-editor/node/ImageNode";
 
 const imageCache = new Set();
 

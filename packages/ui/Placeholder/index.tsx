@@ -1,7 +1,7 @@
 import "./Placeholder.css";
 import { ReactNode } from "react";
 
-export function Placeholder({
+export default function Placeholder({
   children,
   className,
 }: {
@@ -10,3 +10,5 @@ export function Placeholder({
 }): JSX.Element {
   return <div className={className || "Placeholder__root"}>{children}</div>;
 }
+
+export { Placeholder };

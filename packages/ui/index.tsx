@@ -6,6 +6,7 @@ export * from "./Dialog";
 export * from "./TextInput";
 export * from "./DropDown";
 export * from "./ColorPicker";
+export * from "./ImageResizer";
 export { LexicalContentEditable as ContentEditable } from "./ContentEditable";
 
 export * from "./hooks";
