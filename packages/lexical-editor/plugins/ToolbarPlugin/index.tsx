@@ -63,7 +63,7 @@ import { useCallback, useEffect, useState } from "react";
 import { IS_APPLE } from "lib/editor-constants";
 
 import useModal from "ui/hooks/useModal";
-import catTypingGif from "../../images/cat-typing.gif";
+import catTypingGif from "ui/images/cat-typing.gif";
 import ColorPicker from "ui/ColorPicker";
 import DropDown, { DropDownItem } from "ui/DropDown";
 import { getSelectedNode, sanitizeUrl } from "lib";
@@ -76,7 +76,6 @@ import {
   InsertImagePayload,
 } from "../ImagesPlugin";
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin";
-import React from "react";
 
 const blockTypeToBlockName = {
   bullet: "Bulleted List",
