@@ -28,7 +28,7 @@ import * as React from "react";
 import invariant from "lib/invariant";
 
 import { $createTableNodeWithDimensions, TableNode } from "node/TableNode";
-import Button from "components/Button";
+import { Button } from "ui";
 import { DialogActions } from "components/Dialog";
 import TextInput from "components/TextInput";
 

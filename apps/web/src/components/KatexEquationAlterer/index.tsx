@@ -3,7 +3,7 @@ import "./KatexEquationAlterer.css";
 import * as React from "react";
 import { useCallback, useState } from "react";
 
-import Button from "components/Button";
+import { Button } from "ui";
 import KatexRenderer from "./KatexRenderer";
 
 type Props = {

@@ -9,11 +9,10 @@ import {
 } from "@lexical/react/LexicalAutoEmbedPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { useMemo, useState } from "react";
-import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import useModal from "../../hooks/useModal";
-import Button from "components/Button";
+import { Button } from "ui";
 import { DialogActions } from "components/Dialog";
 import { INSERT_FIGMA_COMMAND } from "../FigmaPlugin";
 import { INSERT_TWEET_COMMAND } from "../TwitterPlugin";

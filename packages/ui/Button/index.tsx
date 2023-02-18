@@ -1,6 +1,6 @@
 import "./Button.css";
 import { ReactNode } from "react";
-import joinClasses from "lib/join-classes";
+import { joinClasses } from "lib";
 
 export function Button({
   "data-test-id": dataTestId,

@@ -7,6 +7,9 @@
   "scripts": {
     "lint": "eslint \"**/*.ts*\""
   },
+  "dependencies": {
+    "lib": "*"
+  },
   "devDependencies": {
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
@@ -16,7 +19,6 @@
     "eslint-config-custom": "*",
     "react": "18.2.0",
     "tsconfig": "*",
-    "lib": "*",
     "typescript": "4.5.2"
   }
 }
