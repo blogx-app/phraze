@@ -40,7 +40,7 @@ import KeywordsPlugin from "plugins/KeywordsPlugin";
 import LinkPlugin from "plugins/LinkPlugin";
 import MentionsPlugin from "plugins/MentionsPlugin";
 import TreeViewPlugin from "plugins/TreeViewPlugin";
-import ContentEditable from "components/ContentEditable";
+import { ContentEditable } from "ui";
 import ImageResizer from "components/ImageResizer";
 import Placeholder from "components/Placeholder";
 import { $isImageNode } from "node/ImageNode";

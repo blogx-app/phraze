@@ -1,11 +1,14 @@
 {
   "name": "lexical-editor",
   "version": "1.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./index.ts",
+  "types": "./index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\""
+  },
+  "dependencies": {
+    "lib": "*"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",
