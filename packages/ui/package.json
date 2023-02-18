@@ -8,11 +8,15 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "devDependencies": {
-    "@types/react": "^18.0.22",
-    "eslint": "^7.32.0",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
+    "@emotion/babel-plugin": "11.10.5",
+    "@types/react": "18.0.22",
+    "eslint": "7.32.0",
     "eslint-config-custom": "*",
-    "react": "^18.2.0",
+    "react": "18.2.0",
     "tsconfig": "*",
-    "typescript": "^4.5.2"
+    "lib": "*",
+    "typescript": "4.5.2"
   }
 }
