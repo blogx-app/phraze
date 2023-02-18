@@ -1,5 +1,5 @@
 {
-  "name": "blogx-monorepo",
+  "name": "blogx",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
