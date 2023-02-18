@@ -29,7 +29,7 @@ import {
   $isImageNode,
   ImageNode,
   ImagePayload,
-} from "../../../node/ImageNode";
+} from "../../node/ImageNode";
 import { Button } from "ui";
 import { DialogActions, DialogButtonsList } from "ui/Dialog";
 import FileInput from "ui/FileInput";

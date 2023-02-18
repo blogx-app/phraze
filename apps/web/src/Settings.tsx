@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 
 import { isDevPlayground } from "./appSettings";
-import { useSettings } from "./context/SettingsContext";
+import { useSettings } from "lexical-editor/context/SettingsContext";
 import Switch from "components/Switch";
 
 export default function Settings(): JSX.Element {
