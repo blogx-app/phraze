@@ -51,7 +51,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { IS_APPLE } from "lib";
 
-import { CellContext } from "../plugins/TablePlugin";
+import { CellContext } from "../src/plugins/TablePlugin";
 import {
   $isTableNode,
   Cell,
