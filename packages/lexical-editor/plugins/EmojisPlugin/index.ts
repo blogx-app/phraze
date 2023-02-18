@@ -4,7 +4,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { TextNode } from "lexical";
 import { useEffect } from "react";
 
-import { $createEmojiNode, EmojiNode } from "../../../node/EmojiNode";
+import { $createEmojiNode, EmojiNode } from "../../node/EmojiNode";
 
 const emojis: Map<string, [string, string]> = new Map([
   [":)", ["emoji happysmile", "🙂"]],

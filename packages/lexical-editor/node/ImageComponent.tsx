@@ -35,11 +35,11 @@ import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
 import { useSettings } from "../context/SettingsContext";
 import { useSharedHistoryContext } from "../context/SharedHistoryContext";
-import EmojisPlugin from "../src/plugins/EmojisPlugin";
-import KeywordsPlugin from "../src/plugins/KeywordsPlugin";
-import LinkPlugin from "../src/plugins/LinkPlugin";
-import MentionsPlugin from "../src/plugins/MentionsPlugin";
-import TreeViewPlugin from "../src/plugins/TreeViewPlugin";
+import EmojisPlugin from "../plugins/EmojisPlugin";
+import KeywordsPlugin from "../plugins/KeywordsPlugin";
+import LinkPlugin from "../plugins/LinkPlugin";
+import MentionsPlugin from "../plugins/MentionsPlugin";
+import TreeViewPlugin from "../plugins/TreeViewPlugin";
 import { ContentEditable } from "ui";
 import ImageResizer from "ui/ImageResizer";
 import { Placeholder } from "ui";

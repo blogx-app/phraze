@@ -53,7 +53,7 @@ import YouTubePlugin from "./plugins/YouTubePlugin";
 import { ContentEditable } from "ui";
 import { isDevPlayground } from "lib";
 import { Placeholder } from "ui";
-import PlaygroundEditorTheme from "../themes/PlaygroundEditorTheme";
+import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
 
 const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
 

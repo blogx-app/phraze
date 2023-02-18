@@ -39,17 +39,17 @@ import {
   $createEquationNode,
   $isEquationNode,
   EquationNode,
-} from "../../../node/EquationNode";
+} from "../../node/EquationNode";
 import {
   $createImageNode,
   $isImageNode,
   ImageNode,
-} from "../../../node/ImageNode";
+} from "../../node/ImageNode";
 import {
   $createTweetNode,
   $isTweetNode,
   TweetNode,
-} from "../../../node/TweetNode";
+} from "../../node/TweetNode";
 
 export const HR: ElementTransformer = {
   dependencies: [HorizontalRuleNode],
