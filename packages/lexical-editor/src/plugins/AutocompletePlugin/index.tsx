@@ -21,11 +21,11 @@ import {
 } from "lexical";
 import { useCallback, useEffect } from "react";
 
-import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext";
+import { useSharedAutocompleteContext } from "../../../context/SharedAutocompleteContext";
 import {
   $createAutocompleteNode,
   AutocompleteNode,
-} from "../../node/AutocompleteNode";
+} from "../../../node/AutocompleteNode";
 import { addSwipeRightListener } from "lib";
 
 type SearchPromise = {

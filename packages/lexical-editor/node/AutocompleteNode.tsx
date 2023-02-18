@@ -8,7 +8,7 @@ import {
 } from "lexical";
 
 import { useSharedAutocompleteContext } from "../context/SharedAutocompleteContext";
-import { uuid as UUID } from "../plugins/AutocompletePlugin";
+import { uuid as UUID } from "../src/plugins/AutocompletePlugin";
 
 declare global {
   interface Navigator {
