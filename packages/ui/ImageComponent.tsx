@@ -6,8 +6,6 @@ import type {
   RangeSelection,
 } from "lexical";
 
-import "node/ImageNode/ImageNode.css";
-
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
@@ -33,17 +31,17 @@ import {
 } from "lexical";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
-import { useSettings } from "lexical-editor/context/SettingsContext";
-import { useSharedHistoryContext } from "lexical-editor/context/SharedHistoryContext";
-import EmojisPlugin from "lexical-editor/plugins/EmojisPlugin";
-import KeywordsPlugin from "lexical-editor/plugins/KeywordsPlugin";
-import LinkPlugin from "lexical-editor/plugins/LinkPlugin";
-import MentionsPlugin from "lexical-editor/plugins/MentionsPlugin";
-import TreeViewPlugin from "lexical-editor/plugins/TreeViewPlugin";
+import { useSettings } from "@blogx/lexical-editor/context/SettingsContext";
+import { useSharedHistoryContext } from "@blogx/lexical-editor/context/SharedHistoryContext";
+import EmojisPlugin from "@blogx/lexical-editor/plugins/EmojisPlugin";
+import KeywordsPlugin from "@blogx/lexical-editor/plugins/KeywordsPlugin";
+import LinkPlugin from "@blogx/lexical-editor/plugins/LinkPlugin";
+import MentionsPlugin from "@blogx/lexical-editor/plugins/MentionsPlugin";
+import TreeViewPlugin from "@blogx/lexical-editor/plugins/TreeViewPlugin";
 import { ContentEditable } from "ui";
 import ImageResizer from "ui/ImageResizer";
 import Placeholder from "ui/Placeholder";
-import { $isImageNode } from "lexical-editor/node/ImageNode";
+import { $isImageNode } from "@blogx/lexical-editor/node/ImageNode";
 
 const imageCache = new Set();
 

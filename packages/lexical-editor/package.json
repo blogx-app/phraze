@@ -1,5 +1,5 @@
 {
-  "name": "lexical-editor",
+  "name": "@blogx/lexical-editor",
   "version": "1.0.0",
   "main": "./index.ts",
   "types": "./index.ts",
@@ -8,8 +8,7 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "dependencies": {
-    "lib": "*",
-    "ui": "*"
+    "lib": "*"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",
