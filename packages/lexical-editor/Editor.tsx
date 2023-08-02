@@ -51,11 +51,11 @@ import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import TwitterPlugin from "./plugins/TwitterPlugin";
 import YouTubePlugin from "./plugins/YouTubePlugin";
 import { ContentEditable } from "ui";
-import { isDevPlayground } from "lib";
+// import { isDevPlayground } from "lib";
 import { Placeholder } from "ui";
 import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
 
-const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
+// const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
 
 export function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext();
@@ -191,7 +191,7 @@ export function Editor(): JSX.Element {
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         <ActionsPlugin />
       </div>
-      {showTreeView && isDevPlayground && <TreeViewPlugin />}
+      {/* {showTreeView && isDevPlayground && <TreeViewPlugin />} */}
     </>
   );
 }

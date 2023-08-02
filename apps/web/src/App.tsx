@@ -12,7 +12,7 @@ import Editor, {
 } from "@blogx/lexical-editor";
 import { isDevPlayground } from "lib/appSettings";
 import { PlaygroundNodes } from "@blogx/lexical-editor/node/PlaygroundNodes";
-import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
+// import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
 import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
 import PlaygroundEditorTheme from "@blogx/lexical-editor/themes/PlaygroundEditorTheme";
 import { BlogHeader } from "ui";
@@ -21,10 +21,10 @@ import { BlogHeader } from "ui";
 const TypingPerfPlugin = React.lazy(
   () => import("@blogx/lexical-editor/plugins/TypingPerfPlugin")
 );
-const Settings = React.lazy(() => import("./Settings"));
-const TestRecorderPlugin = React.lazy(
-  () => import("@blogx/lexical-editor/plugins/TestRecorderPlugin")
-);
+// const Settings = React.lazy(() => import("./Settings"));
+// const TestRecorderPlugin = React.lazy(
+//   () => import("@blogx/lexical-editor/plugins/TestRecorderPlugin")
+// );
 
 // only in develop
 function prepopulatedRichText() {
@@ -131,13 +131,13 @@ function App(): JSX.Element {
               <BlogHeader />
               <Editor />
             </div>
-            {isDevPlayground ? (
+            {/* {isDevPlayground ? (
               <>
                 <Settings />
                 <PasteLogPlugin />
                 <TestRecorderPlugin />
               </>
-            ) : null}
+            ) : null} */}
             {measureTypingPerf && isDevPlayground ? <TypingPerfPlugin /> : null}
           </SharedAutocompleteContext>
         </TableContext>
