@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
 import { CharacterLimitPlugin } from "@lexical/react/LexicalCharacterLimitPlugin";
 import { CheckListPlugin } from "@lexical/react/LexicalCheckListPlugin";
@@ -10,8 +11,6 @@ import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin";
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
-import { useState } from "react";
-
 import { useSettings } from "./context/SettingsContext";
 import { useSharedHistoryContext } from "./context/SharedHistoryContext";
 import { TableCellNodes } from "./node/TableCellNodes";
@@ -53,7 +52,6 @@ import { ContentEditable } from "ui";
 // import { isDevPlayground } from "lib";
 import { Placeholder } from "ui";
 import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
-
 // const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
 
 export function Editor(): JSX.Element {
@@ -92,11 +90,7 @@ export function Editor(): JSX.Element {
   return (
     <>
       {isRichText && <ToolbarPlugin />}
-      <div
-        className={`editor-container ${showTreeView ? "tree-view" : ""} ${
-          !isRichText ? "plain-text" : ""
-        }`}
-      >
+      <div className={`editor-container ${showTreeView ? "tree-view" : ""} ${!isRichText ? "plain-text" : ""}`}>
         {isMaxLength && <MaxLengthPlugin maxLength={30} />}
         <DragDropPaste />
         <AutoFocusPlugin />

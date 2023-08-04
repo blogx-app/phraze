@@ -9,6 +9,7 @@ export const BlogHeader = () => {
   //   el.style.cssText = "height:" + el.scrollHeight + "px !important";
   // };
 
+  // TODO - need to improve the UI, this should be expanding as the user type.
   return (
     <div>
       <HeaderInput

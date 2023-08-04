@@ -69,7 +69,7 @@ interface MiniDrawerProps {
 }
 
 export default function MiniDrawer({ children }: MiniDrawerProps) {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerClose = () => {
     setOpen((state) => !state);
