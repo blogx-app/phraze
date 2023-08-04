@@ -4,19 +4,20 @@ import { $createListItemNode, $createListNode } from "@lexical/list";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
 import { $createParagraphNode, $createTextNode, $getRoot } from "lexical";
-import Editor, {
+import {
   SettingsContext,
   useSettings,
   SharedAutocompleteContext,
   SharedHistoryContext,
 } from "@blogx/lexical-editor";
 // import { isDevPlayground } from "lib/appSettings";
-import {Sidebar} from 'ui'
+import { RouterProvider, Sidebar } from 'ui'
 import { PlaygroundNodes } from "@blogx/lexical-editor/node/PlaygroundNodes";
 // import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
 import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
 import PlaygroundEditorTheme from "@blogx/lexical-editor/themes/PlaygroundEditorTheme";
 import { BlogHeader } from "ui";
+import { routes } from "./route";
 
 // Dynamically loading so that it does not hurt prod performance.
 // const TypingPerfPlugin = React.lazy(
@@ -38,7 +39,7 @@ function prepopulatedRichText() {
     quote.append(
       $createTextNode(
         `In case you were wondering what the black box at the bottom is – it's the debug view, showing the current state of the editor. ` +
-          `You can disable it by pressing on the settings control in the bottom-left of your screen and toggling the debug view setting.`
+        `You can disable it by pressing on the settings control in the bottom-left of your screen and toggling the debug view setting.`
       )
     );
     root.append(quote);
@@ -128,19 +129,7 @@ function App(): JSX.Element {
       <SharedHistoryContext>
         <TableContext>
           <SharedAutocompleteContext>
-            <div className="editor-shell">
-              <Sidebar />
-              <BlogHeader />
-              <Editor />
-            </div>
-            {/* {isDevPlayground ? (
-              <>
-                <Settings />
-                <PasteLogPlugin />
-                <TestRecorderPlugin />
-              </>
-            ) : null} */}
-            {/* {measureTypingPerf && isDevPlayground ? <TypingPerfPlugin /> : null} */}
+            <RouterProvider routes={routes} />
           </SharedAutocompleteContext>
         </TableContext>
       </SharedHistoryContext>

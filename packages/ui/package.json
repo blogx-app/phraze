@@ -10,7 +10,8 @@
   "dependencies": {
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
-    "lib": "*"
+    "lib": "*",
+    "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
     "@blogx/lexical-editor": "*",
