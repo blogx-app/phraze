@@ -10,13 +10,12 @@ import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin";
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
-import * as React from "react";
 import { useState } from "react";
 
 import { useSettings } from "./context/SettingsContext";
 import { useSharedHistoryContext } from "./context/SharedHistoryContext";
 import { TableCellNodes } from "./node/TableCellNodes";
-import ActionsPlugin from "./plugins/ActionsPlugin";
+// import ActionsPlugin from "./plugins/ActionsPlugin";
 import AutocompletePlugin from "./plugins/AutocompletePlugin";
 import AutoEmbedPlugin from "./plugins/AutoEmbedPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
@@ -41,7 +40,7 @@ import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import MarkdownShortcutPlugin from "./plugins/MarkdownShortcutPlugin";
 import { MaxLengthPlugin } from "./plugins/MaxLengthPlugin";
 import MentionsPlugin from "./plugins/MentionsPlugin";
-import SpeechToTextPlugin from "./plugins/SpeechToTextPlugin";
+// import SpeechToTextPlugin from "./plugins/SpeechToTextPlugin";
 import TabFocusPlugin from "./plugins/TabFocusPlugin";
 import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
 import TableCellResizer from "./plugins/TableCellResizer";
@@ -109,7 +108,7 @@ export function Editor(): JSX.Element {
         <EmojisPlugin />
         <HashtagPlugin />
         <KeywordsPlugin />
-        <SpeechToTextPlugin />
+        {/* <SpeechToTextPlugin /> */}
         <AutoLinkPlugin />
         {isRichText ? (
           <>
@@ -189,7 +188,7 @@ export function Editor(): JSX.Element {
         )}
         {isAutocomplete && <AutocompletePlugin />}
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
-        <ActionsPlugin />
+        {/* <ActionsPlugin /> */}
       </div>
       {/* {showTreeView && isDevPlayground && <TreeViewPlugin />} */}
     </>

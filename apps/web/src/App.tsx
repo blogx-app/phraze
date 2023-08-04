@@ -10,7 +10,7 @@ import Editor, {
   SharedAutocompleteContext,
   SharedHistoryContext,
 } from "@blogx/lexical-editor";
-import { isDevPlayground } from "lib/appSettings";
+// import { isDevPlayground } from "lib/appSettings";
 import { PlaygroundNodes } from "@blogx/lexical-editor/node/PlaygroundNodes";
 // import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
 import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
@@ -18,9 +18,9 @@ import PlaygroundEditorTheme from "@blogx/lexical-editor/themes/PlaygroundEditor
 import { BlogHeader } from "ui";
 
 // Dynamically loading so that it does not hurt prod performance.
-const TypingPerfPlugin = React.lazy(
-  () => import("@blogx/lexical-editor/plugins/TypingPerfPlugin")
-);
+// const TypingPerfPlugin = React.lazy(
+//   () => import("@blogx/lexical-editor/plugins/TypingPerfPlugin")
+// );
 // const Settings = React.lazy(() => import("./Settings"));
 // const TestRecorderPlugin = React.lazy(
 //   () => import("@blogx/lexical-editor/plugins/TestRecorderPlugin")
@@ -138,7 +138,7 @@ function App(): JSX.Element {
                 <TestRecorderPlugin />
               </>
             ) : null} */}
-            {measureTypingPerf && isDevPlayground ? <TypingPerfPlugin /> : null}
+            {/* {measureTypingPerf && isDevPlayground ? <TypingPerfPlugin /> : null} */}
           </SharedAutocompleteContext>
         </TableContext>
       </SharedHistoryContext>
