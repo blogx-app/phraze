@@ -1,4 +1,3 @@
-import * as React from "react";
 export * from "./BlogHeader";
 export * from "./Button";
 export * from "./ColorPicker";
@@ -16,5 +15,6 @@ export * from "./TextInput";
 export * from "./ImageResizer";
 export * from "./ImageComponent";
 export * from "./Switch";
+export * from './Sidebar'
 
 export * from "./hooks";

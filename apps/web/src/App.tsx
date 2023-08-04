@@ -11,6 +11,7 @@ import Editor, {
   SharedHistoryContext,
 } from "@blogx/lexical-editor";
 // import { isDevPlayground } from "lib/appSettings";
+import {Sidebar} from 'ui'
 import { PlaygroundNodes } from "@blogx/lexical-editor/node/PlaygroundNodes";
 // import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
 import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
@@ -128,6 +129,7 @@ function App(): JSX.Element {
         <TableContext>
           <SharedAutocompleteContext>
             <div className="editor-shell">
+              <Sidebar />
               <BlogHeader />
               <Editor />
             </div>
