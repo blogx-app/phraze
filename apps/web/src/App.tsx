@@ -9,15 +9,16 @@ import {
   useSettings,
   SharedAutocompleteContext,
   SharedHistoryContext,
+  ToolbarProvider,
 } from "@blogx/lexical-editor";
-// import { isDevPlayground } from "lib/appSettings";
-import { RouterProvider, Sidebar } from 'ui'
+import { RouterProvider } from "ui";
 import { PlaygroundNodes } from "@blogx/lexical-editor/node/PlaygroundNodes";
-// import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
 import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
 import PlaygroundEditorTheme from "@blogx/lexical-editor/themes/PlaygroundEditorTheme";
-import { BlogHeader } from "ui";
 import { routes } from "./route";
+// import { BlogHeader } from "ui";
+// import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
+// import { isDevPlayground } from "lib/appSettings";
 
 // Dynamically loading so that it does not hurt prod performance.
 // const TypingPerfPlugin = React.lazy(
@@ -39,7 +40,7 @@ function prepopulatedRichText() {
     quote.append(
       $createTextNode(
         `In case you were wondering what the black box at the bottom is – it's the debug view, showing the current state of the editor. ` +
-        `You can disable it by pressing on the settings control in the bottom-left of your screen and toggling the debug view setting.`
+          `You can disable it by pressing on the settings control in the bottom-left of your screen and toggling the debug view setting.`
       )
     );
     root.append(quote);
@@ -125,15 +126,17 @@ function App(): JSX.Element {
   };
 
   return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <SharedHistoryContext>
-        <TableContext>
-          <SharedAutocompleteContext>
-            <RouterProvider routes={routes} />
-          </SharedAutocompleteContext>
-        </TableContext>
-      </SharedHistoryContext>
-    </LexicalComposer>
+    <ToolbarProvider>
+      <LexicalComposer initialConfig={initialConfig}>
+        <SharedHistoryContext>
+          <TableContext>
+            <SharedAutocompleteContext>
+              <RouterProvider routes={routes} />
+            </SharedAutocompleteContext>
+          </TableContext>
+        </SharedHistoryContext>
+      </LexicalComposer>
+    </ToolbarProvider>
   );
 }
 

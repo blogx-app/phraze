@@ -1178,6 +1178,7 @@ i.chevron-down {
   height: 8px;
   width: 8px;
   background-image: url(ui/images/icons/chevron-down.svg);
+  background-repeat: no-repeat;
 }
 
 .action-button {
@@ -1306,6 +1307,7 @@ button.action-button:disabled {
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .toolbar button.toolbar-item:disabled {
@@ -1379,8 +1381,8 @@ button.action-button:disabled {
 
 .toolbar i.chevron-down {
   margin-top: 3px;
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
   display: flex;
   user-select: none;
 }
