@@ -45,7 +45,7 @@ import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
 import TableCellResizer from "./plugins/TableCellResizer";
 import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin";
 import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin";
-import ToolbarPlugin from "./plugins/ToolbarPlugin";
+// import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import TwitterPlugin from "./plugins/TwitterPlugin";
 import YouTubePlugin from "./plugins/YouTubePlugin";
 import { ContentEditable } from "ui";
@@ -89,8 +89,12 @@ export function Editor(): JSX.Element {
 
   return (
     <>
-      {isRichText && <ToolbarPlugin />}
-      <div className={`editor-container ${showTreeView ? "tree-view" : ""} ${!isRichText ? "plain-text" : ""}`}>
+      {/* {isRichText && <ToolbarPlugin />} */}
+      <div
+        className={`editor-container ${showTreeView ? "tree-view" : ""} ${
+          !isRichText ? "plain-text" : ""
+        }`}
+      >
         {isMaxLength && <MaxLengthPlugin maxLength={30} />}
         <DragDropPaste />
         <AutoFocusPlugin />
