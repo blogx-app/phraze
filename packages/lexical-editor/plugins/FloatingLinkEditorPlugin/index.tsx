@@ -198,7 +198,7 @@ function FloatingLinkEditor({
       ) : (
         <>
           <div className="link-input">
-            <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+            <a target="_blank" rel="noopener noreferrer">
               {linkUrl}
             </a>
             <div

@@ -4,6 +4,7 @@ import { $isCodeHighlightNode } from "@lexical/code";
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { mergeRegister } from "@lexical/utils";
+import { $getSelectionStyleValueForProperty } from "@lexical/selection";
 import {
   $getSelection,
   $isRangeSelection,
@@ -20,6 +21,7 @@ import { createPortal } from "react-dom";
 import { getDOMRangeRect } from "lib/getDOMRangeRect";
 import { getSelectedNode } from "lib/getSelectedNode";
 import { setFloatingElemPosition } from "lib/setFloatingElemPosition";
+import FontDropDown from "./FontDropDown";
 
 function TextFormatFloatingToolbar({
   editor,
@@ -44,6 +46,7 @@ function TextFormatFloatingToolbar({
   isSuperscript: boolean;
   isUnderline: boolean;
 }): JSX.Element {
+  const [fontFamily, setFontFamily] = useState<string>("Arial");
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null);
 
   const insertLink = useCallback(() => {
@@ -75,6 +78,12 @@ function TextFormatFloatingToolbar({
       const rangeRect = getDOMRangeRect(nativeSelection, rootElement);
 
       setFloatingElemPosition(rangeRect, popupCharStylesEditorElem, anchorElem);
+    }
+
+    if ($isRangeSelection(selection)) {
+      setFontFamily(
+        $getSelectionStyleValueForProperty(selection, "font-family", "Arial")
+      );
     }
   }, [editor, anchorElem]);
 
@@ -126,6 +135,13 @@ function TextFormatFloatingToolbar({
     <div ref={popupCharStylesEditorRef} className="floating-text-format-popup">
       {editor.isEditable() && (
         <>
+          <FontDropDown
+            editor={editor}
+            disabled={false}
+            style="font-family"
+            value={fontFamily}
+          />
+          <span className="divider" />
           <button
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold");
