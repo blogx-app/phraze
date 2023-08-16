@@ -42,7 +42,7 @@
 }
 
 .floating-text-format-popup button.popup-item.active {
-  background-color: rgba(223, 232, 250, 0.3);
+  background-color: rgba(223, 232, 250, 0.8);
 }
 
 .floating-text-format-popup button.popup-item.active i {
@@ -146,4 +146,40 @@
 .font-family-dropdown-button i.chevron-down {
   width: 8px;
   height: 8px;
+}
+
+
+.floating-toolbar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #fff;
+  gap: 4px;
+}
+
+.floating-toolbar-item i.chevron-down {
+  height: 8px;
+}
+
+.floating-toolbar-item:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+
+.floating-toolbar-icon {
+  display: flex;
+  height: 1rem;
+  width: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.floating-toolbar-icon.font-color {
+  background-image: url(ui/images/icons/font-color.svg);
+}
+
+.bg-color {
+  background-image: url(ui/images/icons/bg-color.svg);
 }

@@ -1,10 +1,13 @@
 import "./index.css";
-
+import { createPortal } from "react-dom";
 import { $isCodeHighlightNode } from "@lexical/code";
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { mergeRegister } from "@lexical/utils";
-import { $getSelectionStyleValueForProperty } from "@lexical/selection";
+import {
+  $getSelectionStyleValueForProperty,
+  $patchStyleText,
+} from "@lexical/selection";
 import {
   $getSelection,
   $isRangeSelection,
@@ -15,13 +18,12 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from "lexical";
 import { useCallback, useEffect, useRef, useState } from "react";
-import * as React from "react";
-import { createPortal } from "react-dom";
 
 import { getDOMRangeRect } from "lib/getDOMRangeRect";
 import { getSelectedNode } from "lib/getSelectedNode";
 import { setFloatingElemPosition } from "lib/setFloatingElemPosition";
 import FontDropDown from "./FontDropDown";
+import { ColorPicker } from "ui";
 
 function TextFormatFloatingToolbar({
   editor,
@@ -47,7 +49,11 @@ function TextFormatFloatingToolbar({
   isUnderline: boolean;
 }): JSX.Element {
   const [fontFamily, setFontFamily] = useState<string>("Arial");
+  const [bgColor, setBgColor] = useState<string>("#fff");
+  const [fontColor, setFontColor] = useState<string>("#000");
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null);
+  const [activeEditor, setActiveEditor] = useState(editor);
+  const [isEditable, setIsEditable] = useState(() => editor.isEditable());
 
   const insertLink = useCallback(() => {
     if (!isLink) {
@@ -131,6 +137,32 @@ function TextFormatFloatingToolbar({
     );
   }, [editor, updateTextFormatFloatingToolbar]);
 
+  const applyStyleText = useCallback(
+    (styles: Record<string, string>) => {
+      activeEditor.update(() => {
+        const selection = $getSelection();
+        if ($isRangeSelection(selection)) {
+          $patchStyleText(selection, styles);
+        }
+      });
+    },
+    [activeEditor]
+  );
+
+  const onFontColorSelect = useCallback(
+    (value: string) => {
+      applyStyleText({ color: value });
+    },
+    [applyStyleText]
+  );
+
+  const onBgColorSelect = useCallback(
+    (value: string) => {
+      applyStyleText({ "background-color": value });
+    },
+    [applyStyleText]
+  );
+
   return (
     <div ref={popupCharStylesEditorRef} className="floating-text-format-popup">
       {editor.isEditable() && (
@@ -140,6 +172,41 @@ function TextFormatFloatingToolbar({
             disabled={false}
             style="font-family"
             value={fontFamily}
+          />
+          <span className="divider" />
+          <button
+            onClick={insertLink}
+            style={{
+              display: "flex",
+              gap: "4px",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            className={"popup-item spaced " + (isLink ? "active" : "")}
+            aria-label="Insert link"
+          >
+            <span>Link</span>
+            <i className="format link" />
+          </button>
+          <span className="divider" />
+          <ColorPicker
+            disabled={!isEditable}
+            buttonClassName="floating-toolbar-item color-picker"
+            buttonAriaLabel="Formatting text color"
+            buttonIconClassName="floating-toolbar-icon font-color"
+            color={fontColor}
+            onChange={onFontColorSelect}
+            title="text color"
+          />
+          <span className="divider" />
+          <ColorPicker
+            disabled={!isEditable}
+            buttonClassName="floating-toolbar-item color-picker"
+            buttonAriaLabel="Formatting background color"
+            buttonIconClassName="floating-toolbar-icon bg-color"
+            color={bgColor}
+            onChange={onBgColorSelect}
+            title="bg color"
           />
           <span className="divider" />
           <button
@@ -198,21 +265,22 @@ function TextFormatFloatingToolbar({
           >
             <i className="format superscript" />
           </button>
+          <span className="divider" />
           <button
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code");
             }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "4px",
+            }}
             className={"popup-item spaced " + (isCode ? "active" : "")}
             aria-label="Insert code block"
           >
+            <span>Code</span>
             <i className="format code" />
-          </button>
-          <button
-            onClick={insertLink}
-            className={"popup-item spaced " + (isLink ? "active" : "")}
-            aria-label="Insert link"
-          >
-            <i className="format link" />
           </button>
         </>
       )}
@@ -243,6 +311,14 @@ function useFloatingTextFormatToolbar(
       const selection = $getSelection();
       const nativeSelection = window.getSelection();
       const rootElement = editor.getRootElement();
+
+      if (
+        (nativeSelection?.anchorNode?.parentNode as any)?.className.includes(
+          "color-picker"
+        )
+      ) {
+        return;
+      }
 
       if (
         nativeSelection !== null &&

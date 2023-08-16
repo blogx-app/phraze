@@ -24,6 +24,7 @@ export default function TextInput({
         placeholder={placeholder}
         value={value}
         onChange={(e) => {
+          e.preventDefault();
           onChange(e.target.value);
         }}
         data-test-id={dataTestId}

@@ -4,6 +4,7 @@
 
 .color-picker-basic-color {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
   margin: 0;
@@ -12,9 +13,9 @@
 
 .color-picker-basic-color button {
   border: 1px solid #ccc;
-  border-radius: 4px;
-  height: 16px;
-  width: 16px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
   cursor: pointer;
   list-style-type: none;
 }

@@ -111,10 +111,11 @@ export default function ColorPicker({
     <DropDown {...rest} disabled={disabled} stopCloseOnClickSelf={true}>
       <div
         className="color-picker-wrapper"
-        style={{ width: WIDTH }}
+        style={{ width: WIDTH + 40 }}
         ref={innerDivRef}
       >
-        <TextInput label="Hex" onChange={onSetHex} value={inputColor} />
+        {/* TODO - Need to add this. */}
+        {/* <TextInput label="Hex" onChange={onSetHex} value={inputColor} /> */}
         <div className="color-picker-basic-color">
           {basicColors.map((basicColor) => (
             <button
