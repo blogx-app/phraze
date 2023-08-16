@@ -33,10 +33,17 @@ import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
 import { InsertEquationDialog } from "../EquationsPlugin";
 import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin";
 import { InsertTableDialog } from "../TablePlugin";
+import {
+  ComponentPickerMenu,
+  ComponentPickerMenuList,
+  ComponentPickerMenuListItem,
+} from "./style";
 
 class ComponentPickerOption extends TypeaheadOption {
   // What shows up in the editor
   title: string;
+  // This will give more info about the Option
+  description?: string;
   // Icon for display
   icon?: JSX.Element;
   // For extra searching.
@@ -50,6 +57,7 @@ class ComponentPickerOption extends TypeaheadOption {
     title: string,
     options: {
       icon?: JSX.Element;
+      description?: string;
       keywords?: Array<string>;
       keyboardShortcut?: string;
       onSelect: (queryString: string) => void;
@@ -57,6 +65,7 @@ class ComponentPickerOption extends TypeaheadOption {
   ) {
     super(title);
     this.title = title;
+    this.description = options.description;
     this.keywords = options.keywords || [];
     this.icon = options.icon;
     this.keyboardShortcut = options.keyboardShortcut;
@@ -82,7 +91,7 @@ function ComponentPickerMenuItem({
     className += " selected";
   }
   return (
-    <li
+    <ComponentPickerMenuListItem
       key={option.key}
       tabIndex={-1}
       className={className}
@@ -94,8 +103,11 @@ function ComponentPickerMenuItem({
       onClick={onClick}
     >
       {option.icon}
-      <span className="text">{option.title}</span>
-    </li>
+      <div>
+        <div className="text">{option.title}</div>
+        <div className="description">{option.description}</div>
+      </div>
+    </ComponentPickerMenuListItem>
   );
 }
 
@@ -157,7 +169,8 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
 
   const options = useMemo(() => {
     const baseOptions = [
-      new ComponentPickerOption("Paragraph", {
+      new ComponentPickerOption("Text", {
+        description: "Write plain text",
         icon: <i className="icon paragraph" />,
         keywords: ["normal", "paragraph", "p", "text"],
         onSelect: () =>
@@ -174,6 +187,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
         (n) =>
           new ComponentPickerOption(`Heading ${n}`, {
             icon: <i className={`icon h${n}`} />,
+            description: "Give a heading",
             keywords: ["heading", "header", `h${n}`],
             onSelect: () =>
               editor.update(() => {
@@ -189,6 +203,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       ),
       new ComponentPickerOption("Table", {
         icon: <i className="icon table" />,
+        description: "Insert a table",
         keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
         onSelect: () =>
           showModal("Insert Table", (onClose) => (
@@ -197,24 +212,28 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       }),
       new ComponentPickerOption("Numbered List", {
         icon: <i className="icon number" />,
+        description: "Insert a numbered list",
         keywords: ["numbered list", "ordered list", "ol"],
         onSelect: () =>
           editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Bulleted List", {
         icon: <i className="icon bullet" />,
+        description: "Insert a bulletien list",
         keywords: ["bulleted list", "unordered list", "ul"],
         onSelect: () =>
           editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Check List", {
         icon: <i className="icon check" />,
+        description: "Insert a check list",
         keywords: ["check list", "todo list"],
         onSelect: () =>
           editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Quote", {
         icon: <i className="icon quote" />,
+        description: "Insert an important quotation",
         keywords: ["block quote"],
         onSelect: () =>
           editor.update(() => {
@@ -227,6 +246,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       new ComponentPickerOption("Code", {
         icon: <i className="icon code" />,
         keywords: ["javascript", "python", "js", "codeblock"],
+        description: "Write code to explain something",
         onSelect: () =>
           editor.update(() => {
             const selection = $getSelection();
@@ -246,6 +266,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       }),
       new ComponentPickerOption("Divider", {
         icon: <i className="icon horizontal-rule" />,
+        description: "A ruler to seperate things",
         keywords: ["horizontal rule", "divider", "hr"],
         onSelect: () =>
           editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
@@ -261,6 +282,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       ),
       new ComponentPickerOption("Equation", {
         icon: <i className="icon equation" />,
+        description: "Write a complex equation",
         keywords: ["equation", "latex", "math"],
         onSelect: () =>
           showModal("Insert Equation", (onClose) => (
@@ -270,6 +292,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       new ComponentPickerOption("GIF", {
         icon: <i className="icon gif" />,
         keywords: ["gif", "animate", "image", "file"],
+        description: "Insert a funny GIF",
         onSelect: () =>
           editor.dispatchCommand(INSERT_IMAGE_COMMAND, {
             altText: "Cat typing on a laptop",
@@ -279,6 +302,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       new ComponentPickerOption("Image", {
         icon: <i className="icon image" />,
         keywords: ["image", "photo", "picture", "file"],
+        description: "Insert an image to enhance experience",
         onSelect: () =>
           showModal("Insert Image", (onClose) => (
             <InsertImageDialog activeEditor={editor} onClose={onClose} />
@@ -287,6 +311,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
       new ComponentPickerOption("Collapsible", {
         icon: <i className="icon caret-right" />,
         keywords: ["collapse", "collapsible", "toggle"],
+        description: "Am still note sure what this is",
         onSelect: () =>
           editor.dispatchCommand(INSERT_COLLAPSIBLE_COMMAND, undefined),
       }),
@@ -294,6 +319,7 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
         (alignment) =>
           new ComponentPickerOption(`Align ${alignment}`, {
             icon: <i className={`icon ${alignment}-align`} />,
+            description: `This will indent towards ${alignment}`,
             keywords: ["align", "justify", alignment],
             onSelect: () =>
               // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
@@ -351,8 +377,8 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
         ) =>
           anchorElementRef.current && options.length
             ? ReactDOM.createPortal(
-                <div className="typeahead-popover component-picker-menu">
-                  <ul>
+                <ComponentPickerMenu>
+                  <ComponentPickerMenuList>
                     {options.map((option, i: number) => (
                       <ComponentPickerMenuItem
                         index={i}
@@ -368,8 +394,8 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
                         option={option}
                       />
                     ))}
-                  </ul>
-                </div>,
+                  </ComponentPickerMenuList>
+                </ComponentPickerMenu>,
                 anchorElementRef.current
               )
             : null

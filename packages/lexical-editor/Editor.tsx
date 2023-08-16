@@ -38,7 +38,7 @@ import LinkPlugin from "./plugins/LinkPlugin";
 import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import MarkdownShortcutPlugin from "./plugins/MarkdownShortcutPlugin";
 import { MaxLengthPlugin } from "./plugins/MaxLengthPlugin";
-import MentionsPlugin from "./plugins/MentionsPlugin";
+// import MentionsPlugin from "./plugins/MentionsPlugin";
 // import SpeechToTextPlugin from "./plugins/SpeechToTextPlugin";
 import TabFocusPlugin from "./plugins/TabFocusPlugin";
 import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
@@ -102,7 +102,7 @@ export function Editor(): JSX.Element {
         <ComponentPickerPlugin />
         <EmojiPickerPlugin />
         <AutoEmbedPlugin />
-        <MentionsPlugin />
+        {/* <MentionsPlugin /> */}
         <EmojisPlugin />
         <HashtagPlugin />
         <KeywordsPlugin />
@@ -138,7 +138,7 @@ export function Editor(): JSX.Element {
                 placeholder={null}
                 ErrorBoundary={LexicalErrorBoundary}
               />
-              <MentionsPlugin />
+              {/* <MentionsPlugin /> */}
               <HistoryPlugin />
               <ImagesPlugin captionsEnabled={false} />
               <LinkPlugin />
