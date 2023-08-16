@@ -16,7 +16,7 @@ export const ComponentPickerMenuList = styled.ul`
   list-style: none;
   margin: 0;
   border-radius: 8px;
-  max-height: 200px;
+  max-height: 336px;
   overflow-y: scroll;
 
   -ms-overflow-style: none;
@@ -76,7 +76,7 @@ export const ComponentPickerMenuListItem = styled.li`
 
   .text {
     display: flex;
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.125;
     flex-grow: 1;
     min-width: 150px;
@@ -90,8 +90,8 @@ export const ComponentPickerMenuListItem = styled.li`
 
   .icon {
     display: flex;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     user-select: none;
     margin-right: 8px;
     line-height: 16px;
