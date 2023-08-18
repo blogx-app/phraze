@@ -11,7 +11,8 @@
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
     "lib": "*",
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@blogx/lexical-editor": "*",
@@ -20,6 +21,7 @@
     "@emotion/styled": "11.10.5",
     "@types/react": "18.0.22",
     "@types/react-dom": "18.0.0",
+    "@types/styled-system": "^5.1.16",
     "eslint": "7.32.0",
     "eslint-config-custom": "*",
     "react": "18.2.0",

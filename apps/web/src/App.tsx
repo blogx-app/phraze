@@ -116,7 +116,8 @@ function App(): JSX.Element {
   } = useSettings();
 
   const initialConfig = {
-    editorState: emptyEditor ? undefined : prepopulatedRichText,
+    editorState: undefined,
+    // editorState: emptyEditor ? undefined : prepopulatedRichText,
     namespace: "Playground",
     nodes: [...PlaygroundNodes],
     onError: (error: Error) => {

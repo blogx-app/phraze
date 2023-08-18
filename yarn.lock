@@ -1202,6 +1202,13 @@
   resolved "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-2.0.1.tgz"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
 
+"@types/styled-system@^5.1.16":
+  version "5.1.16"
+  resolved "https://registry.npmjs.org/@types/styled-system/-/styled-system-5.1.16.tgz"
+  integrity sha512-+dyGs2n2o6QStsexh87NeaRmXYnKOnEe7iOEkcYOwKwI5a1gFL0+Mt/hZKi+4KD1qDMkLkGb0lpDrffb/vSkDQ==
+  dependencies:
+    csstype "^3.0.2"
+
 "@types/testing-library__jest-dom@^5.9.1":
   version "5.14.5"
   resolved "https://registry.npmjs.org/@types/testing-library__jest-dom/-/testing-library__jest-dom-5.14.5.tgz"
@@ -3729,6 +3736,7 @@ ui@*, "ui@file:/Users/sanjusmac/Desktop/blogX/blogx/packages/ui":
     "@mui/material" "^5.14.3"
     lib "*"
     react-router-dom "^6.14.2"
+    styled-system "^5.1.5"
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
@@ -3824,6 +3832,7 @@ web-vitals@2.1.0:
     react "18.2.0"
     react-dom "18.2.0"
     react-router-dom "^6.14.2"
+    styled-system "^5.1.5"
     typescript "4.5.3"
     web-vitals "2.1.0"
 

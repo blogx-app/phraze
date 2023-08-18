@@ -15,9 +15,10 @@ export * from "./TextInput";
 export * from "./ImageResizer";
 export * from "./ImageComponent";
 export * from "./Switch";
-export * from './Sidebar'
-export * from './AppLayout'
+export * from "./Sidebar";
+export * from "./AppLayout";
+export * from "./Text";
 
 export * from "./hooks";
 
-export * from './contexts'
+export * from "./contexts";
