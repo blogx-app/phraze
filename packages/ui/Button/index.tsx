@@ -10,6 +10,7 @@ export function Button({
   disabled,
   small,
   title,
+  style,
 }: {
   "data-test-id"?: string;
   children: ReactNode;
@@ -18,6 +19,7 @@ export function Button({
   onClick: () => void;
   small?: boolean;
   title?: string;
+  style?: Record<string, string | number>;
 }): JSX.Element {
   return (
     <button
@@ -31,6 +33,15 @@ export function Button({
       onClick={onClick}
       title={title}
       aria-label={title}
+      style={{
+        ...{
+          border: "1px solid black",
+          fontWeight: "bold",
+          padding: "10px 20px",
+          borderRadius: "8px",
+        },
+        ...style,
+      }}
       {...(dataTestId && { "data-test-id": dataTestId })}
     >
       {children}

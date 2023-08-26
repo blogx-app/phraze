@@ -1,9 +1,5 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-// import AppBar from "@mui/material/AppBar";
-// import Tabs from "@mui/material/Tabs";
-// import Tab from "@mui/material/Tab";
-// import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import {
   DomainButton,
@@ -61,7 +57,7 @@ export default function DomainTabs() {
         textColor="inherit"
         aria-label="full width tabs example"
         style={{
-          marginLeft: "1rem",
+          marginLeft: "0.75rem",
         }}
       >
         <StyledTab

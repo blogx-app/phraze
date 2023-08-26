@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NavLink } from "react-router-dom";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -83,7 +84,9 @@ export default function MiniDrawer({ children }: MiniDrawerProps) {
       <CssBaseline />
       <Drawer variant="permanent" open={open}>
         <div style={{ margin: "0 auto", marginTop: "0.5rem" }}>
-          <AmongUsIcon />
+          <NavLink to="/home">
+            <AmongUsIcon />
+          </NavLink>
         </div>
         <List style={{ margin: "auto" }}>
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (

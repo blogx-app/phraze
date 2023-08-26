@@ -5,6 +5,9 @@ import { DomainInfoContainer } from "./style";
 const ManageDomainPage = () => {
   return (
     <div>
+      <Text fontWeight="bold" fontSize="1.25rem" mb="0.5rem">
+        Add a custom domain
+      </Text>
       <DomainTabs />
       <DomainInfoContainer>
         <Text fontWeight="bold" mb="0.5rem">
