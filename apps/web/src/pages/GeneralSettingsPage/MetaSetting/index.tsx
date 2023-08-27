@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import Text from "ui/Text";
 import GooglePreview from "./GooglePreview/GooglePreview";
+import FacebookPreview from "./FacebookPreview/FacebookPreview";
+import TwitterPreview from "./TwitterPreview/TwitterPreview";
 
 const MetaSetting = () => {
   return (
@@ -15,6 +17,8 @@ const MetaSetting = () => {
         Site Meta Settings
       </Text>
       <GooglePreview />
+      <FacebookPreview />
+      <TwitterPreview />
     </Box>
   );
 };

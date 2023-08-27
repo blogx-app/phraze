@@ -16,7 +16,7 @@ export function Button({
   children: ReactNode;
   className?: string;
   disabled?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   small?: boolean;
   title?: string;
   style?: Record<string, string | number>;

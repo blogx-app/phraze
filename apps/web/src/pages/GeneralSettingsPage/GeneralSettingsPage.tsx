@@ -12,7 +12,7 @@ const GeneralSettingsPage = () => {
       <Box display="flex" gap="1rem">
         <div
           style={{
-            minWidth: "60rem",
+            maxWidth: "60rem",
           }}
         >
           {/* publication info */}
