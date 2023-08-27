@@ -18,6 +18,7 @@ export * from "./Switch";
 export * from "./Sidebar";
 export * from "./AppLayout";
 export * from "./Text";
+export * from "./Input";
 
 export * from "./hooks";
 
