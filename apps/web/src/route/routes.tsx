@@ -5,14 +5,16 @@ import HomePage from "../pages/HomePage";
 import ManageDomainPage from "../pages/ManageDomainPage";
 import { PostsPage } from "../pages/PostsPage";
 import { SettingsPage } from "../pages/SettingsPage";
+import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
 
 export const routesName: Record<string, string> = {
   root: "/",
   home: "/home",
   editor: "/editor",
-  manageDomain: "/manage-domain",
+  manageDomain: "settings/manage-domain",
   posts: "/posts",
   settings: "/settings",
+  generalSettings: "/settings/general",
 };
 
 const routes: RouteObject[] = [
@@ -25,6 +27,7 @@ const routes: RouteObject[] = [
       { path: routesName.manageDomain, element: <ManageDomainPage /> },
       { path: routesName.posts, element: <PostsPage /> },
       { path: routesName.settings, element: <SettingsPage /> },
+      { path: routesName.generalSettings, element: <GeneralSettingsPage /> },
     ],
   },
 ];

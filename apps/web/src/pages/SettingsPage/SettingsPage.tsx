@@ -6,6 +6,7 @@ import BrandingIcon from "./icons/BrandingIcon";
 import ThemeIcon from "./icons/ThemeIcon";
 import NavigationIcon from "./icons/NavigationIcon";
 import Text from "ui/Text";
+import ManageDomainIcon from "./icons/ManageDomainIcon";
 
 export type SettingsObjType = {
   icon: ReactNode;
@@ -39,6 +40,12 @@ const SETTINGS = [
     name: "Navigation",
     subText: "Set up primary and secondary menu",
     toLink: "navigation",
+  },
+  {
+    icon: <ManageDomainIcon />,
+    name: "Manage Domain",
+    subText: "Host this blog on your custom (sub)/domain",
+    toLink: "manage-domain",
   },
 ] as SettingsObjType[];
 
