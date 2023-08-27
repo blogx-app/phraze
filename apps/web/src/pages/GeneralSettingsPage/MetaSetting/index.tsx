@@ -4,6 +4,7 @@ import GooglePreview from "./GooglePreview/GooglePreview";
 import FacebookPreview from "./FacebookPreview/FacebookPreview";
 import TwitterPreview from "./TwitterPreview/TwitterPreview";
 
+// TODO - Turn this meta settings into tabs like manage-domain
 const MetaSetting = () => {
   return (
     <Box border="1px solid black" borderRadius="12px">

@@ -40,7 +40,6 @@ const closedMixin = (theme: Theme): CSSObject => ({
   width: `calc(${theme.spacing(7)} + 1px)`,
   borderRadius: "12px",
   height: "calc(100vh - 2rem)",
-  background: "black",
   marginLeft: "1rem",
   marginTop: "1rem",
   [theme.breakpoints.up("sm")]: {
@@ -53,15 +52,9 @@ const Drawer = styled(MuiDrawer, {
 })(({ theme, open }) => ({
   width: drawerWidth,
   flexShrink: 0,
-  background: "transparent",
   borderRadius: "8px",
   whiteSpace: "nowrap",
   marginTop: "1rem",
-  // boxSizing: "border-box",
-  // ...(open && {
-  //   ...openedMixin(theme),
-  //   "& .MuiDrawer-paper": openedMixin(theme),
-  // }),
   ...(!open && {
     ...closedMixin(theme),
     "& .MuiDrawer-paper": closedMixin(theme),
@@ -72,6 +65,8 @@ interface MiniDrawerProps {
   children?: React.ReactNode;
 }
 
+// TODO - handle open drawer state
+// TODO - Add open and close icon
 export default function MiniDrawer({ children }: MiniDrawerProps) {
   const [open, setOpen] = React.useState(false);
 
@@ -82,7 +77,15 @@ export default function MiniDrawer({ children }: MiniDrawerProps) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <Drawer variant="permanent" open={open}>
+      <Drawer
+        variant="permanent"
+        open={open}
+        PaperProps={{
+          style: {
+            background: "black",
+          },
+        }}
+      >
         <div style={{ margin: "0 auto", marginTop: "0.5rem" }}>
           <NavLink to="/home">
             <AmongUsIcon />

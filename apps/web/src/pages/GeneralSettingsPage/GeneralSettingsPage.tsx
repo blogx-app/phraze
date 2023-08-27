@@ -3,6 +3,9 @@ import { Input } from "ui";
 import Text from "ui/Text";
 import MetaSetting from "./MetaSetting";
 
+// TODO - Implement social sharing
+// TODO - Add save button
+// TODO - Give PublicationInfo another Component
 const GeneralSettingsPage = () => {
   return (
     <div>
