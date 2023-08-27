@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
-import { Input } from "ui";
+import { Input, TextArea } from "ui";
 import Text from "ui/Text";
 import GooglePreviewPlaceholder from "./GooglePreviewPlaceholder";
 
 const GooglePreview = () => {
   return (
-    <Box p="12px">
+    <Box p="12px" borderBottom="1px solid black">
       <Box ml="0.5rem" mb="0.5rem">
         <Text fontSize="14px" fontWeight="bold">
           Meta Settings
@@ -24,7 +24,7 @@ const GooglePreview = () => {
             helperText="The name of your site"
             placeholder="Dunder Mifflin Paper Company | Best Paper"
           />
-          <Input
+          <TextArea
             label="Description"
             helperText="Used in your theme, meta data and search results"
             placeholder="Dunder Mifflin paper company is a very old company selling paper since 1000 B.C."

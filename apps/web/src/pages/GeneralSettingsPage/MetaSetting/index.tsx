@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import Text from "ui/Text";
-import GooglePreview from "./GooglePreview";
+import GooglePreview from "./GooglePreview/GooglePreview";
 
 const MetaSetting = () => {
   return (
