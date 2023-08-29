@@ -6,21 +6,13 @@ import ManageDomainPage from "../pages/ManageDomainPage";
 import { PostsPage } from "../pages/PostsPage";
 import { SettingsPage } from "../pages/SettingsPage";
 import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
-
-export const routesName: Record<string, string> = {
-  root: "/",
-  home: "/home",
-  editor: "/editor",
-  manageDomain: "settings/manage-domain",
-  posts: "/posts",
-  settings: "/settings",
-  generalSettings: "/settings/general",
-};
+import routesName from "./routesName";
+import { getNavigationBreadcrum } from "./breadcrumUtils";
 
 const routes: RouteObject[] = [
   {
     path: routesName.root,
-    element: <AppLayout />,
+    element: <AppLayout getNavigationBreadcrum={getNavigationBreadcrum} />,
     children: [
       { path: routesName.editor, element: <BlogEditorPage /> },
       { path: routesName.home, element: <HomePage /> },
@@ -32,4 +24,5 @@ const routes: RouteObject[] = [
   },
 ];
 
+export { default as routesName } from "./routesName";
 export default routes;
