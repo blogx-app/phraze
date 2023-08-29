@@ -33,7 +33,7 @@ export const HeaderInput = styled(DescriptionInput)`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
 
   ::placeholder {

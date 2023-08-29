@@ -14,12 +14,12 @@ export const BlogHeader = () => {
     <div>
       <HeaderInput
         // onKeyDown={autosize}
-        placeholder="Write a rock solid title"
+        placeholder="Blog  Title"
       />
-      <DescriptionInput
+      {/* <DescriptionInput
         // onKeyDown={autosize}
         placeholder="Write a description as clear as sky"
-      />
+      /> */}
     </div>
   );
 };
