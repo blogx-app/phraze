@@ -1,7 +1,8 @@
+import SunIcon from "./icon/SunIcon";
 import Text from "../Text";
-import BellIcon from "./icon/BellIcon";
 import { AppBarContainer } from "./style";
 
+// Add a better theme toggle button
 const AppBar = () => {
   return (
     <AppBarContainer>
@@ -9,7 +10,7 @@ const AppBar = () => {
         Home
       </Text>
       <div className="bell-icon">
-        <BellIcon />
+        <SunIcon />
       </div>
     </AppBarContainer>
   );

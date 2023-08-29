@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -17,8 +17,9 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import AmongUsIcon from "./icons/AmongUsIcon";
 import UserIcon from "./icons/UserIcon";
-import SunIcon from "./icons/SunIcon";
+import SunIcon from "../AppBar/icon/SunIcon";
 import { BottomIconsContainer } from "./style";
+import SettingsGearIcon from "./icons/SettingsGearIcon";
 
 const drawerWidth = 240;
 
@@ -67,8 +68,14 @@ interface MiniDrawerProps {
 
 // TODO - handle open drawer state
 // TODO - Add open and close icon
+// TODO - settings handler should pe passed in props
 export default function MiniDrawer({ children }: MiniDrawerProps) {
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+
+  const handleOnClickSettings = () => {
+    navigate("/settings");
+  };
 
   // const handleDrawerClose = () => {
   //   setOpen((state) => !state);
@@ -120,7 +127,9 @@ export default function MiniDrawer({ children }: MiniDrawerProps) {
           ))}
         </List>
         <BottomIconsContainer>
-          <SunIcon />
+          <span onClick={handleOnClickSettings} style={{ cursor: "pointer" }}>
+            <SettingsGearIcon />
+          </span>
           <UserIcon />
         </BottomIconsContainer>
       </Drawer>
