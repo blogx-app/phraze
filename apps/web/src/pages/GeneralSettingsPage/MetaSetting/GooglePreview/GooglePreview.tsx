@@ -5,7 +5,7 @@ import GooglePreviewPlaceholder from "./GooglePreviewPlaceholder";
 
 const GooglePreview = () => {
   return (
-    <Box p="12px" borderBottom="1px solid black">
+    <div>
       <Box ml="0.5rem" mb="0.5rem">
         <Text fontSize="14px" fontWeight="bold">
           Meta Settings
@@ -34,7 +34,7 @@ const GooglePreview = () => {
           <GooglePreviewPlaceholder />
         </div>
       </Box>
-    </Box>
+    </div>
   );
 };
 

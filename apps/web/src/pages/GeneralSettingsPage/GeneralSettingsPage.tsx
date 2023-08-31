@@ -5,7 +5,7 @@ import MetaSetting from "./MetaSetting";
 
 // TODO - Implement social sharing
 // TODO - Add save button
-// TODO - Give PublicationInfo another Component
+// TODO - Create Component for PublicationInfo
 const GeneralSettingsPage = () => {
   return (
     <div>
@@ -41,7 +41,7 @@ const GeneralSettingsPage = () => {
               />
             </Box>
           </Box>
-          <MetaSetting />
+          {/* <MetaSetting /> */}
         </div>
         <Box border="1px solid black" borderRadius="12px">
           <Text>Social Sharing</Text>

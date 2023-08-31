@@ -5,7 +5,7 @@ import FacebookPreviewPlaceholder from "./FacebookPreviewPlaceholder";
 
 const FacebookPreview = () => {
   return (
-    <Box p="12px" borderBottom="1px solid black">
+    <div>
       <Box ml="0.5rem" mb="0.5rem">
         <Text fontSize="14px" fontWeight="bold">
           Facebook card{" "}
@@ -47,7 +47,7 @@ const FacebookPreview = () => {
           <FacebookPreviewPlaceholder />
         </div>
       </Box>
-    </Box>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ import TwitterPreviewPlaceholder from "./TwitterPreviewPlaceholder";
 
 const TwitterPreview = () => {
   return (
-    <Box p="12px">
+    <div>
       <Box ml="0.5rem" mb="0.5rem">
         <Text fontSize="14px" fontWeight="bold">
           X Card <Text color="#808080">(formely Twitter)</Text>
@@ -47,7 +47,7 @@ const TwitterPreview = () => {
           <TwitterPreviewPlaceholder />
         </div>
       </Box>
-    </Box>
+    </div>
   );
 };
 

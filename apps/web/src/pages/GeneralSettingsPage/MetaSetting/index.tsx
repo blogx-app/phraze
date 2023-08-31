@@ -3,23 +3,18 @@ import Text from "ui/Text";
 import GooglePreview from "./GooglePreview/GooglePreview";
 import FacebookPreview from "./FacebookPreview/FacebookPreview";
 import TwitterPreview from "./TwitterPreview/TwitterPreview";
+import { Tabs } from "ui";
 
-// TODO - Turn this meta settings into tabs like manage-domain
 const MetaSetting = () => {
   return (
-    <Box border="1px solid black" borderRadius="12px">
-      <Text
-        fontWeight="bold"
-        p="12px 0 8px 16px"
-        style={{
-          borderBottom: "1px solid black",
-        }}
-      >
+    <Box borderRadius="12px">
+      <Text fontWeight="bold" mb="1rem" fontSize="1.25rem">
         Site Meta Settings
       </Text>
-      <GooglePreview />
-      <FacebookPreview />
-      <TwitterPreview />
+      <Tabs
+        tabLabels={["Meta Settings", "Facebook Card", "Twitter Card"]}
+        tabPanels={[<GooglePreview />, <FacebookPreview />, <TwitterPreview />]}
+      />
     </Box>
   );
 };
