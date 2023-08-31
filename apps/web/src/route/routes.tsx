@@ -6,13 +6,18 @@ import ManageDomainPage from "../pages/ManageDomainPage";
 import { PostsPage } from "../pages/PostsPage";
 import { SettingsPage } from "../pages/SettingsPage";
 import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
-import routesName from "./routesName";
+import routesName, { hideAppbar } from "./routesName";
 import { getNavigationBreadcrum } from "./breadcrumUtils";
 
 const routes: RouteObject[] = [
   {
     path: routesName.root,
-    element: <AppLayout getNavigationBreadcrum={getNavigationBreadcrum} />,
+    element: (
+      <AppLayout
+        getNavigationBreadcrum={getNavigationBreadcrum}
+        hideAppBar={hideAppbar}
+      />
+    ),
     children: [
       { path: routesName.editor, element: <BlogEditorPage /> },
       { path: routesName.home, element: <HomePage /> },

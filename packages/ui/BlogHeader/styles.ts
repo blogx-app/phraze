@@ -6,9 +6,8 @@ export const HeaderInputComponent = styled.div`
   line-height: 1;
 
   font-weight: bold;
-  width: 96%;
 
-  padding: 1.25rem;
+  padding: 28px;
   padding-bottom: 0.75rem;
 
   :empty::after {
