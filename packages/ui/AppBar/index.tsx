@@ -2,28 +2,34 @@ import { Box } from "@mui/material";
 import SunIcon from "./icon/SunIcon";
 import { AppBarContainer, BreadcrumsNavlink } from "./style";
 import { AppBarProps } from "./type";
-import { NavLink, useLocation } from "react-router-dom";
-import Text from "../Text";
+import { useLocation } from "react-router-dom";
 
 // TODO - Add a better theme toggle button, or maybe not ;)
 const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
   const location = useLocation();
 
-  const { pageName, crumbs } = getNavigationBreadcrum(location.pathname);
+  const { crumbs } = getNavigationBreadcrum(location.pathname);
+  console.log(crumbs);
 
   return (
     <AppBarContainer>
       <Box>
-        {/* <Text fontSize="1.25rem" fontWeight="bold" as="span" mr="1rem">
-          {pageName}
-        </Text> */}
         {crumbs?.map((crumb, i) => (
-          <>
+          <span key={crumb.toLink}>
             {i !== 0 && <span>{" / "}</span>}
-            <BreadcrumsNavlink to={crumb.toLink}>
+            <BreadcrumsNavlink
+              to={crumb.toLink}
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      color: "black",
+                    }
+                  : undefined
+              }
+            >
               {crumb.name}
             </BreadcrumsNavlink>
-          </>
+          </span>
         ))}
       </Box>
       <div className="bell-icon">

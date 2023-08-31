@@ -2,7 +2,13 @@ import AppBar from "../AppBar";
 import Sidebar from "../Sidebar";
 import { Outlet } from "react-router-dom";
 
-export const AppLayout = ({ getNavigationBreadcrum }): JSX.Element => {
+interface AppLayoutProps {
+  getNavigationBreadcrum: (path: string) => any;
+}
+
+export const AppLayout = ({
+  getNavigationBreadcrum,
+}: AppLayoutProps): JSX.Element => {
   return (
     <>
       <Sidebar>

@@ -23,7 +23,6 @@ export const BreadcrumsNavlink = styled(NavLink)`
   padding: 4px;
 
   :hover {
-    color: black;
     background-color: #80808011;
   }
 `;
