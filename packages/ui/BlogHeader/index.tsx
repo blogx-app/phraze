@@ -1,25 +1,13 @@
-import { HeaderInput, DescriptionInput } from "./styles";
+import { HeaderInputComponent } from "./styles";
 
-// replace with a resizeable textarea
 export const BlogHeader = () => {
-  // const autosize = (ev: any) => {
-  //   const { target: el } = ev || {};
-
-  //   el.style.cssText = "-moz-box-sizing:content-box";
-  //   el.style.cssText = "height:" + el.scrollHeight + "px !important";
-  // };
-
-  // TODO - need to improve the UI, this should be expanding as the user type.
   return (
     <div>
-      <HeaderInput
-        // onKeyDown={autosize}
-        placeholder="Blog  Title"
+      <HeaderInputComponent
+        contentEditable={true}
+        placeholder="Blog Title"
+        spellCheck={true}
       />
-      {/* <DescriptionInput
-        // onKeyDown={autosize}
-        placeholder="Write a description as clear as sky"
-      /> */}
     </div>
   );
 };
