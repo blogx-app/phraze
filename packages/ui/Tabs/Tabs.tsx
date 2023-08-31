@@ -51,7 +51,7 @@ export const Tabs = ({ tabLabels, tabPanels }: TabsProps) => {
             key={`${label}-${i}`}
             label={label}
             {...a11yProps(i)}
-            style={{ background: TAB_HEADER_COLORS[i] }}
+            style={{ background: TAB_HEADER_COLORS[i], fontWeight: "bold" }}
           />
         ))}
       </StyledTabs>

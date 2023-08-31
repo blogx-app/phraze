@@ -8,7 +8,10 @@ const TwitterPreview = () => {
     <div>
       <Box ml="0.5rem" mb="0.5rem">
         <Text fontSize="14px" fontWeight="bold">
-          X Card <Text color="#808080">(formely Twitter)</Text>
+          X Card{" "}
+          <Text as="span" color="#808080">
+            (formely Twitter)
+          </Text>
         </Text>
         <Text fontSize="0.75rem" color="#808080">
           Customized structured data of your site for X (formely twitter)

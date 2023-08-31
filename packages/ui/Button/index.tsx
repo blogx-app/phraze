@@ -1,5 +1,5 @@
 import "./Button.css";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import { joinClasses } from "lib";
 
 export function Button({
@@ -19,7 +19,7 @@ export function Button({
   onClick?: () => void;
   small?: boolean;
   title?: string;
-  style?: Record<string, string | number>;
+  style?: CSSProperties;
 }): JSX.Element {
   return (
     <button
