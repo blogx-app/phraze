@@ -7,38 +7,38 @@ import AnalyticsIcon from "./icons/AnalyticsIcon";
 import PagesIcon from "./icons/PagesIcon";
 import TagsIcon from "./icons/TagsIcon";
 import LeadsIcon from "./icons/LeadsIcon";
-import { NavigationNavLink } from "./style";
+import { NavigationButton, NavigationNavLink } from "./style";
 import PostsIconWrapper from "./PostsIconWrapper";
 import React from "react";
+
+const NAVIGATIONS_ITEMS = [
+  {
+    name: "Analytics",
+    icon: <AnalyticsIcon />,
+    toLink: "/analytics",
+  },
+  {
+    name: "Pages",
+    icon: <PagesIcon />,
+    toLink: "/pages",
+  },
+  {
+    name: "Tags",
+    icon: <TagsIcon />,
+    toLink: "/tags",
+  },
+  {
+    name: "Leads",
+    icon: <LeadsIcon />,
+    toLink: "/leads",
+  },
+];
 
 export interface NavigationComponentProps {
   open: boolean;
 }
 
 const NavigationComponent = ({ open }: NavigationComponentProps) => {
-  const NAVIGATIONS_ITEMS = [
-    {
-      name: "Analytics",
-      icon: <AnalyticsIcon />,
-      toLink: "/analytics",
-    },
-    {
-      name: "Pages",
-      icon: <PagesIcon />,
-      toLink: "/pages",
-    },
-    {
-      name: "Tags",
-      icon: <TagsIcon />,
-      toLink: "/tags",
-    },
-    {
-      name: "Leads",
-      icon: <LeadsIcon />,
-      toLink: "/leads",
-    },
-  ];
-
   return (
     <Box
       display="flex"
@@ -47,23 +47,24 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
       paddingTop="1rem"
       alignItems="center"
       minHeight="75%"
+      width={open ? "100%" : undefined}
     >
-      <Button
-        style={{
-          background: "rgba(0, 204, 255, 0.85)",
-          border: "none",
-          padding: "0.5rem",
-        }}
-      >
+      <NavigationButton bg="rgba(0, 204, 255, 0.85)" open={open}>
         <VisitSiteIcon />
-      </Button>
+        {open && (
+          <Text fontSize="1rem" color="white" fontWeight="bold">
+            Visit Site
+          </Text>
+        )}
+      </NavigationButton>
       <Box
         display="flex"
         flexDirection="column"
         gap="1rem"
         margin="0 auto"
         justifyContent="center"
-        alignItems="center"
+        alignItems={open ? "flex-start" : "center"}
+        width={open ? "100%" : undefined}
       >
         {NAVIGATIONS_ITEMS.map((item, i) => (
           <React.Fragment key={item.name + item.toLink}>
@@ -78,15 +79,14 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
           </React.Fragment>
         ))}
       </Box>
-      <Button
-        style={{
-          background: "rgba(0, 255, 102, 0.85)",
-          border: "none",
-          padding: "0.5rem",
-        }}
-      >
+      <NavigationButton bg="rgba(0, 255, 102, 0.85)" open={open}>
         <UpgradeIcon />
-      </Button>
+        {open && (
+          <Text fontSize="1rem" color="white" fontWeight="bold">
+            Upgrade
+          </Text>
+        )}
+      </NavigationButton>
     </Box>
   );
 };

@@ -9,6 +9,7 @@ import SettingsGearIcon from "./icons/SettingsGearIcon";
 import PhrazeLogo from "./icons/PhrazeLogo";
 import ArrowIcon from "./icons/ArrowIcon";
 import NavigationComponent from "./NavigationComponent";
+import Text from "ui/Text";
 
 const drawerWidth = 240;
 
@@ -23,6 +24,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
   marginTop: "1rem",
   height: "calc(100vh - 2rem)",
   borderRadius: "12px",
+  padding: "0 30px",
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
@@ -67,11 +69,15 @@ interface MiniDrawerProps {
 // TODO - Add open and close icon
 // TODO - settings handler should pe passed in props
 export default function Sidebar({ children }: MiniDrawerProps) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const navigate = useNavigate();
 
   const handleOnClickSettings = () => {
     navigate("/settings");
+  };
+
+  const handleOnClickProfile = () => {
+    navigate("/profile");
   };
 
   const handleDrawerClose = () => {
@@ -88,28 +94,59 @@ export default function Sidebar({ children }: MiniDrawerProps) {
           style: {
             display: "flex",
             flexDirection: "column",
+            alignItems: open ? "flex-start" : "",
             justifyContent: "space-between",
             background: "black",
             overflow: "visible",
           },
         }}
       >
-        <div style={{ margin: "0 auto", marginTop: "30px" }}>
+        <div
+          style={{
+            margin: open ? "30px 0 0 0" : "30px auto 0 auto",
+          }}
+        >
           <NavLink to="/home">
-            <PhrazeLogo />
+            {open ? (
+              <img style={{ height: "26px" }} src="/phraze_full_logo.webp" />
+            ) : (
+              <PhrazeLogo />
+            )}
           </NavLink>
         </div>
         <OpenButtonContainer onClick={handleDrawerClose} open={open}>
           <ArrowIcon />
         </OpenButtonContainer>
         <NavigationComponent open={open} />
-        <BottomIconsContainer>
-          <span onClick={handleOnClickSettings} style={{ cursor: "pointer" }}>
+        <BottomIconsContainer style={{ width: open ? "100%" : undefined }}>
+          <Box
+            display="flex"
+            gap="8px"
+            padding={open ? "4px 8px" : undefined}
+            onClick={handleOnClickSettings}
+            style={{ cursor: "pointer" }}
+          >
             <SettingsGearIcon />
-          </span>
-          <span style={{ cursor: "pointer" }}>
+            {open && (
+              <Text fontSize="1rem" color="white">
+                Settings
+              </Text>
+            )}
+          </Box>
+          <Box
+            display="flex"
+            gap="8px"
+            padding={open ? "4px 8px" : undefined}
+            onClick={handleOnClickProfile}
+            style={{ cursor: "pointer" }}
+          >
             <UserIcon />
-          </span>
+            {open && (
+              <Text fontSize="1rem" color="white">
+                Profile
+              </Text>
+            )}
+          </Box>
         </BottomIconsContainer>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

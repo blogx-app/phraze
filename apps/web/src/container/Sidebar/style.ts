@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
+import { Button } from "ui";
 
 export const BottomIconsContainer = styled.div`
   display: flex;
@@ -49,4 +50,20 @@ export const NavigationNavLink = styled(NavLink)`
   display: flex;
   color: white;
   align-items: center;
+`;
+
+export const NavigationButton = styled(Button)<{ open: boolean; bg: string }>`
+  background: ${({ bg }) => bg};
+  border: none;
+  padding: ${({ open }) => (open ? "0.75rem 0.5rem" : "0.5rem !important")};
+  width: ${({ open }) => (open ? "100%" : "fit-content")};
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  :hover {
+    background-color: ${({ bg }) => bg};
+  }
 `;
