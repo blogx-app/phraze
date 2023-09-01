@@ -9,7 +9,6 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
   const location = useLocation();
 
   const { crumbs } = getNavigationBreadcrum(location.pathname);
-  console.log(crumbs);
 
   return (
     <AppBarContainer>
@@ -18,13 +17,10 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
           <span key={crumb.toLink}>
             {i !== 0 && <span>{" / "}</span>}
             <BreadcrumsNavlink
+              end
               to={crumb.toLink}
               style={({ isActive }) =>
-                isActive
-                  ? {
-                      color: "black",
-                    }
-                  : undefined
+                isActive ? { color: "black" } : undefined
               }
             >
               {crumb.name}

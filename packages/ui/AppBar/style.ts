@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 export const AppBarContainer = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const AppBarContainer = styled.div`
   }
 `;
 
-export const BreadcrumsNavlink = styled(NavLink)`
+export const BreadcrumsNavlink = styled(NavLink as React.FC<NavLinkProps>)`
   font-size: 1rem;
   color: #808080;
   text-decoration: none;

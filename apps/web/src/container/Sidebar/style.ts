@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, NavLinkProps } from "react-router-dom";
 import { Button } from "ui";
 
 export const BottomIconsContainer = styled.div`
@@ -42,7 +42,7 @@ export const OpenButtonContainer = styled.div<{ open: boolean }>`
   `}
 `;
 
-export const NavigationNavLink = styled(NavLink)`
+export const NavigationNavLink = styled(NavLink as React.FC<NavLinkProps>)`
   text-decoration: none;
   font-size: 1rem;
   font-weight: 400;

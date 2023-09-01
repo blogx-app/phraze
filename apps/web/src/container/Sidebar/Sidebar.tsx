@@ -69,7 +69,7 @@ interface MiniDrawerProps {
 // TODO - Add open and close icon
 // TODO - settings handler should pe passed in props
 export default function Sidebar({ children }: MiniDrawerProps) {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
 
   const handleOnClickSettings = () => {
