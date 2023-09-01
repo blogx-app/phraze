@@ -1,6 +1,8 @@
-const routesName: Record<string, string> = {
+const routesName = {
   root: "/",
   home: "/home",
+  analytics: "/analytics",
+  pages: "/pages",
   editor: "/editor",
   posts: "/posts",
   settings: "/settings",

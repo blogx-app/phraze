@@ -1,5 +1,5 @@
 import { RouteObject } from "react-router-dom";
-import { AppLayout } from "ui";
+import { AppLayout } from "../container/AppLayout";
 import BlogEditorPage from "../pages/BlogEditorPage";
 import HomePage from "../pages/HomePage";
 import ManageDomainPage from "../pages/ManageDomainPage";
@@ -8,6 +8,8 @@ import { SettingsPage } from "../pages/SettingsPage";
 import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
 import routesName, { hideAppbar } from "./routesName";
 import { getNavigationBreadcrum } from "./breadcrumUtils";
+
+console.log("routes", routesName);
 
 const routes: RouteObject[] = [
   {
@@ -25,6 +27,7 @@ const routes: RouteObject[] = [
       { path: routesName.posts, element: <PostsPage /> },
       { path: routesName.settings, element: <SettingsPage /> },
       { path: routesName.generalSettings, element: <GeneralSettingsPage /> },
+      { path: routesName.analytics, element: <>Analytics Page</> },
     ],
   },
 ];

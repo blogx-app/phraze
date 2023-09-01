@@ -15,8 +15,6 @@ export * from "./TextInput";
 export * from "./ImageResizer";
 export * from "./ImageComponent";
 export * from "./Switch";
-export * from "./Sidebar";
-export * from "./AppLayout";
 export * from "./Text";
 export * from "./Input";
 export * from "./TextArea";
