@@ -58,7 +58,7 @@ export const ComponentPickerMenuListItem = styled.li`
     background-size: contain;
   }
 
-  :first-child {
+  :first-of-type {
     border-radius: 8px 8px 0px 0px;
   }
 

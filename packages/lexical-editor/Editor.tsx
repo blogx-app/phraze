@@ -45,7 +45,6 @@ import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
 import TableCellResizer from "./plugins/TableCellResizer";
 import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin";
 import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin";
-import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import TwitterPlugin from "./plugins/TwitterPlugin";
 import YouTubePlugin from "./plugins/YouTubePlugin";
 import { ContentEditable } from "ui";
@@ -78,14 +77,14 @@ export function Editor(): JSX.Element {
     }
   };
 
-  const cellEditorConfig = {
-    namespace: "Playground",
-    nodes: [...TableCellNodes],
-    onError: (error: Error) => {
-      throw error;
-    },
-    theme: PlaygroundEditorTheme,
-  };
+  // const cellEditorConfig = {
+  //   namespace: "Playground",
+  //   nodes: [...TableCellNodes],
+  //   onError: (error: Error) => {
+  //     throw error;
+  //   },
+  //   theme: PlaygroundEditorTheme,
+  // };
 
   return (
     <>
@@ -129,22 +128,22 @@ export function Editor(): JSX.Element {
             <ListMaxIndentLevelPlugin maxDepth={7} />
             <TablePlugin />
             <TableCellResizer />
-            <NewTablePlugin cellEditorConfig={cellEditorConfig}>
-              <AutoFocusPlugin />
-              <RichTextPlugin
+            {/* <NewTablePlugin cellEditorConfig={cellEditorConfig}> */}
+            {/* <AutoFocusPlugin /> */}
+            {/* <RichTextPlugin
                 contentEditable={
                   <ContentEditable className="TableNode__contentEditable" />
                 }
                 placeholder={null}
                 ErrorBoundary={LexicalErrorBoundary}
-              />
-              {/* <MentionsPlugin /> */}
-              <HistoryPlugin />
-              <ImagesPlugin captionsEnabled={false} />
-              <LinkPlugin />
-              <ClickableLinkPlugin />
-              <FloatingTextFormatToolbarPlugin />
-            </NewTablePlugin>
+              /> */}
+            {/* <MentionsPlugin /> */}
+            {/* <HistoryPlugin /> */}
+            {/* <ImagesPlugin captionsEnabled={false} /> */}
+            {/* <LinkPlugin /> */}
+            {/* <ClickableLinkPlugin /> */}
+            {/* <FloatingTextFormatToolbarPlugin /> */}
+            {/* </NewTablePlugin> */}
             <ImagesPlugin />
             <LinkPlugin />
             <TwitterPlugin />

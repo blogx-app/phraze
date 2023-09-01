@@ -224,6 +224,7 @@ export default function ImagesPlugin({
             $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd();
           }
 
+          debugger;
           return true;
         },
         COMMAND_PRIORITY_EDITOR

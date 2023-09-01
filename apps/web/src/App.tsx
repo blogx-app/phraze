@@ -127,17 +127,17 @@ function App(): JSX.Element {
   };
 
   return (
-    <ToolbarProvider>
-      <LexicalComposer initialConfig={initialConfig}>
-        <SharedHistoryContext>
-          <TableContext>
-            <SharedAutocompleteContext>
-              <RouterProvider routes={routes} />
-            </SharedAutocompleteContext>
-          </TableContext>
-        </SharedHistoryContext>
-      </LexicalComposer>
-    </ToolbarProvider>
+    // <ToolbarProvider>
+    <LexicalComposer initialConfig={initialConfig}>
+      <SharedHistoryContext>
+        <TableContext>
+          <SharedAutocompleteContext>
+            <RouterProvider routes={routes} />
+          </SharedAutocompleteContext>
+        </TableContext>
+      </SharedHistoryContext>
+    </LexicalComposer>
+    // </ToolbarProvider>
   );
 }
 

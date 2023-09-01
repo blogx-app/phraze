@@ -36,7 +36,6 @@
   position: relative;
   outline: 0;
   overflow: auto;
-  resize: vertical;
 }
 
 .editor {

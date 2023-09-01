@@ -1,4 +1,4 @@
-import { RouteObject } from "react-router-dom";
+import { Outlet, RouteObject } from "react-router-dom";
 import { AppLayout } from "../container/AppLayout";
 import BlogEditorPage from "../pages/BlogEditorPage";
 import HomePage from "../pages/HomePage";
@@ -8,8 +8,6 @@ import { SettingsPage } from "../pages/SettingsPage";
 import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
 import routesName, { hideAppbar } from "./routesName";
 import { getNavigationBreadcrum } from "./breadcrumUtils";
-
-console.log("routes", routesName);
 
 const routes: RouteObject[] = [
   {
