@@ -8,8 +8,13 @@ import SocialSharing from "./SocialSharing";
 const GeneralSettingsPage = () => {
   return (
     <div>
-      <Box display="flex" justifyContent="space-between">
-        <Text fontSize="1.25rem" fontWeight="bold" mb="0.75rem">
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        mb="0.75rem"
+      >
+        <Text fontSize="1.25rem" fontWeight="bold">
           General Settings
         </Text>
         <Button style={{ background: "#FF1493", color: "white" }}>

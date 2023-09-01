@@ -12,7 +12,7 @@ const SocialSharing = () => {
       border="1px solid black"
       borderRadius="12px"
       mb="1rem"
-      minWidth="24rem"
+      width="100%"
     >
       <Box borderBottom="1px solid black">
         <Text fontWeight="bold" p="12px 0 8px 16px">
