@@ -1,8 +1,8 @@
 import { useMemo } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { Box, CssBaseline } from "@mui/material";
 import AppBar from "ui/AppBar";
 import { Sidebar } from "../Sidebar";
-import { Outlet, useLocation } from "react-router-dom";
-import { CssBaseline } from "@mui/material";
 
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
@@ -23,7 +23,9 @@ export const AppLayout = ({
         {!appbarHidden && (
           <AppBar getNavigationBreadcrum={getNavigationBreadcrum} />
         )}
-        <Outlet />
+        <Box p="30px">
+          <Outlet />
+        </Box>
       </>
     </Sidebar>
   );

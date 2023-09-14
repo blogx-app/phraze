@@ -13,7 +13,7 @@ import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
 import { useSettings } from "./context/SettingsContext";
 import { useSharedHistoryContext } from "./context/SharedHistoryContext";
-import { TableCellNodes } from "./node/TableCellNodes";
+// import { TableCellNodes } from "./node/TableCellNodes";
 // import ActionsPlugin from "./plugins/ActionsPlugin";
 import AutocompletePlugin from "./plugins/AutocompletePlugin";
 import AutoEmbedPlugin from "./plugins/AutoEmbedPlugin";
@@ -44,13 +44,13 @@ import TabFocusPlugin from "./plugins/TabFocusPlugin";
 import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
 import TableCellResizer from "./plugins/TableCellResizer";
 import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin";
-import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin";
+// import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin";
 import TwitterPlugin from "./plugins/TwitterPlugin";
 import YouTubePlugin from "./plugins/YouTubePlugin";
 import { ContentEditable } from "ui";
 // import { isDevPlayground } from "lib";
 import { Placeholder } from "ui";
-import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
+// import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
 // const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
 
 export function Editor(): JSX.Element {

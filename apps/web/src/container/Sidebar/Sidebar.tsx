@@ -4,10 +4,8 @@ import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import UserIcon from "./icons/UserIcon";
-import { BottomIconsContainer, OpenButtonContainer } from "./style";
+import { BottomIconsContainer } from "./style";
 import SettingsGearIcon from "./icons/SettingsGearIcon";
-import PhrazeLogo from "./icons/PhrazeLogo";
-import ArrowIcon from "./icons/ArrowIcon";
 import NavigationComponent from "./NavigationComponent";
 import Text from "ui/Text";
 
@@ -20,27 +18,8 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: "hidden",
-  marginLeft: "1rem",
-  marginTop: "1rem",
-  height: "calc(100vh - 2rem)",
-  borderRadius: "12px",
   padding: "0 30px",
-});
-
-const closedMixin = (theme: Theme): CSSObject => ({
-  transition: theme.transitions.create("width", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  overflowX: "hidden",
-  width: `calc(${theme.spacing(7)} + 1px)`,
-  borderRadius: "12px",
-  height: "calc(100vh - 2rem)",
-  marginLeft: "1rem",
-  marginTop: "1rem",
-  [theme.breakpoints.up("sm")]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
-  },
+  borderRight: "1px #555555 solid",
 });
 
 const Drawer = styled(MuiDrawer, {
@@ -50,14 +29,9 @@ const Drawer = styled(MuiDrawer, {
   flexShrink: 0,
   borderRadius: "8px",
   whiteSpace: "nowrap",
-  marginTop: "1rem",
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme),
-  }),
-  ...(!open && {
-    ...closedMixin(theme),
-    "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
 
@@ -69,7 +43,6 @@ interface MiniDrawerProps {
 // TODO - Add open and close icon
 // TODO - settings handler should pe passed in props
 export default function Sidebar({ children }: MiniDrawerProps) {
-  const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
 
   const handleOnClickSettings = () => {
@@ -80,21 +53,17 @@ export default function Sidebar({ children }: MiniDrawerProps) {
     navigate("/profile");
   };
 
-  const handleDrawerClose = () => {
-    setOpen((state) => !state);
-  };
-
   return (
     <Box display="flex">
       <Drawer
         variant="permanent"
-        open={open}
+        open={true}
         sx={{ overflow: "visible" }}
         PaperProps={{
           style: {
             display: "flex",
             flexDirection: "column",
-            alignItems: open ? "flex-start" : "",
+            alignItems: "flex-start",
             justifyContent: "space-between",
             background: "black",
             overflow: "visible",
@@ -103,53 +72,47 @@ export default function Sidebar({ children }: MiniDrawerProps) {
       >
         <div
           style={{
-            margin: open ? "30px 0 0 0" : "30px auto 0 auto",
+            margin: "30px 0 0 0",
           }}
         >
           <NavLink to="/home">
-            {open ? (
-              <img style={{ height: "26px" }} src="/phraze_full_logo.webp" />
-            ) : (
-              <PhrazeLogo />
-            )}
+            <img style={{ height: "36px" }} src="/phraze_full_logo.webp" />
           </NavLink>
         </div>
-        <OpenButtonContainer onClick={handleDrawerClose} open={open}>
-          <ArrowIcon />
-        </OpenButtonContainer>
-        <NavigationComponent open={open} />
-        <BottomIconsContainer style={{ width: open ? "100%" : undefined }}>
+        <NavigationComponent open={true} />
+        <BottomIconsContainer style={{ width: "100%" }}>
           <Box
             display="flex"
             gap="8px"
-            padding={open ? "4px 8px" : undefined}
+            padding="4px 8px"
             onClick={handleOnClickSettings}
             style={{ cursor: "pointer" }}
           >
             <SettingsGearIcon />
-            {open && (
-              <Text fontSize="1rem" color="white">
-                Settings
-              </Text>
-            )}
+
+            <Text fontSize="1rem" color="white">
+              Settings
+            </Text>
           </Box>
           <Box
             display="flex"
             gap="8px"
-            padding={open ? "4px 8px" : undefined}
+            padding="4px 8px"
             onClick={handleOnClickProfile}
             style={{ cursor: "pointer" }}
           >
             <UserIcon />
-            {open && (
-              <Text fontSize="1rem" color="white">
-                Profile
-              </Text>
-            )}
+            <Text fontSize="1rem" color="white">
+              Profile
+            </Text>
           </Box>
         </BottomIconsContainer>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, background: "black" }}
+        minHeight="100vh"
+      >
         {children}
       </Box>
     </Box>

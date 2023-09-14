@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $wrapNodeInElement, mergeRegister } from "@lexical/utils";
 import {
@@ -18,8 +19,6 @@ import {
   LexicalCommand,
   LexicalEditor,
 } from "lexical";
-import { useEffect, useRef, useState } from "react";
-import * as React from "react";
 import { CAN_USE_DOM } from "lib/canUseDOM";
 
 import landscapeImage from "ui/images/landscape.jpg";
@@ -224,7 +223,6 @@ export default function ImagesPlugin({
             $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd();
           }
 
-          debugger;
           return true;
         },
         COMMAND_PRIORITY_EDITOR
