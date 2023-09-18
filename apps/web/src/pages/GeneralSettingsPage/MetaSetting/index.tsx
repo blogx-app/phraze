@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 import GooglePreview from "./GooglePreview/GooglePreview";
 import FacebookPreview from "./FacebookPreview/FacebookPreview";
 import TwitterPreview from "./TwitterPreview/TwitterPreview";

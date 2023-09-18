@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import useReport from "ui/hooks/useReport";
+import useReport from "@phraze-app/ui/hooks/useReport";
 
 const validInputTypes = new Set([
   "insertText",

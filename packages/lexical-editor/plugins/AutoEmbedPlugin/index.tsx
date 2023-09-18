@@ -1,5 +1,4 @@
 import type { LexicalEditor } from "lexical";
-import React from "react";
 import {
   AutoEmbedOption,
   EmbedConfig,
@@ -13,7 +12,7 @@ import * as ReactDOM from "react-dom";
 
 import useModal from "@phraze-app/ui/hooks/useModal";
 import { Button } from "@phraze-app/ui";
-import { DialogActions } from "ui/Dialog";
+import { DialogActions } from "@phraze-app/ui/Dialog";
 import { INSERT_FIGMA_COMMAND } from "../FigmaPlugin";
 import { INSERT_TWEET_COMMAND } from "../TwitterPlugin";
 import { INSERT_YOUTUBE_COMMAND } from "../YouTubePlugin";

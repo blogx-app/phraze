@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
-import AppBar from "ui/AppBar";
+import AppBar from "@phraze-app/ui/AppBar";
 import { Sidebar } from "../Sidebar";
 
 interface AppLayoutProps {

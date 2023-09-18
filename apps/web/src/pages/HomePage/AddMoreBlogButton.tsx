@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import AddIcon from "./icons/AddIcon";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 
 const ButtonContainer = styled.div`
   display: flex;

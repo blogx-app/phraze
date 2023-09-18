@@ -1,5 +1,5 @@
 import routesName from "./routesName";
-import { BreadcrumsType } from "ui/AppBar/type";
+import { BreadcrumsType } from "@phraze-app/ui/AppBar/type";
 
 type BreadCrumsObjType = Record<
   string,

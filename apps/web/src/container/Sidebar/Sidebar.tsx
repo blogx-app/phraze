@@ -7,7 +7,7 @@ import UserIcon from "./icons/UserIcon";
 import { BottomIconsContainer } from "./style";
 import SettingsGearIcon from "./icons/SettingsGearIcon";
 import NavigationComponent from "./NavigationComponent";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 
 const drawerWidth = 240;
 

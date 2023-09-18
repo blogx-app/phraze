@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Button, Input } from "@phraze-app/ui";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 import MetaSetting from "./MetaSetting";
 import SocialSharing from "./SocialSharing";
 

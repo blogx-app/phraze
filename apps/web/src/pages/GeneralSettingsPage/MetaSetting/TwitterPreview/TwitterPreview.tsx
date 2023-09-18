@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Button, Input, TextArea } from "@phraze-app/ui";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 import TwitterPreviewPlaceholder from "./TwitterPreviewPlaceholder";
 
 const TwitterPreview = () => {

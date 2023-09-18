@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 
 import { isDevPlayground } from "lib/appSettings";
 import { useSettings } from "@blogx/lexical-editor/context/SettingsContext";
-import Switch from "ui/Switch";
+import Switch from "@phraze-app/ui/Switch";
 
 export default function Settings(): JSX.Element {
   const windowLocation = window.location;

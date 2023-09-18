@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
 import styled from "@emotion/styled";
 import { Box, IconButton } from "@mui/material";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 import DraftsIcon from "./icons/DraftsIcon";
 import { NavigationNavLink } from "./style";
 import PublishedIcon from "./icons/PublishedIcon";

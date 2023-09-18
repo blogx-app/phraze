@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import { DomainButton } from "./style";
 import DomainInput from "./DomainInputWrapper";
-import Text from "ui/Text";
-import { Tabs } from "ui/Tabs";
+import Text from "@phraze-app/ui/Text";
+import { Tabs } from "@phraze-app/ui/Tabs";
 
 export default function DomainTabs() {
   return (

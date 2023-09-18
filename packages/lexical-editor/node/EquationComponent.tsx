@@ -12,8 +12,8 @@ import {
 } from "lexical";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import EquationEditor from "ui/EquationEditor";
-import KatexRenderer from "ui/KatexRenderer";
+import EquationEditor from "@phraze-app/ui/EquationEditor";
+import KatexRenderer from "@phraze-app/ui/KatexRenderer";
 import { $isEquationNode } from "./EquationNode";
 
 type EquationComponentProps = {

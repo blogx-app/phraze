@@ -5,7 +5,7 @@ import GeneralSettingIcon from "./icons/GeneralSettingIcon";
 import BrandingIcon from "./icons/BrandingIcon";
 import ThemeIcon from "./icons/ThemeIcon";
 import NavigationIcon from "./icons/NavigationIcon";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 import ManageDomainIcon from "./icons/ManageDomainIcon";
 
 export type SettingsObjType = {

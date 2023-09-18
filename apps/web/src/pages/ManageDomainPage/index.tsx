@@ -1,4 +1,4 @@
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 import DomainTabs from "./DomainTabs";
 import { DomainInfoContainer } from "./style";
 

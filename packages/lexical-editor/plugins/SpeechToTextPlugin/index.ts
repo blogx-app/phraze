@@ -11,7 +11,7 @@ import {
 } from "lexical";
 import { useEffect, useRef, useState } from "react";
 
-import useReport from "ui/hooks/useReport";
+import useReport from "@phraze-app/ui/hooks/useReport";
 
 export const SPEECH_TO_TEXT_COMMAND: LexicalCommand<boolean> = createCommand(
   "SPEECH_TO_TEXT_COMMAND"

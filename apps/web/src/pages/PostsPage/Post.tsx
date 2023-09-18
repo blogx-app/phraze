@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Text from "ui/Text";
+import Text from "@phraze-app/ui/Text";
 import EditButton from "./icons/EditButton";
 import TrashIcon from "./icons/TrashIcon";
 

@@ -62,10 +62,10 @@ import {
 import { useCallback, useEffect, useState } from "react";
 import { IS_APPLE } from "lib/editor-constants";
 
-import useModal from "ui/hooks/useModal";
-import catTypingGif from "ui/images/cat-typing.gif";
-import ColorPicker from "ui/ColorPicker";
-import DropDown, { DropDownItem } from "ui/DropDown";
+import useModal from "@phraze-app/ui/hooks/useModal";
+import catTypingGif from "@phraze-app/ui/images/cat-typing.gif";
+import ColorPicker from "@phraze-app/ui/ColorPicker";
+import DropDown, { DropDownItem } from "@phraze-app/ui/DropDown";
 import { getSelectedNode, sanitizeUrl } from "lib";
 import { EmbedConfigs } from "../AutoEmbedPlugin";
 import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
@@ -356,8 +356,9 @@ function FontDropDown({
       {(style === "font-family" ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
         ([option, text]) => (
           <DropDownItem
-            className={`item ${dropDownActiveClass(value === option)} ${style === "font-size" ? "fontsize-item" : ""
-              }`}
+            className={`item ${dropDownActiveClass(value === option)} ${
+              style === "font-size" ? "fontsize-item" : ""
+            }`}
             onClick={() => handleClick(option)}
             key={option}
           >
@@ -404,9 +405,9 @@ export default function ToolbarPlugin(): JSX.Element {
         anchorNode.getKey() === "root"
           ? anchorNode
           : $findMatchingParent(anchorNode, (e) => {
-            const parent = e.getParent();
-            return parent !== null && $isRootOrShadowRoot(parent);
-          });
+              const parent = e.getParent();
+              return parent !== null && $isRootOrShadowRoot(parent);
+            });
 
       if (element === null) {
         element = anchorNode.getTopLevelElementOrThrow();
@@ -676,8 +677,9 @@ export default function ToolbarPlugin(): JSX.Element {
             className={"toolbar-item spaced " + (isBold ? "active" : "")}
             title={IS_APPLE ? "Bold (⌘B)" : "Bold (Ctrl+B)"}
             type="button"
-            aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? "⌘B" : "Ctrl+B"
-              }`}
+            aria-label={`Format text as bold. Shortcut: ${
+              IS_APPLE ? "⌘B" : "Ctrl+B"
+            }`}
           >
             <i className="format bold" />
           </button>
@@ -689,8 +691,9 @@ export default function ToolbarPlugin(): JSX.Element {
             className={"toolbar-item spaced " + (isItalic ? "active" : "")}
             title={IS_APPLE ? "Italic (⌘I)" : "Italic (Ctrl+I)"}
             type="button"
-            aria-label={`Format text as italics. Shortcut: ${IS_APPLE ? "⌘I" : "Ctrl+I"
-              }`}
+            aria-label={`Format text as italics. Shortcut: ${
+              IS_APPLE ? "⌘I" : "Ctrl+I"
+            }`}
           >
             <i className="format italic" />
           </button>
@@ -702,8 +705,9 @@ export default function ToolbarPlugin(): JSX.Element {
             className={"toolbar-item spaced " + (isUnderline ? "active" : "")}
             title={IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)"}
             type="button"
-            aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"
-              }`}
+            aria-label={`Format text to underlined. Shortcut: ${
+              IS_APPLE ? "⌘U" : "Ctrl+U"
+            }`}
           >
             <i className="format underline" />
           </button>

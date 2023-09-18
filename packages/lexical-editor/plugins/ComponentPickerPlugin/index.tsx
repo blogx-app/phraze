@@ -26,8 +26,8 @@ import { useCallback, useMemo, useState } from "react";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import useModal from "ui/hooks/useModal";
-import catTypingGif from "ui/images/cat-typing.gif";
+import useModal from "@phraze-app/ui/hooks/useModal";
+import catTypingGif from "@phraze-app/ui/images/cat-typing.gif";
 import { EmbedConfigs } from "../AutoEmbedPlugin";
 import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
 import { InsertEquationDialog } from "../EquationsPlugin";
