@@ -1,4 +1,5 @@
 export * from "./BlogHeader";
+export * from "./Box";
 export * from "./Button";
 export * from "./ColorPicker";
 export { LexicalContentEditable as ContentEditable } from "./ContentEditable";
