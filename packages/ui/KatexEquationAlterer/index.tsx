@@ -1,9 +1,8 @@
 import "./KatexEquationAlterer.css";
 
-import * as React from "react";
 import { useCallback, useState } from "react";
 
-import { Button } from "ui";
+import { Button } from "@phraze-app/ui";
 import KatexRenderer from "./KatexRenderer";
 
 type Props = {

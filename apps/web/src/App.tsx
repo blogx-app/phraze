@@ -11,12 +11,12 @@ import {
   SharedHistoryContext,
   ToolbarProvider,
 } from "@blogx/lexical-editor";
-import { RouterProvider } from "ui";
+import { RouterProvider } from "@phraze-app/ui";
 import { PlaygroundNodes } from "@blogx/lexical-editor/node/PlaygroundNodes";
 import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
 import PlaygroundEditorTheme from "@blogx/lexical-editor/themes/PlaygroundEditorTheme";
 import { routes } from "./route";
-// import { BlogHeader } from "ui";
+// import { BlogHeader } from "@phraze-app/ui";
 // import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
 // import { isDevPlayground } from "lib/appSettings";
 

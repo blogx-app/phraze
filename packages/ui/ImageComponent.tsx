@@ -38,9 +38,9 @@ import KeywordsPlugin from "@blogx/lexical-editor/plugins/KeywordsPlugin";
 import LinkPlugin from "@blogx/lexical-editor/plugins/LinkPlugin";
 import MentionsPlugin from "@blogx/lexical-editor/plugins/MentionsPlugin";
 import TreeViewPlugin from "@blogx/lexical-editor/plugins/TreeViewPlugin";
-import { ContentEditable } from "ui";
-import ImageResizer from "ui/ImageResizer";
-import Placeholder from "ui/Placeholder";
+import { ContentEditable } from "@phraze-app/ui";
+import ImageResizer from "@phraze-app/ui/ImageResizer";
+import Placeholder from "@phraze-app/ui/Placeholder";
 import { $isImageNode } from "@blogx/lexical-editor/node/ImageNode";
 
 const imageCache = new Set();

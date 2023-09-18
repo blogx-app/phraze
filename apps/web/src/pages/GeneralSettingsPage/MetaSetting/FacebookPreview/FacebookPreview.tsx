@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Button, Input, TextArea } from "ui";
+import { Button, Input, TextArea } from "@phraze-app/ui";
 import Text from "ui/Text";
 import FacebookPreviewPlaceholder from "./FacebookPreviewPlaceholder";
 

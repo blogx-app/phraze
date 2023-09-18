@@ -47,9 +47,9 @@ import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin";
 // import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin";
 import TwitterPlugin from "./plugins/TwitterPlugin";
 import YouTubePlugin from "./plugins/YouTubePlugin";
-import { ContentEditable } from "ui";
+import { ContentEditable } from "@phraze-app/ui";
 // import { isDevPlayground } from "lib";
-import { Placeholder } from "ui";
+import { Placeholder } from "@phraze-app/ui";
 // import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
 // const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
 

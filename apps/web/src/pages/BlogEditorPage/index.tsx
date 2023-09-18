@@ -1,6 +1,6 @@
 import "./index.css";
 import { Editor } from "@blogx/lexical-editor/Editor";
-import { BlogHeader } from "ui";
+import { BlogHeader } from "@phraze-app/ui";
 
 const BlogEditorPage = () => {
   return (

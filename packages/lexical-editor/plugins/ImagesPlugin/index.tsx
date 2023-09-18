@@ -21,18 +21,18 @@ import {
 } from "lexical";
 import { CAN_USE_DOM } from "lib/canUseDOM";
 
-import landscapeImage from "ui/images/landscape.jpg";
-import yellowFlowerImage from "ui/images/yellow-flower.jpg";
+import landscapeImage from "@phraze-app/ui/images/landscape.jpg";
+import yellowFlowerImage from "@phraze-app/ui/images/yellow-flower.jpg";
 import {
   $createImageNode,
   $isImageNode,
   ImageNode,
   ImagePayload,
 } from "../../node/ImageNode";
-import { Button } from "ui";
-import { DialogActions, DialogButtonsList } from "ui/Dialog";
-import FileInput from "ui/FileInput";
-import TextInput from "ui/TextInput";
+import { Button } from "@phraze-app/ui";
+import { DialogActions, DialogButtonsList } from "@phraze-app/ui/Dialog";
+import FileInput from "@phraze-app/ui/FileInput";
+import TextInput from "@phraze-app/ui/TextInput";
 
 export type InsertImagePayload = Readonly<ImagePayload>;
 

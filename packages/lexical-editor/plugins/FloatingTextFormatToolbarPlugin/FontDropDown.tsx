@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import type { LexicalEditor } from "lexical";
 import { $getSelection, $isRangeSelection } from "lexical";
 import { $patchStyleText } from "@lexical/selection";
-import { DropDown, DropDownItem } from "ui";
+import { DropDown, DropDownItem } from "@phraze-app/ui";
 
 const FONT_FAMILY_OPTIONS: [string, string][] = [
   ["Arial", "Arial"],

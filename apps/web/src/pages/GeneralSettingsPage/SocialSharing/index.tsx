@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { Input } from "ui";
-import Text from "ui/Text";
+import { Input } from "@phraze-app/ui";
+import Text from "@phraze-app/ui/Text";
 
 // TODO - Make seperate page for Social Sharing and enable message sharing on a given platform
 // like what we had to use package in indiagold for social sharing

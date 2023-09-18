@@ -3,7 +3,7 @@ import Text from "ui/Text";
 import GooglePreview from "./GooglePreview/GooglePreview";
 import FacebookPreview from "./FacebookPreview/FacebookPreview";
 import TwitterPreview from "./TwitterPreview/TwitterPreview";
-import { Tabs } from "ui";
+import { Tabs } from "@phraze-app/ui";
 
 const MetaSetting = () => {
   return (

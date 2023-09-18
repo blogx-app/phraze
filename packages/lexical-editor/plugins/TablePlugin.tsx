@@ -16,13 +16,12 @@ import {
   LexicalNode,
 } from "lexical";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import * as React from "react";
 import invariant from "lib/invariant";
 
 import { $createTableNodeWithDimensions, TableNode } from "../node/TableNode";
-import { Button } from "ui";
-import { DialogActions } from "ui/Dialog";
-import TextInput from "ui/TextInput";
+import { Button } from "@phraze-app/ui";
+import { DialogActions } from "@phraze-app/ui/Dialog";
+import TextInput from "@phraze-app/ui/TextInput";
 
 export type InsertTableCommandPayload = Readonly<{
   columns: string;

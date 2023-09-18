@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@blogx/lexical-editor": "*",
+    "@phraze-app/ui": "*",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@lexical/file": "0.7.6",

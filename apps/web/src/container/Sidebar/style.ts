@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { NavLink, NavLinkProps } from "react-router-dom";
-import { Button } from "ui";
+import { Button } from "@phraze-app/ui";
 
 export const BottomIconsContainer = styled.div`
   display: flex;

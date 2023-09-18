@@ -1,5 +1,5 @@
 import { Box, IconButton } from "@mui/material";
-import { Button } from "ui";
+import { Button } from "@phraze-app/ui";
 import Text from "ui/Text";
 import VisitSiteIcon from "../../assets/icons/VisitSiteIcon";
 import UpgradeIcon from "../../assets/icons/UpgradeIcon";

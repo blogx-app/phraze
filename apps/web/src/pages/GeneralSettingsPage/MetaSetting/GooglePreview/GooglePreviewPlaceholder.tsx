@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { Input } from "ui";
-import Text from "ui/Text";
+import { Input } from "@phraze-app/ui";
+import Text from "@phraze-app/ui/Text";
 
 // TODO - Add a globe image near name
 const GooglePreviewPlaceholder = () => {

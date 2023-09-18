@@ -23,7 +23,7 @@ import { getDOMRangeRect } from "lib/getDOMRangeRect";
 import { getSelectedNode } from "lib/getSelectedNode";
 import { setFloatingElemPosition } from "lib/setFloatingElemPosition";
 import FontDropDown from "./FontDropDown";
-import { ColorPicker } from "ui";
+import { ColorPicker } from "@phraze-app/ui";
 
 function TextFormatFloatingToolbar({
   editor,

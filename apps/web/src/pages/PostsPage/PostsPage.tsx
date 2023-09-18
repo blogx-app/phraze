@@ -1,6 +1,6 @@
-import Text from "ui/Text";
 import { Box } from "@mui/material";
-import { Button } from "ui";
+import Text from "@phraze-app/ui/Text";
+import { Button } from "@phraze-app/ui";
 import Post from "./Post";
 
 export const PostsPage = () => {

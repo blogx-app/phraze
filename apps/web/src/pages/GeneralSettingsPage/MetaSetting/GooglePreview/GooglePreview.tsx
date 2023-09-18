@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Input, TextArea } from "ui";
+import { Input, TextArea } from "@phraze-app/ui";
 import Text from "ui/Text";
 import GooglePreviewPlaceholder from "./GooglePreviewPlaceholder";
 
