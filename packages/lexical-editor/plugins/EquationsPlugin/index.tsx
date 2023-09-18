@@ -15,7 +15,7 @@ import { useCallback, useEffect } from "react";
 import * as React from "react";
 
 import { $createEquationNode, EquationNode } from "../../node/EquationNode";
-import KatexEquationAlterer from "ui/KatexEquationAlterer";
+import KatexEquationAlterer from "@phraze-app/ui/KatexEquationAlterer";
 
 type CommandPayload = {
   equation: string;

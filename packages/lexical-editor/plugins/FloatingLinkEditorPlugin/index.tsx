@@ -24,7 +24,7 @@ import { Dispatch, useCallback, useEffect, useRef, useState } from "react";
 import * as React from "react";
 import { createPortal } from "react-dom";
 
-import LinkPreview from "ui/LinkPreview";
+import LinkPreview from "@phraze-app/ui/LinkPreview";
 import { getSelectedNode } from "lib/getSelectedNode";
 import { setFloatingElemPosition } from "lib/setFloatingElemPosition";
 import { sanitizeUrl } from "lib/url";
