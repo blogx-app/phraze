@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { CSSProperties, HTMLAttributes } from "react";
 import {
   BackgroundProps,
   BorderProps,
@@ -17,7 +17,9 @@ export interface BoxProps
     PositionProps,
     SpaceProps,
     Omit<ColorProps, "color">,
-    HTMLAttributes<HTMLElement> {}
+    HTMLAttributes<HTMLElement> {
+  cursor?: CSSProperties["cursor"];
+}
 
 export interface FlexProps extends BoxProps, FlexboxProps {}
 

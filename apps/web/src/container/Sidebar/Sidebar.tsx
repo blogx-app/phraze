@@ -8,6 +8,7 @@ import { BottomIconsContainer } from "./style";
 import SettingsGearIcon from "./icons/SettingsGearIcon";
 import NavigationComponent from "./NavigationComponent";
 import Text from "@phraze-app/ui/Text";
+import UpgradeToPro from "./UpgradeToPro";
 
 const drawerWidth = 240;
 
@@ -79,34 +80,37 @@ export default function Sidebar({ children }: MiniDrawerProps) {
           </div>
           <NavigationComponent open={true} />
         </div>
-        <BottomIconsContainer style={{ width: "100%" }}>
-          <Box
-            display="flex"
-            gap="8px"
-            padding="4px 8px"
-            paddingLeft="1rem"
-            onClick={handleOnClickSettings}
-            style={{ cursor: "pointer" }}
-          >
-            <SettingsGearIcon />
-            <Text fontSize="14px" color="white">
-              Settings
-            </Text>
-          </Box>
-          <Box
-            display="flex"
-            gap="8px"
-            padding="4px 8px"
-            paddingLeft="1rem"
-            onClick={handleOnClickProfile}
-            style={{ cursor: "pointer" }}
-          >
-            <UserIcon />
-            <Text fontSize="14px" color="white">
-              Profile
-            </Text>
-          </Box>
-        </BottomIconsContainer>
+        <div style={{ width: "100%" }}>
+          <UpgradeToPro />
+          <BottomIconsContainer style={{ width: "100%" }}>
+            <Box
+              display="flex"
+              gap="8px"
+              padding="4px 8px"
+              paddingLeft="1rem"
+              onClick={handleOnClickSettings}
+              style={{ cursor: "pointer" }}
+            >
+              <SettingsGearIcon />
+              <Text fontSize="14px" color="#888">
+                Settings
+              </Text>
+            </Box>
+            <Box
+              display="flex"
+              gap="8px"
+              padding="4px 8px"
+              paddingLeft="1rem"
+              onClick={handleOnClickProfile}
+              style={{ cursor: "pointer" }}
+            >
+              <UserIcon />
+              <Text fontSize="14px" color="#888">
+                Profile
+              </Text>
+            </Box>
+          </BottomIconsContainer>
+        </div>
       </Drawer>
       <Box
         component="main"

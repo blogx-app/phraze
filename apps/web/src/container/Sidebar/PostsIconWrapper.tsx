@@ -1,17 +1,12 @@
-import { useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
+import { useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import { Box, IconButton } from "@mui/material";
 import Text from "@phraze-app/ui/Text";
-import DraftsIcon from "./icons/DraftsIcon";
+import { Flex } from "@phraze-app/ui";
 import { NavigationNavLink } from "./style";
-import PublishedIcon from "./icons/PublishedIcon";
-import ScheduledIcon from "./icons/ScheduledIcon";
-import ArrowIcon from "./icons/ArrowIcon";
 import PostsIcon from "./icons/PostsIcon";
 import OrangeAddIcon from "./icons/OrangeAddIcon";
-import { useNavigate } from "react-router-dom";
-import { Flex } from "@phraze-app/ui";
 
 // TODO - fix this. remove any type from here.
 const Container = styled(animated.div as any)`
@@ -76,14 +71,19 @@ const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
           justifyContent="space-between"
           width="100%"
         >
-          <Box display="flex" alignItems="center">
+          <Flex
+            cursor="pointer"
+            display="flex"
+            alignItems="center"
+            onClick={() => navigate("/posts")}
+          >
             <IconButton>
               <PostsIcon />
             </IconButton>
             <Text color="white" fontSize="14px">
               Posts
             </Text>
-          </Box>
+          </Flex>
           {open && (
             <IconButton onClick={() => navigate("/editor")}>
               <OrangeAddIcon />
@@ -98,7 +98,11 @@ const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
             to={item.toLink}
             key={`${item.name}-${item.toLink}-${i}`}
           >
-            {open && <Text fontSize="14px">{item.name}</Text>}
+            {open && (
+              <Text color="#888" fontSize="14px">
+                {item.name}
+              </Text>
+            )}
           </NavigationNavLink>
         ))}
       </Flex>

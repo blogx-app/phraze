@@ -74,7 +74,11 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
               key={`${item.name}-${item.toLink}-${i}`}
             >
               <IconButton>{item.icon}</IconButton>
-              {open && <Text fontSize="14px">{item.name}</Text>}
+              {open && (
+                <Text fontSize="14px" color="#888">
+                  {item.name}
+                </Text>
+              )}
             </NavigationNavLink>
           </React.Fragment>
         ))}

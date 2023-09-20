@@ -56,11 +56,11 @@ export const NavigationNavLink = styled(NavLink as React.FC<NavLinkProps>)`
   padding-left: 0.5rem;
 `;
 
-export const NavigationButton = styled(Button)<{ open: boolean; bg: string }>`
+export const NavigationButton = styled(Button)<{ open?: boolean; bg: string }>`
   background: ${({ bg }) => bg};
   border: none;
   padding: ${({ open }) => (open ? "0.75rem 0.5rem" : "0.5rem !important")};
-  width: ${({ open }) => (open ? "100%" : "fit-content")};
+  width: 100%;
   display: flex;
   gap: 0.5rem;
   align-items: center;

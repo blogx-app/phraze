@@ -14,6 +14,7 @@ import { BoxProps } from "./types";
 
 export const Box = styled.div<BoxProps>`
   ${compose(background, border, layout, position, space, color)}
+  cursor: ${({ cursor }) => cursor};
 `;
 
 export const Flex = styled(Box)<

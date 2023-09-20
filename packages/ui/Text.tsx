@@ -13,10 +13,11 @@ import {
   typography,
 } from "styled-system";
 
-const Text = styled.div<
+export const Text = styled.div<
   TypographyProps & SpaceProps & LayoutProps & ColorProps & BackgroundProps
 >`
   ${compose(typography, space, layout, color, background)}
+  white-space: normal;
 `;
 
 export default Text;
