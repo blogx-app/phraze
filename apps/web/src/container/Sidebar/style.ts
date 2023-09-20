@@ -9,9 +9,11 @@ export const BottomIconsContainer = styled.div`
 
   margin: 0.5rem auto;
   margin-bottom: 1rem;
+  padding: 0 24px;
   padding-top: 1rem;
 
-  /* border-top: 1px #555 solid; */
+  border-top: 1px #555 solid;
+  width: 100%;
 `;
 
 export const OpenButtonContainer = styled.div<{ open: boolean }>`

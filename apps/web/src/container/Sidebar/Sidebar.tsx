@@ -18,7 +18,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: "hidden",
-  padding: "0 30px",
+  // padding: "0 30px",
   borderRight: "1px #555555 solid",
 });
 
@@ -67,7 +67,7 @@ export default function Sidebar({ children }: MiniDrawerProps) {
           },
         }}
       >
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", padding: "0 24px" }}>
           <div
             style={{
               margin: "30px 0 0 0",
