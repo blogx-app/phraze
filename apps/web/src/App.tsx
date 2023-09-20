@@ -2,6 +2,13 @@
 // import { $createLinkNode } from "@lexical/link";
 // import { $createListItemNode, $createListNode } from "@lexical/list";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import {
+  CssBaseline,
+  ThemeProvider as MuiThemeProvider,
+  createTheme,
+  THEME_ID,
+} from "@mui/material";
+
 // import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
 // import { $createParagraphNode, $createTextNode, $getRoot } from "lexical";
 import {
@@ -9,13 +16,18 @@ import {
   // useSettings,
   SharedAutocompleteContext,
   SharedHistoryContext,
-  ToolbarProvider,
+  // ToolbarProvider,
 } from "@blogx/lexical-editor";
 import { RouterProvider } from "@phraze-app/ui";
+import { PhrazeThemeProvider } from "@phraze-app/theme";
 import { PlaygroundNodes } from "@blogx/lexical-editor/node/PlaygroundNodes";
 import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
 import PlaygroundEditorTheme from "@blogx/lexical-editor/themes/PlaygroundEditorTheme";
+import { dark } from "@phraze-app/theme";
 import { routes } from "./route";
+
+const muiTheme = createTheme();
+
 // import { BlogHeader } from "@phraze-app/ui";
 // import PasteLogPlugin from "@blogx/lexical-editor/plugins/PasteLogPlugin";
 // import { isDevPlayground } from "lib/appSettings";
@@ -128,15 +140,19 @@ function App(): JSX.Element {
 
   return (
     // <ToolbarProvider>
-    <LexicalComposer initialConfig={initialConfig}>
-      <SharedHistoryContext>
-        <TableContext>
-          <SharedAutocompleteContext>
-            <RouterProvider routes={routes} />
-          </SharedAutocompleteContext>
-        </TableContext>
-      </SharedHistoryContext>
-    </LexicalComposer>
+    <PhrazeThemeProvider theme={dark}>
+      <MuiThemeProvider theme={{ [THEME_ID]: muiTheme }}>
+        <LexicalComposer initialConfig={initialConfig}>
+          <SharedHistoryContext>
+            <TableContext>
+              <SharedAutocompleteContext>
+                <RouterProvider routes={routes} />
+              </SharedAutocompleteContext>
+            </TableContext>
+          </SharedHistoryContext>
+        </LexicalComposer>
+      </MuiThemeProvider>
+    </PhrazeThemeProvider>
     // </ToolbarProvider>
   );
 }
