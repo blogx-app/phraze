@@ -1,7 +1,6 @@
 import { vars } from "../css/vars.css";
 
-export interface PancakeTheme {
-  siteWidth: number;
+export interface PhrazeTheme {
   isDark: boolean;
   colors: typeof vars.colors;
   spacing: typeof vars.space;

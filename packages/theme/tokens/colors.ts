@@ -24,7 +24,7 @@ export const darkColors = {
   secondary80: "#FF7F00",
   background: "#191919",
   backgroundDisabled: "rgba(0, 0, 0, 0.05)",
-  backgroundContent: "#181818",
+  backgroundContent: "#000",
   contrast: "#FFFFFF",
   cardBorder: "#FF852C0f",
   white75: "rgba(255, 255, 255, 0.75)",

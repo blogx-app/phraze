@@ -18,6 +18,7 @@ export const Text = styled.div<
 >`
   ${compose(typography, space, layout, color, background)}
   white-space: normal;
+  line-height: 1.1;
 `;
 
 export default Text;

@@ -2,6 +2,7 @@ import { darkColors } from "./colors";
 
 // TODO - Change this shadows for our use.
 export const shadows = {
+  card: "0 0 4px #aaa",
   level1:
     "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
   active: "0px 0px 0px 1px #0098A1, 0px 0px 4px 8px rgba(31, 199, 212, 0.4)",

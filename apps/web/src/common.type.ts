@@ -1,5 +1,5 @@
-import { Theme } from "@emotion/react";
+import { PhrazeTheme } from "@phraze-app/theme";
 
 export interface ThemeProps {
-  theme: Theme;
+  theme?: PhrazeTheme;
 }
