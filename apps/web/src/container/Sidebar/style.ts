@@ -5,13 +5,13 @@ import { Button } from "@phraze-app/ui";
 export const BottomIconsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 8px;
 
   margin: 0.5rem auto;
-  margin-bottom: 1.5rem;
-  padding-top: 1.25rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
 
-  border-top: 1px white solid;
+  /* border-top: 1px #555 solid; */
 `;
 
 export const OpenButtonContainer = styled.div<{ open: boolean }>`
@@ -50,6 +50,8 @@ export const NavigationNavLink = styled(NavLink as React.FC<NavLinkProps>)`
   display: flex;
   color: white;
   align-items: center;
+
+  padding-left: 0.5rem;
 `;
 
 export const NavigationButton = styled(Button)<{ open: boolean; bg: string }>`

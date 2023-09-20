@@ -11,8 +11,10 @@ import ArrowIcon from "./icons/ArrowIcon";
 import PostsIcon from "./icons/PostsIcon";
 import OrangeAddIcon from "./icons/OrangeAddIcon";
 import { useNavigate } from "react-router-dom";
+import { Flex } from "@phraze-app/ui";
 
-const Container = styled(animated.div)`
+// TODO - fix this. remove any type from here.
+const Container = styled(animated.div as any)`
   background-color: rgba(128, 128, 128, 0.3);
   border-radius: 8px;
 
@@ -40,17 +42,14 @@ const OpenButtonContainer = styled.div<{ open: boolean }>`
 const POSTS_ITEMS = [
   {
     name: "Drafts",
-    icon: <DraftsIcon />,
     toLink: "/posts/draft",
   },
   {
     name: "Published",
-    icon: <PublishedIcon />,
     toLink: "/posts/published",
   },
   {
     name: "Scheduled",
-    icon: <ScheduledIcon />,
     toLink: "/post/scheduled",
   },
 ];
@@ -61,19 +60,12 @@ interface PostsIconWrapperProps {
 
 const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
   const navigate = useNavigate();
-  const [openPostItem, setOpenPostItem] = useState(open);
 
-  const toggleOpen = () => setOpenPostItem((open) => !open);
   const animationProps = useSpring({
     width: open ? "100%" : "inherit",
-    height: openPostItem ? "189px" : "62px",
     alignItems: open ? "flex-start" : "center",
     padding: open ? "12px" : "4px",
   });
-
-  useEffect(() => {
-    setOpenPostItem(open);
-  }, [open]);
 
   return (
     <Container style={animationProps}>
@@ -88,7 +80,9 @@ const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
             <IconButton>
               <PostsIcon />
             </IconButton>
-            <Text color="white">Posts</Text>
+            <Text color="white" fontSize="14px">
+              Posts
+            </Text>
           </Box>
           {open && (
             <IconButton onClick={() => navigate("/editor")}>
@@ -97,41 +91,17 @@ const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
           )}
         </Box>
       )}
-      {!open && openPostItem && (
-        <NavigationNavLink to="/editor">
-          <IconButton>
-            <OrangeAddIcon />
-          </IconButton>
-        </NavigationNavLink>
-      )}
-      {openPostItem ? (
-        POSTS_ITEMS.map((item, i) => (
+      <Flex gap="14px" flexDirection="column" pl="1rem">
+        {POSTS_ITEMS.map((item, i) => (
           <NavigationNavLink
             style={{ marginLeft: open ? "1rem" : "" }}
             to={item.toLink}
             key={`${item.name}-${item.toLink}-${i}`}
           >
-            <IconButton>{item.icon}</IconButton>
-            {open && <Text>{item.name}</Text>}
+            {open && <Text fontSize="14px">{item.name}</Text>}
           </NavigationNavLink>
-        ))
-      ) : (
-        <div
-          style={{
-            padding: "0.5rem",
-            paddingBottom: "0",
-            lineHeight: 1,
-          }}
-        >
-          <PostsIcon />
-        </div>
-      )}
-
-      {!open && (
-        <OpenButtonContainer open={openPostItem} onClick={toggleOpen}>
-          <ArrowIcon />
-        </OpenButtonContainer>
-      )}
+        ))}
+      </Flex>
     </Container>
   );
 };

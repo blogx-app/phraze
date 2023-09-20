@@ -39,9 +39,6 @@ interface MiniDrawerProps {
   children?: React.ReactNode;
 }
 
-// TODO - handle open drawer state
-// TODO - Add open and close icon
-// TODO - settings handler should pe passed in props
 export default function Sidebar({ children }: MiniDrawerProps) {
   const navigate = useNavigate();
 
@@ -70,27 +67,29 @@ export default function Sidebar({ children }: MiniDrawerProps) {
           },
         }}
       >
-        <div
-          style={{
-            margin: "30px 0 0 0",
-          }}
-        >
-          <NavLink to="/home">
-            <img style={{ height: "36px" }} src="/phraze_full_logo.webp" />
-          </NavLink>
+        <div style={{ width: "100%" }}>
+          <div
+            style={{
+              margin: "30px 0 0 0",
+            }}
+          >
+            <NavLink to="/home">
+              <img style={{ height: "32px" }} src="/phraze_full_logo.webp" />
+            </NavLink>
+          </div>
+          <NavigationComponent open={true} />
         </div>
-        <NavigationComponent open={true} />
         <BottomIconsContainer style={{ width: "100%" }}>
           <Box
             display="flex"
             gap="8px"
             padding="4px 8px"
+            paddingLeft="1rem"
             onClick={handleOnClickSettings}
             style={{ cursor: "pointer" }}
           >
             <SettingsGearIcon />
-
-            <Text fontSize="1rem" color="white">
+            <Text fontSize="14px" color="white">
               Settings
             </Text>
           </Box>
@@ -98,11 +97,12 @@ export default function Sidebar({ children }: MiniDrawerProps) {
             display="flex"
             gap="8px"
             padding="4px 8px"
+            paddingLeft="1rem"
             onClick={handleOnClickProfile}
             style={{ cursor: "pointer" }}
           >
             <UserIcon />
-            <Text fontSize="1rem" color="white">
+            <Text fontSize="14px" color="white">
               Profile
             </Text>
           </Box>
@@ -110,7 +110,7 @@ export default function Sidebar({ children }: MiniDrawerProps) {
       </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, background: "black" }}
+        sx={{ flexGrow: 1, background: "#191919" }}
         minHeight="100vh"
       >
         {children}

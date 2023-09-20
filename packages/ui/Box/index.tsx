@@ -16,8 +16,11 @@ export const Box = styled.div<BoxProps>`
   ${compose(background, border, layout, position, space, color)}
 `;
 
-export const Flex = styled(Box)<FlexProps>`
+export const Flex = styled(Box)<
+  FlexProps & { gap?: React.CSSProperties["gap"] }
+>`
   display: flex;
+  gap: ${({ gap }) => gap};
   ${flexbox}
 `;
 

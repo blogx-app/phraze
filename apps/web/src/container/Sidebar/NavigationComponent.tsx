@@ -48,10 +48,10 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
       minHeight="75%"
       width={open ? "100%" : undefined}
     >
-      <NavigationButton bg="rgba(0, 204, 255, 0.85)" open={open}>
+      <NavigationButton bg="#bfff00" open={open}>
         <VisitSiteIcon />
         {open && (
-          <Text fontSize="1rem" color="white" fontWeight="bold">
+          <Text fontSize="14px" color="#1D2504" fontWeight="400">
             Visit Site
           </Text>
         )}
@@ -59,8 +59,9 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
       <Box
         display="flex"
         flexDirection="column"
-        gap="1rem"
+        gap="0.5rem"
         margin="0 auto"
+        marginTop="12px"
         justifyContent="center"
         alignItems={open ? "flex-start" : "center"}
         width={open ? "100%" : undefined}
@@ -73,19 +74,19 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
               key={`${item.name}-${item.toLink}-${i}`}
             >
               <IconButton>{item.icon}</IconButton>
-              {open && <Text>{item.name}</Text>}
+              {open && <Text fontSize="14px">{item.name}</Text>}
             </NavigationNavLink>
           </React.Fragment>
         ))}
       </Box>
-      <NavigationButton bg="rgba(0, 255, 102, 0.85)" open={open}>
+      {/* <NavigationButton bg="rgba(0, 255, 102, 0.85)" open={open}>
         <UpgradeIcon />
         {open && (
           <Text fontSize="1rem" color="white" fontWeight="bold">
             Upgrade
           </Text>
         )}
-      </NavigationButton>
+      </NavigationButton> */}
     </Box>
   );
 };
