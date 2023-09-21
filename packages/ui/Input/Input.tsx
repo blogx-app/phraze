@@ -1,7 +1,12 @@
 import { InputHTMLAttributes } from "react";
 import { Box } from "@mui/material";
 import { InputProps } from "./types";
-import { StyledLabel, StyledInput } from "./style";
+import {
+  StyledLabel,
+  StyledInput,
+  InputContainer,
+  AdornmentIconWrapper,
+} from "./style";
 import Text from "../Text";
 
 export const Input = ({
@@ -11,17 +16,25 @@ export const Input = ({
   placeholder,
   onChange,
   ContainerProps,
+  startAdornment,
   ...rest
 }: InputProps & InputHTMLAttributes<HTMLInputElement>) => {
+  console.log("startAdornment", Boolean(startAdornment));
   return (
     <Box display="flex" flexDirection="column" {...ContainerProps}>
       <StyledLabel>{label}</StyledLabel>
-      <StyledInput
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        {...rest}
-      />
+      <InputContainer>
+        {startAdornment && (
+          <AdornmentIconWrapper>{startAdornment}</AdornmentIconWrapper>
+        )}
+        <StyledInput
+          hasStartAdornment={Boolean(startAdornment)}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          {...rest}
+        />
+      </InputContainer>
       <Text fontSize="10px" marginLeft="8px" color="#808080">
         {helperText}
       </Text>

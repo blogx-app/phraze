@@ -19,7 +19,7 @@ const Container = styled(Flex)`
 const UpgradeToPro = () => {
   return (
     <Container>
-      <Flex justifyContent="center">
+      <Flex justifyContent="center" alignItems="center" gap="0.25rem">
         <UpgradeDiamondIcon />
         <Text color="#bfff00" fontSize="1.25rem">
           Premium

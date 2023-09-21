@@ -20,7 +20,7 @@ const AddPostCard = () => {
           <Text fontSize="1.5rem" color="white" mb="0.25rem">
             Add Post
           </Text>
-          <Text fontStyle="italic" fontSize="10px" color="#aaa">
+          <Text fontStyle="italic" fontSize="12px" color="#aaa">
             Express your thoughts in style with phraze
           </Text>
         </div>

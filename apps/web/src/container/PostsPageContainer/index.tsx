@@ -1,6 +1,7 @@
-import { Box, Flex } from "@phraze-app/ui";
+import { Box, Flex, Input } from "@phraze-app/ui";
 import AddPostCard from "./AddPostCard";
 import ContentCards from "./ContentCards";
+import SearchIcon from "./icon/SearchIcon";
 
 const PostsPageContainer = () => {
   return (
@@ -8,6 +9,21 @@ const PostsPageContainer = () => {
       <Flex gap="1rem">
         <AddPostCard />
         <ContentCards />
+      </Flex>
+      <Flex width="100%">
+        <Input
+          startAdornment={<SearchIcon />}
+          placeholder="Search..."
+          style={{
+            width: "100%",
+          }}
+          ContainerProps={{
+            style: {
+              width: "50%",
+              marginTop: "1.25rem",
+            },
+          }}
+        />
       </Flex>
     </Box>
   );
