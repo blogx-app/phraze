@@ -19,7 +19,6 @@ export const Input = ({
   startAdornment,
   ...rest
 }: InputProps & InputHTMLAttributes<HTMLInputElement>) => {
-  console.log("startAdornment", Boolean(startAdornment));
   return (
     <Box display="flex" flexDirection="column" {...ContainerProps}>
       <StyledLabel>{label}</StyledLabel>

@@ -88,6 +88,7 @@ export default function Sidebar({ children }: MiniDrawerProps) {
               gap="8px"
               padding="4px 8px"
               paddingLeft="1rem"
+              alignItems="center"
               onClick={handleOnClickSettings}
               style={{ cursor: "pointer" }}
             >
@@ -101,6 +102,7 @@ export default function Sidebar({ children }: MiniDrawerProps) {
               gap="8px"
               padding="4px 8px"
               paddingLeft="1rem"
+              alignItems="center"
               onClick={handleOnClickProfile}
               style={{ cursor: "pointer" }}
             >

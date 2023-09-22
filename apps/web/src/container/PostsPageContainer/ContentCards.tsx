@@ -33,7 +33,7 @@ const ContentCards = () => {
   return (
     <>
       {CONTENT_CARDS.map((card) => (
-        <Fragment>
+        <Fragment key={card.navigateTo}>
           <CardContainer flexDirection="column" py="8px" minWidth="145px">
             <Flex justifyContent="space-between" px="0.5rem">
               {<card.icon />}

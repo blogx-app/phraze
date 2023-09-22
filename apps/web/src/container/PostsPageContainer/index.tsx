@@ -10,7 +10,7 @@ const PostsPageContainer = () => {
         <AddPostCard />
         <ContentCards />
       </Flex>
-      <Flex width="100%">
+      <Flex width="100%" gap="1rem">
         <Input
           startAdornment={<SearchIcon />}
           placeholder="Search..."
@@ -20,10 +20,12 @@ const PostsPageContainer = () => {
           ContainerProps={{
             style: {
               width: "50%",
-              marginTop: "1.25rem",
+              marginTop: "1rem",
+              maxWidth: "31rem",
             },
           }}
         />
+        {/* <PostsPageContainer /> */}
       </Flex>
     </Box>
   );
