@@ -2,10 +2,13 @@ import { Box, Flex, Input } from "@phraze-app/ui";
 import AddPostCard from "./AddPostCard";
 import ContentCards from "./ContentCards";
 import SearchIcon from "./icon/SearchIcon";
+import PostSelectButtonContainer, {
+  ListingType,
+} from "./PostSelectButtonContainer";
 
 const PostsPageContainer = () => {
   return (
-    <Box>
+    <Flex flexDirection="column" gap="1rem">
       <Flex gap="1rem">
         <AddPostCard />
         <ContentCards />
@@ -20,14 +23,13 @@ const PostsPageContainer = () => {
           ContainerProps={{
             style: {
               width: "50%",
-              marginTop: "1rem",
               maxWidth: "31rem",
             },
           }}
         />
-        {/* <PostsPageContainer /> */}
+        <PostSelectButtonContainer selectedListingType={ListingType.Row} />
       </Flex>
-    </Box>
+    </Flex>
   );
 };
 

@@ -1,14 +1,50 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+import { Flex, PhzButton } from "@phraze-app/ui";
+import ShowBlock from "./icon/ShowBlock";
+import ShowList from "./icon/ShowList";
 
-enum ListType {
-  Block = "block",
-  List = "list",
+export enum ListingType {
+  Block = "BLOCK",
+  Row = "ROW",
 }
 
-export const Container = styled.div``;
+export interface PostSelectButtonContainerProps {
+  selectedListingType: ListingType;
+}
 
-const PostSelectButtonContainer = () => {
-  return <Container></Container>;
+export const Container = styled(Flex)`
+  ${({ theme }) =>
+    css({
+      backgroundColor: theme.colors.backgroundContent,
+      boxShadow: theme.shadows.card,
+      borderRadius: theme.radii.card,
+    })}
+
+  height: 48px;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+`;
+
+const ListingButton = styled(PhzButton)<{ selected: boolean }>`
+  background: ${({ theme, selected }) =>
+    selected ? theme.colors.background : theme.colors.backgroundContent};
+`;
+
+const PostSelectButtonContainer = ({
+  selectedListingType,
+}: PostSelectButtonContainerProps) => {
+  return (
+    <Container>
+      <ListingButton selected={selectedListingType === ListingType.Block}>
+        <ShowBlock />
+      </ListingButton>
+      <ListingButton selected={selectedListingType === ListingType.Row}>
+        <ShowList />
+      </ListingButton>
+    </Container>
+  );
 };
 
 export default PostSelectButtonContainer;
