@@ -12,4 +12,5 @@ export const CardContainer = styled(Flex)<ThemeProps>`
     })};
 
   height: 9rem;
+  min-width: 9rem;
 `;

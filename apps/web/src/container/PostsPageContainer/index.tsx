@@ -1,10 +1,11 @@
-import { Box, Flex, Input } from "@phraze-app/ui";
+import { Flex, Input } from "@phraze-app/ui";
 import AddPostCard from "./AddPostCard";
 import ContentCards from "./ContentCards";
 import SearchIcon from "./icon/SearchIcon";
 import PostSelectButtonContainer, {
-  ListingType,
+  ListingTypeEnum,
 } from "./PostSelectButtonContainer";
+import Post from "../Post";
 
 const PostsPageContainer = () => {
   return (
@@ -27,8 +28,9 @@ const PostsPageContainer = () => {
             },
           }}
         />
-        <PostSelectButtonContainer selectedListingType={ListingType.Row} />
+        <PostSelectButtonContainer selectedListingType={ListingTypeEnum.Row} />
       </Flex>
+      <Post posts={[]} listingType={ListingTypeEnum.Row} />
     </Flex>
   );
 };

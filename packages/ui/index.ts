@@ -21,6 +21,8 @@ export * from "./Text";
 export * from "./Input";
 export * from "./TextArea";
 export * from "./Tabs";
+export * from "./ImageWrapper";
+export * from "./Tags";
 
 export * from "./hooks";
 

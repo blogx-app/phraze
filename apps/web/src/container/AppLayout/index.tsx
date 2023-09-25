@@ -23,7 +23,7 @@ export const AppLayout = ({
         {!appbarHidden && (
           <AppBar getNavigationBreadcrum={getNavigationBreadcrum} />
         )}
-        <Box p="30px">
+        <Box p="1.25rem">
           <Outlet />
         </Box>
       </>

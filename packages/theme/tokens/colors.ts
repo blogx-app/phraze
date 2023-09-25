@@ -2,6 +2,7 @@ export const baseColors = {
   transparent: "transparent",
   white: "white",
   black: "black",
+  grey: "#aaa",
   failure: "#FF3873",
   failure33: "#FF387333",
   primary: "#BFFF00",
@@ -38,4 +39,10 @@ export const darkColors = {
   textPrimary: "#BFFF00",
   textSubtle: "rgba(255, 255, 255, 0.75)",
   disabled: "rgba(255, 133, 44, 0.6)",
+  tag: {
+    default: "#00FFFF",
+    published: "#00FF66",
+    draft: "#FFA500",
+    scheduled: "#0033CC",
+  },
 };

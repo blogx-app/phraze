@@ -57,6 +57,7 @@ export const tokens = {
     circle: "50%",
     button: "6px",
     input: "6px",
+    image: "6px",
   },
   fontSizes: {
     "10px": "10px",
