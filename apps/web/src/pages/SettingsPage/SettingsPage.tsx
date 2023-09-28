@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useTheme } from "@emotion/react";
 import { NavLink } from "react-router-dom";
 import { Box } from "@mui/material";
 import GeneralSettingIcon from "./icons/GeneralSettingIcon";
@@ -30,6 +31,7 @@ const SETTINGS = [
   },
   ,
   {
+    // TODO - Fix this theme icon. It have a white line in the middle.
     icon: <ThemeIcon />,
     name: "Theme",
     subText: "Install and update theme",
@@ -50,9 +52,11 @@ const SETTINGS = [
 ] as SettingsObjType[];
 
 export const SettingsPage = () => {
+  const theme = useTheme();
+
   return (
     <div>
-      <Text mb="12px" fontWeight="bold">
+      <Text mb="12px" fontWeight="bold" color={theme.colors.white}>
         Website Setting
       </Text>
       <Box display="flex" gap="1rem" maxWidth="1240px" flexWrap="wrap">
@@ -69,11 +73,17 @@ export const SettingsPage = () => {
               p="12px"
               borderRadius="12px"
               minWidth="25rem"
+              bgcolor={theme.colors.backgroundContent}
+              boxShadow={theme.shadows.card}
             >
               <Box>{setting?.icon}</Box>
               <Box>
-                <Box fontWeight="bold">{setting?.name}</Box>
-                <Box color="#181818">{setting?.subText}</Box>
+                <Box fontWeight="bold" color={theme.colors.white}>
+                  {setting?.name}
+                </Box>
+                <Box color={theme.colors.text} fontSize="14px">
+                  {setting?.subText}
+                </Box>
               </Box>
             </Box>
           </NavLink>

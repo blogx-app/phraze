@@ -18,6 +18,7 @@ export const PostRowViewContainer = styled(Flex)`
     css({
       borderRadius: theme.radii.card,
       background: theme.colors.backgroundContent,
+      boxShadow: theme.shadows.card,
     })};
 `;
 
