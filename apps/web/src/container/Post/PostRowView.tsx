@@ -25,7 +25,7 @@ const PostRowView = ({ post }: { post: SinglePostProps }) => {
             </Flex>
           </Flex>
           <Box>
-            <Text color="white" fontSize="1rem" fontWeight="400" mb="0.75rem">
+            <Text color="white" fontSize="1rem" fontWeight="400" mb="0.5rem">
               {post.title}
             </Text>
             <Text color="#aaa" fontSize="14px">
