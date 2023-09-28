@@ -27,23 +27,23 @@ export const DomainInput = styled.input`
 `;
 
 export const DomainButton = styled.button`
-  background-color: #00ff66;
+  background-color: ${({ theme }) => theme.colors.primary};
 
-  padding: 1rem 2rem;
-  font-size: 1rem;
+  padding: 10px 2rem;
+  font-size: 14px;
 
   border: 1px solid black;
   border-radius: 8px;
   cursor: pointer;
 `;
 
+//TODO - Fix the dash width in border
 export const DomainInfoContainer = styled.div`
   width: 31rem;
 
   padding: 1rem;
-  border: 1px solid black;
-
-  margin: 1rem 0;
+  border: 1px dashed ${({ theme }) => theme.colors.greyAAA};
+  margin-bottom: 0.5rem;
 
   border-radius: 12px;
 `;

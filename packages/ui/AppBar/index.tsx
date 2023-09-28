@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
+import { useTheme } from "@emotion/react";
 import {
   AppBarContainer,
   BreadcrumsNavlink,
@@ -9,6 +10,7 @@ import { AppBarProps } from "./type";
 
 const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
   const location = useLocation();
+  const theme = useTheme();
 
   const { crumbs } = getNavigationBreadcrum(location.pathname);
 
@@ -22,7 +24,7 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
               end
               to={crumb.toLink}
               style={({ isActive }) =>
-                isActive ? { color: "white" } : undefined
+                isActive ? { color: theme.colors.white } : undefined
               }
             >
               {crumb.name}

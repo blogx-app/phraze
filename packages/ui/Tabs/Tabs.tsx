@@ -14,7 +14,7 @@ function TabPanel(props: TabPanelProps) {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 2 }}>{children}</Box>}
+      {value === index && <Box sx={{ py: 2 }}>{children}</Box>}
     </div>
   );
 }
@@ -26,8 +26,7 @@ function a11yProps(index: number) {
   };
 }
 
-const TAB_HEADER_COLORS = ["#00CCFF", "#FF69B4"];
-
+// TODO - Fix the text color of the selected tab
 export const Tabs = ({ tabLabels, tabPanels }: TabsProps) => {
   const [value, setValue] = useState(0);
 
@@ -37,22 +36,9 @@ export const Tabs = ({ tabLabels, tabPanels }: TabsProps) => {
 
   return (
     <div>
-      <StyledTabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="secondary"
-        textColor="inherit"
-        style={{
-          marginLeft: "0.75rem",
-        }}
-      >
+      <StyledTabs value={value} onChange={handleChange} textColor="inherit">
         {tabLabels.map((label, i) => (
-          <StyledTab
-            key={`${label}-${i}`}
-            label={label}
-            {...a11yProps(i)}
-            style={{ background: TAB_HEADER_COLORS[i], fontWeight: "bold" }}
-          />
+          <StyledTab key={`${label}-${i}`} label={label} {...a11yProps(i)} />
         ))}
       </StyledTabs>
       <TabsPanelContainer>

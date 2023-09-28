@@ -1,21 +1,26 @@
 import styled from "@emotion/styled";
 import { Tab, Tabs } from "@mui/material";
+import { ThemeProps } from "../common.types";
 
 export const StyledTabs = styled(Tabs)`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.primary66};
+
   .MuiTabs-indicator {
     height: 4px;
     border-radius: 4px;
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
+
+  .Mui-selected {
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
-export const StyledTab = styled(Tab)`
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-  background: red;
+export const StyledTab = styled(Tab)<ThemeProps>`
   opacity: 1;
+  text-transform: uppercase;
 
-  border: 1px black solid;
-  text-transform: capitalize;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const TabsPanelContainer = styled.div`

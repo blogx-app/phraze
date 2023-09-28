@@ -15,10 +15,15 @@ const StyleStateTag = styled(OutlinedTag)<{ postState: PostStateType }>`
 
   cursor: auto;
   user-select: none;
+  width: fit-content;
 `;
 
 export const StateTags = ({ children, type }: StateTagsProps) => {
-  return <StyleStateTag postState={type}>{children}</StyleStateTag>;
+  return (
+    <StyleStateTag as="span" postState={type}>
+      {children}
+    </StyleStateTag>
+  );
 };
 
 export default StateTags;

@@ -14,8 +14,8 @@ export const AppBarContainer = styled.div`
 `;
 
 export const BreadcrumsNavlink = styled(NavLink as React.FC<NavLinkProps>)`
-  font-size: 1rem;
-  color: #aaa;
+  font-size: 14px;
+  color: #999;
   text-decoration: none;
   padding: 4px;
 
