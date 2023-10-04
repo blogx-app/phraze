@@ -9,14 +9,15 @@ export type SettingName =
   | "showTreeView"
   | "showNestedEditorTreeView"
   | "emptyEditor"
-  | "showTableOfContents";
-
+  | "showTableOfContents"
+  | "isCollab";
 export type Settings = Record<SettingName, boolean>;
 
 const hostName = window.location.hostname;
 export const isDevPlayground: boolean = hostName !== "blogx-webapp.vercel.app";
 
 export const DEFAULT_SETTINGS: Settings = {
+  isCollab: true,
   disableBeforeInput: false,
   emptyEditor: !isDevPlayground,
   isAutocomplete: false,

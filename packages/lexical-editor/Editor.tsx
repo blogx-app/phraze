@@ -14,6 +14,7 @@ import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
 import { useSettings } from "./context/SettingsContext";
 import { useSharedHistoryContext } from "./context/SharedHistoryContext";
 // import { TableCellNodes } from "./node/TableCellNodes";
+import { createWebsocketProvider } from "./collaboration";
 // import ActionsPlugin from "./plugins/ActionsPlugin";
 import AutocompletePlugin from "./plugins/AutocompletePlugin";
 import AutoEmbedPlugin from "./plugins/AutoEmbedPlugin";
@@ -50,13 +51,19 @@ import YouTubePlugin from "./plugins/YouTubePlugin";
 import { ContentEditable } from "@phraze-app/ui";
 // import { isDevPlayground } from "lib";
 import { Placeholder } from "@phraze-app/ui";
+import { CollaborationPlugin } from "./plugins/LexicalCollaborationPlugin";
 // import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
 // const TreeViewPlugin = React.lazy(() => import("./plugins/TreeViewPlugin"));
+
+const skipCollaborationInit =
+  // @ts-ignore
+  window.parent != null && window.parent.frames.right === window;
 
 export function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext();
   const {
     settings: {
+      isCollab,
       isAutocomplete,
       isMaxLength,
       isCharLimit,
@@ -86,6 +93,8 @@ export function Editor(): JSX.Element {
   //   theme: PlaygroundEditorTheme,
   // };
 
+  console.log({ isCollab });
+
   return (
     <>
       {/* {isRichText && <ToolbarPlugin />} */}
@@ -109,7 +118,15 @@ export function Editor(): JSX.Element {
         <AutoLinkPlugin />
         {isRichText ? (
           <>
-            <HistoryPlugin externalHistoryState={historyState} />
+            {isCollab ? (
+              <CollaborationPlugin
+                id="main"
+                providerFactory={createWebsocketProvider}
+                shouldBootstrap={!skipCollaborationInit}
+              />
+            ) : (
+              <HistoryPlugin externalHistoryState={historyState} />
+            )}
             <RichTextPlugin
               contentEditable={
                 <div className="editor-scroller">
