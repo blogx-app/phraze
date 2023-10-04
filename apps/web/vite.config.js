@@ -22,6 +22,6 @@ export default defineConfig({
     open: true,
   },
   optimizeDeps: {
-    exclude: ["@emotion/react/jsx"],
+    // exclude: ["@emotion/react/jsx"],
   },
 });

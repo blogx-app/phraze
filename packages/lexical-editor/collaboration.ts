@@ -1,11 +1,3 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 import { Provider } from "@lexical/yjs";
 import { TiptapCollabProvider, HocuspocusProvider } from "@hocuspocus/provider";
 // import { WebsocketProvider } from "y-websocket";
@@ -44,7 +36,7 @@ export function createWebsocketProvider(
   // @TODO: PUT PROPER TOKEN
   // @TODO: OR USE `HocuspocusProvider` with Hocuspocus URL
   const hocuspocusProvider = new HocuspocusProvider({
-    url: "ws://localhost:8080/collaboration",
+    url: "ws://localhost:8080",
     name: `lexical-${id}`,
     // token: "YOUR_TOKEN",
     document: doc,

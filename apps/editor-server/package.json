@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "@hocuspocus/extension-logger": "^2.5.0",
+    "@hocuspocus/extension-sqlite": "^2.5.0",
+    "@hocuspocus/extension-webhook": "^2.5.0",
     "@hocuspocus/server": "^2.5.0"
   }
 }
