@@ -1,7 +1,7 @@
 /* This need to be refactored */
 import type { EditorThemeClasses } from "lexical";
 
-import "./PlaygroundEditorTheme.css";
+import "./PlaygroundEditorThemeDark.css";
 
 const theme: EditorThemeClasses = {
   blockCursor: "PlaygroundEditorTheme__blockCursor",
