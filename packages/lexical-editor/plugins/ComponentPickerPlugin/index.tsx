@@ -102,8 +102,8 @@ function ComponentPickerMenuItem({
       onMouseEnter={onMouseEnter}
       onClick={onClick}
     >
-      {option.icon}
-      <div>
+      <span className="icon-container">{option.icon}</span>
+      <div className="text-container">
         <div className="text">{option.title}</div>
         <div className="description">{option.description}</div>
       </div>

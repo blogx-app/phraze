@@ -46,9 +46,10 @@ export const ComponentPickerMenuListItem = styled.li`
   flex-shrink: 0;
   background-color: rgba(37, 37, 37);
   border: 0;
+  user-select: none;
 
   &.selected {
-    background: rgba(37, 37, 37, 0.5);
+    background: rgba(45, 45, 45);
   }
 
   &.active {
@@ -71,17 +72,27 @@ export const ComponentPickerMenuListItem = styled.li`
   }
 
   :focus {
-    background-color: #eee;
+    background-color: rgba(45, 45, 45);
+  }
+
+  .icon-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    margin-right: 8px;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .text {
-    display: flex;
     color: rgba(255, 255, 255, 0.81);
     font-size: 0.875rem;
     line-height: 1.125;
-    flex-grow: 1;
-    min-width: 150px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 2px;
   }
 
   .description {
@@ -93,8 +104,8 @@ export const ComponentPickerMenuListItem = styled.li`
     display: flex;
     width: 24px;
     height: 24px;
+    margin: auto;
     user-select: none;
-    margin-right: 8px;
     line-height: 16px;
     background-size: contain;
     background-repeat: no-repeat;
