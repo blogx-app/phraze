@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const ComponentPickerMenu = styled.div`
-  background: #fff;
+  background: rgb(37, 37, 37);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   margin-top: 25px;
@@ -44,11 +44,11 @@ export const ComponentPickerMenuListItem = styled.li`
   align-content: center;
   flex-direction: row;
   flex-shrink: 0;
-  background-color: #fff;
+  background-color: rgba(37, 37, 37);
   border: 0;
 
   &.selected {
-    background: #eee;
+    background: rgba(37, 37, 37, 0.5);
   }
 
   &.active {
@@ -67,7 +67,7 @@ export const ComponentPickerMenuListItem = styled.li`
   }
 
   :hover {
-    background-color: #eee;
+    background-color: rgba(45, 45, 45);
   }
 
   :focus {
@@ -76,6 +76,7 @@ export const ComponentPickerMenuListItem = styled.li`
 
   .text {
     display: flex;
+    color: rgba(255, 255, 255, 0.81);
     font-size: 0.875rem;
     line-height: 1.125;
     flex-grow: 1;
@@ -85,7 +86,7 @@ export const ComponentPickerMenuListItem = styled.li`
 
   .description {
     font-size: 0.75rem;
-    color: rgb(120, 119, 116);
+    color: rgb(127, 127, 127);
   }
 
   .icon {
