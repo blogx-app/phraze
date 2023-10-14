@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const ComponentPickerMenu = styled.div`
-  background: #fff;
+  background: rgb(37, 37, 37);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   margin-top: 25px;
@@ -44,11 +44,12 @@ export const ComponentPickerMenuListItem = styled.li`
   align-content: center;
   flex-direction: row;
   flex-shrink: 0;
-  background-color: #fff;
+  background-color: rgba(37, 37, 37);
   border: 0;
+  user-select: none;
 
   &.selected {
-    background: #eee;
+    background: rgba(45, 45, 45);
   }
 
   &.active {
@@ -67,33 +68,44 @@ export const ComponentPickerMenuListItem = styled.li`
   }
 
   :hover {
-    background-color: #eee;
+    background-color: rgba(45, 45, 45);
   }
 
   :focus {
-    background-color: #eee;
+    background-color: rgba(45, 45, 45);
+  }
+
+  .icon-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    margin-right: 8px;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .text {
-    display: flex;
+    color: rgba(255, 255, 255, 0.81);
     font-size: 0.875rem;
     line-height: 1.125;
-    flex-grow: 1;
-    min-width: 150px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 2px;
   }
 
   .description {
     font-size: 0.75rem;
-    color: rgb(120, 119, 116);
+    color: rgb(127, 127, 127);
   }
 
   .icon {
     display: flex;
     width: 24px;
     height: 24px;
+    margin: auto;
     user-select: none;
-    margin-right: 8px;
     line-height: 16px;
     background-size: contain;
     background-repeat: no-repeat;

@@ -5,6 +5,9 @@ export const HeaderInputComponent = styled.div`
   outline: none;
   line-height: 1;
 
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.editor.text};
+
   font-weight: bold;
 
   padding: 28px;
@@ -12,6 +15,6 @@ export const HeaderInputComponent = styled.div`
 
   :empty::after {
     content: attr(placeholder);
-    color: #aaa;
+    color: rgb(55, 55, 55);
   }
 `;

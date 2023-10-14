@@ -140,20 +140,20 @@ function App(): JSX.Element {
 
   return (
     // <ToolbarProvider>
-    <ThemeProvider theme={dark}>
-      <MuiThemeProvider theme={{ [THEME_ID]: muiTheme }}>
-        <LexicalComposer initialConfig={initialConfig}>
-          <SharedHistoryContext>
-            <TableContext>
-              <SharedAutocompleteContext>
+    <LexicalComposer initialConfig={initialConfig}>
+      <SharedHistoryContext>
+        <TableContext>
+          <SharedAutocompleteContext>
+            <ThemeProvider theme={dark}>
+              <MuiThemeProvider theme={{ [THEME_ID]: muiTheme }}>
                 <CssBaseline />
                 <RouterProvider routes={routes} />
-              </SharedAutocompleteContext>
-            </TableContext>
-          </SharedHistoryContext>
-        </LexicalComposer>
-      </MuiThemeProvider>
-    </ThemeProvider>
+              </MuiThemeProvider>
+            </ThemeProvider>
+          </SharedAutocompleteContext>
+        </TableContext>
+      </SharedHistoryContext>
+    </LexicalComposer>
     // </ToolbarProvider>
   );
 }
