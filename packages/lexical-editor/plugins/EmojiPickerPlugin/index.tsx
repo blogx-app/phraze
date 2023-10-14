@@ -5,9 +5,9 @@ import Picker from '@emoji-mart/react'
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import {
   LexicalTypeaheadMenuPlugin,
-  TypeaheadOption,
+  MenuOption,
   useBasicTypeaheadTriggerMatch,
-} from "@lexical/react/LexicalTypeaheadMenuPlugin";
+} from '@lexical/react/LexicalTypeaheadMenuPlugin';
 import {
   $createTextNode,
   $getSelection,
@@ -17,7 +17,7 @@ import {
 
 // TODO - Make a custom component so that when someone type and emoji name,
 // it should start handling the the things in popover. try reusing emoji-mart
-class EmojiOption extends TypeaheadOption {
+class EmojiOption extends MenuOption {
   title: string;
   emoji: string;
   keywords: Array<string>;

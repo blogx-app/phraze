@@ -47,4 +47,7 @@ export const darkColors = {
     draft: "#FFA500",
     scheduled: "#0033CC",
   },
+  editor: {
+    text: "rgba(255, 255, 255, 0.81)",
+  },
 };

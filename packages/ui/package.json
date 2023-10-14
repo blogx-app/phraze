@@ -8,26 +8,25 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "dependencies": {
+    "@blogx/lexical-editor": "*",
+    "@emotion/styled": "11.10.5",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
-    "@phraze-app/theme": "^1.0.0",
+    "@phraze-app/theme": "*",
     "lib": "*",
     "react-router-dom": "^6.14.2",
-    "styled-system": "^5.1.5"
-  },
-  "devDependencies": {
-    "@blogx/lexical-editor": "*",
-    "@emotion/babel-plugin": "11.10.5",
-    "@emotion/react": "11.10.5",
-    "@emotion/styled": "11.10.5",
-    "@types/react": "18.0.22",
-    "@types/react-dom": "18.0.0",
-    "@types/styled-system": "^5.1.16",
-    "eslint": "7.32.0",
-    "eslint-config-custom": "*",
+    "styled-system": "^5.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tsconfig": "*",
     "typescript": "4.5.2"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "11.10.5",
+    "@types/react": "18.0.22",
+    "@types/react-dom": "18.0.0",
+    "@types/styled-system": "^5.1.16",
+    "eslint": "7.32.0",
+    "eslint-config-custom": "*"
   }
 }

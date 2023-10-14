@@ -1,13 +1,12 @@
 .floating-text-format-popup {
   display: flex;
-  background: #fff;
+  background: var(--card-background);
   vertical-align: middle;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
   opacity: 0;
-  background-color: #fff;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   padding-left: 0 4px;
   border-radius: 4px;
@@ -20,6 +19,7 @@
   border: 0;
   display: flex;
   background: none;
+  color: var(--text-color);
   padding: 6px;
   cursor: pointer;
   vertical-align: middle;
@@ -43,7 +43,7 @@
 }
 
 .floating-text-format-popup button.popup-item.active {
-  background-color: rgba(223, 232, 250, 0.8);
+  background-color: rgb(48, 48, 48);
 }
 
 .floating-text-format-popup button.popup-item.active i {
@@ -51,7 +51,7 @@
 }
 
 .floating-text-format-popup .popup-item:hover:not([disabled]) {
-  background-color: #eee;
+  background-color: rgb(48, 48, 48);
 }
 
 .floating-text-format-popup select.popup-item {
@@ -65,7 +65,7 @@
   -moz-appearance: none;
   width: 70px;
   font-size: 14px;
-  color: #777;
+  color: white;
   text-overflow: ellipsis;
 }
 
@@ -80,7 +80,7 @@
   width: 200px;
   vertical-align: middle;
   font-size: 14px;
-  color: #777;
+  color: white;
   text-overflow: ellipsis;
   width: 70px;
   overflow: hidden;
@@ -118,7 +118,7 @@
 
 .floating-text-format-popup .divider {
   width: 1px;
-  background-color: #eee;
+  background-color: #444;
   /* margin: 0 4px; */
 }
 
@@ -134,13 +134,14 @@
   align-items: center;
   justify-content: center;
   padding: 0 12px;
-  
+
   border: none;
-  background-color: #fff;
+  background-color: transparent;
+  color: var(--text-color);
 }
 
 .font-family-dropdown-button:hover:not([disabled]) {
-  background-color: #eee;
+  background-color: rgb(48, 48, 48);
   cursor: pointer;
 }
 
@@ -149,13 +150,12 @@
   height: 8px;
 }
 
-
 .floating-toolbar-item {
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  background-color: #fff;
+  background-color: var(--card-background);
   gap: 4px;
 }
 
@@ -164,10 +164,9 @@
 }
 
 .floating-toolbar-item:hover {
-  background-color: #eee;
+  background-color: rgb(48, 48, 48);
   cursor: pointer;
 }
-
 
 .floating-toolbar-icon {
   display: flex;

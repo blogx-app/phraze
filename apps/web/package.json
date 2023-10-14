@@ -5,11 +5,10 @@
   "dependencies": {
     "@blogx/lexical-editor": "*",
     "@emotion/css": "^11.11.2",
-    "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
+    "@excalidraw/excalidraw": "^0.16.1",
     "@hocuspocus/provider": "^2.5.0",
-    "@lexical/file": "0.7.6",
-    "@lexical/react": "0.7.6",
+    "@lexical/react": "^0.12.2",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
     "@phraze-app/theme": "*",
