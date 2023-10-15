@@ -21,13 +21,10 @@ export interface ImageWrapperProps
 }
 
 export const ImageWrapper = styled.img<{ theme?: PhrazeTheme }>`
-  ${({ theme }) => {
-    console.log(theme);
-
-    return css({
+  ${({ theme }) =>
+    css({
       borderRadius: theme.radii.image,
-    });
-  }}
+    })}
   ${compose(space, size, border)}
 `;
 
