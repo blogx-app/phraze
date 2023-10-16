@@ -36,9 +36,9 @@ export function createWebsocketProvider(
   // @TODO: PUT PROPER TOKEN
   // @TODO: OR USE `HocuspocusProvider` with Hocuspocus URL
   const hocuspocusProvider = new HocuspocusProvider({
-    url: "ws://localhost:8080",
+    url: import.meta.env.VITE_EDITOR_BACKEND_WSS,
     name: `lexical-${id}`,
-    // token: "YOUR_TOKEN",
+    token: "YOUR_TOKEN",
     document: doc,
     onConnect() {
       console.log("Connected to the server");
