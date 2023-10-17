@@ -118,6 +118,8 @@ export default function Sidebar({ children }: MiniDrawerProps) {
         component="main"
         sx={{ flexGrow: 1, background: "#191919" }}
         minHeight="100vh"
+        height="100vh"
+        overflow="scroll"
       >
         {children}
       </Box>

@@ -164,12 +164,13 @@ function getBaseOptions(editor: LexicalEditor, showModal: ShowModal) {
           }
         }),
     }),
-    ...([1, 2, 3] as const).map(
+    // Note - This is because the header is going to be the h1 tag of a blog.
+    ...([2, 3, 4] as const).map(
       (n) =>
-        new ComponentPickerOption(`Heading ${n}`, {
-          icon: <i className={`icon h${n}`} />,
+        new ComponentPickerOption(`Heading ${n - 1}`, {
+          icon: <i className={`icon h${n - 1}`} />,
           description: "Give a heading",
-          keywords: ["heading", "header", `h${n}`],
+          keywords: ["heading", "header", `h${n - 1}`],
           onSelect: () =>
             editor.update(() => {
               const selection = $getSelection();

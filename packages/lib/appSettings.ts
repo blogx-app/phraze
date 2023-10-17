@@ -17,7 +17,7 @@ const hostName = window.location.hostname;
 export const isDevPlayground: boolean = hostName !== "blogx-webapp.vercel.app";
 
 export const DEFAULT_SETTINGS: Settings = {
-  isCollab: true, // [[COLLAB]]
+  isCollab: false, // [[COLLAB]]
   disableBeforeInput: false,
   emptyEditor: !isDevPlayground,
   isAutocomplete: false,

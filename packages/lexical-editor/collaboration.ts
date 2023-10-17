@@ -20,9 +20,6 @@ export function createWebsocketProvider(
     onConnect() {
       console.log("Connected to the server");
     },
-    onMessage({ event, message }) {
-      console.log(event, message);
-    },
     onClose() {
       console.log("Connection Closed");
     },
