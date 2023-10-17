@@ -14,7 +14,7 @@
   margin-left: 20px;
   margin-bottom: 10px;
   font-size: 15px;
-  color: rgb(101, 103, 107);
+  color: var(--font-color);
   border-left-color: rgb(206, 208, 212);
   border-left-width: 4px;
   border-left-style: solid;
@@ -22,7 +22,7 @@
 }
 .PlaygroundEditorTheme__h1 {
   font-size: 24px;
-  color: rgb(5, 5, 5);
+  color: var(--font-color);
   font-weight: 400;
   margin: 0;
 }
