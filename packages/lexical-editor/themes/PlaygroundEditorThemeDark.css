@@ -69,7 +69,8 @@
   vertical-align: super;
 }
 .PlaygroundEditorTheme__textCode {
-  background-color: rgb(240, 242, 245);
+  background-color: rgba(135, 131, 120, 0.15);
+  color: #eb5757;
   padding: 1px 0.25rem;
   font-family: Menlo, Consolas, Monaco, monospace;
   font-size: 94%;
@@ -87,7 +88,7 @@
   cursor: pointer;
 }
 .PlaygroundEditorTheme__code {
-  background-color: rgb(240, 242, 245);
+  background-color: var(--code-block-background);
   font-family: Menlo, Consolas, Monaco, monospace;
   display: block;
   padding: 8px 8px 8px 52px;
@@ -104,12 +105,12 @@
 .PlaygroundEditorTheme__code:before {
   content: attr(data-gutter);
   position: absolute;
-  background-color: #eee;
+  background-color: var(--code-block-background);
   left: 0;
   top: 0;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid var(--card-background);
   padding: 8px;
-  color: #777;
+  color: var(--font-color);
   white-space: pre-wrap;
   text-align: right;
   min-width: 25px;
