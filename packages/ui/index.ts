@@ -14,7 +14,6 @@ export * from "./Modal";
 export * from "./Placeholder";
 export * from "./TextInput";
 export * from "./ImageResizer";
-export * from "./ImageComponent";
 export * from "./Switch";
 export * from "./PhzButton";
 export * from "./Text";
