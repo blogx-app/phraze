@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Flex, Text } from "@phraze-app/ui";
+import { Flex, Text } from "@phraze-app/ui";
 import UpgradeDiamondIcon from "./icons/UpgradeDiamondIcon";
 import { NavigationButton } from "./style";
 
@@ -21,14 +21,14 @@ const UpgradeToPro = () => {
     <Container>
       <Flex justifyContent="center" alignItems="center" gap="0.25rem">
         <UpgradeDiamondIcon />
-        <Text color="#bfff00" fontSize="1.25rem">
+        <Text color="#bfff00da" fontSize="1.25rem">
           Premium
         </Text>
       </Flex>
       <Text color="white" fontSize="0.75rem" px="0.5rem" mb="0.5rem">
         Upgrade your plan to get pro benefits and more...
       </Text>
-      <NavigationButton bg="#bfff00">
+      <NavigationButton bg="#bfff00da">
         <Text fontSize="14px" color="#000" fontWeight="400">
           Upgrade to Pro
         </Text>

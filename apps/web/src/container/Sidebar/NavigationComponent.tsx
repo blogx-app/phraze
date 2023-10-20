@@ -10,7 +10,11 @@ import { NavigationButton, NavigationNavLink } from "./style";
 import PostsIconWrapper from "./PostsIconWrapper";
 import React from "react";
 
-const NAVIGATIONS_ITEMS = [
+const NAVIGATIONS_ITEMS: {
+  name: string;
+  icon: React.ReactNode;
+  toLink: string;
+}[] = [
   {
     name: "Analytics",
     icon: <AnalyticsIcon />,
@@ -48,7 +52,7 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
       minHeight="75%"
       width={open ? "100%" : undefined}
     >
-      <NavigationButton bg="#bfff00" open={open}>
+      <NavigationButton bg="#bfff00da" open={open}>
         <VisitSiteIcon />
         {open && (
           <Text fontSize="14px" color="#1D2504" fontWeight="400">

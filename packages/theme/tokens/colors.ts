@@ -6,7 +6,7 @@ export const baseColors = {
   grey555: "#555",
   failure: "#FF3873",
   failure33: "#FF387333",
-  primary: "#BFFF00",
+  primary: "#bfff00da",
   primary0f: "#BFFF000f",
   primary66: "#BFFF0066",
   success: "#00FF66",
