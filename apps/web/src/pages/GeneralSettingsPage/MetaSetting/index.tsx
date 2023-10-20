@@ -4,11 +4,13 @@ import GooglePreview from "./GooglePreview/GooglePreview";
 import FacebookPreview from "./FacebookPreview/FacebookPreview";
 import TwitterPreview from "./TwitterPreview/TwitterPreview";
 import { Tabs } from "@phraze-app/ui";
+import { useTheme } from "@emotion/react";
 
 const MetaSetting = () => {
+  const theme = useTheme();
   return (
     <Box borderRadius="12px">
-      <Text fontWeight="bold" mb="1rem" fontSize="1.25rem">
+      <Text fontWeight="bold" fontSize="1rem" color={theme.colors.textWhite}>
         Site Meta Settings
       </Text>
       <Tabs

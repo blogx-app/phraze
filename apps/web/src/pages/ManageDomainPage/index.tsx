@@ -2,7 +2,6 @@ import { useTheme } from "@emotion/react";
 import Text from "@phraze-app/ui/Text";
 import DomainTabs from "./DomainTabs";
 import { DomainInfoContainer } from "./style";
-import Tags from "@phraze-app/ui/Tags/Tags";
 import { StateTags } from "@phraze-app/ui";
 
 const ManageDomainPage = () => {

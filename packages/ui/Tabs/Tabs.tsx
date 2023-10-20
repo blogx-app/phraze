@@ -4,7 +4,9 @@ import { Box } from "@mui/material";
 import { TabPanelProps, TabsProps } from "./type";
 
 function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, tabsPadding, ...other } = props;
+
+  console.log({ tabsPadding });
 
   return (
     <div
@@ -14,7 +16,11 @@ function TabPanel(props: TabPanelProps) {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ py: 2 }}>{children}</Box>}
+      {value === index && (
+        <Box sx={{ py: tabsPadding ? tabsPadding : 2 }} px={1}>
+          {children}
+        </Box>
+      )}
     </div>
   );
 }
@@ -27,7 +33,7 @@ function a11yProps(index: number) {
 }
 
 // TODO - Fix the text color of the selected tab
-export const Tabs = ({ tabLabels, tabPanels }: TabsProps) => {
+export const Tabs = ({ tabLabels, tabPanels, tabsPadding }: TabsProps) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -43,7 +49,7 @@ export const Tabs = ({ tabLabels, tabPanels }: TabsProps) => {
       </StyledTabs>
       <TabsPanelContainer>
         {tabPanels.map((panel, i) => (
-          <TabPanel value={value} index={i}>
+          <TabPanel value={value} index={i} tabsPadding={tabsPadding}>
             {panel}
           </TabPanel>
         ))}

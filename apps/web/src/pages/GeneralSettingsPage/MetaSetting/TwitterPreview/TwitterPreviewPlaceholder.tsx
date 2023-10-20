@@ -1,3 +1,4 @@
+import { useTheme } from "@emotion/react";
 import { Box } from "@mui/material";
 import { Input } from "@phraze-app/ui";
 import Text from "@phraze-app/ui/Text";
@@ -5,9 +6,16 @@ import Text from "@phraze-app/ui/Text";
 // TODO - Add a globe image near name
 // TODO - Add an image uploading button and placeholder as it is in design
 const TwitterPreviewPlaceholder = () => {
+  const theme = useTheme();
+
   return (
     <div>
-      <Text fontSize="0.75rem" fontWeight="bold" color="#808080" ml="8px">
+      <Text
+        fontSize="0.75rem"
+        fontWeight="bold"
+        color={theme.colors.textWhite}
+        ml="8px"
+      >
         Twitter Preview
       </Text>
       <div

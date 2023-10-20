@@ -36,7 +36,6 @@ export function Button({
       style={{
         ...{
           border: "1px solid black",
-          fontWeight: "bold",
           padding: "10px 20px",
           borderRadius: "8px",
         },

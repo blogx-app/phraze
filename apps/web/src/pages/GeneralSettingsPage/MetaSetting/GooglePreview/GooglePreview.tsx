@@ -7,12 +7,10 @@ const GooglePreview = () => {
   return (
     <div>
       <Box ml="0.5rem" mb="0.5rem">
-        <Text fontSize="14px" fontWeight="bold">
-          Meta Settings
-        </Text>
-        <Text fontSize="0.75rem" color="#808080">
+        {/* @TODO - Add this text to tabs tooltip */}
+        {/* <Text fontSize="0.75rem" color="#808080">
           Extra content for search engines
-        </Text>
+        </Text> */}
       </Box>
       <Box display="flex" gap="1rem">
         <Box minWidth="30rem">

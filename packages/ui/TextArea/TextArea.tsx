@@ -24,7 +24,7 @@ export const TextArea = ({
         onChange={onChange}
         {...rest}
       />
-      <Text fontSize="10px" marginLeft="8px" color="#808080">
+      <Text fontSize="12px" marginLeft="8px" mt="4px" color="#808080">
         {helperText}
       </Text>
     </Box>

@@ -12,6 +12,7 @@ export const StyledInput = styled.input<{
   border-radius: 8px;
 
   height: 3rem;
+  width: 100%;
   background-color: black;
   color: white;
 
@@ -19,14 +20,17 @@ export const StyledInput = styled.input<{
   box-shadow: ${({ theme }) => theme.shadows.card};
 
   ::placeholder {
-    color: #aaa;
+    color: ${({ theme }) => theme.colors.textGrey25};
   }
 `;
 
 export const StyledLabel = styled.label`
+  color: ${({ theme }) => theme.colors.textWhite};
+
   font-weight: bold;
   font-size: 12px;
   margin-left: 8px;
+  margin-bottom: 4px;
 `;
 
 export const InputContainer = styled.div`
