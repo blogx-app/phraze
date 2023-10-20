@@ -11,9 +11,11 @@ const ManageDomainPage = () => {
   return (
     <div>
       <DomainInfoContainer>
-        <Text mb="0.5rem" color={theme.colors.textWhite}>
+        <Text mb="10px" color={theme.colors.textWhite}>
           Custom domian status:{" "}
-          <StateTags type="published">Connected</StateTags>
+          <StateTags tagType="outlined" type="published">
+            Connected
+          </StateTags>
         </Text>
         <Text color={theme.colors.textWhite}>
           Hosted at: {/* Make this an external link */}

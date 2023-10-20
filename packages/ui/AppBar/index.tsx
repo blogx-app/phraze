@@ -24,7 +24,7 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
               end
               to={crumb.toLink}
               style={({ isActive }) =>
-                isActive ? { color: theme.colors.white } : undefined
+                isActive ? { color: theme.colors.textWhite } : undefined
               }
             >
               {crumb.name}

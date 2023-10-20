@@ -5,7 +5,7 @@ export const DomainInputContainer = styled.div`
 `;
 
 export const HttpBox = styled.div`
-  background-color: #ffa500;
+  background-color: ${({ theme }) => theme.colors.primary};
   padding: 0.5rem 1rem;
 
   border-top-left-radius: 8px;

@@ -18,7 +18,8 @@ export default function DomainTabs() {
             <Text
               m="0.5rem 0 1rem 0.5rem"
               color={theme.colors.textAAA}
-              fontSize="14px"
+              fontSize="12px"
+              fontWeight="bold"
             >
               Your blog will be hosted at: https://...
             </Text>
@@ -29,7 +30,8 @@ export default function DomainTabs() {
             <Text
               m="0.5rem 0 1rem 0.5rem"
               color={theme.colors.textAAA}
-              fontSize="14px"
+              fontSize="12px"
+              fontWeight="bold"
             >
               Your blog will be hosted at: https://...
             </Text>

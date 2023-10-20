@@ -20,10 +20,10 @@ export const StyledTab = styled(Tab)<ThemeProps>`
   opacity: 1;
   text-transform: uppercase;
 
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.primary66};
 `;
 
 export const TabsPanelContainer = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 12px;
 `;

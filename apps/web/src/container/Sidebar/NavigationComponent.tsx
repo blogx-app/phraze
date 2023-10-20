@@ -1,14 +1,13 @@
+import React from "react";
 import { Box, IconButton } from "@mui/material";
 import Text from "@phraze-app/ui/Text";
 import VisitSiteIcon from "../../assets/icons/VisitSiteIcon";
-import UpgradeIcon from "../../assets/icons/UpgradeIcon";
 import AnalyticsIcon from "./icons/AnalyticsIcon";
 import PagesIcon from "./icons/PagesIcon";
 import TagsIcon from "./icons/TagsIcon";
 import LeadsIcon from "./icons/LeadsIcon";
 import { NavigationButton, NavigationNavLink } from "./style";
 import PostsIconWrapper from "./PostsIconWrapper";
-import React from "react";
 
 const NAVIGATIONS_ITEMS: {
   name: string;
