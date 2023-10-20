@@ -13,7 +13,7 @@ const ManageDomainPage = () => {
       <DomainInfoContainer>
         <Text mb="10px" color={theme.colors.textWhite}>
           Custom domian status:{" "}
-          <StateTags tagType="outlined" type="published">
+          <StateTags tagType="filled" type="published">
             Connected
           </StateTags>
         </Text>

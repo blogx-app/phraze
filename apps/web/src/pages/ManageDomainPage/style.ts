@@ -14,17 +14,23 @@ export const HttpBox = styled.div`
   border-right: none;
 `;
 
-export const DomainInput = styled.input`
-  width: 100%;
-
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border: 1px solid black;
-
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  outline: none;
-`;
+export const DomainInput = styled.input(
+  {
+    width: "100%",
+    borderTopRightRadius: "8px",
+    borderBottomRightRadius: "8px",
+    paddingLeft: "0.5rem",
+    paddingRight: "0.5rem",
+    outline: "none",
+    fontSize: "1rem",
+  },
+  ({ theme }) => ({
+    backgroundColor: theme.colors.black,
+    color: theme.colors.textWhite,
+    border: "none",
+    boxShadow: theme.shadows.card,
+  })
+);
 
 export const DomainButton = styled.button`
   background-color: ${({ theme }) => theme.colors.primary};
