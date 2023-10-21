@@ -6,8 +6,6 @@ import { TabPanelProps, TabsProps } from "./type";
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, tabsPadding, ...other } = props;
 
-  console.log({ tabsPadding });
-
   return (
     <div
       role="tabpanel"
@@ -49,7 +47,12 @@ export const Tabs = ({ tabLabels, tabPanels, tabsPadding }: TabsProps) => {
       </StyledTabs>
       <TabsPanelContainer>
         {tabPanels.map((panel, i) => (
-          <TabPanel value={value} index={i} tabsPadding={tabsPadding}>
+          <TabPanel
+            key={tabLabels[i]}
+            value={value}
+            index={i}
+            tabsPadding={tabsPadding}
+          >
             {panel}
           </TabPanel>
         ))}

@@ -35,6 +35,15 @@ const breadCrumObj: BreadCrumsObjType = {
       },
     ],
   },
+  [routesName.leads]: {
+    pageName: "Leads",
+    crumbs: [
+      {
+        name: "Leads",
+        toLink: routesName.leads,
+      },
+    ],
+  },
   [routesName.settings]: {
     pageName: "Settings",
     crumbs: [

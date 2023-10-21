@@ -8,6 +8,7 @@ import { SettingsPage } from "../pages/SettingsPage";
 import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
 import routesName, { hideAppbar } from "./routesName";
 import { getNavigationBreadcrum } from "./breadcrumUtils";
+import LeadsPage from "../pages/LeadsPage";
 
 const routes: RouteObject[] = [
   {
@@ -26,6 +27,7 @@ const routes: RouteObject[] = [
       { path: routesName.settings, element: <SettingsPage /> },
       { path: routesName.generalSettings, element: <GeneralSettingsPage /> },
       { path: routesName.analytics, element: <>Analytics Page</> },
+      { path: routesName.leads, element: <LeadsPage /> },
     ],
   },
 ];

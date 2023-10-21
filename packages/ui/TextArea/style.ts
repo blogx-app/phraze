@@ -15,6 +15,7 @@ export const StyledTextArea = styled.textarea`
 
   ::placeholder {
     font-size: 12px;
+    color: ${({ theme }) => theme.colors.textGrey25};
   }
 `;
 
