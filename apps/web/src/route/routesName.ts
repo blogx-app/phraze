@@ -7,9 +7,14 @@ const routesName = {
   leads: "/leads",
   pages: "/pages",
   posts: "/posts",
+  tags: "/tags",
   settings: "/settings",
+  profile: "/profile",
   manageDomain: "/settings/manage-domain",
   generalSettings: "/settings/general",
+  brandingSettings: "/settings/branding",
+  themeSettings: "/settings/theme",
+  navigationSettings: "/settings/navigation",
 };
 
 const APPBAR_HIDDEN_PATHNAME = [routesName.editor];

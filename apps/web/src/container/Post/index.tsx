@@ -38,8 +38,8 @@ const Post = ({ posts = allPosts, listingType }: PostsProps) => {
 
   return (
     <PostsContainer>
-      {posts.map((post) => (
-        <PostRowView key={post.id} post={post} />
+      {posts.map((post, i) => (
+        <PostRowView key={`${post.id}-${i}`} post={post} />
       ))}
     </PostsContainer>
   );

@@ -7,22 +7,23 @@ import DraftsIcon from "./icon/DraftsIcon";
 import RightIconCircular from "./icon/RightIconCircular";
 import PublishedIcon from "./icon/PublishedIcon";
 import ScheduledIcon from "./icon/ScheduledIcon";
+import { routesName } from "../../route";
 
 const CONTENT_CARDS = [
   {
     icon: DraftsIcon,
     contentType: "Drafts",
-    navigateTo: "/posts/draft",
+    navigateTo: "/posts?blogType=draft",
   },
   {
     icon: PublishedIcon,
     contentType: "Published",
-    navigateTo: "/posts/published",
+    navigateTo: "/posts?blogType=published",
   },
   {
     icon: ScheduledIcon,
     contentType: "Scheduled",
-    navigateTo: "/posts/scheduled",
+    navigateTo: "/posts?blogType=scheduled",
   },
 ];
 

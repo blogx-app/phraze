@@ -62,6 +62,7 @@ export const SettingsPage = () => {
       <Box display="flex" gap="1rem" maxWidth="1240px" flexWrap="wrap">
         {SETTINGS.map((setting) => (
           <NavLink
+            key={setting.toLink}
             to={setting?.toLink}
             style={{ textDecoration: "none", color: "inherit" }}
           >

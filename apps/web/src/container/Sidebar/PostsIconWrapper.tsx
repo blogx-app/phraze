@@ -37,15 +37,15 @@ const OpenButtonContainer = styled.div<{ open: boolean }>`
 const POSTS_ITEMS = [
   {
     name: "Drafts",
-    toLink: "/posts/draft",
+    toLink: "/posts?blogType=draft",
   },
   {
     name: "Published",
-    toLink: "/posts/published",
+    toLink: "/posts?blogType=published",
   },
   {
     name: "Scheduled",
-    toLink: "/post/scheduled",
+    toLink: "/posts?blogType=scheduled",
   },
 ];
 

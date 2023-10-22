@@ -35,6 +35,33 @@ const breadCrumObj: BreadCrumsObjType = {
       },
     ],
   },
+  [routesName.pages]: {
+    pageName: "Pages",
+    crumbs: [
+      {
+        name: "Pages",
+        toLink: routesName.pages,
+      },
+    ],
+  },
+  [routesName.tags]: {
+    pageName: "Tags",
+    crumbs: [
+      {
+        name: "Tags",
+        toLink: routesName.tags,
+      },
+    ],
+  },
+  [routesName.analytics]: {
+    pageName: "Analytics",
+    crumbs: [
+      {
+        name: "Analytics",
+        toLink: routesName.analytics,
+      },
+    ],
+  },
   [routesName.leads]: {
     pageName: "Leads",
     crumbs: [
@@ -50,6 +77,15 @@ const breadCrumObj: BreadCrumsObjType = {
       {
         name: "Settings",
         toLink: routesName.settings,
+      },
+    ],
+  },
+  [routesName.profile]: {
+    pageName: "Profile",
+    crumbs: [
+      {
+        name: "Profile",
+        toLink: routesName.profile,
       },
     ],
   },
@@ -76,6 +112,45 @@ const breadCrumObj: BreadCrumsObjType = {
       {
         name: "General Settings",
         toLink: routesName.generalSettings,
+      },
+    ],
+  },
+  [routesName.brandingSettings]: {
+    pageName: "Branding Settings",
+    crumbs: [
+      {
+        name: "Settings",
+        toLink: routesName.settings,
+      },
+      {
+        name: "Branding Settings",
+        toLink: routesName.brandingSettings,
+      },
+    ],
+  },
+  [routesName.themeSettings]: {
+    pageName: "Theme Settings",
+    crumbs: [
+      {
+        name: "Settings",
+        toLink: routesName.settings,
+      },
+      {
+        name: "Theme Settings",
+        toLink: routesName.themeSettings,
+      },
+    ],
+  },
+  [routesName.navigationSettings]: {
+    pageName: "Navigation Settings",
+    crumbs: [
+      {
+        name: "Settings",
+        toLink: routesName.settings,
+      },
+      {
+        name: "Navigation Settings",
+        toLink: routesName.navigationSettings,
       },
     ],
   },
