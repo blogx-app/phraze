@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "@emotion/react";
 import { Box, IconButton } from "@mui/material";
 import Text from "@phraze-app/ui/Text";
 import VisitSiteIcon from "../../assets/icons/VisitSiteIcon";
@@ -41,6 +42,8 @@ export interface NavigationComponentProps {
 }
 
 const NavigationComponent = ({ open }: NavigationComponentProps) => {
+  const theme = useTheme();
+
   return (
     <Box
       display="flex"
@@ -78,7 +81,7 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
             >
               <IconButton>{item.icon}</IconButton>
               {open && (
-                <Text fontSize="14px" color="#888">
+                <Text fontSize="14px" color={theme.colors.textWhite}>
                   {item.name}
                 </Text>
               )}

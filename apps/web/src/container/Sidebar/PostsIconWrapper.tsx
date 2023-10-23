@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { Box, IconButton } from "@mui/material";
 import Text from "@phraze-app/ui/Text";
 import { Flex } from "@phraze-app/ui";
+import { useTheme } from "@emotion/react";
 import { NavigationNavLink } from "./style";
 import PostsIcon from "./icons/PostsIcon";
 import OrangeAddIcon from "./icons/OrangeAddIcon";
@@ -55,6 +56,7 @@ interface PostsIconWrapperProps {
 
 const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const animationProps = useSpring({
     width: open ? "100%" : "inherit",
@@ -80,7 +82,7 @@ const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
             <IconButton>
               <PostsIcon />
             </IconButton>
-            <Text color="white" fontSize="14px">
+            <Text color={theme.colors.textWhite} fontSize="14px">
               Posts
             </Text>
           </Flex>
@@ -99,7 +101,7 @@ const PostsIconWrapper = ({ open }: PostsIconWrapperProps) => {
             key={`${item.name}-${item.toLink}-${i}`}
           >
             {open && (
-              <Text color="#888" fontSize="14px">
+              <Text color={theme.colors.textSubtle} fontSize="14px">
                 {item.name}
               </Text>
             )}

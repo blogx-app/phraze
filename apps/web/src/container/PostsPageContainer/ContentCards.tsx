@@ -7,7 +7,6 @@ import DraftsIcon from "./icon/DraftsIcon";
 import RightIconCircular from "./icon/RightIconCircular";
 import PublishedIcon from "./icon/PublishedIcon";
 import ScheduledIcon from "./icon/ScheduledIcon";
-import { routesName } from "../../route";
 
 const CONTENT_CARDS = [
   {

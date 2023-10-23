@@ -34,12 +34,11 @@ export const darkColors = {
   inputSecondary: "#999999",
   inputText: "rgba(255, 255, 255, 0.5)",
   primaryDark: "#000000",
-  text: "#888",
   textWhite: "rgba(255, 255, 255, 0.8)",
   textAAA: "#aaa",
   textGrey25: "rgba(255, 255, 255, 0.25)",
   textPrimary: "#BFFF00",
-  textSubtle: "rgba(255, 255, 255, 0.75)",
+  textSubtle: "#888",
   disabled: "rgba(255, 133, 44, 0.6)",
   tag: {
     default: "#00FFFF",

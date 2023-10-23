@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
+import { useTheme } from "@emotion/react";
 import UserIcon from "./icons/UserIcon";
 import { BottomIconsContainer } from "./style";
 import SettingsGearIcon from "./icons/SettingsGearIcon";
@@ -42,6 +43,7 @@ interface MiniDrawerProps {
 
 export default function Sidebar({ children }: MiniDrawerProps) {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const handleOnClickSettings = () => {
     navigate("/settings");
@@ -93,7 +95,7 @@ export default function Sidebar({ children }: MiniDrawerProps) {
               style={{ cursor: "pointer" }}
             >
               <SettingsGearIcon />
-              <Text fontSize="14px" color="#888">
+              <Text fontSize="14px" color={theme.colors.textWhite}>
                 Settings
               </Text>
             </Box>
@@ -107,7 +109,7 @@ export default function Sidebar({ children }: MiniDrawerProps) {
               style={{ cursor: "pointer" }}
             >
               <UserIcon />
-              <Text fontSize="14px" color="#888">
+              <Text fontSize="14px" color={theme.colors.textWhite}>
                 Profile
               </Text>
             </Box>
