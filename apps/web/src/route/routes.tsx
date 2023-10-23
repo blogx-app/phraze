@@ -15,6 +15,7 @@ import BrandingSettingPage from "../pages/BrandingSettingsPage";
 import ThemeSettingsPage from "../pages/ThemeSettingsPage";
 import NavigationSettingsPage from "../pages/NavigationSettingsPage";
 import ProfilePage from "../pages/ProfilePage";
+import BillingAndPlansPage from "../pages/BillingAndPlansPage";
 
 const routes: RouteObject[] = [
   {
@@ -38,6 +39,7 @@ const routes: RouteObject[] = [
       { path: routesName.tags, element: <TagsPage /> },
       { path: routesName.brandingSettings, element: <BrandingSettingPage /> },
       { path: routesName.themeSettings, element: <ThemeSettingsPage /> },
+      { path: routesName.billingsAndPlan, element: <BillingAndPlansPage /> },
       {
         path: routesName.navigationSettings,
         element: <NavigationSettingsPage />,

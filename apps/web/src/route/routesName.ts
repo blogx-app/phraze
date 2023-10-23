@@ -10,6 +10,7 @@ const routesName = {
   tags: "/tags",
   settings: "/settings",
   profile: "/profile",
+  billingsAndPlan: "/settings/billing-and-plan",
   manageDomain: "/settings/manage-domain",
   generalSettings: "/settings/general",
   brandingSettings: "/settings/branding",

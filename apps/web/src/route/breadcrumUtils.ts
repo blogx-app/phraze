@@ -115,6 +115,19 @@ const breadCrumObj: BreadCrumsObjType = {
       },
     ],
   },
+  [routesName.billingsAndPlan]: {
+    pageName: "Billings and Plan",
+    crumbs: [
+      {
+        name: "Settings",
+        toLink: routesName.settings,
+      },
+      {
+        name: "Billings and Plan",
+        toLink: routesName.billingsAndPlan,
+      },
+    ],
+  },
   [routesName.brandingSettings]: {
     pageName: "Branding Settings",
     crumbs: [

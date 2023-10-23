@@ -1,13 +1,14 @@
 import { ReactNode } from "react";
-import { useTheme } from "@emotion/react";
 import { NavLink } from "react-router-dom";
-import { Box } from "@mui/material";
+import { useTheme } from "@emotion/react";
+import { Box, Divider } from "@mui/material";
+import Text from "@phraze-app/ui/Text";
 import GeneralSettingIcon from "./icons/GeneralSettingIcon";
 import BrandingIcon from "./icons/BrandingIcon";
 import ThemeIcon from "./icons/ThemeIcon";
 import NavigationIcon from "./icons/NavigationIcon";
-import Text from "@phraze-app/ui/Text";
 import ManageDomainIcon from "./icons/ManageDomainIcon";
+import BillingsIcon from "./icons/BillingsIcon";
 
 export type SettingsObjType = {
   icon: ReactNode;
@@ -51,6 +52,15 @@ const SETTINGS = [
   },
 ] as SettingsObjType[];
 
+const BILLING_AND_OTHERS = [
+  {
+    icon: <BillingsIcon />,
+    name: "Billing & Plans",
+    subText: "Manage your billing & subscription on phraze",
+    toLink: "billing-and-plan",
+  },
+] as SettingsObjType[];
+
 export const SettingsPage = () => {
   const theme = useTheme();
 
@@ -61,6 +71,48 @@ export const SettingsPage = () => {
       </Text>
       <Box display="flex" gap="1rem" maxWidth="1240px" flexWrap="wrap">
         {SETTINGS.map((setting) => (
+          <NavLink
+            key={setting.toLink}
+            to={setting?.toLink}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Box
+              border="1px solid black"
+              width="fit-content"
+              display="flex"
+              gap="12px"
+              p="12px"
+              borderRadius="12px"
+              minWidth="25rem"
+              bgcolor={theme.colors.backgroundContent}
+              boxShadow={theme.shadows.card}
+            >
+              <Box>{setting?.icon}</Box>
+              <Box>
+                <Box fontWeight="bold" color={theme.colors.white}>
+                  {setting?.name}
+                </Box>
+                <Box color={theme.colors.text} fontSize="14px">
+                  {setting?.subText}
+                </Box>
+              </Box>
+            </Box>
+          </NavLink>
+        ))}
+      </Box>
+      <Divider
+        component="div"
+        style={{
+          borderColor: theme.colors.grey555,
+          marginTop: "2rem",
+          marginBottom: "2rem",
+        }}
+      />
+      <Text mb="12px" fontWeight="bold" color={theme.colors.white}>
+        Billing
+      </Text>
+      <Box display="flex" gap="1rem" maxWidth="1240px" flexWrap="wrap">
+        {BILLING_AND_OTHERS.map((setting) => (
           <NavLink
             key={setting.toLink}
             to={setting?.toLink}
