@@ -7,26 +7,27 @@ import { Sidebar } from "../Sidebar";
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
   hideAppBar: (path: string) => boolean;
+  hideSidebar?: (path: string) => boolean;
 }
 
 export const AppLayout = ({
   getNavigationBreadcrum,
   hideAppBar,
+  hideSidebar,
 }: AppLayoutProps): JSX.Element => {
   const { pathname } = useLocation();
   const appbarHidden = useMemo(() => hideAppBar(pathname), [pathname]);
+  const sidebarHidden = useMemo(() => hideSidebar?.(pathname), [pathname]);
 
   return (
-    <Sidebar>
+    <Sidebar sidebarHidden={sidebarHidden}>
       <CssBaseline />
-      <>
-        {!appbarHidden && (
-          <AppBar getNavigationBreadcrum={getNavigationBreadcrum} />
-        )}
-        <Box p="1.25rem">
-          <Outlet />
-        </Box>
-      </>
+      {!appbarHidden && (
+        <AppBar getNavigationBreadcrum={getNavigationBreadcrum} />
+      )}
+      <Box p="1.25rem">
+        <Outlet />
+      </Box>
     </Sidebar>
   );
 };

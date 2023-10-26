@@ -19,8 +19,12 @@ const routesName = {
 };
 
 const APPBAR_HIDDEN_PATHNAME = [routesName.editor];
+const SIDEBAR_HIDDEN_PATHNAME = [routesName.editor];
 
 export const hideAppbar = (pathname: string) =>
   APPBAR_HIDDEN_PATHNAME.includes(pathname);
+
+export const hideSidebar = (pathname: string) =>
+  SIDEBAR_HIDDEN_PATHNAME.includes(pathname);
 
 export default routesName;
