@@ -9,13 +9,13 @@
 
 .editor-shell {
   margin: 0 auto;
-  border-radius: 10px;
-  background-color: white;
-  max-width: 48rem;
+  background-color: var(--editor-background);
+  width: 48rem;
   color: #000;
   position: relative;
   line-height: 1.7;
   font-weight: 400;
+  background-color: pink;
 }
 
 .editor-shell .editor-container {
