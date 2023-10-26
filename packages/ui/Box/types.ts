@@ -8,6 +8,8 @@ import {
   SpaceProps,
   GridProps as _GridProps,
   ColorProps,
+  TypographyProps,
+  ShadowProps,
 } from "styled-system";
 
 export interface BoxProps
@@ -15,7 +17,9 @@ export interface BoxProps
     BorderProps,
     LayoutProps,
     PositionProps,
+    ShadowProps,
     SpaceProps,
+    TypographyProps,
     Omit<ColorProps, "color">,
     HTMLAttributes<HTMLElement> {
   cursor?: CSSProperties["cursor"];

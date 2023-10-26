@@ -7,13 +7,24 @@ import {
   space,
   color,
   compose,
+  typography,
+  shadow,
 } from "styled-system";
 import { flexbox } from "styled-system";
 import { FlexProps } from "./types";
 import { BoxProps } from "./types";
 
 export const Box = styled.div<BoxProps>`
-  ${compose(background, border, layout, position, space, color)}
+  ${compose(
+    background,
+    border,
+    layout,
+    position,
+    space,
+    color,
+    typography,
+    shadow
+  )}
   cursor: ${({ cursor }) => cursor};
 `;
 

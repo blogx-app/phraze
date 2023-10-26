@@ -12,17 +12,17 @@ const CONTENT_CARDS = [
   {
     icon: DraftsIcon,
     contentType: "Drafts",
-    navigateTo: "/posts?blogType=draft",
+    navigateTo: "/posts?blogState=draft",
   },
   {
     icon: PublishedIcon,
     contentType: "Published",
-    navigateTo: "/posts?blogType=published",
+    navigateTo: "/posts?blogState=published",
   },
   {
     icon: ScheduledIcon,
     contentType: "Scheduled",
-    navigateTo: "/posts?blogType=scheduled",
+    navigateTo: "/posts?blogState=scheduled",
   },
 ];
 
