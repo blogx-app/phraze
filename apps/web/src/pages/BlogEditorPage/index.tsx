@@ -1,7 +1,14 @@
 import "./index.css";
 import { useTheme } from "@emotion/react";
 import { Editor } from "@blogx/lexical-editor/Editor";
-import { BlogHeader, Flex, StateTags } from "@phraze-app/ui";
+import {
+  BlogHeader,
+  Box,
+  Flex,
+  PhzDrawer,
+  StateTags,
+  Text,
+} from "@phraze-app/ui";
 import { ChevronLeft } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { routesName } from "../../route";
@@ -42,6 +49,11 @@ const BlogEditorPage = () => {
       <div className="editor-shell">
         <BlogHeader />
         <Editor />
+        <PhzDrawer open={true} anchor="right">
+          <Box p={1}>
+            <Text>Riight Drawer</Text>
+          </Box>
+        </PhzDrawer>
       </div>
     </Flex>
   );

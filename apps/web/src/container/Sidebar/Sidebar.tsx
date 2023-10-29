@@ -1,40 +1,14 @@
 import * as React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import MuiDrawer from "@mui/material/Drawer";
 import { useTheme } from "@emotion/react";
 import Text from "@phraze-app/ui/Text";
+import { PhzDrawer } from "@phraze-app/ui";
 import UserIcon from "./icons/UserIcon";
 import { BottomIconsContainer } from "./style";
 import SettingsGearIcon from "./icons/SettingsGearIcon";
 import NavigationComponent from "./NavigationComponent";
 import UpgradeToPro from "./UpgradeToPro";
-
-const drawerWidth = 240;
-
-const openedMixin = (theme: Theme): CSSObject => ({
-  width: drawerWidth,
-  transition: theme.transitions.create("width", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
-  }),
-  overflowX: "hidden",
-  borderRight: "1px #555555 solid",
-});
-
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  width: drawerWidth,
-  flexShrink: 0,
-  borderRadius: "8px",
-  whiteSpace: "nowrap",
-  ...(open && {
-    ...openedMixin(theme),
-    "& .MuiDrawer-paper": openedMixin(theme),
-  }),
-}));
 
 interface MiniDrawerProps {
   children?: React.ReactNode;
@@ -56,21 +30,7 @@ export default function Sidebar({ children, sidebarHidden }: MiniDrawerProps) {
   return (
     <Box display="flex">
       {!sidebarHidden && (
-        <Drawer
-          variant="permanent"
-          open={true}
-          sx={{ overflow: "visible" }}
-          PaperProps={{
-            style: {
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "space-between",
-              background: "black",
-              overflow: "visible",
-            },
-          }}
-        >
+        <PhzDrawer open={true}>
           <div style={{ width: "100%", padding: "0 24px" }}>
             <div
               style={{
@@ -116,7 +76,7 @@ export default function Sidebar({ children, sidebarHidden }: MiniDrawerProps) {
               </Box>
             </BottomIconsContainer>
           </div>
-        </Drawer>
+        </PhzDrawer>
       )}
       <Box
         component="main"

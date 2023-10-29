@@ -22,7 +22,7 @@ export * from "./TextArea";
 export * from "./Tabs";
 export * from "./ImageWrapper";
 export * from "./Tags";
-
+export * from "./PhzDrawer";
 export * from "./hooks";
 
 export * from "./contexts";
