@@ -25,6 +25,7 @@ export const darkColors = {
   secondary: "#FF7F00",
   secondary80: "#FF7F00",
   background: "#191919",
+  tableHeaderBackground: "#222",
   backgroundDisabled: "rgba(0, 0, 0, 0.05)",
   backgroundContent: "#000",
   contrast: "#FFFFFF",

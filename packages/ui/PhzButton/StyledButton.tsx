@@ -12,6 +12,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   justify-content: center;
   align-items: center;
   padding: 0.875rem 1.5rem;
+  white-space: nowrap;
 
   ${({ theme, variant }) =>
     css({

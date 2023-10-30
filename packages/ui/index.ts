@@ -15,14 +15,16 @@ export * from "./Placeholder";
 export * from "./TextInput";
 export * from "./ImageResizer";
 export * from "./Switch";
-export * from "./PhzButton";
 export * from "./Text";
 export * from "./Input";
 export * from "./TextArea";
 export * from "./Tabs";
 export * from "./ImageWrapper";
 export * from "./Tags";
-export * from "./PhzDrawer";
 export * from "./hooks";
+
+export * from "./PhzButton";
+export * from "./PhzTable";
+export * from "./PhzDrawer";
 
 export * from "./contexts";
