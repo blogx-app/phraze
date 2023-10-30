@@ -14,7 +14,7 @@ const PostsPageContainer = () => {
         <AddPostCard />
         <ContentCards />
       </Flex>
-      <Flex width="100%" gap="1rem">
+      <Flex width="100%" gap="1rem" alignItems="center">
         <Input
           startAdornment={<SearchIcon />}
           placeholder="Search..."
