@@ -2,7 +2,13 @@ import { ReactNode } from "react";
 import styled from "@emotion/styled";
 import { OutlinedTag } from "./styles";
 
-export type PostStateType = "draft" | "published" | "scheduled";
+// export type PostStateType = "draft" | "published" | "scheduled";
+export enum PostStateType {
+  default = "default",
+  draft = "draft",
+  published = "published",
+  scheduled = "scheduled",
+}
 export type TagType = "filled" | "outlined";
 
 export interface StateTagsProps {
@@ -25,6 +31,8 @@ const StyleStateTag = styled(OutlinedTag)<{
   cursor: auto;
   user-select: none;
   width: fit-content;
+
+  text-transform: capitalize;
 `;
 
 export const StateTags = ({

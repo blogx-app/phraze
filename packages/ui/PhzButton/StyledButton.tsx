@@ -11,8 +11,14 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.875rem 1.5rem;
 
-  ${({ theme }) => css({ borderRadius: theme.radii.button })};
+  ${({ theme, variant }) =>
+    css({
+      borderRadius: theme.radii.button,
+      background: variant === "primary" ? theme.colors.primary : "",
+    })};
+
   ${compose(color, space, layout)}
 
   :hover {
