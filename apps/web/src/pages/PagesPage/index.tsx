@@ -6,13 +6,12 @@ const PagesPage = () => {
   const theme = useTheme();
 
   return (
-    <Box maxWidth="45rem">
+    <Box maxWidth="48rem">
       <Flex alignItems="center" gap="1rem">
         <Box
-          border={`${theme.colors.greyAAA} 1px dashed`}
-          maxWidth="66%"
           p={2}
           borderRadius="8px"
+          border={`${theme.colors.greyAAA} 1px dashed`}
         >
           <Text color={theme.colors.textAAA}>
             A page is basically a blog post without any author, date, social

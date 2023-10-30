@@ -22,7 +22,7 @@ const pages = [
 
 export const PagesListing = () => {
   return (
-    <Flex width="60rem" flexWrap="wrap" gap="1rem" mt={3}>
+    <Flex width="48rem" flexWrap="wrap" gap="1rem" mt={3}>
       {pages.map(({ pageTitle, pageState, createdAt }) => (
         <PageItem
           key={pageTitle + createdAt}
