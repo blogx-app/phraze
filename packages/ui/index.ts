@@ -27,5 +27,6 @@ export * from "./PhzButton";
 export * from "./PhzTable";
 export * from "./PhzPaper";
 export * from "./PhzDrawer";
+export * from "./PhzAvatars";
 
 export * from "./contexts";

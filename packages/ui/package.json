@@ -14,10 +14,10 @@
     "@mui/material": "^5.14.3",
     "@phraze-app/theme": "*",
     "lib": "*",
-    "react-router-dom": "^6.14.2",
-    "styled-system": "^5.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.14.2",
+    "styled-system": "^5.1.5",
     "tsconfig": "*",
     "typescript": "4.5.2"
   },

@@ -1,4 +1,4 @@
-import { Box, Flex, StateTags, Text } from "@phraze-app/ui";
+import { Box, Flex, PhzAvatars, StateTags, Text } from "@phraze-app/ui";
 import Tags from "@phraze-app/ui/Tags/Tags";
 import { useTheme } from "@emotion/react";
 import { PostImageWrapper, PostRowViewContainer } from "./styles";
@@ -35,7 +35,12 @@ const PostRowView = ({ post }: { post: SinglePostProps }) => {
         </Flex>
       </Flex>
       <Flex borderTop={`1px solid ${theme.colors.background}`} mt="0.75rem">
-        <Flex></Flex>
+        <Flex pt={2} alignItems="center" gap="0.25rem">
+          <PhzAvatars size="20px" />
+          <Text fontSize="0.75rem" color={theme.colors.textWhite}>
+            Sanjib Kumar Sah
+          </Text>
+        </Flex>
         <Flex></Flex>
       </Flex>
     </PostRowViewContainer>
