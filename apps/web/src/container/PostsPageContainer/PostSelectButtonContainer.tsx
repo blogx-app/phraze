@@ -30,7 +30,7 @@ export const Container = styled(Flex)`
 const ListingButton = styled(PhzButton)<{ selected: boolean }>`
   background: ${({ theme, selected }) =>
     selected ? theme.colors.background : theme.colors.backgroundContent};
-  padding: 0 0.6rem;
+  padding: 0 0.4rem;
 `;
 
 const PostSelectButtonContainer = ({
