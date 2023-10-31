@@ -33,13 +33,13 @@ const SETTINGS = [
     toLink: "branding",
   },
   ,
-  {
-    // TODO - Fix this theme icon. It have a white line in the middle.
-    icon: <ThemeIcon />,
-    name: "Theme",
-    subText: "Install and update theme",
-    toLink: "theme",
-  },
+  // {
+  // TODO - Fix this theme icon. It have a white line in the middle.
+  //   icon: <ThemeIcon />,
+  //   name: "Theme",
+  //   subText: "Install and update theme",
+  //   toLink: "theme",
+  // },
   {
     icon: <NavigationIcon />,
     name: "Navigation",

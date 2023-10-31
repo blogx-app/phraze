@@ -1,8 +1,17 @@
-import { Box, Flex, PhzAvatars, StateTags, Text } from "@phraze-app/ui";
+import {
+  Box,
+  Flex,
+  PhzAvatars,
+  PhzButton,
+  StateTags,
+  Text,
+} from "@phraze-app/ui";
 import Tags from "@phraze-app/ui/Tags/Tags";
 import { useTheme } from "@emotion/react";
 import { PostImageWrapper, PostRowViewContainer } from "./styles";
 import { SinglePostProps } from "./types";
+import TrashIcon from "../../pages/PostsPage/icons/TrashIcon";
+import EditButtonIcon from "../../pages/PostsPage/icons/EditButtonIcon";
 
 const PostRowView = ({ post }: { post: SinglePostProps }) => {
   const theme = useTheme();
@@ -34,14 +43,47 @@ const PostRowView = ({ post }: { post: SinglePostProps }) => {
           </Box>
         </Flex>
       </Flex>
-      <Flex borderTop={`1px solid ${theme.colors.background}`} mt="0.75rem">
-        <Flex pt={2} alignItems="center" gap="0.25rem">
-          <PhzAvatars size="20px" />
-          <Text fontSize="0.75rem" color={theme.colors.textWhite}>
-            Sanjib Kumar Sah
-          </Text>
+      <Flex
+        borderTop={`1px solid ${theme.colors.background}`}
+        pt={2}
+        mt="0.75rem"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Flex alignItems="center">
+          <Flex alignItems="center" gap="0.25rem" mr="0.5rem">
+            <PhzAvatars size="20px" />
+            <Text fontSize="0.75rem" color={theme.colors.textWhite}>
+              Sanjib Kumar Sah
+            </Text>
+          </Flex>
+          <Flex>
+            <Text
+              fontSize="0.75rem"
+              fontWeight="bold"
+              color={theme.colors.textWhite}
+            >
+              Last updated:{" "}
+              <Text as="span" fontWeight="normal">
+                12/12/12
+              </Text>
+            </Text>
+          </Flex>
         </Flex>
-        <Flex></Flex>
+        <Flex alignItems="center" gap="0.5rem">
+          <TrashIcon />
+          <PhzButton
+            variant="primary"
+            style={{
+              fontSize: "12px",
+              padding: "0 0 0 8px",
+              borderRadius: "1rem",
+            }}
+          >
+            Edit
+            <EditButtonIcon />
+          </PhzButton>
+        </Flex>
       </Flex>
     </PostRowViewContainer>
   );
