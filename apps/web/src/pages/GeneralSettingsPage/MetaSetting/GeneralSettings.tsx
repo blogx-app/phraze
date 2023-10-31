@@ -7,9 +7,6 @@ const GeneralSettings = () => {
   return (
     <Flex gap="1rem">
       <div style={{ width: "100%" }}>
-        <Text fontSize="1rem" fontWeight="bold" color={theme.colors.textWhite}>
-          General Settings
-        </Text>
         <Tabs
           tabsPadding={0}
           tabLabels={["Publication Info"]}

@@ -1,9 +1,11 @@
 import { Box } from "@mui/material";
-import { Button, Input, TextArea } from "@phraze-app/ui";
-import Text from "@phraze-app/ui/Text";
+import { Input, PhzButton, TextArea } from "@phraze-app/ui";
 import TwitterPreviewPlaceholder from "./TwitterPreviewPlaceholder";
+import { useTheme } from "@emotion/react";
 
 const TwitterPreview = () => {
+  const theme = useTheme();
+
   return (
     <div>
       <Box ml="0.5rem" mb="0.5rem">
@@ -15,7 +17,7 @@ const TwitterPreview = () => {
       <Box display="flex" gap="1rem">
         <Box minWidth="30rem">
           <Box
-            bgcolor="#D9D9D9"
+            bgcolor={theme.colors.backgroundContent}
             display="flex"
             justifyContent="center"
             alignItems="center"
@@ -25,7 +27,7 @@ const TwitterPreview = () => {
             mb="8px"
             mt="8px"
           >
-            <Button style={{ background: "#00CCFF" }}>Add X Image</Button>
+            <PhzButton variant="primary">Add X Image</PhzButton>
           </Box>
           <Input
             ContainerProps={{

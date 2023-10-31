@@ -45,7 +45,7 @@ export const LeadsTab = () => {
           <Text fontSize="2rem" fontWeight="bold" as="span" mr={2}>
             4
           </Text>
-          <Text as="span">Total Leads </Text>
+          <Text as="span">Leads</Text>
           <Text fontSize="0.75rem" color={theme.colors.textSubtle}>
             Last lead: 5s ago
           </Text>

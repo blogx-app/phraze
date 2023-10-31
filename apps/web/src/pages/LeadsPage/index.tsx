@@ -7,10 +7,12 @@ const LeadsPage = () => {
       maxWidth="48rem"
       // background="radial-gradient(circle at bottom, rgba(22,141,143,1) -87%, rgba(0,0,0,1) 61%)"
     >
-      <Tabs
+      {/* Will move the configure section to settings */}
+      {/* <Tabs
         tabLabels={["Leads", "Configure"]}
         tabPanels={[<LeadsTab />, <>Two</>]}
-      />
+      /> */}
+      <LeadsTab />
     </Box>
   );
 };
