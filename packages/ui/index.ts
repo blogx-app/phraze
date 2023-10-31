@@ -25,6 +25,7 @@ export * from "./hooks";
 
 export * from "./PhzButton";
 export * from "./PhzTable";
+export * from "./PhzPaper";
 export * from "./PhzDrawer";
 
 export * from "./contexts";

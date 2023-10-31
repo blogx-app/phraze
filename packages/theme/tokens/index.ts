@@ -27,6 +27,7 @@ export const tokens = {
     mono: "SFMono, ui-monospace, monospace",
   },
   space: {
+    card: "16px",
     "0px": "0px",
     "1rem": "1rem",
     "1px": "1px",
