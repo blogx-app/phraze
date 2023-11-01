@@ -7,8 +7,9 @@ import AnalyticsIcon from "./icons/AnalyticsIcon";
 import PagesIcon from "./icons/PagesIcon";
 import TagsIcon from "./icons/TagsIcon";
 import LeadsIcon from "./icons/LeadsIcon";
-import { NavigationButton, NavigationNavLink } from "./style";
+import { NavigationNavLink } from "./style";
 import PostsIconWrapper from "./PostsIconWrapper";
+import { Flex, PhzButton } from "@phraze-app/ui";
 
 const NAVIGATIONS_ITEMS: {
   name: string;
@@ -54,14 +55,12 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
       minHeight="75%"
       width={open ? "100%" : undefined}
     >
-      <NavigationButton bg="#bfff00da" open={open}>
-        <VisitSiteIcon />
-        {open && (
-          <Text fontSize="14px" color="#1D2504" fontWeight="400">
-            Visit Site
-          </Text>
-        )}
-      </NavigationButton>
+      <PhzButton bg="#bfff00da" width="100%">
+        <Flex alignItems="center" gap="0.25rem">
+          <VisitSiteIcon />
+          Visit Site
+        </Flex>
+      </PhzButton>
       <Box
         display="flex"
         flexDirection="column"

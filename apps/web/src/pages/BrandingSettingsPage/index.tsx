@@ -1,5 +1,12 @@
+import { Box } from "@phraze-app/ui";
+import { AccentColorContainer } from "../../container/BrandingPageContainer";
+
 const BrandingSettingPage = () => {
-  return <>Under Construction</>;
+  return (
+    <Box maxWidth="48rem">
+      <AccentColorContainer />
+    </Box>
+  );
 };
 
 export default BrandingSettingPage;
