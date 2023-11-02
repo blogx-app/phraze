@@ -9,7 +9,7 @@ const Panel = ({
 }: {
   header: string;
   description: string;
-  buttonType: "icon" | "logo" | "cover";
+  buttonType: "favicon" | "logo" | "cover";
   onUploadButtonClickHandler: () => void;
 }) => {
   const theme = useTheme();
@@ -29,7 +29,7 @@ const Panel = ({
   );
 };
 
-const LOGO_TABS = ["icon", "logo", "cover"];
+const LOGO_TABS = ["favicon", "logo", "cover"];
 
 export const PublicationIconsChooserSection = () => {
   return (
@@ -39,8 +39,8 @@ export const PublicationIconsChooserSection = () => {
         tabLabels={LOGO_TABS}
         tabPanels={[
           <Panel
-            header="icon"
-            buttonType="icon"
+            header="favicon"
+            buttonType="favicon"
             description="A square, social Icon used in the UI of your publication, at least 60x60px"
             onUploadButtonClickHandler={() => null}
           />,

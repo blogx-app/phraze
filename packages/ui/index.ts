@@ -22,6 +22,7 @@ export * from "./Tabs";
 export * from "./ImageWrapper";
 export * from "./Tags";
 export * from "./hooks";
+export * from "./NavigationReorder";
 
 export * from "./PhzButton";
 export * from "./PhzTable";
