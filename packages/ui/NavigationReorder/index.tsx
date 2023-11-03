@@ -10,9 +10,7 @@ import { ForwardRefExoticComponent, RefAttributes, useState } from "react";
 interface DndReorderProps<T> {
   id?: string;
   initialItems: T[];
-  DraggableComponent: ForwardRefExoticComponent<
-    Pick<any, string | number | symbol> & RefAttributes<unknown>
-  >;
+  DraggableComponent: ForwardRefExoticComponent<any & RefAttributes<unknown>>;
 }
 
 const NavigationReorder = <T extends { id: string }>({
@@ -36,7 +34,7 @@ const NavigationReorder = <T extends { id: string }>({
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="characters">
           {(provided) => (
-            <ul
+            <div
               className="characters"
               {...provided.droppableProps}
               ref={provided.innerRef}
@@ -56,7 +54,7 @@ const NavigationReorder = <T extends { id: string }>({
                 );
               })}
               {provided.placeholder}
-            </ul>
+            </div>
           )}
         </Droppable>
       </DragDropContext>

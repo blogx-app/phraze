@@ -1,45 +1,44 @@
 import { Flex, PhzPaper, Text } from "@phraze-app/ui";
 import NavigationReorder from "@phraze-app/ui/NavigationReorder";
-import React from "react";
+import NavigationViewCard, {
+  NavigationItem,
+} from "../../container/Navigation/NavigationViewCard";
+import { useTheme } from "@emotion/react";
 
 const NavigationSettingsPage = () => {
+  const theme = useTheme();
+
   return (
     <Flex gap="1rem" maxWidth="48rem">
       <PhzPaper width="50%">
-        <Text fontWeight={600}>Primary Navigation</Text>
-        <NavigationReorder<{ id: string; value: string }>
+        <Text fontWeight={600} mb={1}>
+          Primary Navigation
+        </Text>
+        <Text color={theme.colors.textSubtle} fontSize="12px">
+          Rearrange or edit links are needed
+        </Text>
+        <NavigationReorder<NavigationItem>
           initialItems={[
-            { id: "name", value: "name" },
-            { id: "work", value: "work" },
-            { id: "pink", value: "pink" },
-            { id: "blue", value: "blue" },
+            { id: "name", name: "name", url: "nre things" },
+            { id: "name-2", name: "name", url: "nre things" },
           ]}
-          DraggableComponent={React.forwardRef(
-            ({ item: { value }, ...rest }, fRef) => (
-              <div {...rest} ref={fRef as any}>
-                {value}
-              </div>
-            )
-          )}
+          DraggableComponent={NavigationViewCard}
         />
       </PhzPaper>
       <PhzPaper width="50%">
-        <Text fontWeight={600}>Secondary Navigation</Text>
-        <NavigationReorder<{ id: string; value: string }>
+        <Text fontWeight={600} mb={1}>
+          Secondary Navigation
+        </Text>
+        <Text color={theme.colors.textSubtle} fontSize="12px">
+          Rearrange or edit links are needed
+        </Text>
+        <NavigationReorder<NavigationItem>
           initialItems={[
-            { id: "name", value: "name" },
-            { id: "work", value: "work" },
-            { id: "pink", value: "pink" },
-            { id: "blue", value: "blue" },
+            { id: "name", name: "name", url: "nre things" },
+            { id: "name-2", name: "name", url: "nre things" },
           ]}
-          DraggableComponent={React.forwardRef(
-            ({ item: { value }, ...rest }, fRef) => (
-              <div {...rest} ref={fRef as any}>
-                {value}
-              </div>
-            )
-          )}
-        ></NavigationReorder>
+          DraggableComponent={NavigationViewCard}
+        />
       </PhzPaper>
     </Flex>
   );
