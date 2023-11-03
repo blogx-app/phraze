@@ -3,21 +3,32 @@ import Text from "@phraze-app/ui/Text";
 import GooglePreview from "./GooglePreview/GooglePreview";
 import FacebookPreview from "./FacebookPreview/FacebookPreview";
 import TwitterPreview from "./TwitterPreview/TwitterPreview";
-import { Tabs } from "@phraze-app/ui";
+import { PhzPaper, Tabs } from "@phraze-app/ui";
 import { useTheme } from "@emotion/react";
 
 const MetaSetting = () => {
   const theme = useTheme();
   return (
-    <Box borderRadius="12px">
-      <Text fontWeight="bold" fontSize="1rem" color={theme.colors.textWhite}>
-        Site Meta Settings
-      </Text>
-      <Tabs
-        tabLabels={["Meta Settings", "Facebook Card", "Twitter Card"]}
-        tabPanels={[<GooglePreview />, <FacebookPreview />, <TwitterPreview />]}
-      />
-    </Box>
+    <PhzPaper>
+      <Box borderRadius="12px">
+        <Text
+          fontWeight="bold"
+          fontSize="1rem"
+          color={theme.colors.textWhite}
+          mb={2}
+        >
+          Site Meta Settings
+        </Text>
+        <Tabs
+          tabLabels={["Meta Settings", "Facebook Card", "Twitter Card"]}
+          tabPanels={[
+            <GooglePreview />,
+            <FacebookPreview />,
+            <TwitterPreview />,
+          ]}
+        />
+      </Box>
+    </PhzPaper>
   );
 };
 

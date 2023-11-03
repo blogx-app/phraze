@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { NavLink, NavLinkProps } from "react-router-dom";
-import { Button } from "@phraze-app/ui";
 
 export const BottomIconsContainer = styled.div`
   display: flex;
@@ -52,6 +51,9 @@ export const NavigationNavLink = styled(NavLink as React.FC<NavLinkProps>)`
   display: flex;
   color: white;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 
+  border-radius: ${({ theme }) => theme.radii.button};
   padding-left: 0.5rem;
 `;

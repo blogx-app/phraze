@@ -11,19 +11,15 @@ const GeneralSettingsPage = () => {
 
   return (
     <Box maxWidth="60rem">
-      <Flex justifyContent="space-between" alignItems="flex-end">
+      <Flex justifyContent="space-between" alignItems="flex-end" mb={3}>
         <Text color={theme.colors.textWhite} fontWeight="bold">
-          General Settings
+          Metadata Settings
         </Text>
         <PhzButton variant="primary" px={5}>
           Save All
         </PhzButton>
       </Flex>
       <GeneralSettings />
-      <Divider
-        component="div"
-        style={{ borderColor: theme.colors.grey555, marginBottom: "2rem" }}
-      />
       <MetaSetting />
       {/* <SocialSharing /> */}
     </Box>

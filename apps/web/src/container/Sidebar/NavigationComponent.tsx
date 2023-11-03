@@ -75,6 +75,15 @@ const NavigationComponent = ({ open }: NavigationComponentProps) => {
           <React.Fragment key={item.name + item.toLink}>
             {i === 1 && <PostsIconWrapper open={open} />}
             <NavigationNavLink
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      background: theme.colors.transparent,
+                      border: theme.borders.card,
+                      fontWeight: "bold",
+                    }
+                  : {}
+              }
               to={item.toLink}
               key={`${item.name}-${item.toLink}-${i}`}
             >

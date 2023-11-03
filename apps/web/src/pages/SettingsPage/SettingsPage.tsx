@@ -93,7 +93,12 @@ const Listing = ({ settingTypeName, settingList, theme }: ListingProps) => (
           >
             <Box>{setting?.icon}</Box>
             <Box>
-              <Box fontWeight="bold" color={theme.colors.white} mb="4px">
+              <Box
+                fontWeight="bold"
+                color={theme.colors.foreground}
+                mb="4px"
+                fontSize={1}
+              >
                 {setting?.name}
               </Box>
               <Text color={theme.colors.textSubtle} fontSize="14px">

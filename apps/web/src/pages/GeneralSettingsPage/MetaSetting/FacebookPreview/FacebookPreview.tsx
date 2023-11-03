@@ -31,7 +31,7 @@ const FacebookPreview = () => {
           </Box>
           <Input
             ContainerProps={{
-              mb: "0.5rem",
+              mb: 3,
             }}
             label="Title"
             helperText="The name of your site"
