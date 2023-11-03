@@ -21,12 +21,13 @@ export const Text = styled.div<
     ColorProps &
     BackgroundProps & { textColor?: keyof PhrazeTheme["colors"] }
 >`
-  ${compose(typography, space, layout, color, background)}
   white-space: normal;
   line-height: 1.1;
 
   color: ${({ theme, textColor }) =>
-    textColor ? theme.colors[textColor] : ""};
+    textColor ? theme.colors[textColor] : theme.colors.foreground};
+
+  ${compose(typography, space, layout, color, background)}
 `;
 
 export default Text;

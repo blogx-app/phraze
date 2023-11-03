@@ -8,7 +8,7 @@ export const CardContainer = styled(Flex)<ThemeProps>`
     css({
       background: theme.colors.backgroundContent,
       borderRadius: theme.radii.card,
-      boxShadow: theme.shadows.card,
+      border: theme.borders.card,
     })};
 
   height: 9rem;

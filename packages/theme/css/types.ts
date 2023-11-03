@@ -8,4 +8,5 @@ export type Theme = {
   space: Tokens["space"];
   fontSizes: Tokens["fontSizes"];
   shadows: Tokens["shadows"];
+  borders: Tokens["borders"];
 };

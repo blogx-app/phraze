@@ -22,6 +22,10 @@ export const shadows = {
 // }
 export const tokens = {
   colors: darkColors,
+  borders: {
+    card: "1px solid rgb(39, 39, 42)",
+    input: "1px solid rgb(39, 39, 42)",
+  },
   fonts: {
     normal: "'Mulish', sans-serif",
     mono: "SFMono, ui-monospace, monospace",

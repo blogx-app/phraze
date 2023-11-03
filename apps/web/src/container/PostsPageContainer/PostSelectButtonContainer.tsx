@@ -17,7 +17,7 @@ export const Container = styled(Flex)`
   ${({ theme }) =>
     css({
       backgroundColor: theme.colors.backgroundContent,
-      boxShadow: theme.shadows.card,
+      border: theme.borders.card,
       borderRadius: theme.radii.card,
     })}
 

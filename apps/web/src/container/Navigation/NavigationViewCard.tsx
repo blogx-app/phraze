@@ -1,6 +1,5 @@
 import React from "react";
 import { useTheme } from "@emotion/react";
-import EditRoundedIcon from "@mui/icons-material/EditRounded";
 import { Box, Flex, Text } from "@phraze-app/ui";
 import EditPencilIcon from "./icons/EditPencilIcon";
 
@@ -19,7 +18,7 @@ const EditIcon = () => {
     <Box
       p={1}
       borderRadius="2rem"
-      border="1px solid #ffffffda"
+      border="1px solid rgb(39, 39, 42)"
       lineHeight="0"
       height="fit-content"
     >
@@ -36,7 +35,6 @@ const NavigationViewCard = React.forwardRef(
       <Flex
         ref={ref as any}
         {...rest}
-        // boxShadow={theme.shadows.card}
         border="1px solid rgb(39, 39, 42)"
         p={3}
         mt={3}
@@ -45,13 +43,13 @@ const NavigationViewCard = React.forwardRef(
         justifyContent="space-between"
       >
         <Box>
-          <Text fontWeight={600} mb={2}>
+          <Text fontWeight={600} mb={2} fontSize={1}>
             Display name:{" "}
             <Text fontWeight="normal" as="span">
               Something
             </Text>
           </Text>
-          <Text fontWeight={600}>
+          <Text fontWeight={600} fontSize={1}>
             Url:{" "}
             <Text fontWeight="normal" as="span">
               Something

@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
+import { PhrazeTheme } from "@phraze-app/theme";
 import { NavLink, NavLinkProps } from "react-router-dom";
 
 export const AppBarContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  border-bottom: 1px solid #555555;
-  padding: 1rem;
+  border-bottom: ${({ theme }) => theme.borders.card};
+  padding: 1.25rem;
 
   .bell-icon {
     cursor: pointer;

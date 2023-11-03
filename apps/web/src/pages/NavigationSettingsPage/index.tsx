@@ -14,7 +14,7 @@ const NavigationSettingsPage = () => {
         <Text fontWeight={600} mb={1}>
           Primary Navigation
         </Text>
-        <Text color={theme.colors.textSubtle} fontSize="12px">
+        <Text textColor="textSubtle" fontSize="12px">
           Rearrange or edit links are needed
         </Text>
         <NavigationReorder<NavigationItem>
@@ -29,7 +29,7 @@ const NavigationSettingsPage = () => {
         <Text fontWeight={600} mb={1}>
           Secondary Navigation
         </Text>
-        <Text color={theme.colors.textSubtle} fontSize="12px">
+        <Text textColor="textSubtle" fontSize="12px">
           Rearrange or edit links are needed
         </Text>
         <NavigationReorder<NavigationItem>

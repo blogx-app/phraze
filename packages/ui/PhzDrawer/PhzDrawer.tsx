@@ -1,6 +1,7 @@
 import React from "react";
 import MuiDrawer, { DrawerProps } from "@mui/material/Drawer";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
+import { useTheme } from "@emotion/react";
 
 interface DrawerImplProps {
   children: React.ReactNode;
@@ -17,7 +18,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: "hidden",
-  borderRight: "1px #555555 solid",
+  borderRight: "1px rgb(39, 39, 42) solid",
 });
 
 const Drawer = styled(MuiDrawer, {
@@ -41,6 +42,8 @@ export const PhzDrawer = ({
   anchor = "left",
   open,
 }: DrawerImplProps) => {
+  const theme = useTheme();
+
   return (
     <Drawer
       anchor={anchor}
@@ -53,7 +56,7 @@ export const PhzDrawer = ({
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between",
-          background: "black",
+          background: theme.colors.background,
           overflow: "visible",
         },
       }}

@@ -82,7 +82,6 @@ const Listing = ({ settingTypeName, settingList, theme }: ListingProps) => (
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <Flex
-            border="1px solid black"
             width="fit-content"
             display="flex"
             gap="12px"
@@ -90,7 +89,7 @@ const Listing = ({ settingTypeName, settingList, theme }: ListingProps) => (
             borderRadius="12px"
             minWidth="25rem"
             backgroundColor={theme.colors.backgroundContent}
-            boxShadow={theme.shadows.card}
+            border={theme.borders.card}
           >
             <Box>{setting?.icon}</Box>
             <Box>
@@ -121,7 +120,7 @@ export const SettingsPage = () => {
       <Divider
         component="div"
         style={{
-          borderColor: theme.colors.grey555,
+          borderColor: theme.colors.border,
           marginTop: "1.875rem",
           marginBottom: "1.25rem",
         }}

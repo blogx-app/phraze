@@ -12,7 +12,7 @@ export const BottomIconsContainer = styled.div`
   padding: 0 24px;
   padding-top: 1rem;
 
-  border-top: 1px #555 solid;
+  border-top: ${({ theme }) => theme.borders.card};
   width: 100%;
 `;
 

@@ -6,6 +6,7 @@ export interface PhrazeTheme {
   spacing: typeof vars.space;
   shadows: typeof vars.shadows;
   radii: typeof vars.radii;
+  borders: typeof vars.borders;
 }
 
 export { default as dark } from "./dark";

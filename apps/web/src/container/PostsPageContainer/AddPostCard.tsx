@@ -10,7 +10,7 @@ const AddPostCard = () => {
       alignItems="center"
       width="50%"
       maxWidth="28rem"
-      border="#888 1px dashed"
+      border="#555 1px dashed"
     >
       <Flex alignItems="center">
         <span style={{ cursor: "pointer" }}>

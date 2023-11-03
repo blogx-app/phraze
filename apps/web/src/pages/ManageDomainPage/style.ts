@@ -8,6 +8,8 @@ export const HttpBox = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   padding: 0.5rem 1rem;
 
+  font-size: 14px;
+
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: 1px solid black;
@@ -22,7 +24,7 @@ export const DomainInput = styled.input(
     paddingLeft: "0.5rem",
     paddingRight: "0.5rem",
     outline: "none",
-    fontSize: "1rem",
+    fontSize: "14px",
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.black,

@@ -28,11 +28,7 @@ const UpgradeToPro = () => {
       <Text color="white" fontSize="0.75rem" px="0.5rem" mb="0.5rem">
         Upgrade your plan to get pro benefits and more...
       </Text>
-      <PhzButton variant="primary">
-        <Text fontSize="14px" color="#000" fontWeight="400">
-          Upgrade to Pro
-        </Text>
-      </PhzButton>
+      <PhzButton variant="primary">Upgrade to Pro</PhzButton>
     </Container>
   );
 };

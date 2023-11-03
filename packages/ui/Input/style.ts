@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { PhrazeTheme } from "@phraze-app/theme";
 
@@ -13,14 +14,18 @@ export const StyledInput = styled.input<{
 
   height: 3rem;
   width: 100%;
-  background-color: black;
   color: white;
 
+  ${({ theme }) =>
+    css({
+      background: theme.colors.transparent,
+      border: theme.borders.input,
+    })}
+
   padding-left: ${({ hasStartAdornment }) => (hasStartAdornment ? "44px" : "")};
-  box-shadow: ${({ theme }) => theme.shadows.card};
 
   ::placeholder {
-    color: ${({ theme }) => theme.colors.textGrey25};
+    color: ${({ theme }) => theme.colors.input};
   }
 `;
 

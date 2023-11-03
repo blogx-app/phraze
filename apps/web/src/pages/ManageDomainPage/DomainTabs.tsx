@@ -4,6 +4,7 @@ import Text from "@phraze-app/ui/Text";
 import { Tabs } from "@phraze-app/ui/Tabs";
 import DomainInput from "./DomainInputWrapper";
 import { DomainButton } from "./style";
+import { PhzButton } from "@phraze-app/ui";
 
 export default function DomainTabs() {
   const theme = useTheme();
@@ -23,7 +24,7 @@ export default function DomainTabs() {
             >
               Your blog will be hosted at: https://...
             </Text>
-            <DomainButton>Confirm</DomainButton>
+            <PhzButton variant="primary">Confirm</PhzButton>
           </>,
           <>
             <DomainInput placeholder="blog.example.com" />
@@ -35,7 +36,7 @@ export default function DomainTabs() {
             >
               Your blog will be hosted at: https://...
             </Text>
-            <DomainButton>Confirm</DomainButton>
+            <PhzButton variant="primary">Confirm</PhzButton>
           </>,
         ]}
       />

@@ -44,7 +44,7 @@ const PostRowView = ({ post }: { post: SinglePostProps }) => {
         </Flex>
       </Flex>
       <Flex
-        borderTop={`1px solid ${theme.colors.background}`}
+        borderTop={theme.borders.card}
         pt={2}
         mt="0.75rem"
         alignItems="center"

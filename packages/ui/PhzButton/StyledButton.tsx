@@ -11,8 +11,10 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.875rem 1.5rem;
+  padding: 0.5rem 1rem;
   white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
 
   ${({ theme, variant }) =>
     css({
@@ -23,7 +25,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${compose(color, space, layout)}
 
   :hover {
-    opacity: 0.75;
+    opacity: 0.85;
   }
 
   & > svg {
