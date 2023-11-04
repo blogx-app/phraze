@@ -19,6 +19,7 @@ export const StyledTabs = styled(Tabs)`
 export const StyledTab = styled(Tab)<ThemeProps>`
   opacity: 1;
   text-transform: uppercase;
+  font-size: 12px;
 
   color: ${({ theme }) => theme.colors.primary66};
 `;

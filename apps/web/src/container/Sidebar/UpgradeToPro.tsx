@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
 import { Flex, Text, PhzButton } from "@phraze-app/ui";
 import UpgradeDiamondIcon from "./icons/UpgradeDiamondIcon";
-import { NavigationButton } from "./style";
+import { routesName } from "../../route";
 
 const Container = styled(Flex)`
   margin: 1.5rem;
@@ -17,6 +18,12 @@ const Container = styled(Flex)`
 `;
 
 const UpgradeToPro = () => {
+  const navigate = useNavigate();
+
+  const onClickUpgradeToPro = () => {
+    navigate(routesName.billingsAndPlan);
+  };
+
   return (
     <Container>
       <Flex justifyContent="center" alignItems="center" gap="0.25rem">
@@ -28,7 +35,9 @@ const UpgradeToPro = () => {
       <Text color="white" fontSize="0.75rem" px="0.5rem" mb="0.5rem">
         Upgrade your plan to get pro benefits and more...
       </Text>
-      <PhzButton variant="primary">Upgrade to Pro</PhzButton>
+      <PhzButton variant="primary" onClick={onClickUpgradeToPro}>
+        Upgrade to Pro
+      </PhzButton>
     </Container>
   );
 };

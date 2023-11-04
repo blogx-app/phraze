@@ -14,7 +14,7 @@ const MetaSetting = () => {
         <Text
           fontWeight="bold"
           fontSize="1rem"
-          color={theme.colors.textWhite}
+          color={theme.colors.foreground}
           mb={2}
         >
           Site Meta Settings

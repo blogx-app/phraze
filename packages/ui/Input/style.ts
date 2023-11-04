@@ -25,12 +25,12 @@ export const StyledInput = styled.input<{
   padding-left: ${({ hasStartAdornment }) => (hasStartAdornment ? "44px" : "")};
 
   ::placeholder {
-    color: ${({ theme }) => theme.colors.input};
+    color: ${({ theme }) => theme.colors.textSubtle};
   }
 `;
 
 export const StyledLabel = styled.label`
-  color: ${({ theme }) => theme.colors.textWhite};
+  color: ${({ theme }) => theme.colors.foreground};
 
   font-weight: bold;
   font-size: 12px;

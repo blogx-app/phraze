@@ -8,7 +8,7 @@ const GeneralSettings = () => {
     <PhzPaper mb={3}>
       <Flex gap="1rem">
         <div style={{ width: "100%" }}>
-          <Text color={theme.colors.textWhite} fontWeight="bold">
+          <Text color={theme.colors.foreground} fontWeight="bold">
             General Settings
           </Text>
           <Tabs

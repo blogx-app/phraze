@@ -12,7 +12,7 @@ const GooglePreviewPlaceholder = () => {
       <Text
         fontSize="0.75rem"
         fontWeight="bold"
-        color={theme.colors.textWhite}
+        color={theme.colors.foreground}
         ml="8px"
         mb="4px"
       >

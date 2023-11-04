@@ -10,12 +10,12 @@ export const StyledTextArea = styled.textarea`
   resize: vertical;
 
   background-color: ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.textWhite};
-  box-shadow: ${({ theme }) => theme.shadows.card};
+  color: ${({ theme }) => theme.colors.foreground};
+  border: ${({ theme }) => theme.borders.card};
 
   ::placeholder {
     font-size: 12px;
-    color: ${({ theme }) => theme.colors.textGrey25};
+    color: ${({ theme }) => theme.colors.textSubtle};
   }
 `;
 
@@ -25,5 +25,5 @@ export const StyledLabel = styled.label`
   margin-left: 8px;
   margin-bottom: 4px;
 
-  color: ${({ theme }) => theme.colors.textWhite};
+  color: ${({ theme }) => theme.colors.foreground};
 `;

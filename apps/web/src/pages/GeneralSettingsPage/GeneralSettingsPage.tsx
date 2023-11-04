@@ -12,7 +12,7 @@ const GeneralSettingsPage = () => {
   return (
     <Box maxWidth="60rem">
       <Flex justifyContent="space-between" alignItems="flex-end" mb={3}>
-        <Text color={theme.colors.textWhite} fontWeight="bold">
+        <Text color={theme.colors.foreground} fontWeight="bold">
           Metadata Settings
         </Text>
         <PhzButton variant="primary" px={5}>

@@ -19,7 +19,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   ${({ theme, variant }) =>
     css({
       borderRadius: theme.radii.button,
-      background: variant === "primary" ? theme.colors.primary : "",
+      background:
+        variant === "primary" ? theme.colors.primary : theme.colors.foreground,
     })};
 
   ${compose(color, space, layout)}
