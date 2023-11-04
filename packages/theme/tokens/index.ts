@@ -23,7 +23,7 @@ export const shadows = {
 export const tokens = {
   colors: darkColors,
   borders: {
-    card: "1px solid rgb(39, 39, 42)",
+    card: "1px solid hsl(240 3.7% 15.9%)",
     input: "1px solid rgb(39, 39, 42)",
   },
   fonts: {

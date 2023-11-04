@@ -28,9 +28,9 @@ export const PageItem = ({
       height="10rem"
       borderRadius="8px"
       flexDirection="column"
-      width="calc(50% - 0.5rem)"
+      width="100%"
       justifyContent="space-between"
-      boxShadow={theme.shadows.card}
+      border={theme.borders.card}
       background={theme.colors.backgroundContent}
     >
       <Flex
@@ -59,7 +59,7 @@ export const PageItem = ({
       </Flex>
 
       <Flex
-        borderTop={`1px ${theme.colors.grey555} solid`}
+        borderTop={`1px ${theme.colors.border} solid`}
         pt={2}
         alignItems="center"
         justifyContent="space-between"

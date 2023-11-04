@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Box, Button, Flex, PhzButton, Text } from "@phraze-app/ui";
+import { Box, Flex, PhzButton, PhzPaper, Text } from "@phraze-app/ui";
 import { PagesListing } from "../../container/Pages";
 
 const PagesPage = () => {
@@ -7,16 +7,12 @@ const PagesPage = () => {
 
   return (
     <Box maxWidth="48rem">
-      <Flex alignItems="center" gap="1rem">
-        <Box
-          p={2}
-          borderRadius="8px"
-          border={`${theme.colors.greyAAA} 1px dashed`}
-        >
+      <PhzPaper display="flex" style={{ gap: "1rem" }}>
+        <Box p={2} borderRadius="8px">
           <Text color={theme.colors.textAAA}>
             A page is basically a blog post without any author, date, social
-            buttons etc. To think of it, you can create a whole website using
-            pages 😉
+            buttons etc. To think of it, you can create your entire website
+            using pages 🚀
           </Text>
         </Box>
         <Flex flexDirection="column" alignItems="center" gap="0.5rem">
@@ -29,7 +25,7 @@ const PagesPage = () => {
             View Sample Page
           </Text>
         </Flex>
-      </Flex>
+      </PhzPaper>
 
       <PagesListing />
     </Box>
