@@ -6,6 +6,7 @@ export const DomainInputContainer = styled.div`
 
 export const HttpBox = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
+  color: black;
   padding: 0.5rem 1rem;
 
   font-size: 14px;
@@ -43,15 +44,4 @@ export const DomainButton = styled.button`
   border: 1px solid black;
   border-radius: 8px;
   cursor: pointer;
-`;
-
-//TODO - Fix the dash width in border
-export const DomainInfoContainer = styled.div`
-  width: 31rem;
-
-  padding: 1rem;
-  border: 1px dashed ${({ theme }) => theme.colors.greyAAA};
-  margin-bottom: 0.5rem;
-
-  border-radius: 12px;
 `;

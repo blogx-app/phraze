@@ -1,16 +1,14 @@
-import Box from "@mui/material/Box";
 import { useTheme } from "@emotion/react";
 import Text from "@phraze-app/ui/Text";
 import { Tabs } from "@phraze-app/ui/Tabs";
 import DomainInput from "./DomainInputWrapper";
-import { DomainButton } from "./style";
-import { PhzButton } from "@phraze-app/ui";
+import { PhzButton, PhzPaper } from "@phraze-app/ui";
 
 export default function DomainTabs() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ maxWidth: 500 }}>
+    <PhzPaper style={{ maxWidth: 500 }}>
       <Tabs
         tabLabels={["Main Domain", "Sub Domain"]}
         tabPanels={[
@@ -40,6 +38,6 @@ export default function DomainTabs() {
           </>,
         ]}
       />
-    </Box>
+    </PhzPaper>
   );
 }
