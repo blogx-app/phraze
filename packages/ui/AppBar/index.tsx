@@ -7,7 +7,7 @@ import {
   NavigationImageContainer,
 } from "./style";
 import { AppBarProps } from "./type";
-import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
+import TeamSwitcher from "../PhzTeamSwitcher";
 
 const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
   const location = useLocation();
@@ -35,10 +35,7 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
           </span>
         ))}
       </Box>
-      <Popover>
-        <PopoverTrigger>Click here</PopoverTrigger>
-        <PopoverContent>This is the conten</PopoverContent>
-      </Popover>
+      <TeamSwitcher />
     </AppBarContainer>
   );
 };

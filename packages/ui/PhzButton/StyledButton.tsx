@@ -29,7 +29,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     opacity: 0.85;
   }
 
-  & > svg {
+  /* & > svg {
     margin: auto;
-  }
+  } */
 `;

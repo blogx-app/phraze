@@ -23,6 +23,8 @@ export const baseColors = {
 export const darkColors = {
   ...baseColors,
   secondary: "#FF7F00",
+  accent: "hsl(240 3.7% 15.9%)",
+  accentForeground: "hsl(0 0% 98%)",
   secondary80: "#FF7F00",
   // background: "rgb(9, 9, 11)",
   background: "hsl(240 10% 3.9%)",
