@@ -70,7 +70,8 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 
 interface TeamSwitcherProps extends PopoverTriggerProps {}
 
-export default function TeamSwitcher({ className }: TeamSwitcherProps) {
+// @TODO - Add clear search button when no value is found
+export default function PhzTeamSwitcher({ className }: TeamSwitcherProps) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false);
@@ -87,10 +88,11 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
             aria-expanded={open}
             aria-label="Select a team"
             style={{
-              minWidth: "200px",
               height: "2.25rem",
               background: theme.colors.background,
               color: theme.colors.foreground,
+              outline: "none",
+              padding: 0,
               // border: theme.borders.card,
             }}
           >
@@ -103,7 +105,7 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
             {selectedTeam.label}
             <CaretUpDown
               style={{
-                marginLeft: "auto",
+                marginLeft: "0.5rem",
                 height: "1rem",
                 width: "1rem",
                 flexShrink: 0,
@@ -112,7 +114,7 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
             />
           </Button>
         </PopoverTrigger>
-        <PopoverContent style={{ minWidth: "200px", padding: "0" }}>
+        <PopoverContent style={{ padding: "0" }}>
           <Command>
             <CommandList>
               <CommandInput placeholder="Search team..." />

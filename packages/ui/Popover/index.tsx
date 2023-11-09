@@ -46,7 +46,7 @@ const StyledPopoverContent = styled(PopoverPrimitive.Content)(
   },
   ({ theme }) => ({
     border: theme.borders.card,
-    padding: theme.spacing.popover,
+    // padding: theme.spacing.popover,
     borderRadius: theme.radii.card,
     background: theme.colors.popover,
     color: theme.colors.popoverForeground,

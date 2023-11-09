@@ -7,20 +7,33 @@ import {
   NavigationImageContainer,
 } from "./style";
 import { AppBarProps } from "./type";
-import TeamSwitcher from "../PhzTeamSwitcher";
+import PhzTeamSwitcher from "../PhzTeamSwitcher";
+import Text from "../Text";
+import { Flex } from "../Box";
 
 const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
   const location = useLocation();
   const theme = useTheme();
 
   const { crumbs } = getNavigationBreadcrum(location.pathname);
+  const lastItem = crumbs[crumbs.length - 1];
 
   return (
     <AppBarContainer>
-      <Box display="flex">
+      <Box display="flex" alignItems="center">
         <NavigationImageContainer src="/phraze_logo.webp" />
+        <Text
+          color={theme.colors.textGrey25}
+          mx={2}
+          fontSize="1.25rem"
+          fontStyle="italic"
+          pr={2}
+        >
+          /
+        </Text>
+        <PhzTeamSwitcher />
         {crumbs?.map((crumb, i) => (
-          <span key={crumb.toLink}>
+          <Flex key={crumb.toLink}>
             <BreadcrumsNavlink
               end
               to={crumb.toLink}
@@ -32,10 +45,9 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
             >
               {crumb.name}
             </BreadcrumsNavlink>
-          </span>
+          </Flex>
         ))}
       </Box>
-      <TeamSwitcher />
     </AppBarContainer>
   );
 };

@@ -1,13 +1,12 @@
 import styled from "@emotion/styled";
-import { PhrazeTheme } from "@phraze-app/theme";
 import { NavLink, NavLinkProps } from "react-router-dom";
 
 export const AppBarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
   border-bottom: ${({ theme }) => theme.borders.card};
-  padding: 1.25rem;
+  padding: 0.5rem 1.25rem;
 
   .bell-icon {
     cursor: pointer;
@@ -26,10 +25,15 @@ export const BreadcrumsNavlink = styled(NavLink as React.FC<NavLinkProps>)`
 
   ::before {
     content: "/";
-    padding-right: 0.5rem;
+    color: ${({ theme }) => theme.colors.textGrey25};
+    padding-right: 1rem;
+    padding-left: 0.5rem;
+    font-style: italic;
+    font-size: 1.25rem;
+    vertical-align: middle;
   }
 `;
 
 export const NavigationImageContainer = styled.img`
-  height: 1.5rem;
+  height: 28px;
 `;
