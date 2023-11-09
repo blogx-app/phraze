@@ -2,6 +2,7 @@ export * from "./BlogHeader";
 export * from "./Box";
 export * from "./Button";
 export * from "./ColorPicker";
+export * from "./Command";
 export { LexicalContentEditable as ContentEditable } from "./ContentEditable";
 export * from "./Dialog";
 export * from "./DropDown";
@@ -30,5 +31,6 @@ export * from "./PhzTable";
 export * from "./PhzPaper";
 export * from "./PhzDrawer";
 export * from "./PhzAvatars";
+export * from "./PhzDialog";
 
 export * from "./contexts";

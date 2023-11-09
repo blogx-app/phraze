@@ -8,7 +8,6 @@ import {
 } from "./style";
 import { AppBarProps } from "./type";
 import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
-import { Button } from "../Button";
 
 const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
   const location = useLocation();
