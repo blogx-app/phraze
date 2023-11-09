@@ -32,6 +32,7 @@ export const tokens = {
   },
   space: {
     card: "16px",
+    popover: "8px",
     "0px": "0px",
     "1rem": "1rem",
     "1px": "1px",
