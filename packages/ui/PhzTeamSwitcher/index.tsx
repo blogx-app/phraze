@@ -101,6 +101,7 @@ export default function PhzTeamSwitcher({ className }: TeamSwitcherProps) {
               style={{
                 marginRight: "0.5rem",
               }}
+              name={selectedTeam.label}
             />
             {selectedTeam.label}
             <CaretUpDown
@@ -135,6 +136,7 @@ export default function PhzTeamSwitcher({ className }: TeamSwitcherProps) {
                           marginRight: "0.5rem",
                           lineHeight: 1,
                         }}
+                        name={team.label}
                       />
                       {team.label}
                       <Check

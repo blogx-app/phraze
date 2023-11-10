@@ -16,7 +16,6 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
   const theme = useTheme();
 
   const { crumbs } = getNavigationBreadcrum(location.pathname);
-  const lastItem = crumbs[crumbs.length - 1];
 
   return (
     <AppBarContainer>

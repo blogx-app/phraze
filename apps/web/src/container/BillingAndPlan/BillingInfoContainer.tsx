@@ -1,5 +1,5 @@
+import { Tag } from "@phosphor-icons/react";
 import { Box, Flex, PhzButton, PhzPaper, Text } from "@phraze-app/ui";
-import TagsIcon from "../Sidebar/icons/TagsIcon";
 
 export const BillingInfoContainer = () => {
   return (
@@ -7,7 +7,7 @@ export const BillingInfoContainer = () => {
       <Flex>
         <Box mr={2}>
           {/* Other icons - Confetti icons */}
-          <TagsIcon />
+          <Tag />
         </Box>
         <Box>
           <Text fontWeight={600} fontSize={1} mb={1}>

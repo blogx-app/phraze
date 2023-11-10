@@ -55,5 +55,4 @@ export const NavigationNavLink = styled(NavLink as React.FC<NavLinkProps>)`
   box-sizing: border-box;
 
   border-radius: ${({ theme }) => theme.radii.button};
-  padding-left: 0.5rem;
 `;
