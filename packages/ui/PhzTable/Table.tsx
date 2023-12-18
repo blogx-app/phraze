@@ -12,7 +12,6 @@ export const PhzTable = <T extends Record<string, string | number>>({
   tableColumns,
   tableData,
 }: PhzTableProps<T[]>) => {
-  console.log(tableColumns, tableData);
   return (
     <TableRoot>
       <TableHeader>

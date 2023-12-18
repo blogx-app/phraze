@@ -34,5 +34,6 @@ export * from "./PhzAvatars";
 export * from "./PhzDialog";
 export * from "./PhzSelect";
 export * from "./PhzTeamSwitcher";
+export * from "./PhzSearchInput";
 
 export * from "./contexts";

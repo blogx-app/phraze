@@ -8,7 +8,7 @@ export const StyledInput = styled.input<{
 }>`
   border: solid 1px black;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 14px;
   outline: none;
   border-radius: 8px;
 
@@ -22,7 +22,7 @@ export const StyledInput = styled.input<{
       border: theme.borders.input,
     })}
 
-  padding-left: ${({ hasStartAdornment }) => (hasStartAdornment ? "44px" : "")};
+  padding-left: ${({ hasStartAdornment }) => (hasStartAdornment ? "36px" : "")};
 
   ::placeholder {
     color: ${({ theme }) => theme.colors.textSubtle};
