@@ -1,12 +1,4 @@
-import {
-  Box,
-  Flex,
-  PhzPaper,
-  PhzTable,
-  PhzTableColumn,
-  Text,
-} from "@phraze-app/ui";
-import LeadsIcon from "./icons/AudienceIcon";
+import { Box, PhzPaper, PhzTable, PhzTableColumn, Text } from "@phraze-app/ui";
 import { useTheme } from "@emotion/react";
 import PhzSearchInput from "@phraze-app/ui/PhzSearchInput/PhzSearchInput";
 
@@ -39,11 +31,11 @@ export const LeadsTab = () => {
   return (
     <Box>
       <PhzPaper>
-        <Box mb={4}>
-          <Text fontSize={4} mb={1} fontWeight={500}>
+        <Box mb={3}>
+          <Text fontSize={4} mb={1} fontWeight={700}>
             Leads
           </Text>
-          <Text fontSize={2} color="textSubtle">
+          <Text fontSize="14px" color="textSubtle">
             All the leads collected on the website will appear here
           </Text>
         </Box>

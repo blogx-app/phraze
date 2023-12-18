@@ -19,7 +19,12 @@ const Panel = ({
       <Text fontWeight={600} mb={1}>
         Publication {header}
       </Text>
-      <Text color={theme.colors.textSubtle} fontSize={1} mb={3}>
+      <Text
+        color={theme.colors.textSubtle}
+        fontWeight={300}
+        fontSize={1}
+        mb={3}
+      >
         {description}
       </Text>
       <PhzButton variant="primary" onClick={onUploadButtonClickHandler}>

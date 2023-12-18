@@ -3,7 +3,11 @@ import { CSSProperties } from "react";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useTheme } from "@emotion/react";
 
-const PhzSearchInput = ({ inputStyle }: { inputStyle?: CSSProperties }) => {
+export const PhzSearchInput = ({
+  inputStyle,
+}: {
+  inputStyle?: CSSProperties;
+}) => {
   const theme = useTheme();
 
   return (
