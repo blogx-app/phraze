@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, forwardRef } from "react";
 import { Box } from "@mui/material";
 import { InputProps } from "./types";
 import {

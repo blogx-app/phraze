@@ -8,6 +8,7 @@ import {
 } from "@phraze-app/ui";
 import LeadsIcon from "./icons/AudienceIcon";
 import { useTheme } from "@emotion/react";
+import PhzSearchInput from "@phraze-app/ui/PhzSearchInput/PhzSearchInput";
 
 const TABLE_COLUMNS: PhzTableColumn[] = [
   { id: "title", label: "Title", minWidth: 220 },
@@ -37,21 +38,20 @@ export const LeadsTab = () => {
 
   return (
     <Box>
-      <Flex gap="1rem" mb={3}>
-        <PhzPaper>
-          <Box>
-            <LeadsIcon />
-          </Box>
-          <Text fontSize="2rem" fontWeight="bold" as="span" mr={2}>
-            4
+      <PhzPaper>
+        <Box mb={4}>
+          <Text fontSize={4} mb={1} fontWeight={500}>
+            Leads
           </Text>
-          <Text as="span">Leads</Text>
-          <Text fontSize="0.75rem" color={theme.colors.textSubtle}>
-            Last lead: 5s ago
+          <Text fontSize={2} color="textSubtle">
+            All the leads collected on the website will appear here
           </Text>
-        </PhzPaper>
-      </Flex>
-      <PhzTable tableColumns={TABLE_COLUMNS} tableData={tableData} />;
+        </Box>
+        <Box mb={2}>
+          <PhzSearchInput inputStyle={{ height: "2.5rem" }} />
+        </Box>
+        <PhzTable tableColumns={TABLE_COLUMNS} tableData={tableData} />
+      </PhzPaper>
     </Box>
   );
 };

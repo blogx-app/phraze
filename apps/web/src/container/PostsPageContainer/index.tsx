@@ -1,11 +1,11 @@
 import { Flex, Input } from "@phraze-app/ui";
 import AddPostCard from "./AddPostCard";
 import ContentCards from "./ContentCards";
-import SearchIcon from "./icon/SearchIcon";
 import PostSelectButtonContainer, {
   ListingTypeEnum,
 } from "./PostSelectButtonContainer";
 import Post from "../Post";
+import PhzSearchInput from "@phraze-app/ui/PhzSearchInput/PhzSearchInput";
 
 const PostsPageContainer = () => {
   return (
@@ -15,19 +15,7 @@ const PostsPageContainer = () => {
         <ContentCards />
       </Flex>
       <Flex width="100%" gap="1rem" alignItems="center">
-        <Input
-          startAdornment={<SearchIcon />}
-          placeholder="Search..."
-          style={{
-            width: "100%",
-          }}
-          ContainerProps={{
-            style: {
-              width: "50%",
-              maxWidth: "31rem",
-            },
-          }}
-        />
+        <PhzSearchInput />
         <PostSelectButtonContainer selectedListingType={ListingTypeEnum.Row} />
       </Flex>
       <Post posts={[]} listingType={ListingTypeEnum.Row} />

@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 
 export const TableRoot = styled.table`
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   background-color: ${({ theme }) => theme.colors.backgroundContent};
+
+  width: 100%;
 
   box-shadow:
     0 0 0 1px #333,
@@ -14,9 +16,8 @@ export const TableHeader = styled.thead``;
 
 export const TableHeaderCell = styled.th`
   font-size: 14px;
-
-  background-color: ${({ theme }) => theme.colors.tableHeaderBackground};
-  color: var(--text-color);
+  color: ${({ theme }) => theme.colors.textSubtle};
+  font-weight: normal;
 
   padding: 0.5rem;
   box-shadow: inset 0 -1px #333;
