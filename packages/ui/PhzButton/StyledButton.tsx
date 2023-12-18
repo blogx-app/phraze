@@ -5,7 +5,7 @@ import { StyledButtonProps } from "./types";
 
 export const StyledButton = styled.button<StyledButtonProps>`
   border: none;
-  height: 100%;
+  height: fit-content;
   cursor: pointer;
 
   display: flex;
