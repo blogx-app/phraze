@@ -9,7 +9,7 @@ type BreadCrumsObjType = Record<
 const breadCrumObj: BreadCrumsObjType = {
   [routesName.root]: { pageName: "", crumbs: [] },
   [routesName.home]: {
-    pageName: "",
+    pageName: "Home",
     crumbs: [
       {
         name: "Home",

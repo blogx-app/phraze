@@ -4,9 +4,13 @@ import { NavLink, NavLinkProps } from "react-router-dom";
 export const AppBarContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0.5rem 1.25rem;
+
+  position: sticky;
+  top: 0;
 
   border-bottom: ${({ theme }) => theme.borders.card};
-  padding: 0.5rem 1.25rem;
+  background: ${({ theme }) => theme.colors.background};
 
   .bell-icon {
     cursor: pointer;

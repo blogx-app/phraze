@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { useTheme } from "@emotion/react";
 import { GearSix, UserCircle } from "@phosphor-icons/react";
@@ -16,16 +16,7 @@ interface MiniDrawerProps {
 }
 
 export default function Sidebar({ children, sidebarHidden }: MiniDrawerProps) {
-  const navigate = useNavigate();
   const theme = useTheme();
-
-  // const handleOnClickSettings = () => {
-  //   navigate("/settings");
-  // };
-
-  // const handleOnClickProfile = () => {
-  //   navigate("/profile");
-  // };
 
   return (
     <Box display="flex">
@@ -56,34 +47,6 @@ export default function Sidebar({ children, sidebarHidden }: MiniDrawerProps) {
                 toLink={routesName.profile}
                 StartIcon={UserCircle}
               />
-              {/* <Box
-                display="flex"
-                gap="8px"
-                padding="4px 8px"
-                paddingLeft="1rem"
-                alignItems="center"
-                onClick={handleOnClickSettings}
-                style={{ cursor: "pointer" }}
-              >
-                <SettingsGearIcon />
-                <Text fontSize="14px" color={theme.colors.textWhite}>
-                  Settings
-                </Text>
-              </Box>
-              <Box
-                display="flex"
-                gap="8px"
-                padding="4px 8px"
-                paddingLeft="1rem"
-                alignItems="center"
-                onClick={handleOnClickProfile}
-                style={{ cursor: "pointer" }}
-              >
-                <UserIcon />
-                <Text fontSize="14px" color={theme.colors.textWhite}>
-                  Profile
-                </Text>
-              </Box> */}
             </BottomIconsContainer>
           </div>
         </PhzDrawer>

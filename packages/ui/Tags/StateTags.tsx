@@ -41,7 +41,7 @@ export const StateTags = ({
   tagType = "outlined",
 }: StateTagsProps) => {
   return (
-    <StyleStateTag as="span" postState={type} tagType={tagType}>
+    <StyleStateTag as="span" tagType postState={type} tagType={tagType}>
       {children}
     </StyleStateTag>
   );
