@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import { Dialog, DialogContent } from "../PhzDialog";
+import { Dialog, DialogContent } from "../PhzDialog/PhzDialog.Components";
 
 const StyledCommanPrimitive = styled(CommandPrimitive)(
   {
