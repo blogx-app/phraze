@@ -31,7 +31,7 @@ export * from "./PhzTable";
 export * from "./PhzPaper";
 export * from "./PhzDrawer";
 export * from "./PhzAvatars";
-export * from "./PhzDialog";
+export * from "./PhzDialog/PhzDialog.Components";
 export * from "./PhzSelect";
 export * from "./PhzTeamSwitcher";
 export * from "./PhzSearchInput";

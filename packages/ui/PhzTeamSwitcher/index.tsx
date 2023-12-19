@@ -22,18 +22,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../PhzDialog";
+} from "../PhzDialog/PhzDialog.Components";
 import { Input } from "../Input";
 import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../PhzSelect";
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
+import { Box, Flex } from "../Box";
+import PhzDialog from "../PhzDialog";
 
 const Label = styled.label``;
 
@@ -74,177 +69,135 @@ interface TeamSwitcherProps extends PopoverTriggerProps {}
 export default function PhzTeamSwitcher({ className }: TeamSwitcherProps) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false);
+  const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(true);
   const [selectedTeam, setSelectedTeam] = React.useState<Team>(
     groups[0].teams[0]
   );
 
   return (
-    <Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
+    <PhzDialog
+      open={showNewTeamDialog}
+      onOpenChange={setShowNewTeamDialog}
+      title="Create team"
+      description="Add a new team to manage products and customers."
+      footerComponent={
+        <Flex p={3} gap="0.5rem" justifyContent="space-between">
           <Button
-            role="combobox"
-            aria-expanded={open}
-            aria-label="Select a team"
-            style={{
-              height: "2.25rem",
-              background: theme.colors.background,
-              color: theme.colors.foreground,
-              outline: "none",
-              padding: 0,
-              // border: theme.borders.card,
-            }}
+            variant="secondary"
+            onClick={() => setShowNewTeamDialog(false)}
           >
-            <PhzAvatars
-              size="20px"
-              style={{
-                marginRight: "0.5rem",
-              }}
-              name={selectedTeam.label}
-            />
-            {selectedTeam.label}
-            <CaretUpDown
-              style={{
-                marginLeft: "0.5rem",
-                height: "1rem",
-                width: "1rem",
-                flexShrink: 0,
-                opacity: "0.5",
-              }}
-            />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent style={{ padding: "0" }}>
-          <Command>
-            <CommandList>
-              <CommandInput placeholder="Search team..." />
-              <CommandEmpty>No team found.</CommandEmpty>
-              {groups.map((group) => (
-                <CommandGroup key={group.label} heading={group.label}>
-                  {group.teams.map((team) => (
-                    <CommandItem
-                      key={team.value}
-                      onSelect={() => {
-                        setSelectedTeam(team);
-                        setOpen(false);
-                      }}
-                    >
-                      <PhzAvatars
-                        size="20px"
-                        style={{
-                          marginRight: "0.5rem",
-                          lineHeight: 1,
-                        }}
-                        name={team.label}
-                      />
-                      {team.label}
-                      <Check
-                        style={{
-                          height: "1rem",
-                          width: "1rem",
-                          marginLeft: "auto",
-                          opacity: selectedTeam.value === team.value ? 1 : 0,
-                        }}
-                      />
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              ))}
-            </CommandList>
-            <CommandSeparator />
-            <CommandList>
-              <CommandGroup
-                style={{
-                  borderTop: theme.borders.card,
-                }}
-              >
-                <DialogTrigger asChild>
-                  <CommandItem
-                    onSelect={() => {
-                      setOpen(false);
-                      setShowNewTeamDialog(true);
-                    }}
-                    id="addding-botder"
-                  >
-                    <PlusCircle
-                      size="1.25rem"
-                      style={{
-                        marginRight: "0.5rem",
-                      }}
-                    />
-                    Create Team
-                  </CommandItem>
-                </DialogTrigger>
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Create team</DialogTitle>
-          <DialogDescription>
-            Add a new team to manage products and customers.
-          </DialogDescription>
-        </DialogHeader>
-        <div>
-          <div
-          // className="space-y-4 py-2 pb-4"
-          >
-            <div
-            // className="space-y-2"
-            >
-              <Label htmlFor="name">Team name</Label>
-              <Input id="name" placeholder="Acme Inc." />
-            </div>
-            <div
-            // className="space-y-2"
-            >
-              <Label htmlFor="plan">Subscription plan</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a plan" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="free">
-                    <span
-                    // className="font-medium"
-                    >
-                      Free
-                    </span>{" "}
-                    -{" "}
-                    <span
-                    // className="text-muted-foreground"
-                    >
-                      Trial for two weeks
-                    </span>
-                  </SelectItem>
-                  <SelectItem value="pro">
-                    <span
-                    //  className="font-medium"
-                    >
-                      Pro
-                    </span>{" "}
-                    -{" "}
-                    <span
-                    // className="text-muted-foreground"
-                    >
-                      $9/month per user
-                    </span>
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </div>
-        <DialogFooter>
-          <Button variant="outline" onClick={() => setShowNewTeamDialog(false)}>
             Cancel
           </Button>
-          <Button type="submit">Continue</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+          <Button type="submit" variant="primary">
+            Continue
+          </Button>
+        </Flex>
+      }
+      triggerComponent={
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Button
+              role="combobox"
+              aria-expanded={open}
+              aria-label="Select a team"
+              style={{
+                height: "2.25rem",
+                background: theme.colors.background,
+                color: theme.colors.foreground,
+                outline: "none",
+                padding: 0,
+              }}
+            >
+              <PhzAvatars
+                size="20px"
+                style={{
+                  marginRight: "0.5rem",
+                }}
+                name={selectedTeam.label}
+              />
+              {selectedTeam.label}
+              <CaretUpDown
+                style={{
+                  marginLeft: "0.5rem",
+                  height: "1rem",
+                  width: "1rem",
+                  flexShrink: 0,
+                  opacity: "0.5",
+                }}
+              />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent style={{ padding: "0" }}>
+            <Command>
+              <CommandList>
+                <CommandInput placeholder="Search team..." />
+                <CommandEmpty>No team found.</CommandEmpty>
+                {groups.map((group) => (
+                  <CommandGroup key={group.label} heading={group.label}>
+                    {group.teams.map((team) => (
+                      <CommandItem
+                        key={team.value}
+                        onSelect={() => {
+                          setSelectedTeam(team);
+                          setOpen(false);
+                        }}
+                      >
+                        <PhzAvatars
+                          size="20px"
+                          style={{
+                            marginRight: "0.5rem",
+                            lineHeight: 1,
+                          }}
+                          name={team.label}
+                        />
+                        {team.label}
+                        <Check
+                          style={{
+                            height: "1rem",
+                            width: "1rem",
+                            marginLeft: "auto",
+                            opacity: selectedTeam.value === team.value ? 1 : 0,
+                          }}
+                        />
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                ))}
+              </CommandList>
+              <CommandSeparator />
+              <CommandList>
+                <CommandGroup
+                  style={{
+                    borderTop: theme.borders.card,
+                  }}
+                >
+                  <DialogTrigger asChild>
+                    <CommandItem
+                      onSelect={() => {
+                        setOpen(false);
+                        setShowNewTeamDialog(true);
+                      }}
+                      id="addding-botder"
+                    >
+                      <PlusCircle
+                        size="1.25rem"
+                        style={{
+                          marginRight: "0.5rem",
+                        }}
+                      />
+                      Create Team
+                    </CommandItem>
+                  </DialogTrigger>
+                </CommandGroup>
+              </CommandList>
+            </Command>
+          </PopoverContent>
+        </Popover>
+      }
+    >
+      <Box p={2} px={3}>
+        <Input placeholder="Enter team name" />
+      </Box>
+    </PhzDialog>
   );
 }
