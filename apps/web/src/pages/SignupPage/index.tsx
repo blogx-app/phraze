@@ -4,6 +4,7 @@ import { GithubLogo } from "@phosphor-icons/react";
 import { Box, Flex, Input, PhzButton, Text } from "@phraze-app/ui";
 import { NavigationImageContainer } from "@phraze-app/ui/AppBar/style";
 import { routesName } from "../../route";
+import { useState } from "react";
 
 const ContinueWithLine = styled.div`
   width: 100%;
@@ -12,8 +13,22 @@ const ContinueWithLine = styled.div`
   height: 0;
 `;
 
+const TEST_EMAIL = "test@phraze.app";
+
 const LoginPage = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+
+  const onEmailChange = (ev: any) => {
+    setEmail(ev.target.value);
+  };
+
+  const handleEmailLogin = () => {
+    if (email === TEST_EMAIL) {
+      localStorage.setItem("auth", "true");
+      navigate(routesName.home);
+    }
+  };
 
   return (
     <Flex justifyContent="center" alignItems="center" height="100vh">
@@ -57,11 +72,14 @@ const LoginPage = () => {
         <Box width="21rem">
           <Input
             placeholder="name@example.com"
+            value={email}
+            onChange={onEmailChange}
             style={{ marginBottom: "0.5rem" }}
           />
           <PhzButton
             variant="primary"
             style={{ width: "100%", minHeight: "2.5rem" }}
+            onClick={handleEmailLogin}
           >
             Sign Up with Email
           </PhzButton>

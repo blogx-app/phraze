@@ -1,9 +1,10 @@
 import { useEffect, useMemo } from "react";
-import { Outlet, useLocation, redirect, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
 import AppBar from "@phraze-app/ui/AppBar";
 import { Sidebar } from "../Sidebar";
 import { routesName } from "../../route";
+import { enqueueSnackbar } from "notistack";
 
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
@@ -11,6 +12,8 @@ interface AppLayoutProps {
   hideAppBar: (path: string) => boolean;
   hideSidebar?: (path: string) => boolean;
 }
+
+const TEST_EMAIL = "test@phraze.app";
 
 export const AppLayout = ({
   getNavigationBreadcrum,
@@ -22,10 +25,24 @@ export const AppLayout = ({
   const navigate = useNavigate();
   const appbarHidden = useMemo(() => hideAppBar(pathname), [pathname]);
   const sidebarHidden = useMemo(() => hideSidebar?.(pathname), [pathname]);
+  const isAuthenticated =
+    localStorage.getItem("auth") === "true" ? true : false;
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      enqueueSnackbar(`enter ${TEST_EMAIL} to login`, {
+        autoHideDuration: 15000,
+        variant: "default",
+      });
+
+      return navigate(routesName.login);
+    } else {
+      return navigate(routesName.home);
+    }
+  }, [isAuthenticated]);
 
   useEffect(() => {
     if (pathname === routesName.root) {
-      console.log("redirecting...");
       return navigate("/login");
     }
   }, [pathname]);

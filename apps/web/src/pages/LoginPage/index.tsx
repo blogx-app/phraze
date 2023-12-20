@@ -4,6 +4,7 @@ import { Box, Flex, Input, PhzButton, Text } from "@phraze-app/ui";
 import { NavigationImageContainer } from "@phraze-app/ui/AppBar/style";
 import { useNavigate } from "react-router-dom";
 import { routesName } from "../../route";
+import { useState } from "react";
 
 const ContinueWithLine = styled.div`
   width: 100%;
@@ -12,8 +13,22 @@ const ContinueWithLine = styled.div`
   height: 0;
 `;
 
+const TEST_EMAIL = "test@phraze.app";
+
 const LoginPage = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+
+  const onEmailChange = (ev: any) => {
+    setEmail(ev.target.value);
+  };
+
+  const handleEmailLogin = () => {
+    if (email === TEST_EMAIL) {
+      localStorage.setItem("auth", "true");
+      navigate(routesName.home);
+    }
+  };
 
   return (
     <Flex
@@ -31,12 +46,15 @@ const LoginPage = () => {
         </Text>
         <Box minWidth="21rem">
           <Input
+            value={email}
+            onChange={onEmailChange}
             placeholder="name@example.com"
             style={{ marginBottom: "0.5rem" }}
           />
           <PhzButton
             variant="primary"
             style={{ width: "100%", minHeight: "2.5rem" }}
+            onClick={handleEmailLogin}
           >
             Sign In with Email
           </PhzButton>

@@ -8,7 +8,7 @@ import {
   createTheme,
   THEME_ID,
 } from "@mui/material";
-
+import { SnackbarProvider } from "notistack";
 // import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
 // import { $createParagraphNode, $createTextNode, $getRoot } from "lexical";
 import {
@@ -25,6 +25,7 @@ import { TableContext } from "@blogx/lexical-editor/plugins/TablePlugin";
 import PlaygroundEditorTheme from "@blogx/lexical-editor/themes/PlaygroundEditorTheme";
 import { dark } from "@phraze-app/theme";
 import { routes } from "./route";
+import React from "react";
 
 const muiTheme = createTheme();
 
@@ -140,20 +141,22 @@ function App(): JSX.Element {
 
   return (
     // <ToolbarProvider>
-    <LexicalComposer initialConfig={initialConfig}>
-      <SharedHistoryContext>
-        <TableContext>
-          <SharedAutocompleteContext>
-            <ThemeProvider theme={dark}>
-              <MuiThemeProvider theme={{ [THEME_ID]: muiTheme }}>
-                <CssBaseline />
-                <RouterProvider routes={routes} />
-              </MuiThemeProvider>
-            </ThemeProvider>
-          </SharedAutocompleteContext>
-        </TableContext>
-      </SharedHistoryContext>
-    </LexicalComposer>
+    <SnackbarProvider>
+      <LexicalComposer initialConfig={initialConfig}>
+        <SharedHistoryContext>
+          <TableContext>
+            <SharedAutocompleteContext>
+              <ThemeProvider theme={dark}>
+                <MuiThemeProvider theme={{ [THEME_ID]: muiTheme }}>
+                  <CssBaseline />
+                  <RouterProvider routes={routes} />
+                </MuiThemeProvider>
+              </ThemeProvider>
+            </SharedAutocompleteContext>
+          </TableContext>
+        </SharedHistoryContext>
+      </LexicalComposer>
+    </SnackbarProvider>
     // </ToolbarProvider>
   );
 }
