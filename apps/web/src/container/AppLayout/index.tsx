@@ -1,8 +1,9 @@
-import { useMemo } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useMemo } from "react";
+import { Outlet, useLocation, redirect, useNavigate } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
 import AppBar from "@phraze-app/ui/AppBar";
 import { Sidebar } from "../Sidebar";
+import { routesName } from "../../route";
 
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
@@ -18,8 +19,16 @@ export const AppLayout = ({
   hideSidebar,
 }: AppLayoutProps): JSX.Element => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const appbarHidden = useMemo(() => hideAppBar(pathname), [pathname]);
   const sidebarHidden = useMemo(() => hideSidebar?.(pathname), [pathname]);
+
+  useEffect(() => {
+    if (pathname === routesName.root) {
+      console.log("redirecting...");
+      return navigate("/login");
+    }
+  }, [pathname]);
 
   return (
     <Sidebar sidebarHidden={sidebarHidden}>
