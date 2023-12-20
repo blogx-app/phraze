@@ -6,7 +6,11 @@ import ManageDomainPage from "../pages/ManageDomainPage";
 import { PostsPage } from "../pages/PostsPage";
 import { SettingsPage } from "../pages/SettingsPage";
 import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
-import routesName, { hideAppbar, hideSidebar } from "./routesName";
+import routesName, {
+  hideAppbar,
+  hideSidebar,
+  showUnauthSidebar,
+} from "./routesName";
 import { getNavigationBreadcrum } from "./breadcrumUtils";
 import LeadsPage from "../pages/LeadsPage";
 import PagesPage from "../pages/PagesPage";
@@ -16,6 +20,7 @@ import ThemeSettingsPage from "../pages/ThemeSettingsPage";
 import NavigationSettingsPage from "../pages/NavigationSettingsPage";
 import ProfilePage from "../pages/ProfilePage";
 import BillingAndPlansPage from "../pages/BillingAndPlansPage";
+import LoginPage from "../pages/LoginPage";
 
 const routes: RouteObject[] = [
   {
@@ -23,6 +28,7 @@ const routes: RouteObject[] = [
     element: (
       <AppLayout
         getNavigationBreadcrum={getNavigationBreadcrum}
+        showUnauthSidebar={showUnauthSidebar}
         hideAppBar={hideAppbar}
         hideSidebar={hideSidebar}
       />
@@ -46,6 +52,10 @@ const routes: RouteObject[] = [
         element: <NavigationSettingsPage />,
       },
       { path: routesName.profile, element: <ProfilePage /> },
+      {
+        path: routesName.login,
+        element: <LoginPage />,
+      },
     ],
   },
 ];

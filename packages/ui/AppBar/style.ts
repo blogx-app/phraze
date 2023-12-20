@@ -40,4 +40,5 @@ export const BreadcrumsNavlink = styled(NavLink as React.FC<NavLinkProps>)`
 
 export const NavigationImageContainer = styled.img`
   height: 28px;
+  width: fit-content;
 `;

@@ -8,4 +8,6 @@ export interface AppBarProps {
     pageName: string;
     crumbs: BreadcrumsType[];
   };
+  showUnauthSidebar: (path: string) => boolean
+  hideAppbar?: boolean;
 }

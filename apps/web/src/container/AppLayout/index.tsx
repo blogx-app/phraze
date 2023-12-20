@@ -6,12 +6,14 @@ import { Sidebar } from "../Sidebar";
 
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
+  showUnauthSidebar: (path: string) => boolean;
   hideAppBar: (path: string) => boolean;
   hideSidebar?: (path: string) => boolean;
 }
 
 export const AppLayout = ({
   getNavigationBreadcrum,
+  showUnauthSidebar,
   hideAppBar,
   hideSidebar,
 }: AppLayoutProps): JSX.Element => {
@@ -23,7 +25,11 @@ export const AppLayout = ({
     <Sidebar sidebarHidden={sidebarHidden}>
       <CssBaseline />
       {!appbarHidden && (
-        <AppBar getNavigationBreadcrum={getNavigationBreadcrum} />
+        <AppBar
+          showUnauthSidebar={showUnauthSidebar}
+          getNavigationBreadcrum={getNavigationBreadcrum}
+          hideAppbar={appbarHidden}
+        />
       )}
       <Box p="1.25rem">
         <Outlet />

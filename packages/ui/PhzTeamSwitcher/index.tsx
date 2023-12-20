@@ -1,5 +1,7 @@
 "use client";
 
+import styled from "@emotion/styled";
+import { useTheme } from "@emotion/react";
 import * as React from "react";
 import { CaretUpDown, Check, PlusCircle } from "@phosphor-icons/react";
 
@@ -14,21 +16,11 @@ import {
   CommandList,
   CommandSeparator,
 } from "../Command";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "../PhzDialog/PhzDialog.Components";
+import { DialogTrigger } from "../PhzDialog/PhzDialog.Components";
+import PhzDialog from "../PhzDialog";
 import { Input } from "../Input";
 import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
-import styled from "@emotion/styled";
-import { useTheme } from "@emotion/react";
 import { Box, Flex } from "../Box";
-import PhzDialog from "../PhzDialog";
 
 const Label = styled.label``;
 
@@ -69,7 +61,7 @@ interface TeamSwitcherProps extends PopoverTriggerProps {}
 export default function PhzTeamSwitcher({ className }: TeamSwitcherProps) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(true);
+  const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false);
   const [selectedTeam, setSelectedTeam] = React.useState<Team>(
     groups[0].teams[0]
   );

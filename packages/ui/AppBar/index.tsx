@@ -10,12 +10,35 @@ import { AppBarProps } from "./type";
 import PhzTeamSwitcher from "../PhzTeamSwitcher";
 import Text from "../Text";
 import { Flex } from "../Box";
+import PhzButton from "../PhzButton";
+import { CaretLeft } from "@phosphor-icons/react";
 
-const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
-  const location = useLocation();
+const AppBar = ({
+  getNavigationBreadcrum,
+  showUnauthSidebar,
+  hideAppbar = false,
+}: AppBarProps) => {
+  const { pathname } = useLocation();
   const theme = useTheme();
 
-  const { crumbs } = getNavigationBreadcrum(location.pathname);
+  const { crumbs = [] } =
+    hideAppbar || showUnauthSidebar(pathname)
+      ? {}
+      : getNavigationBreadcrum?.(pathname);
+
+  if (showUnauthSidebar(pathname)) {
+    return (
+      <AppBarContainer style={{ margin: "1rem 5rem", border: "none" }}>
+        <PhzButton
+          variant="secondary"
+          style={{ width: "fit-content", border: "none" }}
+        >
+          <CaretLeft size={16} style={{ marginRight: "4px" }} />
+          Back
+        </PhzButton>
+      </AppBarContainer>
+    );
+  }
 
   return (
     <AppBarContainer>
@@ -32,7 +55,7 @@ const AppBar = ({ getNavigationBreadcrum }: AppBarProps) => {
         </Text>
         <PhzTeamSwitcher />
         {crumbs?.map((crumb, i) => (
-          <Flex key={crumb.toLink}>
+          <Flex key={crumb.toLink + i}>
             <BreadcrumsNavlink
               end
               to={crumb.toLink}
