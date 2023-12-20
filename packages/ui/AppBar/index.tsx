@@ -15,6 +15,7 @@ const AppBar = ({
   getNavigationBreadcrum,
   showUnauthSidebar,
   hideAppbar = false,
+  isHomeMode,
 }: AppBarProps) => {
   const { pathname } = useLocation();
   const theme = useTheme();
@@ -44,31 +45,35 @@ const AppBar = ({
     <AppBarContainer>
       <Box display="flex" alignItems="center">
         <NavigationImageContainer src="/phraze_logo.webp" />
-        <Text
-          color={theme.colors.textGrey25}
-          mx={2}
-          fontSize="1.25rem"
-          fontStyle="italic"
-          pr={2}
-        >
-          /
-        </Text>
-        <PhzTeamSwitcher />
-        {crumbs?.map((crumb, i) => (
-          <Flex key={crumb.toLink + i}>
-            <BreadcrumsNavlink
-              end
-              to={crumb.toLink}
-              style={({ isActive }) =>
-                isActive
-                  ? { color: theme.colors.foreground }
-                  : { color: theme.colors.textSubtle }
-              }
+        {!isHomeMode && (
+          <>
+            <Text
+              color={theme.colors.textGrey25}
+              mx={2}
+              fontSize="1.25rem"
+              fontStyle="italic"
+              pr={2}
             >
-              {crumb.name}
-            </BreadcrumsNavlink>
-          </Flex>
-        ))}
+              /
+            </Text>
+            <PhzTeamSwitcher />
+            {crumbs?.map((crumb, i) => (
+              <Flex key={crumb.toLink + i}>
+                <BreadcrumsNavlink
+                  end
+                  to={crumb.toLink}
+                  style={({ isActive }) =>
+                    isActive
+                      ? { color: theme.colors.foreground }
+                      : { color: theme.colors.textSubtle }
+                  }
+                >
+                  {crumb.name}
+                </BreadcrumsNavlink>
+              </Flex>
+            ))}
+          </>
+        )}
       </Box>
     </AppBarContainer>
   );

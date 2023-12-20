@@ -1,9 +1,9 @@
 import * as React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { useTheme } from "@emotion/react";
-import { GearSix, UserCircle } from "@phosphor-icons/react";
-import { PhzDrawer } from "@phraze-app/ui";
+import { GearSix, SignOut, UserCircle } from "@phosphor-icons/react";
+import { Flex, PhzButton, PhzDrawer, Text } from "@phraze-app/ui";
 import { BottomIconsContainer } from "./style";
 import NavigationComponent from "./NavigationComponent";
 import UpgradeToPro from "./UpgradeToPro";
@@ -13,10 +13,21 @@ import { routesName } from "../../route";
 interface MiniDrawerProps {
   children?: React.ReactNode;
   sidebarHidden?: boolean;
+  isHomeMode: boolean;
 }
 
-export default function Sidebar({ children, sidebarHidden }: MiniDrawerProps) {
+export default function Sidebar({
+  children,
+  sidebarHidden,
+  isHomeMode,
+}: MiniDrawerProps) {
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const onSignOutClick = () => {
+    localStorage.clear();
+    navigate(routesName.login);
+  };
 
   return (
     <Box display="flex">
@@ -31,22 +42,42 @@ export default function Sidebar({ children, sidebarHidden }: MiniDrawerProps) {
               <NavLink to="/home">
                 <img style={{ height: "24px" }} src="/phraze_full_logo.webp" />
               </NavLink>
+              {isHomeMode && (
+                <PhzButton
+                  height="2.5rem"
+                  width="100%"
+                  mt={3}
+                  variant="primary"
+                >
+                  Create New Blog
+                </PhzButton>
+              )}
             </div>
-            <NavigationComponent />
+            {!isHomeMode && <NavigationComponent />}
           </div>
           <div style={{ width: "100%" }}>
-            <UpgradeToPro />
+            {!isHomeMode && <UpgradeToPro />}
             <BottomIconsContainer style={{ width: "100%" }}>
-              <NavigationLinkComponent
-                name="Settings"
-                toLink={routesName.settings}
-                StartIcon={GearSix}
-              />
-              <NavigationLinkComponent
-                name="Profile"
-                toLink={routesName.profile}
-                StartIcon={UserCircle}
-              />
+              {!isHomeMode && (
+                <NavigationLinkComponent
+                  name="Settings"
+                  toLink={routesName.settings}
+                  StartIcon={GearSix}
+                />
+              )}
+              <Flex alignItems="center">
+                <NavigationLinkComponent
+                  name="Profile"
+                  toLink={routesName.profile}
+                  StartIcon={UserCircle}
+                />
+                <SignOut
+                  color={theme.colors.textSubtle}
+                  size={20}
+                  cursor="pointer"
+                  onClick={onSignOutClick}
+                />
+              </Flex>
             </BottomIconsContainer>
           </div>
         </PhzDrawer>

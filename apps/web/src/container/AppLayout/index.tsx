@@ -25,6 +25,8 @@ export const AppLayout = ({
   const navigate = useNavigate();
   const appbarHidden = useMemo(() => hideAppBar(pathname), [pathname]);
   const sidebarHidden = useMemo(() => hideSidebar?.(pathname), [pathname]);
+  const isHomeMode = pathname === routesName.home;
+
   const isAuthenticated =
     localStorage.getItem("auth") === "true" ? true : false;
 
@@ -36,22 +38,30 @@ export const AppLayout = ({
       });
 
       return navigate(routesName.login);
-    } else {
-      return navigate(routesName.home);
     }
   }, [isAuthenticated]);
 
   useEffect(() => {
-    if (pathname === routesName.root) {
-      return navigate("/login");
+    if (pathname === routesName.root && !isAuthenticated) {
+      return navigate(routesName.login);
+    } else if (pathname === routesName.root && isAuthenticated) {
+      return navigate(routesName.home);
     }
   }, [pathname]);
 
+  if (
+    !isAuthenticated &&
+    ![routesName.login, routesName.signup].includes(pathname)
+  ) {
+    return <></>;
+  }
+
   return (
-    <Sidebar sidebarHidden={sidebarHidden}>
+    <Sidebar sidebarHidden={sidebarHidden} isHomeMode={isHomeMode}>
       <CssBaseline />
       {!appbarHidden && (
         <AppBar
+          isHomeMode={isHomeMode}
           showUnauthSidebar={showUnauthSidebar}
           getNavigationBreadcrum={getNavigationBreadcrum}
           hideAppbar={appbarHidden}

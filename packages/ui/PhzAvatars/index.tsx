@@ -8,7 +8,7 @@ export const PhzAvatars = (
   const { style } = props;
 
   return (
-    <div style={style}>
+    <div style={{ ...style, lineHeight: "0.5" }}>
       <BoringAvatar name="Sanjib Kumar Sah" variant="marble" {...props} />
     </div>
   );

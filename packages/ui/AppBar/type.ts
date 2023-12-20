@@ -10,4 +10,5 @@ export interface AppBarProps {
   };
   showUnauthSidebar: (path: string) => boolean
   hideAppbar?: boolean;
+  isHomeMode: boolean
 }

@@ -1,9 +1,9 @@
-import AddMoreBlogButton from "./AddMoreBlogButton";
+import BlogDetailCard from "./BlogDetailCard";
 
 const HomePage = () => {
   return (
     <div>
-      <AddMoreBlogButton />
+      <BlogDetailCard />
     </div>
   );
 };
