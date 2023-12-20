@@ -31,7 +31,7 @@ export const AppLayout = ({
           hideAppbar={appbarHidden}
         />
       )}
-      <Box p="1.25rem">
+      <Box p={sidebarHidden ? 0 : "1.25rem"}>
         <Outlet />
       </Box>
     </Sidebar>

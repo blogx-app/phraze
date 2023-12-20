@@ -21,6 +21,7 @@ import NavigationSettingsPage from "../pages/NavigationSettingsPage";
 import ProfilePage from "../pages/ProfilePage";
 import BillingAndPlansPage from "../pages/BillingAndPlansPage";
 import LoginPage from "../pages/LoginPage";
+import SignupPage from "../pages/SignupPage";
 
 const routes: RouteObject[] = [
   {
@@ -55,6 +56,10 @@ const routes: RouteObject[] = [
       {
         path: routesName.login,
         element: <LoginPage />,
+      },
+      {
+        path: routesName.signup,
+        element: <SignupPage />,
       },
     ],
   },

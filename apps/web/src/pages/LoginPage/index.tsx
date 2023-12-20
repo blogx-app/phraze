@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import { GithubLogo } from "@phosphor-icons/react";
 import { Box, Flex, Input, PhzButton, Text } from "@phraze-app/ui";
 import { NavigationImageContainer } from "@phraze-app/ui/AppBar/style";
+import { useNavigate } from "react-router-dom";
+import { routesName } from "../../route";
 
 const ContinueWithLine = styled.div`
   width: 100%;
@@ -11,6 +13,8 @@ const ContinueWithLine = styled.div`
 `;
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   return (
     <Flex
       justifyContent="center"
@@ -22,7 +26,7 @@ const LoginPage = () => {
         <Text fontSize="1.5rem" fontWeight={600} mt={1} mb={2}>
           Welcome Back
         </Text>
-        <Text color="textSubtle" mb={3}>
+        <Text color="textSubtle" mb={3} fontSize="14px">
           Enter your email to sign in to your account
         </Text>
         <Box minWidth="21rem">
@@ -62,6 +66,7 @@ const LoginPage = () => {
             style={{ width: "100%", minHeight: "2.5rem", border: "none" }}
             color="textSubtle"
             mt={2}
+            onClick={() => navigate(routesName.signup)}
           >
             Don't have an account? Sign Up
           </PhzButton>
