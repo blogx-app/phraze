@@ -8,6 +8,7 @@ export const StyledTextArea = styled.textarea`
   outline: none;
   border-radius: 8px;
   resize: vertical;
+  width: 100%;
 
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.foreground};

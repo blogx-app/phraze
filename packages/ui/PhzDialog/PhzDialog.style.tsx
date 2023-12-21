@@ -10,11 +10,7 @@ export const StyledDialogOverlay = styled(DialogPrimitive.Overlay)({
 
 export const StyledDialogContent = styled(DialogPrimitive.Content)(
   {
-    position: "fixed",
-    left: "calc(100vw - 66%)",
-    top: "calc(100vh - 66%)",
     zIndex: 1202,
-    display: "grid",
     width: "100%",
     maxWidth: "32rem",
     transform: "translateX(-50%, -50%)",

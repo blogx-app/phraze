@@ -9,6 +9,7 @@ import NavigationComponent from "./NavigationComponent";
 import UpgradeToPro from "./UpgradeToPro";
 import NavigationLinkComponent from "./NavigationLinkComponent";
 import { routesName } from "../../route";
+import CreateNewBlogDialog from "./CreateNewBlogDialog";
 
 interface MiniDrawerProps {
   children?: React.ReactNode;
@@ -43,14 +44,19 @@ export default function Sidebar({
                 <img style={{ height: "24px" }} src="/phraze_full_logo.webp" />
               </NavLink>
               {isHomeMode && (
-                <PhzButton
-                  height="2.5rem"
-                  width="100%"
-                  mt={3}
-                  variant="primary"
-                >
-                  Create New Blog
-                </PhzButton>
+                <CreateNewBlogDialog
+                  TriggerComponent={({ onClickHandler }) => (
+                    <PhzButton
+                      onClick={onClickHandler}
+                      height="2.5rem"
+                      width="100%"
+                      mt={3}
+                      variant="primary"
+                    >
+                      Create New Blog
+                    </PhzButton>
+                  )}
+                />
               )}
             </div>
             {!isHomeMode && <NavigationComponent />}

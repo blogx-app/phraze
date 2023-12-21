@@ -1,3 +1,4 @@
+import { Flex } from "../Box";
 import {
   Dialog,
   DialogContent,
@@ -5,6 +6,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
 } from "./PhzDialog.Components";
 import { PhzDialogProps } from "./type";
 
@@ -19,7 +21,7 @@ export const PhzDialog = ({
 }: PhzDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      {triggerComponent}
+      <DialogTrigger asChild>{triggerComponent}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
