@@ -70,13 +70,6 @@ export default function Sidebar({
           <div style={{ width: "100%" }}>
             {!isHomeMode && <UpgradeToPro />}
             <BottomIconsContainer style={{ width: "100%" }}>
-              {!isHomeMode && (
-                <NavigationLinkComponent
-                  name="Settings"
-                  toLink={getMatchedRoute(routesName.settings)}
-                  StartIcon={GearSix}
-                />
-              )}
               <Flex alignItems="center">
                 <NavigationLinkComponent
                   name="Profile"

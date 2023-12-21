@@ -7,6 +7,7 @@ import {
   File,
   Tag,
   UserList,
+  GearSix,
 } from "@phosphor-icons/react";
 import { PhzButton } from "@phraze-app/ui";
 import PostsIconWrapper from "./PostsIconWrapper";
@@ -40,6 +41,11 @@ const NavigationComponent = () => {
       name: "Leads",
       icon: UserList,
       toLink: routesName.leads,
+    },
+    {
+      name: "Settings",
+      icon: GearSix,
+      toLink: routesName.settings,
     },
   ];
 

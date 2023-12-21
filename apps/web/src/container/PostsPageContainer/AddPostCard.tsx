@@ -1,8 +1,14 @@
 import { Flex, Text } from "@phraze-app/ui";
 import AddPostIcon from "./icon/AddPostIcon";
 import { CardContainer } from "./styles";
+import useAppNavigation from "../../hooks/useAppNavigation";
+import { routesName } from "../../route";
 
 const AddPostCard = () => {
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
+
   return (
     <CardContainer
       flexDirection="column"
@@ -12,7 +18,7 @@ const AddPostCard = () => {
       maxWidth="28rem"
       border="#555 1px dashed"
     >
-      <Flex alignItems="center">
+      <Flex alignItems="center" onClick={() => navigate(routesName.editor)}>
         <span style={{ cursor: "pointer" }}>
           <AddPostIcon />
         </span>

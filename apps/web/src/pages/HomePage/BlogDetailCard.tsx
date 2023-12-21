@@ -1,15 +1,7 @@
 import { useTheme } from "@emotion/react";
-import {
-  Box,
-  Flex,
-  PhzAvatars,
-  PhzButton,
-  PhzPaper,
-  Text,
-} from "@phraze-app/ui";
+import { Flex, PhzAvatars, PhzButton, PhzPaper, Text } from "@phraze-app/ui";
 import Tags from "@phraze-app/ui/Tags/Tags";
 import { routesName } from "../../route";
-import { replaceRouteVar } from "../../route/routes";
 import useAppNavigation from "../../hooks/useAppNavigation";
 
 export const BlogDetailCard = () => {
@@ -20,12 +12,12 @@ export const BlogDetailCard = () => {
 
   const onClickViewDashboard = () => {
     // @todo - should navigate to correct blog page.
-    navigate(replaceRouteVar(routesName.analytics, ":blogName", "acme"));
+    navigate(routesName.posts);
   };
 
   const onClickWritePost = () => {
     //@todo - should create new posts
-    navigate(replaceRouteVar(routesName.editor, ":blogName", "acme"));
+    navigate(routesName.posts);
   };
 
   return (

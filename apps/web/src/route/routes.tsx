@@ -68,13 +68,5 @@ export const getMatchingPathname = (path: string) => {
   return matchingRoutes.route.path || "";
 };
 
-export const replaceRouteVar = (
-  path: string,
-  pathVar: string,
-  pathValue: string
-) => {
-  return path.replace(pathVar, pathValue);
-};
-
 export { default as routesName } from "./routesName";
 export default routes;
