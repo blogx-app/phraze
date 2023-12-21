@@ -33,7 +33,7 @@ export * from "./PhzDrawer";
 export * from "./PhzAvatars";
 export * from "./PhzDialog/PhzDialog.Components";
 export * from "./PhzSelect";
-export * from "./PhzTeamSwitcher";
+export * from "./PhzBlogSwitcher";
 export * from "./PhzSearchInput";
 
 export * from "./contexts";

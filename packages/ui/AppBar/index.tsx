@@ -7,13 +7,14 @@ import {
   NavigationImageContainer,
 } from "./style";
 import { AppBarProps } from "./type";
-import PhzTeamSwitcher from "../PhzTeamSwitcher";
+import PhzBlogSwitcher from "../PhzBlogSwitcher";
 import Text from "../Text";
 import { Flex } from "../Box";
 
 const AppBar = ({
   getNavigationBreadcrum,
   showUnauthSidebar,
+  blogSwitcher,
   hideAppbar = false,
   isHomeMode,
 }: AppBarProps) => {
@@ -56,7 +57,7 @@ const AppBar = ({
             >
               /
             </Text>
-            <PhzTeamSwitcher />
+            {blogSwitcher}
             {crumbs &&
               crumbs?.map((crumb, i) => (
                 <Flex key={crumb?.toLink + i}>

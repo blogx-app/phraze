@@ -6,7 +6,7 @@ interface CreateNewBlogDialogProps {
   TriggerComponent: (props: any) => JSX.Element;
 }
 
-const CreateNewBlogDialog = ({
+export const CreateNewBlogDialog = ({
   TriggerComponent,
 }: CreateNewBlogDialogProps) => {
   const [openCreateBlog, setOpenCreateBlog] = useState(false);

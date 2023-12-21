@@ -5,6 +5,9 @@ import AppBar from "@phraze-app/ui/AppBar";
 import { Sidebar } from "../Sidebar";
 import { routesName } from "../../route";
 import { enqueueSnackbar } from "notistack";
+import PhzBlogSwitcher from "@phraze-app/ui/PhzBlogSwitcher";
+import PhzDialog from "@phraze-app/ui/PhzDialog";
+import CreateNewBlogDialog from "../Sidebar/CreateNewBlogDialog";
 
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
@@ -65,6 +68,13 @@ export const AppLayout = ({
           showUnauthSidebar={showUnauthSidebar}
           getNavigationBreadcrum={getNavigationBreadcrum}
           hideAppbar={appbarHidden}
+          blogSwitcher={
+            <CreateNewBlogDialog
+              TriggerComponent={({ onClickHandler }) => (
+                <PhzBlogSwitcher onClickHandler={onClickHandler} />
+              )}
+            />
+          }
         />
       )}
       <Box p={sidebarHidden ? 0 : "1.25rem"}>
