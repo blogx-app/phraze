@@ -7,12 +7,12 @@ import {
   NavigationImageContainer,
 } from "./style";
 import { AppBarProps } from "./type";
-import PhzBlogSwitcher from "../PhzBlogSwitcher";
 import Text from "../Text";
 import { Flex } from "../Box";
 
 const AppBar = ({
   getNavigationBreadcrum,
+  getMatchedRoute,
   showUnauthSidebar,
   blogSwitcher,
   hideAppbar = false,
@@ -27,18 +27,6 @@ const AppBar = ({
       : getNavigationBreadcrum?.(pathname);
 
   if (showUnauthSidebar(pathname)) {
-    // return (
-    //   <AppBarContainer style={{ margin: "1rem 5rem", border: "none" }}>
-    //     <PhzButton
-    //       variant="secondary"
-    //       style={{ width: "fit-content", border: "none" }}
-    //     >
-    //       <CaretLeft size={16} style={{ marginRight: "4px" }} />
-    //       Back
-    //     </PhzButton>
-    //   </AppBarContainer>
-    // );
-
     return <></>;
   }
 
@@ -63,7 +51,7 @@ const AppBar = ({
                 <Flex key={crumb?.toLink + i}>
                   <BreadcrumsNavlink
                     end
-                    to={crumb?.toLink}
+                    to={getMatchedRoute(crumb?.toLink)}
                     style={({ isActive }) =>
                       isActive
                         ? { color: theme.colors.foreground }

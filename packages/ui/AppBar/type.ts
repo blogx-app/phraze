@@ -10,8 +10,9 @@ export interface AppBarProps {
     pageName: string;
     crumbs: BreadcrumsType[];
   };
-  showUnauthSidebar: (path: string) => boolean
+  showUnauthSidebar: (path: string) => boolean;
   hideAppbar?: boolean;
-  isHomeMode: boolean
-  blogSwitcher: ReactNode
+  isHomeMode: boolean;
+  blogSwitcher: ReactNode;
+  getMatchedRoute: (path: string) => string;
 }

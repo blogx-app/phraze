@@ -6,11 +6,7 @@ import ManageDomainPage from "../pages/ManageDomainPage";
 import { PostsPage } from "../pages/PostsPage";
 import { SettingsPage } from "../pages/SettingsPage";
 import GeneralSettingsPage from "../pages/GeneralSettingsPage/GeneralSettingsPage";
-import routesName, {
-  hideAppbar,
-  hideSidebar,
-  showUnauthSidebar,
-} from "./routesName";
+import routesName, { showUnauthSidebar } from "./routesName";
 import { getNavigationBreadcrum } from "./breadcrumUtils";
 import LeadsPage from "../pages/LeadsPage";
 import PagesPage from "../pages/PagesPage";
@@ -30,8 +26,6 @@ const routes: RouteObject[] = [
       <AppLayout
         getNavigationBreadcrum={getNavigationBreadcrum}
         showUnauthSidebar={showUnauthSidebar}
-        hideAppBar={hideAppbar}
-        hideSidebar={hideSidebar}
       />
     ),
     children: [

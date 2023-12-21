@@ -24,19 +24,7 @@ export const routesName = {
 };
 export default routesName;
 
-const APPBAR_HIDDEN_PATHNAME = [routesName.editor];
-const SIDEBAR_HIDDEN_PATHNAME = [
-  routesName.editor,
-  routesName.login,
-  routesName.signup,
-];
 const APPBAR_UNAUTH_PATHNAME = [routesName.login, routesName.signup];
-
-export const hideAppbar = (pathname: string) =>
-  APPBAR_HIDDEN_PATHNAME.includes(pathname);
-
-export const hideSidebar = (pathname: string) =>
-  SIDEBAR_HIDDEN_PATHNAME.includes(pathname);
 
 export const showUnauthSidebar = (pathname: string) =>
   APPBAR_UNAUTH_PATHNAME.includes(pathname);

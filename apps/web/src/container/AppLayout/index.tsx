@@ -15,8 +15,6 @@ import useMatchedRoute from "../../hooks/useMatchedRoute";
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
   showUnauthSidebar: (path: string) => boolean;
-  hideAppBar: (path: string) => boolean;
-  hideSidebar?: (path: string) => boolean;
 }
 
 const TEST_EMAIL = "test@phraze.app";
@@ -24,8 +22,6 @@ const TEST_EMAIL = "test@phraze.app";
 export const AppLayout = ({
   getNavigationBreadcrum,
   showUnauthSidebar,
-  hideAppBar,
-  hideSidebar,
 }: AppLayoutProps): JSX.Element => {
   const { pathname } = useLocation();
   const navigate = useAppNavigation({
@@ -87,6 +83,7 @@ export const AppLayout = ({
           showUnauthSidebar={showUnauthSidebar}
           getNavigationBreadcrum={getNavigationBreadcrum}
           hideAppbar={appbarHidden}
+          getMatchedRoute={getMatchedRoute}
           blogSwitcher={
             <CreateNewBlogDialog
               TriggerComponent={({ onClickHandler, ...rest }) => (
