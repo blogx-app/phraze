@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useMemo } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
@@ -8,6 +10,7 @@ import { routesName } from "../../route";
 import { enqueueSnackbar } from "notistack";
 import CreateNewBlogDialog from "../Sidebar/CreateNewBlogDialog";
 import useAppNavigation from "../../hooks/useAppNavigation";
+import useMatchedRoute from "../../hooks/useMatchedRoute";
 
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
@@ -25,11 +28,25 @@ export const AppLayout = ({
   hideSidebar,
 }: AppLayoutProps): JSX.Element => {
   const { pathname } = useLocation();
-  const appbarHidden = useMemo(() => hideAppBar(pathname), [pathname]);
-  const sidebarHidden = useMemo(() => hideSidebar?.(pathname), [pathname]);
   const navigate = useAppNavigation({
     blogName: "acme",
   });
+  const getMatchedRoute = useMatchedRoute({
+    blogName: "acme",
+  });
+  const appbarHidden = useMemo(
+    () => [getMatchedRoute(routesName.editor)].includes(pathname),
+    [pathname]
+  );
+  const sidebarHidden = useMemo(
+    () =>
+      [
+        getMatchedRoute(routesName.editor),
+        getMatchedRoute(routesName.login),
+        getMatchedRoute(routesName.signup),
+      ].includes(pathname),
+    [pathname]
+  );
   const isHomeMode = pathname === routesName.home;
 
   const isAuthenticated =
