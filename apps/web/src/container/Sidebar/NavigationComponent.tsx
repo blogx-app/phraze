@@ -11,35 +11,38 @@ import {
 import { PhzButton } from "@phraze-app/ui";
 import PostsIconWrapper from "./PostsIconWrapper";
 import NavigationLinkComponent from "./NavigationLinkComponent";
-
-const NAVIGATIONS_ITEMS: {
-  name: string;
-  icon: Icon;
-  toLink: string;
-}[] = [
-  {
-    name: "Analytics",
-    icon: ChartLine,
-    toLink: "/analytics",
-  },
-  {
-    name: "Pages",
-    icon: File,
-    toLink: "/pages",
-  },
-  {
-    name: "Tags",
-    icon: Tag,
-    toLink: "/tags",
-  },
-  {
-    name: "Leads",
-    icon: UserList,
-    toLink: "/leads",
-  },
-];
+import { routesName } from "../../route";
+import useMatchedRoute from "../../hooks/useMatchedRoute";
 
 const NavigationComponent = () => {
+  const getMatchedRoute = useMatchedRoute({ blogName: "acme" });
+  const NAVIGATIONS_ITEMS: {
+    name: string;
+    icon: Icon;
+    toLink: string;
+  }[] = [
+    {
+      name: "Analytics",
+      icon: ChartLine,
+      toLink: routesName.analytics,
+    },
+    {
+      name: "Pages",
+      icon: File,
+      toLink: routesName.pages,
+    },
+    {
+      name: "Tags",
+      icon: Tag,
+      toLink: routesName.tags,
+    },
+    {
+      name: "Leads",
+      icon: UserList,
+      toLink: routesName.leads,
+    },
+  ];
+
   return (
     <Box
       display="flex"
@@ -71,7 +74,7 @@ const NavigationComponent = () => {
               key={item.name + item.toLink}
               name={item.name}
               StartIcon={item.icon}
-              toLink={item.toLink}
+              toLink={getMatchedRoute(item.toLink)}
             />
           </React.Fragment>
         ))}

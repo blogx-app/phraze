@@ -10,13 +10,15 @@ import {
   Text,
 } from "@phraze-app/ui";
 import { ChevronLeft } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
 import { routesName } from "../../route";
 import BlogSettingsIcon from "./icons/BlogSettingsIcon";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 const BlogEditorPage = () => {
   const theme = useTheme();
-  const navigate = useNavigate();
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
 
   const onClickBack = () => {
     navigate(routesName.posts);
@@ -38,7 +40,7 @@ const BlogEditorPage = () => {
           >
             <ChevronLeft /> Posts
           </span>
-          <StateTags type="draft" tagType="outlined">
+          <StateTags type={"draft" as any} tagType="outlined">
             Draft
           </StateTags>
         </Flex>

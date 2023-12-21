@@ -8,13 +8,15 @@ import {
   Text,
 } from "@phraze-app/ui";
 import Tags from "@phraze-app/ui/Tags/Tags";
-import { useNavigate } from "react-router-dom";
 import { routesName } from "../../route";
 import { replaceRouteVar } from "../../route/routes";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 export const BlogDetailCard = () => {
   const theme = useTheme();
-  const navigate = useNavigate();
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
 
   const onClickViewDashboard = () => {
     // @todo - should navigate to correct blog page.

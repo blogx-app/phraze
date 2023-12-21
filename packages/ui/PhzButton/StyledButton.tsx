@@ -1,3 +1,4 @@
+import { HTMLProps, Ref } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { color, compose, layout, space } from "styled-system";
@@ -43,8 +44,4 @@ export const StyledButton = styled.button<StyledButtonProps>`
   :hover {
     opacity: 0.85;
   }
-
-  /* & > svg {
-    margin: auto;
-  } */
 `;

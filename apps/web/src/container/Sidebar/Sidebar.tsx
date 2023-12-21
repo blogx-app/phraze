@@ -1,15 +1,17 @@
 import * as React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { useTheme } from "@emotion/react";
 import { GearSix, SignOut, UserCircle } from "@phosphor-icons/react";
-import { Flex, PhzButton, PhzDrawer, Text } from "@phraze-app/ui";
+import { Flex, PhzButton, PhzDrawer } from "@phraze-app/ui";
 import { BottomIconsContainer } from "./style";
 import NavigationComponent from "./NavigationComponent";
 import UpgradeToPro from "./UpgradeToPro";
 import NavigationLinkComponent from "./NavigationLinkComponent";
 import { routesName } from "../../route";
 import CreateNewBlogDialog from "./CreateNewBlogDialog";
+import useAppNavigation from "../../hooks/useAppNavigation";
+import useMatchedRoute from "../../hooks/useMatchedRoute";
 
 interface MiniDrawerProps {
   children?: React.ReactNode;
@@ -23,7 +25,10 @@ export default function Sidebar({
   isHomeMode,
 }: MiniDrawerProps) {
   const theme = useTheme();
-  const navigate = useNavigate();
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
+  const getMatchedRoute = useMatchedRoute({ blogName: "acme" });
 
   const onSignOutClick = () => {
     localStorage.clear();
@@ -45,13 +50,14 @@ export default function Sidebar({
               </NavLink>
               {isHomeMode && (
                 <CreateNewBlogDialog
-                  TriggerComponent={({ onClickHandler }) => (
+                  TriggerComponent={({ onClickHandler, ...rest }) => (
                     <PhzButton
                       onClick={onClickHandler}
                       height="2.5rem"
                       width="100%"
                       mt={3}
                       variant="primary"
+                      {...rest}
                     >
                       Create New Blog
                     </PhzButton>
@@ -67,14 +73,14 @@ export default function Sidebar({
               {!isHomeMode && (
                 <NavigationLinkComponent
                   name="Settings"
-                  toLink={routesName.settings}
+                  toLink={getMatchedRoute(routesName.settings)}
                   StartIcon={GearSix}
                 />
               )}
               <Flex alignItems="center">
                 <NavigationLinkComponent
                   name="Profile"
-                  toLink={routesName.profile}
+                  toLink={getMatchedRoute(routesName.profile)}
                   StartIcon={UserCircle}
                 />
                 <SignOut

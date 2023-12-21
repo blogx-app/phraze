@@ -1,6 +1,6 @@
 import { useMatch } from "react-router-dom";
 import { useTheme } from "@emotion/react";
-import type { Icon } from "@phosphor-icons/react";
+import { DotOutline, type Icon } from "@phosphor-icons/react";
 import { Box, Flex, Text } from "@phraze-app/ui";
 import { NavigationNavLink } from "./style";
 
@@ -45,7 +45,11 @@ const NavigationLinkComponent = ({
             </Box>
           ) : (
             // Used as spacer
-            <Box width={32} />
+            <>
+              <Box width={10} />
+              <DotOutline size={12} />
+              <Box width={10} />
+            </>
           )}
           <Text fontSize={14} fontWeight={isMatch ? 500 : 300} color={color}>
             {name}

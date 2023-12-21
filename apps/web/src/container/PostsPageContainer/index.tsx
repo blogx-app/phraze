@@ -6,8 +6,11 @@ import PostSelectButtonContainer, {
 } from "./PostSelectButtonContainer";
 import Post from "../Post";
 import PhzSearchInput from "@phraze-app/ui/PhzSearchInput/PhzSearchInput";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 const PostsPageContainer = () => {
+  const test = useAppNavigation();
+
   return (
     <Flex flexDirection="column" gap="1rem">
       <Flex gap="1rem">

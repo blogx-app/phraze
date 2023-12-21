@@ -4,8 +4,9 @@ import { styled, Theme, CSSObject } from "@mui/material/styles";
 import { useTheme } from "@emotion/react";
 
 interface DrawerImplProps {
-  children: React.ReactNode;
+  open?: boolean;
   anchor?: DrawerProps["anchor"];
+  children: React.ReactNode;
 }
 
 const DRAWER_WIDTH = 240;
@@ -36,14 +37,18 @@ const Drawer = styled(MuiDrawer, {
 /**
  * This is wrapper on MUI Drawer component.
  */
-export const PhzDrawer = ({ children, anchor = "left" }: DrawerImplProps) => {
+export const PhzDrawer = ({
+  open = true,
+  children,
+  anchor = "left",
+}: DrawerImplProps) => {
   const theme = useTheme();
 
   return (
     <Drawer
       anchor={anchor}
       variant="permanent"
-      open={true}
+      open={open}
       sx={{ overflow: "visible" }}
       PaperProps={{
         style: {

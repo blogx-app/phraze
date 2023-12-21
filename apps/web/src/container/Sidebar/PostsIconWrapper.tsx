@@ -5,8 +5,9 @@ import { Flex } from "@phraze-app/ui";
 import { PenNib } from "@phosphor-icons/react";
 import OrangeAddIcon from "./icons/OrangeAddIcon";
 import NavigationLinkComponent from "./NavigationLinkComponent";
-import { useNavigate } from "react-router-dom";
 import { routesName } from "../../route";
+import useMatchedRoute from "../../hooks/useMatchedRoute";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 // TODO - fix this. remove any type from here.
 const Container = styled(animated.div as any)`
@@ -25,23 +26,28 @@ const Container = styled(animated.div as any)`
   margin-top: 0.5rem;
 `;
 
-const POSTS_ITEMS = [
-  {
-    name: "Drafts",
-    toLink: "/posts?blogState=draft",
-  },
-  {
-    name: "Published",
-    toLink: "/posts?blogState=published",
-  },
-  {
-    name: "Scheduled",
-    toLink: "/posts?blogState=scheduled",
-  },
-];
-
 const PostsIconWrapper = () => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
+  const getAppRoute = useMatchedRoute({
+    blogName: "acme",
+  });
+
+  const POSTS_ITEMS = [
+    {
+      name: "Drafts",
+      toLink: routesName.postDraft,
+    },
+    {
+      name: "Published",
+      toLink: routesName.postPublished,
+    },
+    {
+      name: "Scheduled",
+      toLink: routesName.postScheduled,
+    },
+  ];
 
   const onAddBlogIconClick = (e: any) => {
     e.preventDefault();
@@ -61,7 +67,7 @@ const PostsIconWrapper = () => {
       >
         <NavigationLinkComponent
           name="Posts"
-          toLink="/posts"
+          toLink={getAppRoute(routesName.posts)}
           StartIcon={PenNib}
           EndIcon={OrangeAddIcon as any}
           onEndIconClick={onAddBlogIconClick}
@@ -72,7 +78,7 @@ const PostsIconWrapper = () => {
           <NavigationLinkComponent
             key={item.name + item.toLink}
             name={item.name}
-            toLink={item.toLink}
+            toLink={getAppRoute(item.toLink)}
           />
         ))}
       </Flex>

@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
 import { GithubLogo } from "@phosphor-icons/react";
 import { Box, Flex, Input, PhzButton, Text } from "@phraze-app/ui";
 import { NavigationImageContainer } from "@phraze-app/ui/AppBar/style";
 import { routesName } from "../../route";
 import { useState } from "react";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 const ContinueWithLine = styled.div`
   width: 100%;
@@ -16,7 +16,9 @@ const ContinueWithLine = styled.div`
 const TEST_EMAIL = "test@phraze.app";
 
 const LoginPage = () => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
   const [email, setEmail] = useState("");
 
   const onEmailChange = (ev: any) => {

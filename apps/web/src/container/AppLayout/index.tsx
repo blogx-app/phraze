@@ -1,13 +1,13 @@
 import { useEffect, useMemo } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
 import AppBar from "@phraze-app/ui/AppBar";
+import PhzBlogSwitcher from "@phraze-app/ui/PhzBlogSwitcher";
 import { Sidebar } from "../Sidebar";
 import { routesName } from "../../route";
 import { enqueueSnackbar } from "notistack";
-import PhzBlogSwitcher from "@phraze-app/ui/PhzBlogSwitcher";
-import PhzDialog from "@phraze-app/ui/PhzDialog";
 import CreateNewBlogDialog from "../Sidebar/CreateNewBlogDialog";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 interface AppLayoutProps {
   getNavigationBreadcrum: (path: string) => any;
@@ -25,9 +25,11 @@ export const AppLayout = ({
   hideSidebar,
 }: AppLayoutProps): JSX.Element => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
   const appbarHidden = useMemo(() => hideAppBar(pathname), [pathname]);
   const sidebarHidden = useMemo(() => hideSidebar?.(pathname), [pathname]);
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
   const isHomeMode = pathname === routesName.home;
 
   const isAuthenticated =
@@ -70,8 +72,8 @@ export const AppLayout = ({
           hideAppbar={appbarHidden}
           blogSwitcher={
             <CreateNewBlogDialog
-              TriggerComponent={({ onClickHandler }) => (
-                <PhzBlogSwitcher onClickHandler={onClickHandler} />
+              TriggerComponent={({ onClickHandler, ...rest }) => (
+                <PhzBlogSwitcher onClickHandler={onClickHandler} {...rest} />
               )}
             />
           }

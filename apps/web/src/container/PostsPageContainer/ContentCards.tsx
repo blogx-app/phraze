@@ -1,34 +1,37 @@
 import { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
 import { Box, Flex, Text } from "@phraze-app/ui";
 import { useTheme } from "@emotion/react";
 import { CardContainer } from "./styles";
 import DraftsIcon from "./icon/DraftsIcon";
-import RightIconCircular from "./icon/RightIconCircular";
 import PublishedIcon from "./icon/PublishedIcon";
+import RightIconCircular from "./icon/RightIconCircular";
 import ScheduledIcon from "./icon/ScheduledIcon";
-
-const CONTENT_CARDS = [
-  {
-    icon: DraftsIcon,
-    contentType: "Drafts",
-    navigateTo: "/posts?blogState=draft",
-  },
-  {
-    icon: PublishedIcon,
-    contentType: "Published",
-    navigateTo: "/posts?blogState=published",
-  },
-  {
-    icon: ScheduledIcon,
-    contentType: "Scheduled",
-    navigateTo: "/posts?blogState=scheduled",
-  },
-];
+import { routesName } from "../../route";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 const ContentCards = () => {
   const theme = useTheme();
-  const navigate = useNavigate();
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
+
+  const CONTENT_CARDS = [
+    {
+      icon: DraftsIcon,
+      contentType: "Drafts",
+      navigateTo: routesName.postDraft,
+    },
+    {
+      icon: PublishedIcon,
+      contentType: "Published",
+      navigateTo: routesName.postPublished,
+    },
+    {
+      icon: ScheduledIcon,
+      contentType: "Scheduled",
+      navigateTo: routesName.postScheduled,
+    },
+  ];
 
   return (
     <>

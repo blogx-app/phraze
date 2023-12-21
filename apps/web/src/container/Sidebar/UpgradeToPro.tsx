@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
 import { Flex, Text, PhzButton } from "@phraze-app/ui";
 import { SketchLogo } from "@phosphor-icons/react";
-import UpgradeDiamondIcon from "./icons/UpgradeDiamondIcon";
 import { routesName } from "../../route";
 import { useTheme } from "@emotion/react";
+import useAppNavigation from "../../hooks/useAppNavigation";
 
 const Container = styled(Flex)`
   margin: 1.5rem;
@@ -21,7 +20,9 @@ const Container = styled(Flex)`
 `;
 
 const UpgradeToPro = () => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigation({
+    blogName: "acme",
+  });
   const theme = useTheme();
 
   const onClickUpgradeToPro = () => {

@@ -51,8 +51,6 @@ export const AccentColorContainer = () => {
   const handleColorChangeInput = (event: any) => {
     const value = event.target.value;
 
-    console.log({ value, len: value?.length });
-
     if (value?.length < 1) {
       setSelectedColor("#");
       return;
@@ -63,8 +61,6 @@ export const AccentColorContainer = () => {
       setSelectedColor(event.target.value);
     }
   };
-
-  console.log(selectedColor);
 
   return (
     <PhzPaper>

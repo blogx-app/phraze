@@ -157,7 +157,7 @@ export default function PhzBlogSwitcher({
                       marginRight: "0.5rem",
                     }}
                   />
-                  Create Team
+                  Create Blog
                 </CommandItem>
               </DialogTrigger>
             </CommandGroup>
