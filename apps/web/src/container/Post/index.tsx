@@ -7,7 +7,8 @@ const singlePost = {
   thumbnail:
     "https://images.squarespace-cdn.com/content/v1/62c32effd8601c2f49f1728b/3b96767b-aab5-4224-ae6e-26626312f724/20220303_Omage-6.jpg",
   title: "This is a test",
-  blogContent: "this is just a test. no need to panic",
+  blogContent:
+    "this is just a test. no need to panic, this string might go very looooooonggg and it might get a little boring.",
   tags: [
     {
       name: "Figma",

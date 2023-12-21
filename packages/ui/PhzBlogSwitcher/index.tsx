@@ -16,10 +16,7 @@ import {
   CommandSeparator,
 } from "../Command";
 import { DialogTrigger } from "../PhzDialog/PhzDialog.Components";
-import PhzDialog from "../PhzDialog";
-import { Input } from "../Input";
 import { Popover, PopoverContent, PopoverTrigger } from "../Popover";
-import { Box, Flex } from "../Box";
 
 const groups = [
   {

@@ -8,7 +8,7 @@ import {
 } from "@phraze-app/ui";
 import Tags from "@phraze-app/ui/Tags/Tags";
 import { useTheme } from "@emotion/react";
-import { PostImageWrapper, PostRowViewContainer } from "./styles";
+import { PostRowViewContainer } from "./styles";
 import { SinglePostProps } from "./types";
 import TrashIcon from "../../pages/PostsPage/icons/TrashIcon";
 import EditButtonIcon from "../../pages/PostsPage/icons/EditButtonIcon";
@@ -19,11 +19,26 @@ const PostRowView = ({ post }: { post: SinglePostProps }) => {
   return (
     <PostRowViewContainer flexDirection="column">
       <Flex width="100%" justifyContent="space-between" gap="1rem">
-        <Flex>
-          <PostImageWrapper src={post.thumbnail} />
-        </Flex>
-        <Flex flexDirection="column" gap="1rem" width="100%">
-          <Flex justifyContent="space-between">
+        <Flex
+          flexDirection="row"
+          gap="1rem"
+          width="100%"
+          justifyContent="space-between"
+        >
+          <Box>
+            <Text color="white" fontSize="1rem" fontWeight="600" mb="0.5rem">
+              {post.title}
+            </Text>
+            <Text color="#aaa" fontSize="14px">
+              {post.blogContent}
+            </Text>
+          </Box>
+          <Flex
+            justifyContent="space-between"
+            flexDirection="column"
+            alignItems="flex-end"
+            gap="1rem"
+          >
             <StateTags type={post.state as any}>StateTag</StateTags>
             <Flex gap="0.5rem">
               {post.tags.map((tag) => (
@@ -33,14 +48,6 @@ const PostRowView = ({ post }: { post: SinglePostProps }) => {
               ))}
             </Flex>
           </Flex>
-          <Box>
-            <Text color="white" fontSize="1rem" fontWeight="400" mb="0.5rem">
-              {post.title}
-            </Text>
-            <Text color="#aaa" fontSize="14px">
-              {post.blogContent}
-            </Text>
-          </Box>
         </Flex>
       </Flex>
       <Flex
