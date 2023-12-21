@@ -24,7 +24,7 @@ const PostRowView = ({ post }: { post: SinglePostProps }) => {
         </Flex>
         <Flex flexDirection="column" gap="1rem" width="100%">
           <Flex justifyContent="space-between">
-            <StateTags type={post.state}>StateTag</StateTags>
+            <StateTags type={post.state as any}>StateTag</StateTags>
             <Flex gap="0.5rem">
               {post.tags.map((tag) => (
                 <Tags toLink={tag.tagLink} key={tag.name}>

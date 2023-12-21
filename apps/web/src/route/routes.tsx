@@ -1,4 +1,4 @@
-import { RouteObject } from "react-router-dom";
+import { RouteObject, matchRoutes } from "react-router-dom";
 import { AppLayout } from "../container/AppLayout";
 import BlogEditorPage from "../pages/BlogEditorPage";
 import HomePage from "../pages/HomePage";
@@ -64,6 +64,23 @@ const routes: RouteObject[] = [
     ],
   },
 ];
+
+// Takes in a pathname (from browser) and return the corresponding pathname from routesName
+// input => /acme/editor => /:blogName/editor
+export const getMatchingPathname = (path: string) => {
+  const [matchingRoutes] =
+    matchRoutes(routes, path)?.filter((route) => route.pathname === path) || [];
+
+  return matchingRoutes.route.path || "";
+};
+
+export const replaceRouteVar = (
+  path: string,
+  pathVar: string,
+  pathValue: string
+) => {
+  return path.replace(pathVar, pathValue);
+};
 
 export { default as routesName } from "./routesName";
 export default routes;

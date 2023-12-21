@@ -30,12 +30,13 @@ export const PhzTable = <T extends Record<string, string | number>>({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {tableData.map((data, id) => {
+        {tableData.map((data, idx) => {
           return (
-            <TableRow>
-              {tableColumns.map((column) => {
+            <TableRow key={`${data.title} + ${idx}`}>
+              {tableColumns.map((column, idx2) => {
                 return (
                   <TableCell
+                    key={`${column.id}-${idx2}`}
                     style={{
                       textAlign: column.align || "left",
                       minWidth: column.minWidth,

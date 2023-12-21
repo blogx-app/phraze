@@ -22,7 +22,7 @@ export const TableHeaderCell = styled.th`
   padding: 0.5rem;
   box-shadow: inset 0 -1px #333;
 
-  :first-child {
+  &:first-of-type {
     border-top-left-radius: 0.5rem;
   }
 

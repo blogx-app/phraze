@@ -8,9 +8,23 @@ import {
   Text,
 } from "@phraze-app/ui";
 import Tags from "@phraze-app/ui/Tags/Tags";
+import { useNavigate } from "react-router-dom";
+import { routesName } from "../../route";
+import { replaceRouteVar } from "../../route/routes";
 
 export const BlogDetailCard = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const onClickViewDashboard = () => {
+    // @todo - should navigate to correct blog page.
+    navigate(replaceRouteVar(routesName.analytics, ":blogName", "acme"));
+  };
+
+  const onClickWritePost = () => {
+    //@todo - should create new posts
+    navigate(replaceRouteVar(routesName.editor, ":blogName", "acme"));
+  };
 
   return (
     <PhzPaper
@@ -39,10 +53,20 @@ export const BlogDetailCard = () => {
       </div>
 
       <Flex gap="1rem">
-        <PhzButton height="2.5rem" variant="secondary" width="50%">
+        <PhzButton
+          height="2.5rem"
+          variant="secondary"
+          width="50%"
+          onClick={onClickViewDashboard}
+        >
           View Dashboard
         </PhzButton>
-        <PhzButton height="2.5rem" variant="primary" width="50%">
+        <PhzButton
+          height="2.5rem"
+          variant="primary"
+          width="50%"
+          onClick={onClickWritePost}
+        >
           Write Post
         </PhzButton>
       </Flex>

@@ -1,5 +1,6 @@
 import routesName from "./routesName";
 import { BreadcrumsType } from "@phraze-app/ui/AppBar/type";
+import { getMatchingPathname } from "./routes";
 
 type BreadCrumsObjType = Record<
   string,
@@ -170,5 +171,7 @@ const breadCrumObj: BreadCrumsObjType = {
 };
 
 export const getNavigationBreadcrum = (path: string) => {
-  return breadCrumObj[path];
+  const route = getMatchingPathname(path)
+
+  return breadCrumObj[route];
 };

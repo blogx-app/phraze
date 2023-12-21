@@ -57,21 +57,22 @@ const AppBar = ({
               /
             </Text>
             <PhzTeamSwitcher />
-            {crumbs?.map((crumb, i) => (
-              <Flex key={crumb.toLink + i}>
-                <BreadcrumsNavlink
-                  end
-                  to={crumb.toLink}
-                  style={({ isActive }) =>
-                    isActive
-                      ? { color: theme.colors.foreground }
-                      : { color: theme.colors.textSubtle }
-                  }
-                >
-                  {crumb.name}
-                </BreadcrumsNavlink>
-              </Flex>
-            ))}
+            {crumbs &&
+              crumbs?.map((crumb, i) => (
+                <Flex key={crumb?.toLink + i}>
+                  <BreadcrumsNavlink
+                    end
+                    to={crumb?.toLink}
+                    style={({ isActive }) =>
+                      isActive
+                        ? { color: theme.colors.foreground }
+                        : { color: theme.colors.textSubtle }
+                    }
+                  >
+                    {crumb.name}
+                  </BreadcrumsNavlink>
+                </Flex>
+              ))}
           </>
         )}
       </Box>
