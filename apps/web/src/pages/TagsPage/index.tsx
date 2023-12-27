@@ -1,15 +1,13 @@
 import { useTheme } from "@emotion/react";
 import { PlusCircle } from "@phosphor-icons/react";
 import {
-  Box,
   Flex,
   PhzButton,
-  PhzPaper,
-  PhzTable,
+  PhzDataTable,
   PhzTableColumn,
   Text,
 } from "@phraze-app/ui";
-import { PhzSearchInput } from "@phraze-app/ui";
+import AddTagsDialog from "./AddTags.Dialog";
 
 const TABLE_COLUMNS: PhzTableColumn[] = [
   { id: "title", label: "Title", minWidth: 220 },
@@ -40,29 +38,13 @@ const TagsPage = () => {
 
   return (
     <Flex maxWidth="48rem" flexDirection="column" gap="1rem">
-      <PhzPaper>
-        <Box mb={3}>
-          <Text fontSize={4} mb={1} fontWeight={700}>
-            Tags
-          </Text>
-          <Text fontSize="14px" color="textSubtle">
-            Tags are used to manage blogposts
-          </Text>
-        </Box>
-        <Flex mb={2} alignItems="center" justifyContent="space-between">
-          <PhzSearchInput inputStyle={{ height: "2.5rem" }} />
-          <PhzButton variant="primary">
-            <PlusCircle
-              size={22}
-              color={theme.colors.background}
-              style={{ marginRight: "4px" }}
-              weight="light"
-            />
-            Add Tag
-          </PhzButton>
-        </Flex>
-        <PhzTable<Data> tableColumns={TABLE_COLUMNS} tableData={tableData} />
-      </PhzPaper>
+      <PhzDataTable
+        tableColumns={TABLE_COLUMNS}
+        tableData={tableData}
+        tableTitle="Tags"
+        tableDescription="Tags are used to manage blogposts"
+        tableSearchActionPlaceholder={<AddTagsDialog />}
+      />
     </Flex>
   );
 };

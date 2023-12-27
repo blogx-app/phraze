@@ -28,6 +28,7 @@ export * from "./Popover";
 
 export * from "./PhzButton";
 export * from "./PhzTable";
+export * from "./PhzDataTable";
 export * from "./PhzPaper";
 export * from "./PhzDrawer";
 export * from "./PhzAvatars";

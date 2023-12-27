@@ -23,6 +23,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   font-weight: 500;
   outline: none;
 
+  box-sizing: border-box;
+
   ${({ theme, variant }) =>
     css({
       borderRadius: theme.radii.button,
