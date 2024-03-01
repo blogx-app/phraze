@@ -177,9 +177,9 @@
 }
 
 .floating-toolbar-icon.font-color {
-  background-image: url(ui/images/icons/font-color.svg);
+  background-image: url(/ui/images/icons/font-color.svg);
 }
 
 .bg-color {
-  background-image: url(ui/images/icons/bg-color.svg);
+  background-image: url(/ui/images/icons/bg-color.svg);
 }
