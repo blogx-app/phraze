@@ -94,8 +94,6 @@ export function Editor(): JSX.Element {
   //   theme: PlaygroundEditorTheme,
   // };
 
-  console.log({ isCollab });
-
   return (
     <>
       {/* {isRichText && <ToolbarPlugin />} */}
@@ -145,7 +143,7 @@ export function Editor(): JSX.Element {
             <CheckListPlugin />
             <ListMaxIndentLevelPlugin maxDepth={7} />
             <TablePlugin />
-            <TableCellResizer />
+            {/* <TableCellResizer /> */}
             {/* <NewTablePlugin cellEditorConfig={cellEditorConfig}> */}
             {/* <AutoFocusPlugin /> */}
             {/* <RichTextPlugin
@@ -182,7 +180,7 @@ export function Editor(): JSX.Element {
                   isLinkEditMode={isLinkEditMode}
                   setIsLinkEditMode={setIsLinkEditMode}
                 />
-                <TableCellActionMenuPlugin anchorElem={floatingAnchorElem} />
+                {/* <TableCellActionMenuPlugin anchorElem={floatingAnchorElem} /> */}
                 <FloatingTextFormatToolbarPlugin
                   anchorElem={floatingAnchorElem}
                 />
