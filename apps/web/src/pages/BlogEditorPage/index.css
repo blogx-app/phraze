@@ -9,6 +9,7 @@
 
 .editor-shell {
   margin: 0 auto;
+  margin-top: 5rem;
   background-color: var(--editor-background);
   width: 48rem;
   color: #000;

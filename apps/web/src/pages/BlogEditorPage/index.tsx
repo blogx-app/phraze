@@ -36,8 +36,8 @@ const BlogEditorPage = () => {
         justifyContent="space-between"
         alignItems="center"
         width="100%"
-        px={4}
-        py={2}
+        px="10rem"
+        py={3}
         margin="0 auto"
         borderBottom={theme.borders.card}
       >
@@ -52,9 +52,9 @@ const BlogEditorPage = () => {
             Draft
           </StateTags>
         </Flex>
-        <span style={{ cursor: "pointer" }} onClick={onClickOpenDrawer}>
+        {/* <span style={{ cursor: "pointer" }} onClick={onClickOpenDrawer}>
           <div>Some Icon</div>
-        </span>
+        </span> */}
       </Flex>
       <div className="editor-shell">
         <BlogHeader />
