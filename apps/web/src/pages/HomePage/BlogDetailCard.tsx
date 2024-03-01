@@ -17,7 +17,7 @@ export const BlogDetailCard = () => {
 
   const onClickWritePost = () => {
     //@todo - should create new posts
-    navigate(routesName.posts);
+    navigate(routesName.editor);
   };
 
   return (
