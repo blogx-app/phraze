@@ -73,7 +73,7 @@ export function Editor(): JSX.Element {
       showTableOfContents,
     },
   } = useSettings();
-  const text = "Write a blog as beautiful as our cosmos";
+  const text = "Enter / for block picker or continue writing awesome blogs";
   const placeholder = <Placeholder>{text}</Placeholder>;
   const [floatingAnchorElem, setFloatingAnchorElem] =
     useState<HTMLDivElement | null>(null);

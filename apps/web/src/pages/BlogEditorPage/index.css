@@ -1,6 +1,6 @@
 :root {
-  --editor-background: #191919;
   --card-background: rgb(37, 37, 37);
+  --editor-background: var(--colors-background);
   --card-background-cc: rgb(45, 45, 45);
   --code-block-background: rgba(255, 255, 255, 0.1);
   --text-color: rgba(255, 255, 255, 0.81);
