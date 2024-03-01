@@ -1,6 +1,5 @@
-import { Box, PhzPaper, PhzTable, PhzTableColumn, Text } from "@phraze-app/ui";
+import { Box, PhzDataTable, PhzTableColumn } from "@phraze-app/ui";
 import { useTheme } from "@emotion/react";
-import PhzSearchInput from "@phraze-app/ui/PhzSearchInput/PhzSearchInput";
 
 const TABLE_COLUMNS: PhzTableColumn[] = [
   { id: "title", label: "Title", minWidth: 220 },
@@ -30,20 +29,12 @@ export const LeadsTab = () => {
 
   return (
     <Box>
-      <PhzPaper>
-        <Box mb={3}>
-          <Text fontSize={4} mb={1} fontWeight={700}>
-            Leads
-          </Text>
-          <Text fontSize="14px" color="textSubtle">
-            All the leads collected on the website will appear here
-          </Text>
-        </Box>
-        <Box mb={2}>
-          <PhzSearchInput inputStyle={{ height: "2.5rem" }} />
-        </Box>
-        <PhzTable tableColumns={TABLE_COLUMNS} tableData={tableData} />
-      </PhzPaper>
+      <PhzDataTable
+        tableColumns={TABLE_COLUMNS}
+        tableData={tableData}
+        tableTitle="Add Leads"
+        tableDescription="All the leads collected on the blog appear here"
+      />
     </Box>
   );
 };

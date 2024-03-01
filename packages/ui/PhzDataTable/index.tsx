@@ -13,7 +13,7 @@ export interface PhzDataTableProps {
   tableData: any;
   tableTitle: string;
   tableDescription: string;
-  tableSearchActionPlaceholder: React.ReactNode;
+  tableSearchActionPlaceholder?: React.ReactNode;
 }
 
 export const PhzDataTable = ({

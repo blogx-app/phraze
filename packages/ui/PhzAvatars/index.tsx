@@ -1,10 +1,10 @@
 import BoringAvatar, { AvatarProps } from "boring-avatars";
 
-export interface PhzAvatarsProps extends AvatarProps {}
+export interface PhzAvatarsProps extends AvatarProps {
+  style?: React.CSSProperties;
+}
 
-export const PhzAvatars = (
-  props: PhzAvatarsProps & { style?: React.CSSProperties }
-) => {
+export const PhzAvatars = (props: PhzAvatarsProps) => {
   const { style } = props;
 
   return (
