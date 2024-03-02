@@ -1,4 +1,11 @@
-import type { LexicalEditor } from "lexical";
+import {
+  TextAlignCenter,
+  TextAlignLeft,
+  TextAlignRight,
+} from "@phosphor-icons/react";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import "./ImageResizer.css";
+import { LexicalEditor, FORMAT_ELEMENT_COMMAND } from "lexical";
 
 import * as React from "react";
 import { useRef } from "react";
@@ -239,8 +246,32 @@ export default function ImageResizer({
       document.removeEventListener("pointerup", handlePointerUp);
     }
   };
+  const onClickLeftAligner = (direction: "left" | "right" | "center") => () => {
+    editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, direction);
+  };
+
   return (
     <div ref={controlWrapperRef}>
+      <div className="image-aligner-container">
+        <div
+          className="image-aligner-item"
+          onClick={onClickLeftAligner("left")}
+        >
+          <TextAlignLeft size={16} />
+        </div>
+        <div
+          className="image-aligner-item"
+          onClick={onClickLeftAligner("center")}
+        >
+          <TextAlignCenter size={16} />
+        </div>
+        <div
+          className="image-aligner-item"
+          onClick={onClickLeftAligner("right")}
+        >
+          <TextAlignRight size={16} />
+        </div>
+      </div>
       {!showCaption && captionsEnabled && (
         <button
           className="image-caption-button"

@@ -1,0 +1,20 @@
+.image-aligner-container {
+  background: rgb(37, 37, 37);
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  /* gap: 0.5rem; */
+  z-index: 10;
+  line-height: 1;
+
+  :last-child {
+    border: none;
+  }
+}
+
+.image-aligner-item {
+  cursor: pointer;
+  border-right: 1px solid rgb(110, 110, 110, 0.8);
+  padding: 2px 0.25rem;
+}
