@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
+  width: 100%;
 }
 .Input__label {
   display: flex;
@@ -22,4 +23,5 @@
   font-size: 16px;
   border-radius: 5px;
   min-width: 0;
+  width: 100%;
 }

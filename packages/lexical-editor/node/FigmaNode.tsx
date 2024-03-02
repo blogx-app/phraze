@@ -37,7 +37,7 @@ function FigmaComponent({
       nodeKey={nodeKey}
     >
       <iframe
-        width="560"
+        width="100%"
         height="315"
         src={`https://www.figma.com/embed?embed_host=lexical&url=\
         https://www.figma.com/file/${documentID}`}
