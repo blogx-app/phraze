@@ -20,6 +20,9 @@ import {
   LexicalEditor,
 } from "lexical";
 import { CAN_USE_DOM } from "lib/canUseDOM";
+import { Box, Input, PhzButton } from "@phraze-app/ui";
+import { DialogActions, DialogButtonsList } from "@phraze-app/ui/Dialog";
+import FileInput from "@phraze-app/ui/FileInput";
 
 import landscapeImage from "@phraze-app/ui/images/landscape.jpg";
 import yellowFlowerImage from "@phraze-app/ui/images/yellow-flower.jpg";
@@ -29,10 +32,6 @@ import {
   ImageNode,
   ImagePayload,
 } from "../../node/ImageNode";
-import { Button } from "@phraze-app/ui";
-import { DialogActions, DialogButtonsList } from "@phraze-app/ui/Dialog";
-import FileInput from "@phraze-app/ui/FileInput";
-import TextInput from "@phraze-app/ui/TextInput";
 
 export type InsertImagePayload = Readonly<ImagePayload>;
 
@@ -53,31 +52,32 @@ export function InsertImageUriDialogBody({
   const isDisabled = src === "";
 
   return (
-    <>
-      <TextInput
+    <Box minWidth="30rem">
+      <Input
         label="Image URL"
         placeholder="i.e. https://source.unsplash.com/random"
-        onChange={setSrc}
+        onChange={(e) => setSrc(e.target.value)}
         value={src}
         data-test-id="image-modal-url-input"
       />
-      <TextInput
+      <Input
         label="Alt Text"
         placeholder="Random unsplash image"
-        onChange={setAltText}
+        onChange={(e) => setAltText(e.target.value)}
         value={altText}
         data-test-id="image-modal-alt-text-input"
       />
       <DialogActions>
-        <Button
+        <PhzButton
+          variant="primary"
           data-test-id="image-modal-confirm-btn"
           disabled={isDisabled}
           onClick={() => onClick({ altText, src })}
         >
           Confirm
-        </Button>
+        </PhzButton>
       </DialogActions>
-    </>
+    </Box>
   );
 }
 
@@ -112,21 +112,22 @@ export function InsertImageUploadedDialogBody({
         accept="image/*"
         data-test-id="image-modal-file-upload"
       />
-      <TextInput
+      <Input
         label="Alt Text"
         placeholder="Descriptive alternative text"
-        onChange={setAltText}
+        onChange={(e) => setAltText(e.target.value)}
         value={altText}
         data-test-id="image-modal-alt-text-input"
       />
       <DialogActions>
-        <Button
+        <PhzButton
+          variant="primary"
           data-test-id="image-modal-file-upload-btn"
           disabled={isDisabled}
           onClick={() => onClick({ altText, src })}
         >
           Confirm
-        </Button>
+        </PhzButton>
       </DialogActions>
     </>
   );
@@ -162,7 +163,8 @@ export function InsertImageDialog({
     <>
       {!mode && (
         <DialogButtonsList>
-          <Button
+          <PhzButton
+            variant="primary"
             data-test-id="image-modal-option-sample"
             onClick={() =>
               onClick(
@@ -180,19 +182,21 @@ export function InsertImageDialog({
             }
           >
             Sample
-          </Button>
-          <Button
+          </PhzButton>
+          <PhzButton
+            variant="primary"
             data-test-id="image-modal-option-url"
             onClick={() => setMode("url")}
           >
             URL
-          </Button>
-          <Button
+          </PhzButton>
+          <PhzButton
+            variant="secondary"
             data-test-id="image-modal-option-file"
             onClick={() => setMode("file")}
           >
             File
-          </Button>
+          </PhzButton>
         </DialogButtonsList>
       )}
       {mode === "url" && <InsertImageUriDialogBody onClick={onClick} />}

@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 import * as ReactDOM from "react-dom";
 
 import useModal from "@phraze-app/ui/hooks/useModal";
-import { Button } from "@phraze-app/ui";
+import { Input, PhzButton } from "@phraze-app/ui";
 import { DialogActions } from "@phraze-app/ui/Dialog";
 import { INSERT_FIGMA_COMMAND } from "../FigmaPlugin";
 import { INSERT_TWEET_COMMAND } from "../TwitterPlugin";
@@ -253,7 +253,7 @@ export function AutoEmbedDialog({
   return (
     <div style={{ width: "600px" }}>
       <div className="Input__wrapper">
-        <input
+        <Input
           type="text"
           className="Input__input"
           placeholder={embedConfig.exampleUrl}
@@ -264,16 +264,18 @@ export function AutoEmbedDialog({
             setText(value);
             validateText(value);
           }}
+          ContainerProps={{ style: { width: "100%" } }}
         />
       </div>
       <DialogActions>
-        <Button
+        <PhzButton
+          variant="primary"
           disabled={!embedResult}
           onClick={onClick}
           data-test-id={`${embedConfig.type}-embed-modal-submit-btn`}
         >
           Embed
-        </Button>
+        </PhzButton>
       </DialogActions>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { GithubLogo } from "@phosphor-icons/react";
 import { Box, Flex, Input, PhzButton, Text } from "@phraze-app/ui";
@@ -25,12 +25,23 @@ const LoginPage = () => {
     setEmail(ev.target.value);
   };
 
-  const handleEmailLogin = () => {
+  const handleEmailLogin = useCallback(() => {
     if (email === TEST_EMAIL) {
       localStorage.setItem("auth", "true");
       navigate(routesName.home);
     }
-  };
+  }, [email]);
+
+  useEffect(() => {
+    const eventHandler = (e: any) => {
+      if (e.keyCode === 13) {
+        handleEmailLogin();
+      }
+    };
+    document.addEventListener("keydown", eventHandler);
+
+    return () => document.removeEventListener("keydown", eventHandler);
+  }, [handleEmailLogin]);
 
   return (
     <Flex

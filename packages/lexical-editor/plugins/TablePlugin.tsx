@@ -19,7 +19,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import invariant from "lib/invariant";
 
 import { $createTableNodeWithDimensions, TableNode } from "../node/TableNode";
-import { Button } from "@phraze-app/ui";
+import { Button, Input, PhzButton } from "@phraze-app/ui";
 import { DialogActions } from "@phraze-app/ui/Dialog";
 import TextInput from "@phraze-app/ui/TextInput";
 
@@ -100,10 +100,20 @@ export function InsertTableDialog({
 
   return (
     <>
-      <TextInput label="No of rows" onChange={setRows} value={rows} />
-      <TextInput label="No of columns" onChange={setColumns} value={columns} />
+      <Input
+        label="No of rows"
+        onChange={(e) => setRows(e.target.value)}
+        value={rows}
+      />
+      <Input
+        label="No of columns"
+        onChange={(e) => setColumns(e.target.value)}
+        value={columns}
+      />
       <DialogActions data-test-id="table-model-confirm-insert">
-        <Button onClick={onClick}>Confirm</Button>
+        <PhzButton variant="primary" onClick={onClick}>
+          Confirm
+        </PhzButton>
       </DialogActions>
     </>
   );
@@ -126,10 +136,20 @@ export function InsertNewTableDialog({
 
   return (
     <>
-      <TextInput label="No of rows" onChange={setRows} value={rows} />
-      <TextInput label="No of columns" onChange={setColumns} value={columns} />
+      <Input
+        label="No of rows"
+        onChange={(e) => setRows(e.target.value)}
+        value={rows}
+      />
+      <Input
+        label="No of columns"
+        onChange={(e) => setColumns(e.target.value)}
+        value={columns}
+      />
       <DialogActions data-test-id="table-model-confirm-insert">
-        <Button onClick={onClick}>Confirm</Button>
+        <PhzButton variant="primary" onClick={onClick}>
+          Confirm
+        </PhzButton>
       </DialogActions>
     </>
   );

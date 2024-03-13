@@ -3,16 +3,19 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
+  width: 100%;
 }
 .Input__label {
   display: flex;
-  flex: 1;
-  color: #666;
+  margin-right: 1rem;
+  color: var(--colors-foreground);
+  font-size: 14px;
+  font-weight: 600;
+  padding-left: 8px;
 }
 .Input__input {
   display: flex;
-  flex: 2;
-  border: 1px solid #999;
+  border: 1px solid var(--colors-accent);
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 10px;
@@ -20,4 +23,5 @@
   font-size: 16px;
   border-radius: 5px;
   min-width: 0;
+  width: 100%;
 }

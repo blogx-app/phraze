@@ -1,13 +1,13 @@
 "use client";
-
+import { useTheme } from "@emotion/react";
 import { useEffect, useMemo } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
+import { enqueueSnackbar } from "notistack";
 import AppBar from "@phraze-app/ui/AppBar";
 import PhzBlogSwitcher from "@phraze-app/ui/PhzBlogSwitcher";
 import { Sidebar } from "../Sidebar";
 import { routesName } from "../../route";
-import { enqueueSnackbar } from "notistack";
 import CreateNewBlogDialog from "../Sidebar/CreateNewBlogDialog";
 import useAppNavigation from "../../hooks/useAppNavigation";
 import useMatchedRoute from "../../hooks/useMatchedRoute";
@@ -24,6 +24,7 @@ export const AppLayout = ({
   showUnauthSidebar,
 }: AppLayoutProps): JSX.Element => {
   const { pathname } = useLocation();
+  const theme = useTheme();
   const navigate = useAppNavigation({
     blogName: "acme",
   });
@@ -50,10 +51,21 @@ export const AppLayout = ({
 
   useEffect(() => {
     if (!isAuthenticated) {
-      enqueueSnackbar(`enter ${TEST_EMAIL} to login`, {
-        autoHideDuration: 15000,
-        variant: "default",
-      });
+      enqueueSnackbar(
+        <div>
+          enter{" "}
+          <strong style={{ color: theme.colors.primary }}>{TEST_EMAIL}</strong>{" "}
+          to login
+        </div>,
+        {
+          autoHideDuration: 30000,
+          variant: "default",
+          anchorOrigin: {
+            vertical: "top",
+            horizontal: "right",
+          },
+        }
+      );
 
       return navigate(routesName.login);
     }
