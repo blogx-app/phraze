@@ -73,7 +73,7 @@ function LazyImage({
   className: string | null;
   height: "inherit" | number;
   imageRef: { current: null | HTMLImageElement };
-  maxWidth: number;
+  maxWidth?: "inherit" | number;
   src: string;
   width: "inherit" | number;
 }): JSX.Element {
@@ -109,7 +109,7 @@ export function ImageComponent({
   altText: string;
   caption: LexicalEditor;
   height: "inherit" | number;
-  maxWidth: number;
+  maxWidth?: number;
   nodeKey: NodeKey;
   resizable: boolean;
   showCaption: boolean;
