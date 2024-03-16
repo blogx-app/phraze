@@ -35,7 +35,12 @@ export const PhzDataTable = ({
           {tableDescription}
         </Text>
       </Box>
-      <Flex mb={2} alignItems="center" justifyContent="space-between">
+      <Flex
+        mb={2}
+        alignItems="center"
+        justifyContent="space-between"
+        gap="1rem"
+      >
         <PhzSearchInput inputStyle={{ height: "2.5rem" }} />
         {tableSearchActionPlaceholder ? tableSearchActionPlaceholder : <></>}
       </Flex>
