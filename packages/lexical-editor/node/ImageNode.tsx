@@ -15,6 +15,8 @@ import { $applyNodeReplacement, createEditor, DecoratorNode } from "lexical";
 import { Suspense } from "react";
 import { ImageComponent } from "./ImageComponent";
 
+const IMAGE_MAX_WIDTH = 620;
+
 export interface ImagePayload {
   altText: string;
   caption?: LexicalEditor;
@@ -41,7 +43,7 @@ export type SerializedImageNode = Spread<
     altText: string;
     caption: SerializedEditor;
     height?: number;
-    maxWidth: number;
+    maxWidth?: number;
     showCaption: boolean;
     src: string;
     width?: number;
@@ -56,7 +58,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
   __altText: string;
   __width: "inherit" | number;
   __height: "inherit" | number;
-  __maxWidth: number;
+  __maxWidth?: number;
   __showCaption: boolean;
   __caption: LexicalEditor;
   // Captions cannot yet be used within editor cells
@@ -120,7 +122,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
   constructor(
     src: string,
     altText: string,
-    maxWidth: number,
+    maxWidth?: number,
     width?: "inherit" | number,
     height?: "inherit" | number,
     showCaption?: boolean,
@@ -131,7 +133,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     super(key);
     this.__src = src;
     this.__altText = altText;
-    this.__maxWidth = maxWidth;
+    this.__maxWidth = maxWidth || undefined;
     this.__width = width || "inherit";
     this.__height = height || "inherit";
     this.__showCaption = showCaption || false;
@@ -214,7 +216,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
 export function $createImageNode({
   altText,
   height,
-  maxWidth = 500,
+  maxWidth,
   captionsEnabled,
   src,
   width,

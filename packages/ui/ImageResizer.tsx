@@ -3,7 +3,6 @@ import {
   TextAlignLeft,
   TextAlignRight,
 } from "@phosphor-icons/react";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import "./ImageResizer.css";
 import { LexicalEditor, FORMAT_ELEMENT_COMMAND } from "lexical";
 
@@ -77,7 +76,7 @@ export default function ImageResizer({
     : 100;
   const maxHeightContainer =
     editorRootElement !== null
-      ? editorRootElement.getBoundingClientRect().height - 20
+      ? editorRootElement.getBoundingClientRect().height + 200
       : 100;
 
   const minWidth = 100;
