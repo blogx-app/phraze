@@ -54,7 +54,7 @@ const ContentCards = () => {
                 8
               </Text>
               <Text>{card.contentType}</Text>
-              <Text fontSize="10px" mt="4px">
+              <Text fontSize="10px" mt="4px" color="textSubtle">
                 Last updated: 5 sec ago
               </Text>
             </Box>
