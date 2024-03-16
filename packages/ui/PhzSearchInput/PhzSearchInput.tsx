@@ -26,8 +26,7 @@ export const PhzSearchInput = ({
       }}
       ContainerProps={{
         style: {
-          width: "50%",
-          maxWidth: "31rem",
+          width: "100%",
         },
       }}
     />
