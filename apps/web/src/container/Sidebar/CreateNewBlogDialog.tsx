@@ -35,13 +35,13 @@ export const CreateNewBlogDialog = ({
         <Input
           placeholder="Dunder Mifflin Paper Company"
           label="Blog Name"
-          helperText="This is the name of your product or brand. You can edit it anytime."
+          // helperText="This is the name of your product or brand. You can edit it anytime."
         />
 
         <Input
-          placeholder="dunder-mifflin.phraze.xyz"
-          label="Blog Address"
-          helperText="This is the domain name of your blog. You can edit it anytime or connect your custom domain."
+          placeholder="dummy-blog-slug"
+          label="Blog Slug (Optional)"
+          // helperText="This is the domain name of your blog. You can edit it anytime or connect your custom domain."
         />
 
         <TextArea
